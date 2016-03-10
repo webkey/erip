@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<!--Favicon-->
-	<link href="favicon.ico" rel="shortcut icon">
+	<link href="favicon.png" rel="shortcut icon">
 	<!--Main style-->
 	<link href="css/all.css" rel="stylesheet" media="screen">
 	<!--Media queries style-->
@@ -18,68 +18,283 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" media="screen, projection"><![endif]-->
 </head>
 <body>
-<!--wrapper-->
+<aside class="sidebar">
+	<!--logo-->
+	<strong class="logo">
+		<a href="#">
+			<img src="img/logo.png" alt="Расчет" />
+			<span class="logo__text">Единое Расчётное Информационное Пространство</span>
+		</a>
+	</strong>
+	<!--logo end-->
+	<!--sb buttons-->
+	<div class="sb-phones">
+		<div class="sb-phones__align">
+			<div class="sb-phones__title">контактный телефон:</div>
+			<div class="sb-phones__body"><i class="depict-"></i><span>141</span></div>
+		</div>
+	</div>
+	<div class="sb-works">
+		<div class="sb-works__align">
+			<div class="sb-works__title">время работы:</div>
+			<div class="sb-work__body"><i class="depict-"></i><span>8:00 - 20:00</span></div>
+		</div>
+	</div>
+	<!--sb buttons end-->
+	<!--sb menu-->
+	<ul class="sb-menu">
+		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Пункты приема</span></a></li>
+		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Вопросы и ответы</span></a></li>
+		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Статистика системы</span></a></li>
+	</ul>
+	<!--sb menu end-->
+	<!--social networks-->
+	<ul class="social-networks">
+		<li>
+			<a href="#" class="soc-facebook"><span>facebook</span></a>
+		</li>
+		<li>
+			<a href="#" class="soc-twitter"><span>twitter</span></a>
+		</li>
+		<li>
+			<a href="#" class="vk"><span>vk</span></a>
+		</li>
+	</ul>
+	<!--social networks end-->
+	<!--developer-->
+	<a href="#" class="developer"></a>
+	<!--developer end-->
+</aside>
 <div class="wrapper">
-	<!--header-->
-	<header class="header">
-		<div class="max-wrap">
-			<!--header holder-->
-			<div class="header-holder">
-				<!--logo-->
-				<strong class="logo"><a href="#">WebSite</a></strong>
-				<!--logo end-->
-				<p>HEADER <br /><br /> Lorem ipsum dolor sit amet, <a href="#">link text</a> consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-			</div>
-			<!--header holder end-->
-		</div>
-	</header>
-	<!--header end-->
-
-	<!--main-->
-	<div class="main">
-		<div class="max-wrap">
-			<!--main holder-->
-			<div class="main-holder">
-				<!--main content wrapper-->
-				<div class="content-wrap">
-					<!--main content-->
-					<div class="content">
-						ContentTextContent
-					</div>
-					<!--main content end-->
+	<div class="main-layout sticky-js">
+		<!--main column-->
+		<div class="main-wrap">
+			<!--header-->
+			<header class="header">
+				<div class="header-holder">
+					<p>HEADER <br /><br /> Lorem ipsum dolor sit amet, <a href="#">link text</a> consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 				</div>
-				<!--main content wrapper end-->
+			</header>
+			<!--header end-->
 
-				<!--sidebar-->
-				<aside class="sidebar">
-					SIDEBAR <br /> <br /> Lorem ipsum <a href="#">link text</a> dolor sit amet, consectetur adipisicing elit. Sunt asperiores.
-				</aside>
-				<!--sidebar-->
-
-				<!--aside-->
-				<aside class="aside">
-					ASIDE <br /> <br /> Lorem ipsum <a href="#">link text</a> dolor sit amet, consectetur adipisicing elit. Tempora labore!
-				</aside>
-				<!--aside end-->
+			<!--main-->
+			<div class="main">
+				<!--main content-->
+				<div class="content">
+					<div class="catalog-menu">
+						<ul>
+							<li><a href="#">Преимущества нашей системы при оплате</a></li>
+							<li><a href="#">Информация о системе</a></li>
+							<li><a href="#">Где можно оплатить услуги РУП Белпочта</a></li>
+							<li><a href="#">Пункты обслуживания</a></li>
+							<li><a href="#">Где можно оплатить</a></li>
+							<li><a href="#">Преимущества нашей системы при оплате</a></li>
+							<li><a href="#">Преимущества нашей системы при оплате</a></li>
+							<li><a href="#">Информация о системе</a></li>
+						</ul>
+					</div>
+					<div class="promo">
+						<div class="promo-slider">
+							<img src="img/img-promo-slider-01.jpg"  alt="image description" />
+						</div>
+					</div>
+					<section class="news">
+						<h2>Новости</h2>
+					</section>
+					<section class="faq">
+						<h2>Новые вопросы</h2>
+					</section>
+				</div>
+				<!--main content end-->
 			</div>
-			<!--main holder end-->
+			<!--main end-->
 		</div>
-	</div>
-	<!--main end-->
-</div>
-<!--wrapper end-->
+		<!--main column-->
 
-<!--footer-->
-<footer class="footer">
-	<div class="max-wrap">
-		<!--footer holder-->
-		<div class="footer-holder">
-			<p>FOOTER <br /> <br /> Lorem ipsum <a href="#">link text</a> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-		<!--footer holder end-->
+		<!--footer-->
+		<footer class="footer">
+			<div class="nav-bar"></div>
+			<!--useful links-->
+			<ul class="useful-links">
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
+						<div class="useful-links__text"><span>интернет-портал президента РБ</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
+						<div class="useful-links__text"><span>мингорисполком</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
+						<div class="useful-links__text"><span>правовой интернет-портал рб</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-04.png" alt=""></div>
+						<div class="useful-links__text"><span>komplat.by</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
+						<div class="useful-links__text"><span>интернет-портал президента РБ</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
+						<div class="useful-links__text"><span>мингорисполком</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
+						<div class="useful-links__text"><span>правовой интернет-портал рб</span></div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="useful-links__icon"><img src="img/depict-useful-04.png" alt=""></div>
+						<div class="useful-links__text"><span>komplat.by</span></div>
+					</a>
+				</li>
+			</ul>
+			<!--useful links end-->
+			<div class="footer-copy">
+				<span class="copyright">&copy; Центр банковских технологий, 2016</span>
+			</div>
+		</footer>
+		<!--footer end-->
 	</div>
-</footer>
-<!--footer end-->
+	<!--aside-->
+	<aside class="aside sticky-js">
+		<div class="aside__holder">
+			<!--actions-->
+			<div class="actions">
+				<div class="actions__item">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-01.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item actions__item-alt">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-02.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item actions__item-lg">
+					<a href="#" class="actions__inner" style="background: #ffb205; background: -moz-linear-gradient(top,  #ffb205 1%, #ff8d07 100%); background: -webkit-linear-gradient(top,  #ffb205 1%,#ff8d07 100%); background: linear-gradient(to bottom,  #ffb205 1%,#ff8d07 100%);">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon" style="background: #0f4b01;"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-03.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Живи полной жизнью. Экономь свое время при покупке билетов через систему ЕРИП.</strong>
+								<div class="actions__text">Оплата товаров, заказанных билетов в кино, театр, цирк и т.п.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-01.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item actions__item-alt">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-02.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-01.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="actions__item actions__item-alt">
+					<a href="#" class="actions__inner">
+						<div class="actions__align">
+							<div class="actions__visual">
+								<span class="actions__visual-ribbon"></span>
+								<div class="actions__img">
+									<img src="img/img-actions-02.jpg" alt="image description" />
+								</div>
+							</div>
+							<div class="actions__content">
+								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--actions end-->
+		</div>
+	</aside>
+	<!--aside end-->
+</div>
 
 <!--JQuery library-->
 <script src="js/jquery-1.12.0.min.js"></script>
