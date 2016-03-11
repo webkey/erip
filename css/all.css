@@ -21,37 +21,42 @@ body{
 	min-width: 320px;
 }
 h1, h2, h3, h4, h5, h6{
+	font-family: 'pfbeausanspro-bold-italic', Arial, Helvetica, sans-serif;
 	margin: 0;
-	color: #000;
+	color: #f29700;
 }
 h1{
-	font-size: 26px;
-	line-height: 30px;
+	font-size: 36px;
+	line-height: 40px;
 	padding: 0 0 20px;
 }
 h2{
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 30px;
+	line-height: 34px;
 	padding: 0 0 20px;
 }
 h3{
-	font-size: 16px;
-	line-height: 18px;
+	font-size: 20px;
+	line-height: 24px;
+	font-family: 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	padding: 0 0 15px;
 }
 h4{
-	font-size: 14px;
-	line-height: 16px;
+	font-size: 16px;
+	line-height: 24px;
+	font-family: 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	padding: 0 0 10px;
 }
 h5{
-	font-size: 14px;
-	line-height: 16px;
+	font-size: 16px;
+	line-height: 20px;
+	font-family: 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	padding: 0 0 5px;
 }
 h6{
-	font-size: 12px;
-	line-height: 14px;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	padding: 0 0 5px;
 }
 p{
@@ -83,7 +88,7 @@ img{
 	vertical-align: top;
 	max-width: 100%;
 }
-b, strong{
+b, strong, th{
 	font-family: 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
@@ -118,7 +123,8 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 button{
-	font: 16px/20px Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
 	color: #fff;
 	padding: 12px 25px;
 	border: 1px solid transparent;
@@ -153,6 +159,7 @@ button:hover{
 .user-content *+h5{
 	padding-top: 30px;
 }
+
 /*unordered list (UL) styling*/
 .user-content ul{
 	margin:0;
@@ -170,11 +177,14 @@ button:hover{
 	content: '';
 	position: absolute;
 	left: 0;
-	top: 18px;
-	height: 6px;
-	width: 6px;
-	background: #d32e2e;
-	border-radius: 6px;
+	top: 19px;
+	height: 0;
+	width: 0;
+	border: 3px solid #f29700;
+	border-radius: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .user-content ul li:first-child:before{
 	top: 9px;
@@ -184,22 +194,22 @@ button:hover{
 }
 .user-content ul ul li:before,
 .user-content ul ul li:first-child:before{
-	height: 2px;
+	height: 0;
 	width: 8px;
+	border-width: 1px 0;
 	border-radius: 0;
-	top: 23px;
+	top: 21px;
 }
 .user-content ul ul li:first-child{
 	padding-top: 10px;
 }
 .user-content ul ul ul li:before,
 .user-content ul ul ul li:first-child:before{
-	height: 7px;
-	width: 7px;
-	border-radius: 0;
-	background: none;
-	border: 2px solid #d32e2e;
-	top: 20px;
+	height: 6px;
+	width: 6px;
+	top: 19px;
+	border-width: 2px;
+	border-radius: 50%;
 }
 /*unordered list (UL) end*/
 
@@ -224,7 +234,7 @@ button:hover{
 .user-content ol > li:before{
 	display: inline-block;
 	text-align: left;
-	color: #d32e2e;
+	color: #f29700;
 	min-width: 18px;
 	content: counter(section) ".";
 	padding: 0 5px 0 0;
@@ -239,7 +249,7 @@ table{
 table td,
 table th{
 	padding: 8px;
-	border: 1px solid #99bddb;
+	border: 1px solid #0f4b01;
 	font-size: 14px;
 	line-height: 1.4;
 }
@@ -254,7 +264,7 @@ table th{
 }
 .user-content .tbl{
 	table-layout: fixed;
-	border: 1px solid #99bddb;
+	border: 1px solid #e2dbbe;
 	margin-bottom: 20px;
 }
 .table_auto .tbl{
@@ -262,20 +272,18 @@ table th{
 }
 .user-content .tbl td,
 .user-content .tbl th{
-	font: 14px/20px 'gothampro-regular', Arial, Helvetica, sans-serif;
-	color: #333;
+	font: 14px/20px Arial, Helvetica, sans-serif;
+	color: #808080;
 	background-color: #fff;
-	border: solid #99bddb;
+	border: solid #e2dbbe;
 	border-width: 0 0 0 1px;
 	padding: 13px 12px;
 }
 .user-content .tbl tbody tr:nth-child(even) td{
-	background: #e5eef6;
+	background: #fef5d4;
 }
 .user-content .tbl td:first-child{
-	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-align: left;
-	padding-left: 24px;
 }
 .user-content .tbl tbody td:first-child,
 .user-content .tbl tfoot td:first-child{
@@ -283,22 +291,20 @@ table th{
 }
 .user-content .tbl th,
 .user-content .tbl thead td{
-	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	line-height: 17px;
 	color: #fff;
-	background: #0059a6;
+	background: #f29700;
 	padding: 16px 12px 17px;
 }
 .user-content .tbl tfoot td{
-	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
-	background: #e5eef6;
+	background: #fef5d4;
 }
 /*table styling end*/
 
 /*blockquote (div)*/
 .blockquote{
-	background-color: #e5eef6;
-	border-left: 4px solid #0059a6;
+	background-color: #fcf7e3;
+	border-left: 3px solid #0f4b01;
 	padding: 30px 35px 28px 30px;
 }
 .blockquote .q{
@@ -313,7 +319,7 @@ table th{
 	text-align: right;
 	display: block;
 	margin-left: auto;
-	font: 14px/22px 'gothampro-italic', Arial, Helvetica, sans-serif;
+	font: 14px/22px Arial, Helvetica, sans-serif;
 }
 .blockquote .cite-holder{
 	display: inline-block;
@@ -326,8 +332,8 @@ table th{
 .user-content blockquote{
 	display: block;
 	margin: 0;
-	background-color: #f5f5f5;
-	border-left: 4px solid #83cff0;
+	background-color: #fcf7e3;
+	border-left: 3px solid #0f4b01;
 	padding: 18px 32px 28px 42px;
 }
 .user-content blockquote q{
@@ -399,7 +405,7 @@ input[type="search"],
 textarea{
 	display: block;
 	color: #333;
-	font: 14px/16px 'gothampro-regular', Arial, Helvetica, sans-serif;
+	font: 14px/16px Arial, Helvetica, sans-serif;
 	letter-spacing: normal;
 	height: 34px;
 	width: 100%;
@@ -499,11 +505,9 @@ input[type="checkbox"]{ width: 16px; height: 16px; padding: 0; margin: 0; }
 	vertical-align: top;
 	width: 50%;
 	padding: 0 15px;
-}
-.form-col{
-	display: inline-block;
-	vertical-align: top;
-	width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .label-holder{ padding: 0 0 10px; }
 .label-holder,
@@ -561,7 +565,6 @@ label{ color: #333; }
 }
 .file__title a span{
 	padding-top: 5px;
-	color: #0059a6;
 	text-decoration: underline;
 }
 .file__title a:hover span{
@@ -584,12 +587,16 @@ label{ color: #333; }
 	color: #000;
 	padding: 0 0 20px;
 }
-.breadcrumbs-list{
+.breadcrumbs-list,
+.user-content .breadcrumbs-list{
 	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 .breadcrumbs-list li,
 .user-content .breadcrumbs-list li{
-	padding: 0 5px 10px 20px;
+	padding: 0 10px 10px 12px;
 	float: left;
 	position: relative;
 }
@@ -1505,10 +1512,12 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	text-align: center;
 	font-size: 0;
 	letter-spacing: -4px;
-	white-space: nowrap;
 	width: 100%;
 	border: solid #bf7600;
 	border-width: 1px 0;
+}
+.expand-sidebar .social-networks{
+	width: 230px;
 }
 .social-networks li{
 	padding: 20px;
