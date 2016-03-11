@@ -18,20 +18,91 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" media="screen, projection"><![endif]-->
 </head>
 <body>
-<aside class="sidebar">
+<aside class="sidebar sticky-js">
 	<!--logo-->
-	<strong class="logo"><a href="#">WebSite</a></strong>
+	<strong class="logo">
+		<a href="#">
+			<img src="img/logo.png" alt="Расчет" />
+			<span class="logo__text">Единое Расчётное Информационное Пространство</span>
+		</a>
+	</strong>
 	<!--logo end-->
-	<div class="sb-phones"><i class=""></i><span>141</span></div>
-	<div class="sb-works">
-		<div class="sb-works__label">время работы:</div>
-		<div class="sb-work__time">8:00 - 20:00</div>
+	<!--sb buttons-->
+	<div class="sb-phones">
+		<div class="sb-phones__align">
+			<div class="sb-phones__title">контактный телефон:</div>
+			<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
+		</div>
 	</div>
+	<div class="sb-works">
+		<div class="sb-works__align">
+			<div class="sb-works__title">время работы:</div>
+			<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
+		</div>
+	</div>
+	<!--sb buttons end-->
+	<!--sb menu-->
 	<ul class="sb-menu">
-		<li><a href="#"><i class=""></i><span class="sb-menu__inner">пункты приема</span></a></li>
-		<li><a href="#"><i class=""></i><span class="sb-menu__inner">вопросы и ответы</span></a></li>
-		<li><a href="#"><i class=""></i><span class="sb-menu__inner">статистика системы</span></a></li>
+		<li>
+			<a href="#">
+				<div class="sb-icon">
+					<i class="depict-tel"></i>
+					<i class="depict-tel-h"></i>
+				</div>
+				<span class="sb-menu__inner">Пункты приема</span>
+				<span class="sb-menu__inner-alt">Пункты приёма платежей</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<div class="sb-icon">
+					<i class="depict-faq"></i>
+					<i class="depict-faq-h"></i>
+				</div>
+				<span class="sb-menu__inner">Вопросы и ответы</span>
+				<span class="sb-menu__inner-alt">Часто задаваемые вопросы</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<div class="sb-icon">
+					<i class="depict-stat"></i>
+					<i class="depict-stat-h"></i>
+				</div>
+				<span class="sb-menu__inner">Статистика системы</span>
+				<span class="sb-menu__inner-alt">Статистика системы</span>
+			</a>
+		</li>
 	</ul>
+	<!--sb menu end-->
+	<!--social networks-->
+	<ul class="social-networks">
+		<li>
+			<a href="#" class="soc-facebook">
+				<span>facebook</span>
+				<i class="soc-depict-fb"></i>
+				<i class="soc-depict-fb-h"></i>
+			</a>
+		</li>
+		<li>
+			<a href="#" class="soc-twitter">
+				<span>twitter</span>
+				<i class="soc-depict-twitter"></i>
+				<i class="soc-depict-twitter-h"></i>
+			</a>
+		</li>
+		<li>
+			<a href="#" class="vk">
+				<span>vk</span>
+				<i class="soc-depict-vk"></i>
+				<i class="soc-depict-vk-h"></i>
+			</a>
+		</li>
+	</ul>
+	<!--social networks end-->
+	<!--developer-->
+	<a href="#" class="developer"></a>
+	<!--developer end-->
 </aside>
 <div class="wrapper">
 	<div class="main-layout sticky-js">
@@ -39,9 +110,45 @@
 		<div class="main-wrap">
 			<!--header-->
 			<header class="header">
-				<div class="header-holder">
-					<p>HEADER <br /><br /> Lorem ipsum dolor sit amet, <a href="#">link text</a> consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+				<!--button menu-->
+				<div class="btn-menu">
+					<div class="btn-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 				</div>
+				<!--button menu end-->
+				<!-- main navigation -->
+				<nav class="nav">
+					<ul class="nav-list">
+						<li><a href="#"><span>О системе</span></a></li>
+						<li><a href="#"><span>Нкфо</span></a></li>
+						<li><a href="#"><span>Плательщикам</span></a></li>
+						<li><a href="#"><span>Поставщикам</span></a></li>
+						<li><a href="#"><span>Агентам</span></a></li>
+					</ul>
+				</nav>
+				<!-- main navigation end -->
+				<!--search form opener-->
+				<strong class="btn-search-open js-btn-search">
+					<i></i>
+					<span>Поиск</span>
+				</strong>
+				<!--search form opener end-->
+				<!--search form-->
+				<div class="search-form js-search-form">
+					<form action="#">
+						<div class="input-wrapper">
+							<input type="search" placeholder="Поиск по сайту">
+							<div class="btn-search">
+								<input type="submit" value="">
+							</div>
+							<div class="btn-search-close js-btn-search-close"></div>
+						</div>
+					</form>
+				</div>
+				<!--search form end-->
 			</header>
 			<!--header end-->
 

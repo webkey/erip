@@ -17,10 +17,23 @@
 /*icons end*/
 
 /*social icons*/
-[class|="soc-icon"],
-[class*=" soc-icon-"] {
+[class|="soc-depict"],
+[class*=" soc-depict-"] {
 	background:url(../img/sprite-social.png) 0 0 no-repeat;
 	display: inline-block;
 	vertical-align: top;
+}
+.soc-depict-fb{ background-position: 0 0; width: 38px; height: 38px; }
+.soc-depict-fb-h{ background-position: 0 -58px; width: 38px; height: 38px; }
+.soc-depict-twitter{ background-position: 0 -116px; width: 38px; height: 38px; }
+.soc-depict-twitter-h{ background-position: 0 -174px; width: 38px; height: 38px; }
+.soc-depict-vk{ background-position: 0 -232px; width: 38px; height: 38px; }
+.soc-depict-vk-h{ background-position: 0 -290px; width: 38px; height: 38px; }
+
+@media ( -webkit-min-device-pixel-ratio : 1.5 ),
+( min-resolution : 144dpi ){
+	.iii {
+		background-size:38px 38px;
+	}
 }
 /*social icons end*/
