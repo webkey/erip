@@ -1,10 +1,19 @@
 /*icons*/
-[class|="icon"],
-[class*=" icon-"]{
+[class|="depict"],
+[class*=" depict-"]{
 	background:url(../img/sprite-icons.png) 0 0 no-repeat;
 	display: inline-block;
 	vertical-align: top;
 }
+.depict-phone-sm{ background-position: 0 0; width: 15px; height: 15px; }
+.depict-phone-lg{ background-position: 0 -35px; width: 20px; height: 20px; }
+.depict-time-lg{ background-position: 0 -75px; width: 20px; height: 20px; }
+.depict-tel{ background-position: 0 -115px; width: 18px; height: 30px; }
+.depict-tel-h{ background-position: 0 -165px; width: 18px; height: 30px; }
+.depict-faq{ background-position: 0 -215px; width: 20px; height: 30px; }
+.depict-faq-h{ background-position: 0 -265px; width: 20px; height: 30px; }
+.depict-stat{ background-position: 0 -315px; width: 30px; height: 30px; }
+.depict-stat-h{ background-position: 0 -365px; width: 30px; height: 30px; }
 /*icons end*/
 
 /*social icons*/
@@ -15,40 +24,3 @@
 	vertical-align: top;
 }
 /*social icons end*/
-
-/*arrows*/
-[class|="arrow"],
-[class*=" arrow-"] {
-	background:url(../img/sprite-arrows.png) 0 0 no-repeat;
-	display: inline-block;
-	vertical-align: top;
-}
-/*arrows end*/
-
-/*form icons*/
-[class|="icon-form"],
-[class*=" icon-form-"] {
-	background:url(../img/sprite-forms.png) 0 0 no-repeat;
-	display: inline-block;
-	vertical-align: top;
-}
-/*form icons end*/
-
-/*stars*/
-[class|="icon-star"],
-.icon-star,
-[class*=" icon-star-"]{
-	background:url(../img/sprite-rating.png) 0 0 no-repeat;
-	display: inline-block;
-	vertical-align: top;
-}
-/*stars end*/
-
-/*corners*/
-[class|="corner"],
-[class*=" corner-"] {
-	background:url(../img/sprite-corners.png) 0 0 no-repeat;
-	display: inline-block;
-	vertical-align: top;
-}
-/*corners end*/

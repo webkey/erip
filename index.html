@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>WebSite - Home</title>
+	<title>Erip - Home</title>
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,21 +31,21 @@
 	<div class="sb-phones">
 		<div class="sb-phones__align">
 			<div class="sb-phones__title">контактный телефон:</div>
-			<div class="sb-phones__body"><i class="depict-"></i><span>141</span></div>
+			<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
 		</div>
 	</div>
 	<div class="sb-works">
 		<div class="sb-works__align">
 			<div class="sb-works__title">время работы:</div>
-			<div class="sb-work__body"><i class="depict-"></i><span>8:00 - 20:00</span></div>
+			<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
 		</div>
 	</div>
 	<!--sb buttons end-->
 	<!--sb menu-->
 	<ul class="sb-menu">
-		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Пункты приема</span></a></li>
-		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Вопросы и ответы</span></a></li>
-		<li><a href="#"><i class="depict-"></i><span class="sb-menu__inner">Статистика системы</span></a></li>
+		<li><a href="#"><i class="depict-tel"></i><span class="sb-menu__inner">Пункты приема</span></a></li>
+		<li><a href="#"><i class="depict-faq"></i><span class="sb-menu__inner">Вопросы и ответы</span></a></li>
+		<li><a href="#"><i class="depict-stat"></i><span class="sb-menu__inner">Статистика системы</span></a></li>
 	</ul>
 	<!--sb menu end-->
 	<!--social networks-->
@@ -71,9 +71,37 @@
 		<div class="main-wrap">
 			<!--header-->
 			<header class="header">
-				<div class="header-holder">
-					<p>HEADER <br /><br /> Lorem ipsum dolor sit amet, <a href="#">link text</a> consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+				<div class="btn-menu"><span></span></div>
+				<!-- main navigation -->
+				<nav class="nav">
+					<ul class="nav-list">
+						<li><a href="#"><span>О системе</span></a></li>
+						<li><a href="#"><span>Нкфо</span></a></li>
+						<li><a href="#"><span>Плательщикам</span></a></li>
+						<li><a href="#"><span>Поставщикам</span></a></li>
+						<li><a href="#"><span>Агентам</span></a></li>
+					</ul>
+				</nav>
+				<!-- main navigation end -->
+				<!--search form opener-->
+				<div class="btn-search js-btn-search">
+					<i class="depict-icons-magnifier"></i>
+					<span>Поиск</span>
 				</div>
+				<!--search form opener end-->
+				<!--search form-->
+				<div class="search-form js-search-form">
+					<form action="#">
+						<div class="input-wrapper">
+							<input type="search" placeholder="Поиск по сайту">
+							<div class="btn-search">
+								<input type="submit" value="">
+							</div>
+							<div class="btn-search-close js-btn-search-close"></div>
+						</div>
+					</form>
+				</div>
+				<!--search form end-->
 			</header>
 			<!--header end-->
 
@@ -176,8 +204,8 @@
 	<aside class="aside sticky-js">
 		<div class="aside__holder">
 			<!--actions-->
-			<div class="actions">
-				<div class="actions__item">
+			<article class="actions">
+				<section class="actions__item">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -187,13 +215,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<h3>Плати удобным для cебя способом</h3>
 								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item actions__item-alt">
+				</section>
+				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -203,13 +231,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
 								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item actions__item-lg">
+				</section>
+				<section class="actions__item actions__item-lg">
 					<a href="#" class="actions__inner" style="background: #ffb205; background: -moz-linear-gradient(top,  #ffb205 1%, #ff8d07 100%); background: -webkit-linear-gradient(top,  #ffb205 1%,#ff8d07 100%); background: linear-gradient(to bottom,  #ffb205 1%,#ff8d07 100%);">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -219,13 +247,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Живи полной жизнью. Экономь свое время при покупке билетов через систему ЕРИП.</strong>
+								<h3>Живи полной жизнью. Экономь свое время при покупке билетов через систему ЕРИП.</h3>
 								<div class="actions__text">Оплата товаров, заказанных билетов в кино, театр, цирк и т.п.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item">
+				</section>
+				<section class="actions__item">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -235,13 +263,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<h3>Плати удобным для cебя способом</h3>
 								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item actions__item-alt">
+				</section>
+				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -251,13 +279,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
 								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item">
+				</section>
+				<section class="actions__item">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -267,13 +295,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Плати удобным для cебя способом</strong>
+								<h3>Плати удобным для cебя способом</h3>
 								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-				<div class="actions__item actions__item-alt">
+				</section>
+				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
 						<div class="actions__align">
 							<div class="actions__visual">
@@ -283,13 +311,13 @@
 								</div>
 							</div>
 							<div class="actions__content">
-								<strong class="actions__title">Совершай и оплачивай покупки не выходя из дома</strong>
+								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
 								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
 							</div>
 						</div>
 					</a>
-				</div>
-			</div>
+				</section>
+			</article>
 			<!--actions end-->
 		</div>
 	</aside>
