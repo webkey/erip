@@ -54,10 +54,30 @@ function showFormSearch(){
 }
 /*show form search end*/
 
+/*sliders initial*/
+function slidersInit(){
+	/*promo-slider*/
+	var sliderQuestions = $('.promo-slider');
+	if(sliderQuestions.length){
+		sliderQuestions.slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			speed: 300,
+			infinite: true,
+			dots: true,
+			arrows: true
+		});
+	}
+	/*promo-slider end*/
+
+}
+/*sliders initial end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
 	placeholderInit();
 	stickyLayout();
 	showFormSearch();
+	slidersInit();
 });

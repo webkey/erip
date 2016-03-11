@@ -18,60 +18,69 @@
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" media="screen, projection"><![endif]-->
 </head>
 <body>
-<aside class="sidebar">
-	<!--logo-->
-	<strong class="logo">
-		<a href="#">
-			<img src="img/logo.png" alt="Расчет" />
-			<span class="logo__text">Единое Расчётное Информационное Пространство</span>
-		</a>
-	</strong>
-	<!--logo end-->
-	<!--sb buttons-->
-	<div class="sb-phones">
-		<div class="sb-phones__align">
-			<div class="sb-phones__title">контактный телефон:</div>
-			<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
-		</div>
-	</div>
-	<div class="sb-works">
-		<div class="sb-works__align">
-			<div class="sb-works__title">время работы:</div>
-			<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
-		</div>
-	</div>
-	<!--sb buttons end-->
-	<!--sb menu-->
-	<ul class="sb-menu">
-		<li><a href="#"><i class="depict-tel"></i><span class="sb-menu__inner">Пункты приема</span></a></li>
-		<li><a href="#"><i class="depict-faq"></i><span class="sb-menu__inner">Вопросы и ответы</span></a></li>
-		<li><a href="#"><i class="depict-stat"></i><span class="sb-menu__inner">Статистика системы</span></a></li>
-	</ul>
-	<!--sb menu end-->
-	<!--social networks-->
-	<ul class="social-networks">
-		<li>
-			<a href="#" class="soc-facebook"><span>facebook</span></a>
-		</li>
-		<li>
-			<a href="#" class="soc-twitter"><span>twitter</span></a>
-		</li>
-		<li>
-			<a href="#" class="vk"><span>vk</span></a>
-		</li>
-	</ul>
-	<!--social networks end-->
-	<!--developer-->
-	<a href="#" class="developer"></a>
-	<!--developer end-->
-</aside>
+
 <div class="wrapper">
+	<aside class="sidebar sticky-js">
+		<!--logo-->
+		<strong class="logo">
+			<a href="#">
+				<img src="img/logo.png" alt="Расчет" />
+				<span class="logo__text">Единое Расчётное Информационное Пространство</span>
+			</a>
+		</strong>
+		<!--logo end-->
+		<!--sb buttons-->
+		<div class="sb-phones">
+			<div class="sb-phones__align">
+				<div class="sb-phones__title">контактный телефон:</div>
+				<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
+			</div>
+		</div>
+		<div class="sb-works">
+			<div class="sb-works__align">
+				<div class="sb-works__title">время работы:</div>
+				<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
+			</div>
+		</div>
+		<!--sb buttons end-->
+		<!--sb menu-->
+		<ul class="sb-menu">
+			<li><a href="#"><i class="depict-tel"></i><span class="sb-menu__inner">Пункты приема</span></a></li>
+			<li><a href="#"><i class="depict-faq"></i><span class="sb-menu__inner">Вопросы и ответы</span></a></li>
+			<li><a href="#"><i class="depict-stat"></i><span class="sb-menu__inner">Статистика системы</span></a></li>
+		</ul>
+		<!--sb menu end-->
+		<!--social networks-->
+		<ul class="social-networks">
+			<li>
+				<a href="#" class="soc-facebook"><span>facebook</span></a>
+			</li>
+			<li>
+				<a href="#" class="soc-twitter"><span>twitter</span></a>
+			</li>
+			<li>
+				<a href="#" class="vk"><span>vk</span></a>
+			</li>
+		</ul>
+		<!--social networks end-->
+		<!--developer-->
+		<a href="#" class="developer"></a>
+		<!--developer end-->
+	</aside>
 	<div class="main-layout sticky-js">
 		<!--main column-->
 		<div class="main-wrap">
 			<!--header-->
 			<header class="header">
-				<div class="btn-menu"><span></span></div>
+				<!--button menu-->
+				<div class="btn-menu">
+					<div class="btn-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<!--button menu end-->
 				<!-- main navigation -->
 				<nav class="nav">
 					<ul class="nav-list">
@@ -84,10 +93,10 @@
 				</nav>
 				<!-- main navigation end -->
 				<!--search form opener-->
-				<div class="btn-search js-btn-search">
-					<i class="depict-icons-magnifier"></i>
+				<strong class="btn-search-open js-btn-search">
+					<i></i>
 					<span>Поиск</span>
-				</div>
+				</strong>
 				<!--search form opener end-->
 				<!--search form-->
 				<div class="search-form js-search-form">
@@ -109,23 +118,48 @@
 			<div class="main">
 				<!--main content-->
 				<div class="content">
+					<!--catalog menu-->
 					<div class="catalog-menu">
-						<ul>
-							<li><a href="#">Преимущества нашей системы при оплате</a></li>
-							<li><a href="#">Информация о системе</a></li>
-							<li><a href="#">Где можно оплатить услуги РУП Белпочта</a></li>
-							<li><a href="#">Пункты обслуживания</a></li>
-							<li><a href="#">Где можно оплатить</a></li>
-							<li><a href="#">Преимущества нашей системы при оплате</a></li>
-							<li><a href="#">Преимущества нашей системы при оплате</a></li>
-							<li><a href="#">Информация о системе</a></li>
+						<ul class="catalog-menu-list">
+							<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+							<li><a href="#"><span>Информация о системе</span></a></li>
+							<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+							<li><a href="#"><span>Пункты обслуживания</span></a></li>
+							<li><a href="#"><span>Где можно оплатить</span></a></li>
+							<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+							<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+							<li><a href="#"><span>Информация о системе</span></a></li>
 						</ul>
 					</div>
-					<div class="promo">
-						<div class="promo-slider">
-							<img src="img/img-promo-slider-01.jpg"  alt="image description" />
-						</div>
-					</div>
+					<!--catalog menu-->
+					<!--promo slider-->
+					<section class="promo-slider">
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Живи полной жизнью</h3>
+								<p class="promo-slider__text">Экономь своё время при покупке билетов в кино, театр, кинотеатр, самолёт через систему "Расчет" (ЕРИП).</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor sit amet</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet consectetur est facere fuga laudantium minima minus modi, molestias necessitatibus non nostrum odio, perferendis quisquam repudiandae sapiente suscipit voluptates, voluptatibus.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+					</section>
+					<!--promo slider-->
 					<section class="news">
 						<h2>Новости</h2>
 					</section>
