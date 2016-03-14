@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1349px){}
+
+.main-layout{
+	float: none;
+	width: auto;
+	box-shadow: none;
+}
+.header{
+	right: 0;
+	left: 80px;
+	width: auto;
+}
+.news-articles {
+	margin: 0 auto;
+	max-width: 880px;
+	border-right: 1px solid #f5f0dc;
+}
+.faq-list{
+	max-width: 880px;
+	margin: 0 auto;
+}
+.nav-bar__list {
+	margin: 0 auto;
+	max-width: 880px;
+}
+
+.aside{
+	display: none;
+}

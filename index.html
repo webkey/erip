@@ -1,8 +1,6 @@
-<!doctype html><!--[if lt IE 7]>
-<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]--><!--[if IE 7]>
-<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]--><!--[if IE 8]>
-<html class="no-js lt-ie9" lang=""> <![endif]--><!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang=""> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,12 +17,10 @@
 	<link href="css/all.css" rel="stylesheet" media="screen">
 	<!--Media queries style-->
 	<link href="css/mq-all.css" rel="stylesheet" media="screen">
-	<!--style for IE-->
-	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" media="screen, projection"><![endif]-->
 	<!--Modernizr-->
 	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body class="home-page">
+<body class="home-page top-panel-show">
 <!--[if lt IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
 <div class="wrapper">
@@ -117,45 +113,47 @@
 	<div class="main-layout sticky-js">
 		<!--header-->
 		<header class="header">
-			<!--button menu-->
-			<div class="btn-menu">
-				<div class="btn-lines">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-			<!--button menu end-->
-			<!-- main navigation -->
-			<nav class="nav">
-				<ul class="nav-list">
-					<li><a href="#"><span>О системе</span></a></li>
-					<li><a href="#"><span>Нкфо</span></a></li>
-					<li><a href="#"><span>Плательщикам</span></a></li>
-					<li><a href="#"><span>Поставщикам</span></a></li>
-					<li><a href="#"><span>Агентам</span></a></li>
-				</ul>
-			</nav>
-			<!-- main navigation end -->
-			<!--search form opener-->
-			<strong class="btn-search-open js-btn-search">
-				<i></i>
-				<span>Поиск</span>
-			</strong>
-			<!--search form opener end-->
-			<!--search form-->
-			<div class="search-form js-search-form">
-				<form action="#">
-					<div class="input-wrapper">
-						<input type="search" placeholder="Поиск по сайту">
-						<div class="btn-search">
-							<input type="submit" value="">
-						</div>
-						<div class="btn-search-close js-btn-search-close"></div>
+			<div class="header-layout">
+				<!--button menu-->
+				<div class="btn-menu">
+					<div class="btn-lines">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
-				</form>
+				</div>
+				<!--button menu end-->
+				<!-- main navigation -->
+				<nav class="nav">
+					<ul class="nav-list">
+						<li><a href="#about-system-menu"><span>О системе</span></a></li>
+						<li><a href="#for-nkfo-menu"><span>Нкфо</span></a></li>
+						<li><a href="#for-payers-menu"><span>Плательщикам</span></a></li>
+						<li><a href="#for-suppliers-menu"><span>Поставщикам</span></a></li>
+						<li><a href="#for-agents-menu"><span>Агентам</span></a></li>
+					</ul>
+				</nav>
+				<!-- main navigation end -->
+				<!--search form opener-->
+				<strong class="btn-search-open js-btn-search">
+					<i></i>
+					<span>Поиск</span>
+				</strong>
+				<!--search form opener end-->
+				<!--search form-->
+				<div class="search-form js-search-form">
+					<form action="#">
+						<div class="input-wrapper">
+							<input type="search" placeholder="Поиск по сайту">
+							<div class="btn-search">
+								<input type="submit" value="">
+							</div>
+							<div class="btn-search-close js-btn-search-close"></div>
+						</div>
+					</form>
+				</div>
+				<!--search form end-->
 			</div>
-			<!--search form end-->
 		</header>
 		<!--header end-->
 
@@ -165,7 +163,47 @@
 			<div class="content">
 				<!--catalog menu-->
 				<div class="catalog-menu">
-					<ul class="catalog-menu-list">
+					<ul class="catalog-menu-list" id="about-system-menu">
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+						<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+						<li><a href="#"><span>Пункты обслуживания</span></a></li>
+						<li><a href="#"><span>Где можно оплатить</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+					</ul>
+					<ul class="catalog-menu-list" id="for-nkfo-menu">
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+						<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+						<li><a href="#"><span>Пункты обслуживания</span></a></li>
+						<li><a href="#"><span>Где можно оплатить</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+					</ul>
+					<ul class="catalog-menu-list" id="for-payers-menu">
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+						<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+						<li><a href="#"><span>Пункты обслуживания</span></a></li>
+						<li><a href="#"><span>Где можно оплатить</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+					</ul>
+					<ul class="catalog-menu-list" id="for-suppliers-menu">
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+						<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+						<li><a href="#"><span>Пункты обслуживания</span></a></li>
+						<li><a href="#"><span>Где можно оплатить</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+						<li><a href="#"><span>Информация о системе</span></a></li>
+					</ul>
+					<ul class="catalog-menu-list" id="for-agents-menu">
 						<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
 						<li><a href="#"><span>Информация о системе</span></a></li>
 						<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
@@ -224,7 +262,7 @@
 									<span class="dot">...</span></p>
 							</a>
 						</article>
-						<article class="news-article news-article_lg">
+						<article class="news-article">
 							<a href="#">
 								<footer>
 									<time datetime="2016-01-02">02 Янв 2016</time>
@@ -232,7 +270,7 @@
 								<h3>Оплата коммунальных услуг по Гродненской области</h3>
 							</a>
 						</article>
-						<article class="news-article news-article_lg">
+						<article class="news-article">
 							<a href="#">
 								<footer>
 									<time datetime="2016-01-02">02 Янв 2016</time>
@@ -240,7 +278,7 @@
 								<h3>Оплата услуг РУП "Белорусская железная дорога"</h3>
 							</a>
 						</article>
-						<article class="news-article news-article_lg">
+						<article class="news-article">
 							<a href="#">
 								<footer>
 									<time datetime="2016-01-02">02 Янв 2016</time>
@@ -248,7 +286,7 @@
 								<h3>Стандартизация услуг отделов и управлений образования</h3>
 							</a>
 						</article>
-						<article class="news-article news-article_lg">
+						<article class="news-article">
 							<a href="#">
 								<footer>
 									<time datetime="2016-01-02">02 Янв 2016</time>
@@ -266,7 +304,7 @@
 				<!--faq section-->
 				<section class="faq-section">
 					<div class="title-box align-center">
-						<h2>Новости</h2>
+						<h2>Новые вопросы</h2>
 						<p>Мы поможем ответить на вопросы, задаваемые пользователями. С помощью сайта Вы можете узнать ответ на любой интересующий Вас вопрос. Для удобства поиска нужного вопросы мы разделили их на логические группы.</p>
 					</div>
 					<!--faq list-->
@@ -446,112 +484,126 @@
 			<article class="actions">
 				<section class="actions__item">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-01.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-01.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Плати удобным для cебя способом</h3>
-								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								<div class="actions__content">
+									<h3>Плати удобным для cебя способом</h3>
+									<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay. Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay. Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay. Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay. Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-02.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-02.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
-								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								<div class="actions__content">
+									<h3>Совершай и оплачивай покупки не выходя из дома</h3>
+									<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item actions__item-lg">
-					<a href="#" class="actions__inner" style="background: #ffb205; background: -moz-linear-gradient(top,  #ffb205 1%, #ff8d07 100%); background: -webkit-linear-gradient(top,  #ffb205 1%,#ff8d07 100%); background: linear-gradient(to bottom,  #ffb205 1%,#ff8d07 100%);">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon" style="background: #0f4b01;"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-03.jpg" alt="image description" />
+					<a href="#" class="actions__inner" style="background: #ffb106; background: -moz-linear-gradient(top,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%); background: -webkit-linear-gradient(top,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%); background: linear-gradient(to bottom,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);">
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon" style="background: #0f4b01;"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-03.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Живи полной жизнью. Экономь свое время при покупке билетов через систему ЕРИП.</h3>
-								<div class="actions__text">Оплата товаров, заказанных билетов в кино, театр, цирк и т.п.</div>
+								<div class="actions__content">
+									<h3>Живи полной жизнью. Экономь свое время при покупке билетов через систему ЕРИП.</h3>
+									<div class="actions__text">Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п. Оплата товаров, заказанных билетов в кино, театр, цирк и т.п.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-01.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-01.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Плати удобным для cебя способом</h3>
-								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								<div class="actions__content">
+									<h3>Плати удобным для cебя способом</h3>
+									<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-02.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-02.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
-								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								<div class="actions__content">
+									<h3>Совершай и оплачивай покупки не выходя из дома</h3>
+									<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-01.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-01.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Плати удобным для cебя способом</h3>
-								<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								<div class="actions__content">
+									<h3>Плати удобным для cебя способом</h3>
+									<div class="actions__text">Интернет-банкинг, Web-Money, EasyPay, WEBPAY, PayPal, Payokay.</div>
+								</div>
 							</div>
 						</div>
 					</a>
 				</section>
 				<section class="actions__item actions__item-alt">
 					<a href="#" class="actions__inner">
-						<div class="actions__align">
-							<div class="actions__visual">
-								<span class="actions__visual-ribbon"></span>
-								<div class="actions__img">
-									<img src="img/img-actions-02.jpg" alt="image description" />
+						<div class="actions__holder">
+							<div class="actions__align">
+								<div class="actions__visual">
+									<span class="actions__visual-ribbon"></span>
+									<div class="actions__img">
+										<img src="img/img-actions-02.jpg" alt="image description" />
+									</div>
 								</div>
-							</div>
-							<div class="actions__content">
-								<h3>Совершай и оплачивай покупки не выходя из дома</h3>
-								<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								<div class="actions__content">
+									<h3>Совершай и оплачивай покупки не выходя из дома</h3>
+									<div class="actions__text">Оплата товаров, заказанных в интернет-магазинах.</div>
+								</div>
 							</div>
 						</div>
 					</a>
