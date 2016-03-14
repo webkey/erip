@@ -164,13 +164,12 @@ function headerFixed(){
 function catalogMenuScroll(){
 	var $catalogMenu = $('.catalog-menu');
 
-	var catalogMenuHeight = $catalogMenu.outerHeight();
-
 	if(!$catalogMenu.length){
 		return;
 	}
 
 	$(window).on('load scroll', function () {
+		var catalogMenuHeight = $catalogMenu.outerHeight();
 		var scrolled = $(window).scrollTop();
 
 		if($catalogMenu.offset().top + catalogMenuHeight < scrolled){
@@ -199,20 +198,71 @@ function catalogMenuSelect(){
 		return;
 	}
 
-	var scrollToOffset = 60;
-	var scrollSpeed = 300;
+	var currentItemId = $navList.find('.active').find('a').attr("href");
+
+	$(currentItemId).fadeIn(0)
+		.addClass('menu-active');
+
+	var scrollSpeed = 700;
 
 	$navList.find('a').on('click', function(event){
-		console.log(1);
 		event.preventDefault();
+
+		$('.catalog-menu-list').fadeOut(0)
+			.removeClass('menu-active');
+
+		$navList.find('.active')
+			.removeClass('active');
+
 		var navID = $(this).attr("href");
+		$(navID).fadeIn(0)
+			.addClass('menu-active');
+		$(this).closest('li').addClass('active');
+
 		$('html, body').animate({
-			scrollTop: $(navID).offset().top - scrollToOffset
+			scrollTop: 0
 		}, scrollSpeed, "easeInOutExpo");
 	});
 }
 /*catalog menu select end*/
 
+/*site map switcher*/
+function siteMapSwitcher(){
+	var $btnMenu = $('.btn-menu');
+	if(!$btnMenu.length){
+		return;
+	}
+
+	var btnActiveClass = 'active';
+	var siteMapShowClass = 'site-map-show';
+	var $body = $('body');
+
+	$btnMenu.on('click', function () {
+		var $currentBtn = $(this);
+		$currentBtn.toggleClass('active', !$currentBtn.hasClass(btnActiveClass));
+		$body.toggleClass(siteMapShowClass, $currentBtn.hasClass(btnActiveClass));
+
+		return false;
+	});
+
+	$(document).click(function () {
+		closeSiteMap();
+	});
+
+	$('.js-popup-menu').on('click', function(e){
+		e.stopPropagation();
+	});
+
+	$('.btn-menu-close').on('click', function(e){
+		closeSiteMap();
+	});
+
+	function closeSiteMap(){
+		$btnMenu.removeClass(btnActiveClass);
+		$body.removeClass(siteMapShowClass);
+	}
+}
+/*site map switcher end*/
 
 /** ready/load/resize document **/
 
@@ -226,4 +276,5 @@ $(document).ready(function(){
 	headerFixed();
 	catalogMenuScroll();
 	catalogMenuSelect();
+	siteMapSwitcher();
 });

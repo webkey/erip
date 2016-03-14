@@ -5,7 +5,8 @@
 	width: auto;
 	box-shadow: none;
 }
-.header{
+.header,
+.site-map{
 	right: 0;
 	left: 80px;
 	width: auto;
