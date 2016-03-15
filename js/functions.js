@@ -23,47 +23,59 @@ function stickyLayout(){
 	var $stickyJs = $(".sticky-js");
 	if ($stickyJs.length) {
 		$stickyJs.stick_in_parent({
-			//'parent': '.wrapper'
+			'parent': '.wrapper'
+		}).on("sticky_kit:stick", function(e) {
+			console.log("has stuck!", e.target);
+		}).on("sticky_kit:detach", function(e) {
+			console.log("has unstuck!", e.target);
 		});
 	}
 }
 /*sticky layout end*/
 
 /*show form search */
-function showFormSearch(){
-	var searchForm = $('.search-form__header');
-	if(!searchForm.length){ return; }
+function showFormSearch() {
+	var searchForm = $('.js-search-form');
+	if (!searchForm.length) {
+		return;
+	}
 
 	var $body = $('body');
-	$body.on('click', '.btn-search', function(){
+	$body.on('click', '.js-search-open', function () {
 		var $currentBtnOpen = $(this);
-		var $currentWrap = $currentBtnOpen.closest('.header-options');
+		var $currentWrap = $currentBtnOpen.closest('.header');
 		var $searchFormContainer = $currentWrap.find('.js-search-form');
+		//var $searchForm = $searchFormContainer.find('form');
 
-		var $searchForm = $searchFormContainer.find('form');
-		if ( $searchForm.find('input:not(:submit)').val().length && $searchFormContainer.is(':visible') ){
-			$searchForm.submit();
-			return;
-		}
+		//if ( $searchForm.find('input:not(:submit)').val() && $searchFormContainer.is(':visible') ){
+		//	$searchForm.submit();
+		//	return;
+		//}
 
-		if ($currentWrap.hasClass('form-opened')){
-			closeSearchForm($searchFormContainer,$('.header-options'));
-			return;
-		}
+		//if ($currentWrap.hasClass('form-opened')){
+		//
+		//	return;
+		//}
 
-		$currentWrap.addClass('form-opened');
+		$currentBtnOpen.toggleClass('active', !$currentBtnOpen.hasClass('active'));
+		$('body').toggleClass('form-opened', $currentBtnOpen.hasClass('active'));
+
+
+		//$currentWrap.addClass('form-opened');
 		$searchFormContainer.find('input[type="search"], input[type="text"]').trigger('focus');
 	});
 
-	$body.on('click', '.js-btn-search-close', function(){
+	$body.on('click', '.js-search-form', function () {
 		var $searchFormContainer = $(this).closest('.js-search-form');
+
 		$searchFormContainer.find('input:not(:submit)').val('');
 
-		closeSearchForm($searchFormContainer,$('.header-options'));
+		closeSearchForm();
 	});
 
-	function closeSearchForm(form, wrapper){
-		form.closest(wrapper).removeClass('form-opened')
+	function closeSearchForm(){
+		$('.js-search-open').removeClass('active');
+		$('body').removeClass('form-opened');
 	}
 }
 /*show form search end*/
@@ -273,6 +285,103 @@ function siteMapSwitcher(){
 }
 /*site map switcher end*/
 
+/*simple accordion*/
+(function ($) {
+	var SimpleAccordion = function (settings) {
+		var options = $.extend({
+			accordionContainer: null,
+			accordionItem: null,
+			accordionHeader: 'h3',
+			active: '0',
+			animateSpeed: 300
+		}, settings || {});
+
+		this.options = options;
+		var container = $(options.accordionContainer);
+		this.$accordionContainer = container;
+		this.$accordionItem = $(options.accordionItem, container);
+		this.$accordionHeader = $(options.accordionHeader, container);
+		this.$accordionPanel = $(this.$accordionHeader.next());
+		this._active = options.active;
+		this._animateSpeed = options.animateSpeed;
+
+		this.modifiers = {
+			active: 'active',
+			current: 'current'
+		};
+
+		this.bindEvents();
+		this.beforeStart();
+	};
+
+	SimpleAccordion.prototype.beforeStart = function () {
+
+	};
+
+	SimpleAccordion.prototype.bindEvents = function () {
+		var self = this,
+				_modifiersActive = this.modifiers.active;
+
+		self.$accordionItem.on('click', function (e) {
+			e.preventDefault();
+
+			var current = $(this);
+
+			if(current.hasClass(_modifiersActive)){
+				current.find(self.$accordionHeader).css({
+					'height': 24
+				});
+
+				current.find(self.$accordionPanel).css({
+					'height': 24
+				});
+
+				current.removeClass(_modifiersActive);
+				return;
+			}
+
+			self.$accordionHeader.css({
+				'height': 24
+			});
+
+			self.$accordionPanel.css({
+				'height': 24
+			});
+
+			self.$accordionItem.removeClass(_modifiersActive);
+
+			current.find(self.$accordionHeader).css({
+				'height':'auto'
+			});
+
+			current.find(self.$accordionPanel).css({
+				'height':'auto'
+			});
+
+			current.addClass(_modifiersActive);
+		})
+	};
+
+	SimpleAccordion.prototype.scrollPosition = function (scrollElement) {
+		$('html, body').animate({ scrollTop: scrollElement.offset().top }, this._animateSpeed);
+	};
+
+	window.SimpleAccordion = SimpleAccordion;
+}(jQuery));
+
+function faqBehavior() {
+	if($('.faq-list').length){
+		new SimpleAccordion({
+			accordionContainer: '.faq-list',
+			accordionItem: '.faq-item',
+			animateSpeed: 300
+		});
+	}
+
+
+}
+/*simple accordion end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -286,4 +395,5 @@ $(document).ready(function(){
 	catalogMenuScroll();
 	catalogMenuSelect();
 	siteMapSwitcher();
+	faqBehavior();
 });
