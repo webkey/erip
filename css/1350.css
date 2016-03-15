@@ -6,7 +6,8 @@
 	box-shadow: none;
 }
 .header,
-.site-map{
+.site-map,
+.site-map-overlay{
 	right: 0;
 	left: 80px;
 	width: auto;

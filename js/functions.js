@@ -90,21 +90,30 @@ function slidersInit(){
 function sidebarBehavior(){
 	var sidebar = $('.sidebar');
 	if(sidebar.length){
-		var timer;
+		var timerOpen;
+		var timerClose;
 
 		sidebar.on('mouseenter', function () {
-			clearTimeout(timer);
-			$('html').addClass('expand-sidebar');
+			clearTimeout(timerOpen);
+			clearTimeout(timerClose);
+
+			timerOpen = setTimeout(function () {
+				$('html').addClass('expand-sidebar');
+			}, 300);
 
 		}).on('mouseleave', function () {
-			clearTimeout(timer);
-			timer = setTimeout(function () {
+			clearTimeout(timerOpen);
+			clearTimeout(timerClose);
+
+			timerClose = setTimeout(function () {
 				$('html').removeClass('expand-sidebar');
 			}, 500);
 		});
 
 		$(document).on('click', function () {
-			clearTimeout(timer);
+			clearTimeout(timerOpen);
+			clearTimeout(timerClose);
+
 			$('html').removeClass('expand-sidebar');
 		});
 
