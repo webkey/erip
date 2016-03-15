@@ -65,7 +65,7 @@ function showFormSearch() {
 		$searchFormContainer.find('input[type="search"], input[type="text"]').trigger('focus');
 	});
 
-	$body.on('click', '.js-search-form', function () {
+	$body.on('click', '.js-search-close', function () {
 		var $searchFormContainer = $(this).closest('.js-search-form');
 
 		$searchFormContainer.find('input:not(:submit)').val('');
