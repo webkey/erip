@@ -35,47 +35,32 @@ function stickyLayout(){
 
 /*show form search */
 function showFormSearch() {
-	var searchForm = $('.js-search-form');
-	if (!searchForm.length) {
+	var $searchForm = $('.js-search-form');
+	if (!$searchForm.length) {
 		return;
 	}
 
 	var $body = $('body');
-	$body.on('click', '.js-search-open', function () {
-		var $currentBtnOpen = $(this);
-		var $currentWrap = $currentBtnOpen.closest('.header');
-		var $searchFormContainer = $currentWrap.find('.js-search-form');
-		//var $searchForm = $searchFormContainer.find('form');
+	var openedFormClass = 'form-opened';
 
-		//if ( $searchForm.find('input:not(:submit)').val() && $searchFormContainer.is(':visible') ){
-		//	$searchForm.submit();
-		//	return;
-		//}
+	$searchForm.on('click', '.js-search-open', function () {
+		$body.toggleClass(openedFormClass, !$body.hasClass(openedFormClass));
 
-		//if ($currentWrap.hasClass('form-opened')){
-		//
-		//	return;
-		//}
-
-		$currentBtnOpen.toggleClass('active', !$currentBtnOpen.hasClass('active'));
-		$('body').toggleClass('form-opened', $currentBtnOpen.hasClass('active'));
-
-
-		//$currentWrap.addClass('form-opened');
-		$searchFormContainer.find('input[type="search"], input[type="text"]').trigger('focus');
+		focusingSearchForm();
 	});
 
-	$body.on('click', '.js-search-close', function () {
-		var $searchFormContainer = $(this).closest('.js-search-form');
+	$searchForm.on('click', 'input:submit', function () {
+		if(!$body.hasClass(openedFormClass)){
+			$body.addClass(openedFormClass);
 
-		$searchFormContainer.find('input:not(:submit)').val('');
+			focusingSearchForm();
 
-		closeSearchForm();
+			return false;
+		}
 	});
 
-	function closeSearchForm(){
-		$('.js-search-open').removeClass('active');
-		$('body').removeClass('form-opened');
+	function focusingSearchForm(){
+		$searchForm.find('input[type="search"], input[type="text"]').trigger('focus');
 	}
 }
 /*show form search end*/
