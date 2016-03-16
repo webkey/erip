@@ -1750,6 +1750,9 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .helpful-section{
 	background: #f7f7f7;
 }
+.helpful{
+	background: #fff;
+}
 /*tab controls*/
 .helpful__controls,
 .user-content .helpful__controls{
@@ -1778,8 +1781,9 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .user-content .helpful__controls li:before{
 	content: none;
 }
-.helpful__controls li.active{
+.helpful__controls li.r-tabs-state-active{
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+	z-index: 2;
 }
 
 .helpful__controls a{
@@ -1789,6 +1793,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	padding: 0 30px;
 	height: 100%;
 	color: #808080;
+	background: #f7f7f7;
 	font-size: 0;
 	letter-spacing: -4px;
 	-webkit-transition-property: color, background;
@@ -1801,7 +1806,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 }
-.helpful__controls .active a{
+.helpful__controls .r-tabs-state-active a{
 	background: #fff;
 	color: #f29700;
 	-webkit-transition-duration: 0.2s;
@@ -1818,16 +1823,14 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	transition-duration: 0.2s;
 }
 .helpful__controls a:hover span,
-.helpful__controls .active a span{
+.helpful__controls .r-tabs-state-active a span{
 	border-bottom-color: transparent;
 }
 
 /*tab controls end*/
 
-.helpful__tabs{
-	background: #fff;
-}
 .helpful__tab{
+	background: #fff;
 
 }
 

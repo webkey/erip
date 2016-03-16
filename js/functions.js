@@ -24,11 +24,13 @@ function stickyLayout(){
 	if ($stickyJs.length) {
 		$stickyJs.stick_in_parent({
 			'parent': '.wrapper'
-		}).on("sticky_kit:stick", function(e) {
-			console.log("has stuck!", e.target);
-		}).on("sticky_kit:detach", function(e) {
-			console.log("has unstuck!", e.target);
 		});
+			//.on("sticky_kit:stick", function(e) {
+			//console.log("has stuck!", e.target);
+		//})
+		//	.on("sticky_kit:detach", function(e) {
+		//	console.log("has unstuck!", e.target);
+		//});
 	}
 }
 /*sticky layout end*/
@@ -129,10 +131,15 @@ function actionsLayout(){
 		return;
 	}
 
-	$actions.masonry({
+	var actionsSortable = $actions.masonry({
 		// options
 		itemSelector: '.actions__item',
 		percentPosition: true
+	});
+
+	actionsSortable.on( 'layoutComplete', function( event, laidOutItems ) {
+		//console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
+		$(".sticky-js").trigger("sticky_kit:recalc");
 	});
 }
 /*actions layout end*/
@@ -398,34 +405,25 @@ function equalHeightInit(){
 
 /* tabs */
 function tabs() {
-	var tabWrap = $('.tabs-wrap-js');
-	if (!tabWrap) { return; }
+	var $helpfulTabs = $('.helpful');
+	if (!$helpfulTabs) { return; }
 
-	/*скрыть неактивные табы*/
-	tabWrap.each(function () {
-		var thisTabWrap = $(this);
-		var activeControlIndex = thisTabWrap.first('.tab-controls-js').find('li.active').index();
-		var tab = thisTabWrap.children('.tabs-js').children('.tab-js');
-		tab.fadeOut(0).eq(activeControlIndex).fadeIn(0);
-	});
-
-	/*по клику скрываем все табы и показываем активный*/
-	$('.tab-controls-js').on('click', 'a', function (e) {
-		var current = $(this);
-		/*если таб активный, функиця клика отменяется*/
-		if (current.parent('li').hasClass('active')) {
-			e.preventDefault();
-			return;
-		}
-
-		var index = current.parent().index();
-		current.closest('li').addClass('active').siblings().removeClass('active');
-		var tab = current.closest('.tabs-wrap-js').children('.tabs-js').children('.tab-js');
-		tab.fadeOut(0);
-		var currentTab = tab.eq(index);
-		currentTab.fadeIn(0);
-
-		e.preventDefault();
+	$helpfulTabs.responsiveTabs({
+		rotate: false,
+		startCollapsed: 'accordion',
+		collapsible: 'accordion',
+		setHash: false,
+		animation: 'fade', // slide
+		duration: 300, // default 500
+		animationQueue: true,
+		//scrollToAccordion: true,
+		//scrollToAccordionOffset: true,
+		//activate: function(e, tab) {
+		//	console.log(tab);
+		//},
+		//activateState: function(e, state) {
+		//	console.log(state);
+		//}
 	});
 }
 /* tabs end */
