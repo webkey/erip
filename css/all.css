@@ -26,13 +26,15 @@ h1, h2, h3, h4, h5, h6{
 	color: #f29700;
 }
 h1{
-	font-size: 36px;
+	font-size: 38px;
 	line-height: 40px;
+	letter-spacing: -0.05em;
 	padding: 0 0 20px;
 }
 h2{
-	font-size: 30px;
-	line-height: 34px;
+	font-size: 36px;
+	line-height: 38px;
+	letter-spacing: -0.05em;
 	padding: 0 0 20px;
 }
 h3{
@@ -201,7 +203,8 @@ button:hover{
 	border-radius: 0;
 	top: 21px;
 }
-.user-content ul ul li:first-child{
+.user-content ul ul li:first-child,
+.user-content ol ul li:first-child{
 	padding-top: 10px;
 }
 .user-content ul ul ul li:before,
@@ -239,6 +242,9 @@ button:hover{
 	min-width: 18px;
 	content: counter(section) ".";
 	padding: 0 5px 0 0;
+}
+.user-content ol ul li:first-child:before{
+	top: 21px;
 }
 /*ordered list (OL) end*/
 
@@ -1320,6 +1326,11 @@ html.no-js .catalog-menu-list li,
 	min-width: 144px;
 	border-radius: 20px;
 	background: #f29700;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
+}
+.promo-slider__item .btn-more:hover{
+	background: #ffac05;
 }
 
 .promo-slider .slick-arrow{
@@ -1394,6 +1405,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	z-index: 2;
 	margin: 0;
 	bottom: 22px;
+	padding: 0;
 }
 .promo-slider .slick-dots li,
 .user-content .promo-slider .slick-dots li,
@@ -1666,6 +1678,81 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 }
 /*faq list end*/
 /*faq section end*/
+
+/*advantages*/
+.advantages-section{
+	position: relative;
+	background: #fff;
+}
+.advantages{
+	font-size: 0;
+	letter-spacing: -4px;
+	padding: 0 0 50px;
+}
+.advantages-item{
+	width: 33.3%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+	letter-spacing: normal;
+	padding: 20px 32px;
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: background 0.6s;
+	transition: background 0.6s;
+}
+.advantages-item:hover{
+	background: #fcf7e3;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.advantages-img{
+	text-align: center;
+	margin: 0;
+	padding: 0 0 26px;
+}
+.advantages-img img{
+	margin: 0 auto;
+}
+.advantages-item h3{
+	font: 16px/24px 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	color: #333;
+	padding: 0 0 40px;
+	margin: 0 -20px;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.advantages-item h3:after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	bottom: 20px;
+	height: 0;
+	width: 40px;
+	border-top: 3px solid #ccc;
+}
+.advantages-item p{
+	padding: 0;
+}
+/*advantages end*/
+
+/*tab controls*/
+.tab-controls-list{ overflow: hidden; padding: 0 0 5px; }
+.tab-controls-list li{ float: left; margin-right: 6px; }
+.tab-controls-list a{ text-decoration: none; float: left; padding: 5px 17px; background: #f3cdcd; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.tab-controls-list a:hover{ box-shadow: none; }
+.tab-controls-list .active a{ box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); }
+/*tab controls end*/
+/*tabs*/
+.tab{ padding: 5px 17px; background: #f3cdcd; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+/*tabs end*/
 /*MAIN end*/
 
 /*SIDEBAR*/
