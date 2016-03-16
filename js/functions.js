@@ -174,6 +174,9 @@ function catalogMenuScroll(){
 		return;
 	}
 
+	var shadowTpl = '<div class="catalog-menu-shadow" />';
+	$(shadowTpl).insertAfter('.catalog-menu');
+
 	$(window).on('load scroll', function () {
 		var catalogMenuHeight = $catalogMenu.outerHeight();
 		var scrolled = $(window).scrollTop();
@@ -182,7 +185,17 @@ function catalogMenuScroll(){
 			return;
 		}
 
-		$catalogMenu.css('top',((scrolled*0.5))+'px');
+		var scrollSize = scrolled*0.5;
+		$catalogMenu.css('top', scrollSize + 'px');
+
+		$catalogMenu.toggleClass('sliding', scrollSize != 0);
+
+		// change opacity
+		var nextElementPositionTop = $catalogMenu.next().offset().top;
+
+		if ((nextElementPositionTop - scrolled) > 0) {
+			$catalogMenu.css('opacity', (nextElementPositionTop - scrolled) / nextElementPositionTop);
+		}
 	});
 }
 /*catalog menu scroll end*/
