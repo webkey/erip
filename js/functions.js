@@ -398,19 +398,19 @@ function equalHeightInit(){
 
 /* tabs */
 function tabs() {
-	var tabWrap = $('.tabs-wrap');
+	var tabWrap = $('.tabs-wrap-js');
 	if (!tabWrap) { return; }
 
 	/*скрыть неактивные табы*/
 	tabWrap.each(function () {
 		var thisTabWrap = $(this);
-		var activeControlIndex = thisTabWrap.first('.tab-controls-list').find('li.active').index();
-		var tab = thisTabWrap.children('.tabs').children('.tab');
+		var activeControlIndex = thisTabWrap.first('.tab-controls-js').find('li.active').index();
+		var tab = thisTabWrap.children('.tabs-js').children('.tab-js');
 		tab.fadeOut(0).eq(activeControlIndex).fadeIn(0);
 	});
 
 	/*по клику скрываем все табы и показываем активный*/
-	$('.tab-controls-list').on('click', 'a', function (e) {
+	$('.tab-controls-js').on('click', 'a', function (e) {
 		var current = $(this);
 		/*если таб активный, функиця клика отменяется*/
 		if (current.parent('li').hasClass('active')) {
@@ -420,7 +420,7 @@ function tabs() {
 
 		var index = current.parent().index();
 		current.closest('li').addClass('active').siblings().removeClass('active');
-		var tab = current.closest('.tabs-wrap').children('.tabs').children('.tab');
+		var tab = current.closest('.tabs-wrap-js').children('.tabs-js').children('.tab-js');
 		tab.fadeOut(0);
 		var currentTab = tab.eq(index);
 		currentTab.fadeIn(0);

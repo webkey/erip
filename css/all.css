@@ -156,6 +156,9 @@ button:hover{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.full-page{
+	padding: 0;
+}
 .user-content *+h2,
 .user-content *+h3,
 .user-content *+h4,
@@ -1743,16 +1746,93 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 }
 /*advantages end*/
 
+/*helpful section*/
+.helpful-section{
+	background: #f7f7f7;
+}
 /*tab controls*/
-.tab-controls-list{ overflow: hidden; padding: 0 0 5px; }
-.tab-controls-list li{ float: left; margin-right: 6px; }
-.tab-controls-list a{ text-decoration: none; float: left; padding: 5px 17px; background: #f3cdcd; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-.tab-controls-list a:hover{ box-shadow: none; }
-.tab-controls-list .active a{ box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); }
+.helpful__controls,
+.user-content .helpful__controls{
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.helpful__controls li,
+.user-content .helpful__controls li{
+	float: left;
+	display: table;
+	padding: 0;
+	width: 50%;
+	height: 96px;
+	text-align: center;
+	font: 16px/24px 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	-webkit-transition: box-shadow 0.2s;
+	transition: box-shadow 0.2s;
+}
+.helpful__controls li:before,
+.user-content .helpful__controls li:before{
+	content: none;
+}
+.helpful__controls li.active{
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.10);
+}
+
+.helpful__controls a{
+	display: table-cell;
+	vertical-align: middle;
+	text-decoration: none;
+	padding: 0 30px;
+	height: 100%;
+	color: #808080;
+	font-size: 0;
+	letter-spacing: -4px;
+	-webkit-transition-property: color, background;
+	transition-property: color, background;
+	-webkit-transition-duration: 0.6s;
+	transition-duration: 0.6s;
+}
+.helpful__controls a:hover{
+	box-shadow: none;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.helpful__controls .active a{
+	background: #fff;
+	color: #f29700;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+
+.helpful__controls a span{
+	font-size: 16px;
+	letter-spacing: normal;
+	border-bottom: 1px dotted #808080;
+	-webkit-transition-property: border;
+	transition-property: border;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.helpful__controls a:hover span,
+.helpful__controls .active a span{
+	border-bottom-color: transparent;
+}
+
 /*tab controls end*/
-/*tabs*/
-.tab{ padding: 5px 17px; background: #f3cdcd; border-radius: 3px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+
+.helpful__tabs{
+	background: #fff;
+}
+.helpful__tab{
+
+}
+
 /*tabs end*/
+/*helpful section*/
 /*MAIN end*/
 
 /*SIDEBAR*/
