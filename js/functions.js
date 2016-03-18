@@ -138,8 +138,7 @@ function actionsLayout(){
 	});
 
 	actionsSortable.on( 'layoutComplete', function( event, laidOutItems ) {
-		//console.log( 'Masonry layout complete with ' + laidOutItems.length + ' items' );
-		$(".sticky-js").trigger("sticky_kit:recalc");
+		//$(".sticky-js").trigger("sticky_kit:recalc");
 	});
 }
 /*actions layout end*/
@@ -415,7 +414,7 @@ function tabs() {
 		setHash: false,
 		animation: 'fade', // slide
 		duration: 300, // default 500
-		animationQueue: true,
+		animationQueue: true
 		//scrollToAccordion: true,
 		//scrollToAccordionOffset: true,
 		//activate: function(e, tab) {
@@ -433,7 +432,7 @@ function tabs() {
 
 $(document).ready(function(){
 	placeholderInit();
-	stickyLayout();
+	//stickyLayout();
 	showFormSearch();
 	slidersInit();
 	sidebarBehavior();

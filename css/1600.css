@@ -1,0 +1,8 @@
+@media only screen and (max-width: 1616px){}
+
+.main-layout, .header {
+	width: 960px;
+}
+.aside {
+	margin-left: 960px;
+}

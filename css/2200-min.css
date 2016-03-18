@@ -1,0 +1,8 @@
+@media only screen and (min-width: 2284px){}
+
+.main-layout, .header {
+	width: 1360px;
+}
+.aside {
+	margin-left: 1360px;
+}
