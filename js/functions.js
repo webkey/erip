@@ -73,9 +73,13 @@ function slidersInit(){
 	var sliderQuestions = $('.promo-slider');
 	if(sliderQuestions.length){
 		sliderQuestions.slick({
+			fade: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			speed: 300,
+			autoplay: true,
+			focusOnSelect: true,
+			autoplaySpeed: 7000,
+			speed: 600,
 			infinite: true,
 			dots: true,
 			arrows: true
@@ -408,6 +412,7 @@ function tabs() {
 	if (!$helpfulTabs) { return; }
 
 	$helpfulTabs.responsiveTabs({
+		active: 0,
 		rotate: false,
 		startCollapsed: 'accordion',
 		collapsible: 'accordion',
