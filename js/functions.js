@@ -471,6 +471,170 @@ function tabs() {
 }
 /* tabs end */
 
+/*map init*/
+var smallPinMap = 'img/map-pin-sm.png';
+		//largePinMap = 'img/map-pin.png';
+
+var localObjects = [
+	[
+		{lat: 53.8984, lng: 27.5788}, //coordinates of marker
+		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
+		smallPinMap, //image pin
+		10,
+		{
+			title: 'ОАО «АСБ Беларусбанк»',
+			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
+			phone: '<b>Приёмная:</b> <div>+375 17 327 13 23</div>',
+			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+		}
+	],[
+		{lat: 53.8884, lng: 27.5888},
+		{latBias: 0.0015, lngBias: 0},
+		smallPinMap,
+		15,
+		{
+			title: 'ОАО «Белагропромбанк»',
+			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
+			phone: '<b>Приёмная:</b> <div>+375 17 233 91 36</div>',
+			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+		}
+	],[
+		{lat: 53.8784, lng: 27.5788},
+		{latBias: 0.0015, lngBias: 0},
+		smallPinMap,
+		15,
+		{
+			title: 'ОАО «Белинвестбанк»',
+			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
+			phone: '<b>Приёмная:</b> <div>+375 17 294 06 96</div>',
+			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+		}
+	],[
+		{lat: 53.8684, lng: 27.5788},
+		{latBias: 0.0015, lngBias: 0},
+		smallPinMap,
+		15,
+		{
+			title: 'ОАО «БПС-Сбербанк»',
+			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
+			phone: '<b>Приёмная:</b> <div>+375 17 226 19 33</div>',
+			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+		}
+	],[
+		{lat: 53.8782, lng: 27.5897},
+		{latBias: 0.0015, lngBias: 0},
+		smallPinMap,
+		15,
+		{
+			title: 'ОАО «Белгазпромбанк»',
+			address: '<b>Адрес:</b> 220033 Беларусь , Минск, ул. Тростенецкая, 22',
+			phone: '<b>Отдел снабжения:</b> <div>+375 17 247 95 69</div>',
+			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+		}
+	]
+];
+
+var styleMap = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
+
+function mapMainInit(){
+	if (!$('[id*="-map"]').length) {
+		return;
+	}
+
+	function mapCenter(index){
+		var localObject = localObjects[index];
+
+		return{
+			lat: localObject[0].lat + localObject[1].latBias,
+			lng: localObject[0].lng + localObject[1].lngBias
+		};
+	}
+
+	var mapOptions = {
+		zoom: 15,
+		center: mapCenter(0),
+		styles: styleMap,
+		mapTypeControl: false,
+		scaleControl: false,
+		scrollwheel: false
+	};
+
+	var markers = [],
+		elementById = [
+			document.getElementById('points-map')
+		];
+
+	if($(elementById[0]).length){
+		var map = new google.maps.Map(elementById[0], mapOptions);
+		addMarker(0, map);
+
+		/*aligned after resize*/
+		//var resizeTimer1;
+		//$(window).on('resize', function () {
+		//	clearTimeout(resizeTimer1);
+		//	resizeTimer1 = setTimeout(function () {
+		//		moveToLocation(0, map);
+		//	}, 500);
+		//});
+	}
+
+	/*change location*/
+	//$('.contacts__biz a').on('click', function(e) {
+	//	var index = $(this).data('location');
+	//	deleteMarkers();
+	//	moveToLocation(index,map);
+	//	addMarker(index,map);
+	//	e.preventDefault();
+	//});
+
+	/*move to location*/
+	//function moveToLocation(index, map){
+	//	var object = localObjects[index];
+	//	var center = new google.maps.LatLng(mapCenter(index));
+	//	map.panTo(center);
+	//	map.setZoom(object[3]);
+	//}
+
+	function addMarker(index, map) {
+		var object = localObjects[index];
+		var marker = new google.maps.Marker({
+			position: object[0],
+			//animation: google.maps.Animation.DROP,
+			map: map,
+			icon: object[2],
+			title: object[4].title
+		});
+		markers.push(marker);
+
+		var infoWindow = new google.maps.InfoWindow({
+			content: '<div class="map-popup">' +
+			'<h4>'+object[4].title+'</h4>' +
+			'<div class="map-popup__list">' +
+			'<div class="map-popup__row">'+object[4].address+'</div>' +
+			'<div class="map-popup__row">'+object[4].phone+'</div>' +
+			'<div class="map-popup__row">'+object[4].works+'</div>' +
+			'</div>' +
+			'</div>',
+			maxWidth: 220
+		});
+
+		marker.addListener('click', function() {
+			infoWindow.open(map, marker);
+		});
+	}
+
+	function setMapOnAll(map) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(map);
+		}
+	}
+
+	function deleteMarkers() {
+		setMapOnAll(null);
+		//markers = [];
+	}
+}
+/*map init end*/
 
 /** ready/load/resize document **/
 
@@ -488,6 +652,7 @@ $(document).ready(function(){
 	faqBehaviorInit();
 	terminalsSwitcherInit();
 	tabs();
+	mapMainInit();
 });
 
 $(window).load(function () {

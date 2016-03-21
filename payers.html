@@ -374,7 +374,11 @@
 				<!--advantages-->
 				<section class="advantages-section">
 					<div class="align-layout">
-						<div class="title-box align-center"><h2>Преимущества системы</h2></div>
+						<div class="title-box">
+							<div class="align-center align-layout">
+								<h2>Преимущества системы</h2>
+							</div>
+						</div>
 						<article class="advantages">
 							<section class="advantages-item">
 								<figure class="advantages-img">
@@ -425,29 +429,29 @@
 
 				<!--helpful section-->
 				<section class="helpful-section">
-					<div class="title-box align-center">
-						<h2>Полезная информация</h2>
-						<p>Вашему вниманию представлен каталог пунктов банковского обслуживания (коротко ПБО)
-							и следующие типы терминалов для оплаты услуг.</p>
+					<div class="title-box">
+						<div class="align-center align-layout">
+							<h2>Полезная информация</h2>
+							<p>Вашему вниманию представлен каталог пунктов банковского обслуживания (коротко ПБО) и следующие типы терминалов для оплаты услуг.</p>
+						</div>
 					</div>
 
+					<!--helpful-->
 					<div class="helpful">
-						<!--tab controls-->
+						<!--helpful controls-->
 						<ul class="helpful__controls">
 							<li class="active"><a href="#tabs-helpful-01"><span>Где можно оплатить</span></a></li>
 							<li><a href="#tabs-helpful-02"><span>Пункты обслуживания</span></a></li>
 						</ul>
-						<!--tab controls end-->
+						<!--helpful controls end-->
 
-						<!--tabs-->
-						<!--tab-->
-						<div class="helpful__tab" id="tabs-helpful-01">
+						<div class="helpful__panel" id="tabs-helpful-01">
 							<div class="align-layout">
 
 								<div class="helpful__note">Системой «Расчет» можно воспользоваться для оплаты некоторых услуг через платежную
 									систему WEBPAY, а также с помощью систем электронных денег:</div>
-								<!--pay list-->
-								<ul class="pay-list">
+								<!--cells-list / pay list-->
+								<ul class="cells-list pay-list">
 									<li><a href="#"><img src="img/logotype-pay-belgi.png" alt="image description" /></a></li>
 									<li><a href="#"><img src="img/logotype-pay-webpay.png" alt="image description" /></a></li>
 									<li><a href="#"><img src="img/logotype-pay-easypay.png" alt="image description" /></a></li>
@@ -455,7 +459,7 @@
 									<li><a href="#"><img src="img/logotype-pay-easypay.png" alt="image description" /></a></li>
 									<li><a href="#"><img src="img/logotype-pay-webmoney.png" alt="image description" /></a></li>
 								</ul>
-								<!--pay list end-->
+								<!--cells-list / pay list end-->
 
 								<!--terminals-->
 								<section class="terminals">
@@ -649,40 +653,255 @@
 								</section>
 								<!--terminals end-->
 
+								<div class="terminals-more align-center">
+									<a href="#" class="btn-default">Еще <i class="arrow-more"></i></a>
+								</div>
 							</div>
 						</div>
-						<!--tab end-->
-						<div class="helpful__tab" id="tabs-helpful-02">
-							<div class="note">Для осуществления поиска интересующих Вас ПБО, выберите регион и населенный пункт.
-								Отобразится список всех ПБО, имеющихся в выбранном населенном пункте. В случае, если Вас
-								интересует конкретный банк (конкретный тип ПБО),  выбирете нужный банк (тип ПБО).</div>
-							<p>Информация, предоставленная в данном сообщении, является недостоверной. Просим не поддаваться на провокации злоумышленников. Фактически в данном SMS-сообщении мошенники предлагают посетить сайт, который содержит в названии только аббревиатуру ЕРИП, знакомую и очень привычную белорусским гражданам. После контакта с мошенниками (через сайт или посредством телефона) даются инструкции, согласно которым пострадавшие самостоятельно производят действия по списанию денежных средств со счета, привязанного к номеру мобильного телефона, и их отправку на электронный кошелек в системе WebMoney. Сумма, которая списывается оператором со счета мобильного телефона, колеблется в пределах 2 миллионов белорусских рублей. В целях пресечения действий злоумышленников, а также проведения в стране информационной кампании по повышению финансовой грамотности населения сообщаем</p>
-						</div>
-						<!--tabs end-->
-					</div>
 
-					<footer class="section-footer align-center">
-						<a href="#" class="btn-default">Еще <i class="arrow-more"></i></a>
-					</footer>
+						<div class="helpful__panel" id="tabs-helpful-02">
+							<div class="align-layout">
+								<div class="helpful__note">Для осуществления поиска интересующих Вас ПБО, выберите регион и населенный пункт. Отобразится список всех ПБО, имеющихся в выбранном населенном пункте. В случае, если Вас интересует конкретный банк (конкретный тип ПБО), выбирете нужный банк (тип ПБО).</div>
+								<!--service points-->
+								<div class="s-poinets">
+									<div class="s-points__filters">
+										<div class="s-points__filters-item">
+											<label class="select" for="select-filter-region">
+												<select name="filter-region" id="select-filter-region">
+													<option value="-1">Регион</option>
+													<option value="1">Брестская область</option>
+													<option value="2">Витебская область</option>
+													<option value="3">Гомельская область</option>
+													<option value="4">Гродненская область</option>
+													<option value="5">Минская область</option>
+													<option value="6">Могилёвская область</option>
+													<option value="7">Примечания</option>
+												</select>
+											</label>
+										</div>
+										<div class="s-points__filters-item">
+											<label class="select" for="select-filter-locality">
+												<select name="filter-locality" id="select-filter-locality">
+													<option value="-1">Населенный пункт</option>
+													<option value="1">Березино</option>
+													<option value="2">Борисов</option>
+													<option value="3">Вилейка</option>
+													<option value="4">Воложин</option>
+													<option value="5">Дзержинск</option>
+													<option value="6">Клецк</option>
+													<option value="7">Копыль</option>
+													<option value="8">Крупки</option>
+													<option value="9">Логойск</option>
+													<option value="10">Любань</option>
+													<option value="11">Заславль</option>
+													<option value="12">Молодечно</option>
+													<option value="13">Мядель</option>
+													<option value="14">Несвиж </option>
+													<option value="15">Марьина Горка</option>
+													<option value="16">Слуцк </option>
+													<option value="17">Смолевичи</option>
+													<option value="18">Солигорск</option>
+													<option value="19">Старые Дороги</option>
+													<option value="20">Столбцы</option>
+													<option value="21">Узда</option>
+													<option value="22">Червень</option>
+												</select>
+											</label>
+										</div>
+										<div class="s-points__filters-item">
+											<label class="select" for="select-filter-bank">
+												<select name="filter-bank" id="select-filter-bank">
+													<option value="-1">Банк</option>
+													<option value="964">ОАО "Белагропромбанк"</option>
+													<option value="175">ЗАО "БСБ Банк"</option>
+													<option value="226">ОАО "Банк БелВЭБ"</option>
+													<option value="765">ОАО "БНБ-Банк"</option>
+													<option value="117">ЗАО "МТБанк"</option>
+													<option value="273">ЗАО "ИнтерПэйБанк"</option>
+													<option value="369">ОАО "БПС-Сбербанк"</option>
+													<option value="782">ОАО "Паритетбанк"</option>
+													<option value="735">ОАО "Евроторгинвестбанк"</option>
+													<option value="272">ОАО "Банк Москва-Минск"</option>
+													<option value="749">"Приорбанк" ОАО</option>
+													<option value="795">ОАО "Беларусбанк"</option>
+													<option value="270">ЗАО "Альфа-банк"</option>
+													<option value="108">ЗАО Банк ВТБ (Беларусь)</option>
+													<option value="820">ЗАО "Цептер Банк"</option>
+													<option value="742">ОАО "Белгазпромбанк"</option>
+													<option value="704">ЗАО "БТА Банк"</option>
+													<option value="182">ОАО "Технобанк"</option>
+													<option value="755">ЗАО "Идея Банк"</option>
+													<option value="888">ЗАО "Евробанк"</option>
+													<option value="266">"Франсабанк" ОАО</option>
+													<option value="739">ОАО "Белинвестбанк"</option>
+													<option value="110">ЗАО "РРБ-Банк"</option>
+													<option value="288">ЗАО "Трастбанк"</option>
+													<option value="898">ЗАО "АБСОЛЮТБАНК"</option>
+												</select>
+											</label>
+										</div>
+										<div class="s-points__filters-item">
+											<label class="select" for="select-filter-type">
+												<select name="filter-type" id="select-filter-type">
+													<option value="-1">Тип пбо</option>
+													<option value="110">РКЦ</option>
+													<option value="115">Банкомат</option>
+													<option value="119">Cash-In</option>
+													<option value="113">ПСТ+Cash-In</option>
+													<option value="122">Платежный терминал</option>
+													<option value="123">ПСТ (платежно-справочный терминал)</option>
+												</select>
+											</label>
+										</div>
+									</div>
+
+									<div class="s-points__results">
+										<strong class="no-result">Пунктов обслуживания не найдено</strong>
+										<ul class="s-points__results-list">
+											<li><a href="#"><span>ОАО «АСБ Беларусбанк»</span></a></li>
+											<li><a href="#"><span>ОАО «Белагропромбанк»</span></a></li>
+											<li><a href="#"><span>ОАО «Белинвестбанк»</span></a></li>
+											<li><a href="#"><span>ОАО «БПС-Сбербанк»</span></a></li>
+											<li><a href="#"><span>ОАО «Белгазпромбанк»</span></a></li>
+											<li><a href="#"><span>ЗАО «МТБанк»</span></a></li>
+											<li><a href="#"><span>ОАО «Банк Москва-Минск»</span></a></li>
+											<li><a href="#"><span>ЗАО «Альфа-банк»</span></a></li>
+											<li><a href="#"><span>ОАО «Технобанк»</span></a></li>
+											<li><a href="#"><span>ЗАО «Идея Банк»</span></a></li>
+											<li><a href="#"><span>ОАО «Евроторгинвестбанк»</span></a></li>
+											<li><a href="#"><span>ОАО «БНБ-Банк»</span></a></li>
+											<li><a href="#"><span>ЗАО «БСБ Банк»</span></a></li>
+										</ul>
+									</div>
+
+									<div class="align-center">
+										<a href="#" class="btn-default btn-anchor"><span>Показать на карте</span> <i class="arrow-more"></i></a>
+									</div>
+								</div>
+								<!--service points end-->
+							</div>
+						</div>
+					</div>
+					<!--helpful end-->
 				</section>
 				<!--helpful section end-->
 
-				<!--section-->
-				<section class="news-section">
-					<div class="title-box align-center"><h2>Преимущества системы</h2></div>
+				<!--map points-->
+				<div class="points-map" id="points-map"></div>
+				<!--map points end-->
 
-					<footer class="section-footer align-center">
-						<a href="#" class="btn-default">Все новости</a>
-					</footer>
+				<!--info section-->
+				<section class="info-section">
+					<div class="title-box">
+						<div class="align-center align-layout">
+							<h2>Информация о системе</h2>
+							<p>Система «Расчет» предоставляет Вам (Плательщику) возможность произвести оплату за полученные
+								услуги и товары в любом удобном для Вас месте, в удобное для Вас время, в удобном для Вас
+								пункте банковского обслуживания.</p>
+						</div>
+					</div>
+					<div class="align-layout">
+						<!--info-->
+						<article class="info">
+							<div class="info-holder">
+								<div class="info-row">
+									<section class="info-item">
+										<div class="info-item__inner">
+											<h3>Вы можете оплачивать услуги в 24 банках и свыше 13000 ПБО:</h3>
+											<ul>
+												<li>кассы банка;</li>
+												<li>банкоматы;</li>
+												<li>инфокиоски;</li>
+												<li>устройства приема наличных денег.</li>
+											</ul>
+										</div>
+									</section>
+									<section class="info-item">
+										<div class="info-item__inner">
+											<h3>Для оплаты услуг используя систему «Расчет» необходимо:</h3>
+											<ul>
+												<li>выбрать расчётного агента в системе;</li>
+												<li>выбрать удобный для вас способ оплаты;</li>
+												<li>выбрать подходящий вам пункт «ПБО»;</li>
+												<li>выбрать раздел «расчёт» (ерип);</li>
+												<li>выбрать услугу для оплаты.</li>
+											</ul>
+										</div>
+									</section>
+								</div>
+							</div>
+						</article>
+						<!--info end-->
+						<!--easy-->
+						<article class="easy">
+							<h3>Наибольшие удобства система «Расчет» создает:</h3>
+							<div class="easy-bg"></div>
+							<div class="easy-list">
+								<div class="easy-item">
+									<div class="easy-img">
+										<img src="img/img-easy-01.png" alt="image description" />
+									</div>
+									<div class="easy-text">Для пользователей Интернет-банка</div>
+								</div>
+								<div class="easy-item">
+									<div class="easy-img">
+										<img src="img/img-easy-02.png" alt="image description" />
+									</div>
+									<div class="easy-text">Для пользователей систем электронных денег</div>
+								</div>
+							</div>
+						</article>
+						<!--easy end-->
+						<!--agency-->
+						<div class="agency">
+							<h3>Перечень Расчетных агентов, осуществляющих прием платежей в бюджет:</h3>
+							<!--cells-list / agency list-->
+							<ul class="cells-list agency-list">
+								<li><a href="#"><img src="img/logotype-agency-01.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-02.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-03.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-04.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-05.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-06.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-07.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-08.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-09.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-10.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-11.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-12.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-13.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-14.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-15.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-16.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-17.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-18.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-19.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-20.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-21.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-22.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-23.png" alt="image description" /></a></li>
+								<li><a href="#"><img src="img/logotype-agency-24.png" alt="image description" /></a></li>
+							</ul>
+							<!--cells-list / agency list end-->
+						</div>
+						<!--agency end-->
+					</div>
 				</section>
-				<!--section end-->
+				<!--info section end-->
 
 				<!--section-->
 				<!--<section class="news-section">
-					<div class="title-box align-center"><h2>Преимущества системы</h2></div>
-
-					<footer class="section-footer align-center">
-						<a href="#" class="btn-default">Все новости</a>
+					<div class="title-box">
+						<div class="align-center align-layout">
+							<h2>Преимущества системы</h2>
+							<p></p>
+						</div>
+					</div>
+					<div class="align-layout"></div>
+					<footer class="section-footer">
+						<div class="align-center align-layout">
+							<a href="#" class="btn-default">Все новости</a>
+						</div>
 					</footer>
 				</section>-->
 				<!--section end-->
@@ -1249,6 +1468,8 @@ background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 
 <!--<![endif]-->
 <!--JQuery UI-->
 <script src="js/vendor/jquery-ui.min.js"></script>
+<!--Map-->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <!--Widgets-->
 <script src="js/widgets.js"></script>
 <!--Main functions-->
