@@ -477,59 +477,64 @@ var smallPinMap = 'img/map-pin-sm.png';
 
 var localObjects = [
 	[
-		{lat: 53.8984, lng: 27.5788}, //coordinates of marker
+		{lat: 53.8750, lng: 27.4982}, //coordinates of marker
 		{latBias: 0.0020, lngBias: 0}, //bias coordinates for center map
 		smallPinMap, //image pin
-		10,
+		12,
 		{
-			title: 'ОАО «АСБ Беларусбанк»',
-			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
-			phone: '<b>Приёмная:</b> <div>+375 17 327 13 23</div>',
-			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+			title: 'ОАО "Беларусбанк"',
+			type: '<b>Тип устройства:</b> <span>РКЦ</span>',
+			address: '<b>Адрес:</b> <span>Уманская, 54</span>',
+			phone: '<b>Тел.:</b> <span>+375 17 341-26-54</span>',
+			works: '<b>Режим работы:</b> <div><span>Пн-Пт:</span> 9<sup>00</sup> – 19<sup>00</sup></div> <div><span>Сб:</span> 10<sup>00</sup> – 14<sup>00</sup></div>'
 		}
 	],[
-		{lat: 53.8884, lng: 27.5888},
+		{lat: 53.8672, lng: 27.4836},
 		{latBias: 0.0015, lngBias: 0},
 		smallPinMap,
-		15,
+		12,
 		{
-			title: 'ОАО «Белагропромбанк»',
-			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
-			phone: '<b>Приёмная:</b> <div>+375 17 233 91 36</div>',
-			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+			title: 'ОАО "Беларусбанк"',
+			type: '<b>Тип устройства:</b> <span>РКЦ</span>',
+			address: '<b>Адрес:</b> <span>Пр-т газеты "Правда", 20</span>',
+			phone: '<b>Тел.:</b> <span>+375 17 341-26-54</span>',
+			works: '<b>Режим работы:</b> <div><span>Пн-Пт:</span> 9<sup>00</sup> – 19<sup>00</sup></div> <div><span>Сб:</span> 10<sup>00</sup> – 14<sup>00</sup></div>'
 		}
 	],[
-		{lat: 53.8784, lng: 27.5788},
+		{lat: 53.8839, lng: 27.4989},
 		{latBias: 0.0015, lngBias: 0},
 		smallPinMap,
-		15,
+		12,
 		{
-			title: 'ОАО «Белинвестбанк»',
-			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
-			phone: '<b>Приёмная:</b> <div>+375 17 294 06 96</div>',
-			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+			title: 'ОАО "Беларусбанк"',
+			type: '<b>Тип устройства:</b> <span>РКЦ</span>',
+			address: '<b>Адрес:</b> <span>Прилукская, 44</span>',
+			phone: '<b>Тел.:</b> <span>+375 17 341-26-54</span>',
+			works: '<b>Режим работы:</b> <div><span>Пн-Пт:</span> 9<sup>00</sup> – 19<sup>00</sup></div> <div><span>Сб:</span> 10<sup>00</sup> – 14<sup>00</sup></div>'
 		}
 	],[
-		{lat: 53.8684, lng: 27.5788},
+		{lat: 53.8502, lng: 27.4635},
 		{latBias: 0.0015, lngBias: 0},
 		smallPinMap,
-		15,
+		12,
 		{
-			title: 'ОАО «БПС-Сбербанк»',
-			address: '<b>Адрес:</b> 220088 Беларусь, Минск, ул. Пулихова д.15',
-			phone: '<b>Приёмная:</b> <div>+375 17 226 19 33</div>',
-			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+			title: 'ОАО "Беларусбанк"',
+			type: '<b>Тип устройства:</b> <span>РКЦ</span>',
+			address: '<b>Адрес:</b> <span>Есенина, 16</span>',
+			phone: '<b>Тел.:</b> <span>+375 17 341-26-54</span>',
+			works: '<b>Режим работы:</b> <div><span>Пн-Пт:</span> 9<sup>00</sup> – 19<sup>00</sup></div> <div><span>Сб:</span> 10<sup>00</sup> – 14<sup>00</sup></div>'
 		}
 	],[
-		{lat: 53.8782, lng: 27.5897},
+		{lat: 53.9132, lng: 27.5685},
 		{latBias: 0.0015, lngBias: 0},
 		smallPinMap,
-		15,
+		12,
 		{
-			title: 'ОАО «Белгазпромбанк»',
-			address: '<b>Адрес:</b> 220033 Беларусь , Минск, ул. Тростенецкая, 22',
-			phone: '<b>Отдел снабжения:</b> <div>+375 17 247 95 69</div>',
-			works: '<b>Эл. почта:</b> <div><span>Пн-Пт:</span> 10<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб-Вс:</span> 10<sup>00</sup> – 18<sup>00</sup></div>'
+			title: 'ОАО "Беларусбанк"',
+			type: '<b>Тип устройства:</b> <span>РКЦ</span>',
+			address: '<b>Адрес:</b> <span>г. Минск ул. Куйбышева, 18</span>',
+			phone: '<b>Тел.:</b> <span>+375 17 341-26-54</span>',
+			works: '<b>Режим работы:</b> <div><span>Пн-Пт:</span> 9<sup>00</sup> – 20<sup>00</sup></div> <div><span>Сб:</span> 10<sup>00</sup> – 16<sup>00</sup></div>'
 		}
 	]
 ];
@@ -537,7 +542,7 @@ var localObjects = [
 var styleMap = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
 
 function mapMainInit(){
-	if (!$('[id*="-map"]').length) {
+	if (!$('[id$="-map-location"]').length) {
 		return;
 	}
 
@@ -551,8 +556,9 @@ function mapMainInit(){
 	}
 
 	var mapOptions = {
-		zoom: 15,
-		center: mapCenter(0),
+		zoom: 12,
+		//center: mapCenter(0),
+		center: {lat: 53.9023, lng: 27.5618},
 		styles: styleMap,
 		mapTypeControl: false,
 		scaleControl: false,
@@ -561,12 +567,16 @@ function mapMainInit(){
 
 	var markers = [],
 		elementById = [
-			document.getElementById('points-map')
+			document.getElementById('points-map-location')
 		];
 
 	if($(elementById[0]).length){
 		var map = new google.maps.Map(elementById[0], mapOptions);
 		addMarker(0, map);
+		addMarker(1, map);
+		addMarker(2, map);
+		addMarker(3, map);
+		addMarker(4, map);
 
 		/*aligned after resize*/
 		//var resizeTimer1;
@@ -611,6 +621,7 @@ function mapMainInit(){
 			'<h4>'+object[4].title+'</h4>' +
 			'<div class="map-popup__list">' +
 			'<div class="map-popup__row">'+object[4].address+'</div>' +
+			'<div class="map-popup__row">'+object[4].type+'</div>' +
 			'<div class="map-popup__row">'+object[4].phone+'</div>' +
 			'<div class="map-popup__row">'+object[4].works+'</div>' +
 			'</div>' +
@@ -618,8 +629,9 @@ function mapMainInit(){
 			maxWidth: 220
 		});
 
-		marker.addListener('click', function() {
-			infoWindow.open(map, marker);
+		google.maps.event.addListener(marker, 'click', function() {
+			infoWindow.open(map, this);
+			//map.setCenter(marker.getPosition());
 		});
 	}
 

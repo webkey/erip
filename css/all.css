@@ -2241,6 +2241,15 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	top: auto;
 	bottom: -20px;
 }
+.map-popup__list{
+	font: 13px/19px 'pfbeausanspro-thin', Arial, Helvetica, sans-serif;
+}
+.map-popup__list b{
+	font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
+}
+.map-popup__row{
+	padding: 0 0 6px;
+}
 /*map points end*/
 
 /*info section*/
