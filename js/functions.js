@@ -91,39 +91,82 @@ function slidersInit(){
 
 /*sidebar behavior*/
 function sidebarBehavior(){
-	var sidebar = $('.sidebar');
-	if(sidebar.length){
-		var timerOpen;
+	var $sidebar = $('.sidebar');
+	if($sidebar.length){
+		var $body = $('body');
+		var _duration = 300;
+		var _delay = 200;
 		var timerClose;
 
-		sidebar.on('mouseenter', function () {
-			clearTimeout(timerOpen);
+		$sidebar.on('mouseenter', function () {
 			clearTimeout(timerClose);
 
-			timerOpen = setTimeout(function () {
-				$('html').addClass('expand-sidebar');
-			}, 300);
+			$body.addClass('expand-sidebar-start expanded-sidebar');
+
+			$sidebar.stop().animate({
+				'width': 230
+			}, _duration, function () {
+				$body.removeClass('expand-sidebar-start').addClass('expand-sidebar-end');
+			});
 
 		}).on('mouseleave', function () {
-			clearTimeout(timerOpen);
 			clearTimeout(timerClose);
 
 			timerClose = setTimeout(function () {
-				$('html').removeClass('expand-sidebar');
-			}, 500);
+				collapsedSidebar();
+			}, _delay);
 		});
 
 		$(document).on('click', function () {
-			clearTimeout(timerOpen);
 			clearTimeout(timerClose);
 
-			$('html').removeClass('expand-sidebar');
+			if($sidebar.hasClass('expanded-sidebar')){
+				collapsedSidebar();
+			}
 		});
 
-		sidebar.on('click', function (e) {
+		$sidebar.on('click', function (e) {
 			e.stopPropagation();
 		});
+
+		function collapsedSidebar() {
+
+
+			$body.removeClass('expanded-sidebar').addClass('expand-sidebar-start');
+
+			$sidebar.stop().animate({
+				'width': 80
+			}, _duration, function () {
+				$body.removeClass('expand-sidebar-start expand-sidebar-end expanded-sidebar');
+			});
+		}
 	}
+	//if(sidebar.length){
+	//	var timerClose;
+	//
+	//	sidebar.on('mouseenter', function () {
+	//		clearTimeout(timerClose);
+	//
+	//		$('html').addClass('expand-sidebar');
+	//
+	//	}).on('mouseleave', function () {
+	//		clearTimeout(timerClose);
+	//
+	//		timerClose = setTimeout(function () {
+	//			$('html').removeClass('expand-sidebar');
+	//		}, 200);
+	//	});
+	//
+	//	$(document).on('click', function () {
+	//		clearTimeout(timerClose);
+	//
+	//		$('html').removeClass('expand-sidebar');
+	//	});
+	//
+	//	sidebar.on('click', function (e) {
+	//		e.stopPropagation();
+	//	});
+	//}
 }
 /*sidebar behavior end*/
 
@@ -539,7 +582,7 @@ var localObjects = [
 	]
 ];
 
-var styleMap = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}];
+var styleMap = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#215736"},{"visibility":"on"}]}];
 
 function mapMainInit(){
 	if (!$('[id$="-map-location"]').length) {
@@ -614,37 +657,55 @@ function mapMainInit(){
 			icon: object[2],
 			title: object[4].title
 		});
+
 		markers.push(marker);
 
 		var infoWindow = new google.maps.InfoWindow({
-			content: '<div class="map-popup">' +
-			'<h4>'+object[4].title+'</h4>' +
-			'<div class="map-popup__list">' +
-			'<div class="map-popup__row">'+object[4].address+'</div>' +
-			'<div class="map-popup__row">'+object[4].type+'</div>' +
-			'<div class="map-popup__row">'+object[4].phone+'</div>' +
-			'<div class="map-popup__row">'+object[4].works+'</div>' +
-			'</div>' +
-			'</div>',
+			//content: ,
 			maxWidth: 220
 		});
 
-		google.maps.event.addListener(marker, 'click', function() {
-			infoWindow.open(map, this);
+		function onMarkerClick() {
+			var marker = this;
+
+			var latLng = marker.getPosition();
+
+			infoWindow.setContent(
+					'<div class="map-popup">' +
+					'<h4>'+object[4].title+'</h4>' +
+					'<div class="map-popup__list">' +
+					'<div class="map-popup__row">'+object[4].address+'</div>' +
+					'<div class="map-popup__row">'+object[4].type+'</div>' +
+					'<div class="map-popup__row">'+object[4].phone+'</div>' +
+					'<div class="map-popup__row">'+object[4].works+'</div>' +
+					'<div class="map-popup__row"><b>Координаты:</b><div>'+latLng.lat() + ', ' + latLng.lng()+'</div></div>' +
+					'</div>' +
+					'</div>'
+			);
+
 			//map.setCenter(marker.getPosition());
-		});
-	}
+			infoWindow.close();
 
-	function setMapOnAll(map) {
-		for (var i = 0; i < markers.length; i++) {
-			markers[i].setMap(map);
+			infoWindow.open(map, marker);
 		}
+
+		map.addListener('click', function () {
+			infoWindow.close();
+		});
+
+		marker.addListener('click', onMarkerClick);
 	}
 
-	function deleteMarkers() {
-		setMapOnAll(null);
-		//markers = [];
-	}
+	//function setMapOnAll(map) {
+	//	for (var i = 0; i < markers.length; i++) {
+	//		markers[i].setMap(map);
+	//	}
+	//}
+
+	//function deleteMarkers() {
+	//	setMapOnAll(null);
+	//	//markers = [];
+	//}
 }
 /*map init end*/
 

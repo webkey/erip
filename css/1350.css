@@ -1,16 +1,9 @@
 @media only screen and (max-width: 1349px){}
 
-.main-layout{
+.main-layout, .header, .site-map{
 	float: none;
-	width: auto;
+	width: 100%;
 	box-shadow: none;
-}
-.header,
-.site-map,
-.site-map-overlay{
-	right: 0;
-	left: 80px;
-	width: auto;
 }
 .news-articles {
 	margin: 0 auto;
@@ -20,10 +13,6 @@
 .faq-list{
 	max-width: 880px;
 	margin: 0 auto;
-}
-.nav-bar__list {
-	margin: 0 auto;
-	max-width: 880px;
 }
 
 .aside{

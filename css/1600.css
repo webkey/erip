@@ -1,6 +1,9 @@
 @media only screen and (max-width: 1616px){}
 
-.main-layout, .header {
+.main-layout,
+.header,
+.site-map
+{
 	width: 960px;
 }
 .aside {
