@@ -51,32 +51,38 @@
 		<ul class="sb-menu">
 			<li>
 				<a href="#">
-					<div class="sb-icon">
+					<div class="sb-menu__view-normal">
 						<i class="depict-tel"></i>
-						<i class="depict-tel-h"></i>
+						<span class="sb-menu__inner">Пункты приема</span>
 					</div>
-					<span class="sb-menu__inner">Пункты приема</span>
-					<span class="sb-menu__inner-alt">Пункты приёма платежей</span>
+					<div class="sb-menu__view-alt">
+						<i class="depict-tel"></i>
+						<span class="sb-menu__inner">Пункты приёма платежей</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="#">
-					<div class="sb-icon">
+					<div class="sb-menu__view-normal">
 						<i class="depict-faq"></i>
-						<i class="depict-faq-h"></i>
+						<span class="sb-menu__inner">Вопросы и ответы</span>
 					</div>
-					<span class="sb-menu__inner">Вопросы и ответы</span>
-					<span class="sb-menu__inner-alt">Часто задаваемые вопросы</span>
+					<div class="sb-menu__view-alt">
+						<i class="depict-faq"></i>
+						<span class="sb-menu__inner">Часто задаваемые вопросы</span>
+					</div>
 				</a>
 			</li>
 			<li>
 				<a href="#">
-					<div class="sb-icon">
+					<div class="sb-menu__view-normal">
 						<i class="depict-stat"></i>
-						<i class="depict-stat-h"></i>
+						<span class="sb-menu__inner">Статистика системы</span>
 					</div>
-					<span class="sb-menu__inner">Статистика системы</span>
-					<span class="sb-menu__inner-alt">Статистика системы</span>
+					<div class="sb-menu__view-alt">
+						<i class="depict-stat"></i>
+						<span class="sb-menu__inner">Статистика системы</span>
+					</div>
 				</a>
 			</li>
 		</ul>
@@ -115,7 +121,7 @@
 	<!--main layout-->
 	<div class="main-layout sticky-js">
 		<!--site map-->
-		<div class="site-map js-popup-menu">
+		<div class="site-map js-popup-menu" id="site-map-popup">
 			<div class="site-map-layout">
 				<div class="site-map-overlay"></div>
 				<div class="site-map-holder">
