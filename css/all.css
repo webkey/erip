@@ -885,7 +885,7 @@ label{ color: #333; }
 	float: left;
 	width: 100%;
 }
-.nav-layout{ margin: 0 116px 0 68px; }
+.nav-layout{ margin: 0 115px 0 68px; }
 .nav-list{
 	list-style: none;
 	padding: 0;
@@ -1072,7 +1072,7 @@ label{ color: #333; }
 	top: 0;
 	height: 0;
 	width: 0;
-	background: #fcf7e3;
+	background: #fff;
 	/*slide overlay site map*/
 	-webkit-transition-property: height, width;
 	transition-property: height, width;
