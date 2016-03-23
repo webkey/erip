@@ -677,7 +677,7 @@ function lightboxPopup(){
 
 $(document).ready(function(){
 	placeholderInit();
-	//stickyLayout();
+	stickyLayout();
 	showFormSearch();
 	slidersInit();
 	sidebarBehavior();
