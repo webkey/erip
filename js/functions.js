@@ -92,6 +92,7 @@ function slidersInit(){
 /*sidebar behavior*/
 function sidebarBehavior(){
 	var $sidebar = $('.sidebar');
+/*
 	if($sidebar.length){
 		var $body = $('body');
 		var _duration = 300;
@@ -141,32 +142,34 @@ function sidebarBehavior(){
 			});
 		}
 	}
-	//if(sidebar.length){
-	//	var timerClose;
-	//
-	//	sidebar.on('mouseenter', function () {
-	//		clearTimeout(timerClose);
-	//
-	//		$('html').addClass('expand-sidebar');
-	//
-	//	}).on('mouseleave', function () {
-	//		clearTimeout(timerClose);
-	//
-	//		timerClose = setTimeout(function () {
-	//			$('html').removeClass('expand-sidebar');
-	//		}, 200);
-	//	});
-	//
-	//	$(document).on('click', function () {
-	//		clearTimeout(timerClose);
-	//
-	//		$('html').removeClass('expand-sidebar');
-	//	});
-	//
-	//	sidebar.on('click', function (e) {
-	//		e.stopPropagation();
-	//	});
-	//}
+*/
+	if($sidebar.length){
+		var _activeClass = 'expanded-sidebar';
+		var timerClose;
+
+		$sidebar.on('mouseenter', function () {
+
+			clearTimeout(timerClose);
+			$('html').addClass(_activeClass);
+
+		}).on('mouseleave', function () {
+			clearTimeout(timerClose);
+
+			timerClose = setTimeout(function () {
+				$('html').removeClass(_activeClass);
+			}, 200);
+		});
+
+		$(document).on('click', function () {
+			clearTimeout(timerClose);
+
+			$('html').removeClass(_activeClass);
+		});
+
+		$sidebar.on('click', function (e) {
+			e.stopPropagation();
+		});
+	}
 }
 /*sidebar behavior end*/
 
