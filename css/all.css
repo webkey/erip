@@ -1577,7 +1577,7 @@ body:not(.mobile-device) .promo-slider .slick-next:hover{ right: -50px; }
 .promo-slider .slick-prev:before{
 	right: 11px;
 	background-position: 0 -76px;
-	opacity: 0.5;
+	opacity: 0.85;
 }
 .promo-slider .slick-prev:after{
 	right: 11px;
@@ -1587,7 +1587,7 @@ body:not(.mobile-device) .promo-slider .slick-next:hover{ right: -50px; }
 .promo-slider .slick-next:before{
 	left: 11px;
 	background-position: 0 -114px;
-	opacity: 0.5;
+	opacity: 0.85;
 }
 .promo-slider .slick-next:after{
 	left: 11px;
@@ -2133,6 +2133,10 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	text-transform: uppercase;
 	color: #333;
 }
+.terminals-item h3:hover,
+.terminals-item.active h3:hover{
+	color: #f29700;
+}
 .terminals-item h3:before{
 	content: '';
 	display: inline-block;
@@ -2163,8 +2167,10 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	width: 15px;
 	margin-top: 6px;
 	border-top: 3px solid #ccc;
-	-webkit-transition: border 0.2s;
-	transition: border 0.2s;
+	-webkit-transition-property: border, -webkit-transform;
+	transition-property: border, transform;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -2180,8 +2186,10 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .terminals-item.active .terminals-item__angle:after{
 	border-color: #f29700;
 }
-.faq-item.active .faq-item__angle:before{
-	content: none;
+.terminals-item.active .terminals-item__angle:after{
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 
 .terminals-item__drop{
@@ -2201,11 +2209,6 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .user-content .terminals-item__drop ul li,
 .user-content .terminals-item__drop ul li:first-child{
 	padding-left: 30px;
-}
-.terminals-item__drop ul li:before,
-.user-content .terminals-item__drop ul li:before,
-.user-content .terminals-item__drop ul li:first-child:before{
-	/*content: none;*/
 }
 
 .terminals-more{
@@ -2666,7 +2669,8 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .expanded-sidebar .logo{
 	height: 161px;
 }
-.logo a{
+.logo a,
+.logo>div{
 	display: block;
 	text-decoration: none;
 	color: #734700;
@@ -2680,7 +2684,8 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.expanded-sidebar .logo a{
+.expanded-sidebar .logo a,
+.expanded-sidebar .logo>div{
 	padding-top: 15px;
 }
 .logo img{

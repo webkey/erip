@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang=""> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
-	<title>Расчет - Главная</title>
+	<title>Расчет - Все страницы</title>
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,10 +27,10 @@
 	<aside class="sidebar sticky-js">
 		<!--logo-->
 		<strong class="logo">
-			<div>
+			<a href="index.html">
 				<img src="img/logo.png" alt="Расчет" />
 				<span class="logo__text">Единое Расчётное Информационное Пространство</span>
-			</div>
+			</a>
 		</strong>
 		<!--logo end-->
 		<!--sb buttons-->
@@ -120,11 +120,8 @@
 
 	<!--main layout-->
 	<div class="main-layout sticky-js">
-		<!--site map overlay-->
-		<div class="site-map-overlay"></div>
-		<!--site map overlay-->
 		<!--site map-->
-		<div class="site-map js-popup-menu">
+		<div class="site-map js-popup-menu" id="site-map-popup">
 			<div class="site-map-layout">
 				<div class="site-map-overlay"></div>
 				<div class="site-map-holder">
@@ -333,281 +330,31 @@
 
 		<!--main-->
 		<div class="main">
+			<!--breadcrumbs-->
+			<div class="breadcrumbs">
+				<div class="breadcrumbs-inner">
+					<ul class="breadcrumbs-list">
+						<li><a href="#">Главная</a></li>
+						<li><span title="О системе">Все страницы</span></li>
+					</ul>
+				</div>
+			</div>
+			<!--breadcrumbs end-->
+
 			<!--main content-->
-			<div class="content">
-				<!--promo slider-->
-				<section class="promo-slider">
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Живи полной жизнью</h3>
-							<p class="promo-slider__text">Экономь своё время при покупке билетов в кино, театр, кинотеатр, самолёт через систему "Расчет" (ЕРИП).</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-02.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor sit amet</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet consectetur est facere fuga laudantium minima minus modi, molestias necessitatibus non nostrum odio, perferendis quisquam repudiandae sapiente suscipit voluptates, voluptatibus.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-03.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-04.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-05.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-				</section>
-				<!--promo slider-->
-
-				<!--news articles-->
-				<section class="news-section">
-					<div class="title-box">
-						<div class="align-center align-layout">
-							<h2>Новости</h2>
-						</div>
-					</div>
-					<div class="align-layout">
-						<div class="news-articles">
-							<article class="news-article news-article_lg">
-								<a href="#">
-									<figure>
-										<img src="img/img-news-01.jpg" alt="image description" />
-									</figure>
-									<footer>
-										<time datetime="2016-01-02">02 Янв 2016</time>
-									</footer>
-									<h3>Проведение плановых технических работ КУП «РКЦ г. Солигорска»</h3>
-									<p class="news-article__text">С 20:00 04.02.2015 по 17:00 05.02.2015 в связи с проведением плановых технических работ на серверах КУП «Расчетно-кассовый центр г.Солигорска», возможны перебои при приеме
-										<span class="dot">...</span></p>
-								</a>
-							</article>
-							<article class="news-article">
-								<a href="#">
-									<footer>
-										<time datetime="2016-01-02">02 Янв 2016</time>
-									</footer>
-									<h3>Оплата коммунальных услуг по Гродненской области</h3>
-								</a>
-							</article>
-							<article class="news-article">
-								<a href="#">
-									<footer>
-										<time datetime="2016-01-02">02 Янв 2016</time>
-									</footer>
-									<h3>Оплата услуг РУП "Белорусская железная дорога"</h3>
-								</a>
-							</article>
-							<article class="news-article">
-								<a href="#">
-									<footer>
-										<time datetime="2016-01-02">02 Янв 2016</time>
-									</footer>
-									<h3>Стандартизация услуг отделов и управлений образования</h3>
-								</a>
-							</article>
-							<article class="news-article">
-								<a href="#">
-									<footer>
-										<time datetime="2016-01-02">02 Янв 2016</time>
-									</footer>
-									<h3>Оплата услуг РУП «Воложинский жилкоммунхоз»</h3>
-								</a>
-							</article>
-						</div>
-					</div>
-					<footer class="section-footer align-center align-layout">
-						<a href="#" class="btn-default"><span class="btn-default__inner">Все новости</span></a>
-					</footer>
-				</section>
-				<!--news articles end-->
-
-				<!--faq section-->
-				<section class="faq-section">
-					<div class="title-box">
-						<div class="align-center align-layout">
-							<h2>Новые вопросы</h2>
-							<p>Мы поможем ответить на вопросы, задаваемые пользователями. С помощью сайта Вы можете узнать ответ на любой интересующий Вас вопрос. Для удобства поиска нужного вопросы мы разделили их на логические группы.</p>
-						</div>
-					</div>
-					<div class="align-layout">
-						<!--faq list-->
-						<div class="faq-list">
-							<article class="faq-item">
-								<i class="faq-item__angle"></i>
-								<h3>Скажите, пожалуйста, я как физическое лицо могу получить номер в системе, или как физическое лицо могу получить номер в системе Скажите, пожалуйста, я как физическое лицо могу получить номер в системе, или как физическое лицо могу получить номер в системе</h3>
-								<p>«Номер плательщика в системе «Расчет» — это индивидуальный номер плательщика, который это индивидуальный номер плательщика это индивидуальный номер плательщика «Номер плательщика в системе «Расчет» — это индивидуальный номер плательщика, который это индивидуальный номер плательщика это индивидуальный номер плательщика «Номер плательщика в системе «Расчет» — это индивидуальный номер плательщика, который это индивидуальный номер плательщика это индивидуальный номер плательщика «Номер плательщика в системе «Расчет» — это индивидуальный номер плательщика, который это индивидуальный номер плательщика это индивидуальный номер плательщика «Номер плательщика в системе «Расчет» — это индивидуальный номер плательщика, который это индивидуальный номер плательщика это индивидуальный номер плательщика</p>
-							</article>
-							<article class="faq-item">
-								<i class="faq-item__angle"></i>
-								<h3>Как правильно пополнить электронный кошелек Webmoney с пластиковой карточки?</h3>
-								<p>Для того чтобы приобрести электронные деньги Вам необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать Для того чтобы приобрести электронные деньги Вам необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать Для того чтобы приобрести электронные деньги Вам необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать Для того чтобы приобрести электронные деньги Вам необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать Для того чтобы приобрести электронные деньги Вам необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать необходимо в дереве услуг выбрать</p>
-							</article>
-							<article class="faq-item">
-								<i class="faq-item__angle"></i>
-								<h3>При оплате за детский сад в г. Минске лицевой счет состоит из 6 символов. </h3>
-								<p>При оплате первые 3 цифры - это номер детского сада, а остальные 3-табельный номер ребенка. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam architecto assumenda, at autem consectetur consequuntur distinctio doloremque dolores dolorum earum error est harum id illum iste iusto magni maxime modi, obcaecati perferendis porro quam, quasi quidem ratione sit velit. Aliquid, dolorem ut. A ab aut dignissimos dolor fugiat, ipsum molestias nam veniam! Aliquid aspernatur assumenda culpa deleniti dignissimos id ipsa nostrum odio, omnis quam quod sequi sit soluta, voluptatem!</p>
-							</article>
-							<article class="faq-item">
-								<i class="faq-item__angle"></i>
-								<h3>Как оплатить услугу «Штраф ГАИ-фотофиксация скорости»?</h3>
-								<p>Для оплаты данной услуги необходимо выбрать последовательно следующие вкладки. Для оплаты данной услуги необходимо выбрать последовательно следующие вкладки. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eligendi enim eum, facilis hic libero minus neque placeat repellat saepe.</p>
-							</article>
-							<article class="faq-item">
-								<i class="faq-item__angle"></i>
-								<h3>Подключение к системе «Расчет» интернет-магазина.</h3>
-								<p>Оплата товаров, приобретенных в интернет- магазине, проходит следующим образом. Оплата товаров, приобретенных в интернет- магазине, проходит следующим образом. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at doloribus fugit laboriosam repellat sapiente suscipit tempore, unde voluptatibus.</p>
-							</article>
-						</div>
-						<!--faq end-->
-					</div>
-					<footer class="section-footer align-center align-layout">
-						<a href="#" class="btn-default"><span class="btn-default__inner">Все вопросы</span></a>
-					</footer>
-				</section>
-				<!--faq section end-->
+			<div class="content user-content full-page">
+				<div class="align-layout">
+					<ul>
+						<li><a href="index.html" target="_blank">Главная</a></li>
+						<li><a href="about.html" target="_blank">О системе</a></li>
+						<li><a href="payers.html" target="_blank">Плательщикам</a></li>
+						<li><a href="typography.html" target="_blank">Стили</a></li>
+					</ul>
+				</div>
 			</div>
 			<!--main content end-->
 		</div>
 		<!--main end-->
-
-		<!--footer-->
-		<footer class="footer">
-			<div class="nav-bar">
-				<div class="align-layout">
-					<ul class="nav-bar__list">
-						<li class="align-left">
-							<strong>НКФО</strong>
-							<ul>
-								<li><a href="#">Структура</a></li>
-								<li><a href="#">Наблюдательный Совет</a></li>
-								<li><a href="#">Правление</a></li>
-								<li><a href="#">Акционеры</a></li>
-								<li><a href="#">Финансовые показатели деятельности</a></li>
-								<li><a href="#">Вакансии</a></li>
-								<li><a href="#">АИС ЖКУ</a></li>
-								<li><a href="#">Раскрытие информации</a></li>
-								<li><a href="#">Финансовая грамотность</a></li>
-								<li><a href="#">Электронное обращение</a></li>
-								<li><a href="#">Контакты</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>о системе</strong>
-							<ul>
-								<li><a href="#">Участники</a></li>
-								<li><a href="#">Нормативная база</a></li>
-								<li><a href="#">Публикации Видео</a></li>
-								<li><a href="#">Новости</a></li>
-								<li><a href="#">Личный кабинет</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>Расчетным агентам</strong>
-							<ul>
-								<li><a href="#">Платежные агенты</a></li>
-								<li><a href="#">Статистика (Рэнкинг банков)</a></li>
-								<li><a href="#">Договорные отношения</a></li>
-								<li><a href="#">Заявка в службу поддержки.</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>Производителям услуг</strong>
-							<ul>
-								<li><a href="#">Условия подключения</a></li>
-								<li><a href="#">Информационный ресурс</a></li>
-								<li><a href="#">Агрегаторы</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>потребителям услуг</strong>
-							<ul>
-								<li><a href="#">Популярные вопросы</a></li>
-								<li><a href="#">Задать вопрос</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<!--useful links-->
-			<ul class="useful-links">
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
-						<div class="useful-links__text"><span>интернет-портал президента РБ</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
-						<div class="useful-links__text"><span>мингорисполком</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
-						<div class="useful-links__text"><span>правовой интернет-портал рб</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-04.png" alt=""></div>
-						<div class="useful-links__text"><span>komplat.by</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
-						<div class="useful-links__text"><span>интернет-портал президента РБ</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
-						<div class="useful-links__text"><span>мингорисполком</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
-						<div class="useful-links__text"><span>правовой интернет-портал рб</span></div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="useful-links__icon"><img src="img/depict-useful-04.png" alt=""></div>
-						<div class="useful-links__text"><span>komplat.by</span></div>
-					</a>
-				</li>
-			</ul>
-			<!--useful links end-->
-			<div class="footer-copy">
-				<div class="footer-copy-i">
-					<span class="copyright">&copy; Центр банковских технологий, 2016</span>
-				</div>
-			</div>
-		</footer>
-		<!--footer end-->
 	</div>
 	<!--main layout end-->
 
@@ -661,7 +408,10 @@
 				</section>
 				<section class="actions__item actions__item-lg">
 					<a href="#" class="actions__inner">
-						<div class="actions__bg" style="background: #ffb106; background: -moz-linear-gradient(top,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%); background: -webkit-linear-gradient(top,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%); background: linear-gradient(to bottom,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
+						<div class="actions__bg" style="background: #ffb106;
+background: -moz-linear-gradient(-45deg,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%);
+background: -webkit-linear-gradient(-45deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);
+background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
 						<div class="actions__holder">
 							<div class="actions__align">
 								<div class="actions__visual">
@@ -955,7 +705,10 @@
 				</section>
 				<section class="actions__item actions__item-lg">
 					<a href="#" class="actions__inner">
-						<div class="actions__bg" style="background: #ffb106; background: -moz-linear-gradient(top,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%); background: -webkit-linear-gradient(top,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%); background: linear-gradient(to bottom,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
+						<div class="actions__bg" style="background: #ffb106;
+background: -moz-linear-gradient(-45deg,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%);
+background: -webkit-linear-gradient(-45deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);
+background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
 						<div class="actions__holder">
 							<div class="actions__align">
 								<div class="actions__visual">
@@ -1045,6 +798,8 @@
 <!--<![endif]-->
 <!--JQuery UI-->
 <script src="js/vendor/jquery-ui.min.js"></script>
+<!--Map-->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <!--Widgets-->
 <script src="js/widgets.js"></script>
 <!--Main functions-->
