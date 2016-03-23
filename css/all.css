@@ -2134,7 +2134,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	color: #333;
 }
 .terminals-item h3:hover,
-.terminals-item.active h3:hover{
+.terminals-item.active h3{
 	color: #f29700;
 }
 .terminals-item h3:before{

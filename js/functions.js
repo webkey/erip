@@ -394,15 +394,13 @@ function terminalsSwitcherInit(){
 	var _duration = 400;
 
 	$terminalItem.on('click', 'h3', function () {
-		var $currentHead = $(this);
 		var $currentItem = $(this).closest('.terminals-item');
 		var $currentItemDrop = $currentItem.find($terminalItemDrop);
 
 		closeTerminalsDrop();
 
-		$currentItemDrop.stop().slideToggle(_duration, function () {
-			$currentItem.toggleClass(_activeClass, $currentItemDrop.is(':visible'));
-		});
+		$currentItemDrop.stop().slideToggle(_duration);
+		$currentItem.toggleClass(_activeClass, $currentItemDrop.is(':visible'));
 
 		return false;
 	});
