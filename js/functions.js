@@ -92,57 +92,6 @@ function slidersInit(){
 /*sidebar behavior*/
 function sidebarBehavior(){
 	var $sidebar = $('.sidebar');
-/*
-	if($sidebar.length){
-		var $body = $('body');
-		var _duration = 300;
-		var _delay = 200;
-		var timerClose;
-
-		$sidebar.on('mouseenter', function () {
-			clearTimeout(timerClose);
-
-			$body.addClass('expand-sidebar-start expanded-sidebar');
-
-			$sidebar.stop().animate({
-				'width': 230
-			}, _duration, function () {
-				$body.removeClass('expand-sidebar-start').addClass('expand-sidebar-end');
-			});
-
-		}).on('mouseleave', function () {
-			clearTimeout(timerClose);
-
-			timerClose = setTimeout(function () {
-				collapsedSidebar();
-			}, _delay);
-		});
-
-		$(document).on('click', function () {
-			clearTimeout(timerClose);
-
-			if($sidebar.hasClass('expanded-sidebar')){
-				collapsedSidebar();
-			}
-		});
-
-		$sidebar.on('click', function (e) {
-			e.stopPropagation();
-		});
-
-		function collapsedSidebar() {
-
-
-			$body.removeClass('expanded-sidebar').addClass('expand-sidebar-start');
-
-			$sidebar.stop().animate({
-				'width': 80
-			}, _duration, function () {
-				$body.removeClass('expand-sidebar-start expand-sidebar-end expanded-sidebar');
-			});
-		}
-	}
-*/
 	if($sidebar.length){
 		var _activeClass = 'expanded-sidebar';
 		var timerClose;
@@ -712,6 +661,20 @@ function mapMainInit(){
 }
 /*map init end*/
 
+/*lightbox popup*/
+function lightboxPopup(){
+	$('.popup-gmaps').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+
+		fixedContentPos: false
+	});
+}
+/*lightbox popup end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -729,6 +692,7 @@ $(document).ready(function(){
 	terminalsSwitcherInit();
 	tabs();
 	mapMainInit();
+	lightboxPopup();
 });
 
 $(window).load(function () {

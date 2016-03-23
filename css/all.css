@@ -121,10 +121,10 @@ strong em{
 
 /*btn-default*/
 .btn-default,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-button{
+input[type="submit"].btn-default,
+input[type="button"].btn-default,
+input[type="reset"].btn-default,
+button.btn-default{
 	font: 14px/20px 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 0.025em;
@@ -194,10 +194,16 @@ button{
 	position: relative;
 	z-index: 1;
 }
-input[type="submit"]:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-button:hover{
+.btn-default__inner>span{
+	border-bottom: 1px dotted #ffb500;
+	-webkit-transition: border 0.2s;
+	transition: border 0.2s;
+}
+.btn-default__inner:hover>span{ border-color: transparent; }
+input[type="submit"].btn-default:hover,
+input[type="button"].btn-default:hover,
+input[type="reset"].btn-default:hover,
+button.btn-default:hover{
 	background: #ffac05;
 }
 .btn-default:active{
@@ -224,7 +230,9 @@ button:hover{
 	top: 2px;
 	height: 0;
 	width: 7px;
-	border-top: 1px solid #fff;
+	border-top: 1px solid #f29700;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .arrow-more:before{
 	-webkit-transform: rotate(45deg);
@@ -237,12 +245,10 @@ button:hover{
 	transform: rotate(-45deg);
 	left: 3px;
 }
-.btn-anchor>span{
-	border-bottom: 1px dotted #fff;
-	-webkit-transition: border 0.2s;
-	transition: border 0.2s;
+a:hover .arrow-more:before,
+a:hover .arrow-more:after{
+	border-color: #fff;
 }
-.btn-anchor:hover>span{ border-color: transparent; }
 /*btn-default end*/
 /*btn end*/
 
@@ -389,44 +395,56 @@ table th{
 	-webkit-overflow-scrolling: touch;
 	margin: 0 0 20px;
 }
+.tbl,
 .user-content .tbl{
-	table-layout: fixed;
-	border: 1px solid #e2dbbe;
 	margin-bottom: 20px;
 }
 .table_auto .tbl{
 	margin: 0;
 }
+.tbl td,
+.tbl th,
 .user-content .tbl td,
 .user-content .tbl th{
-	font: 14px/20px Arial, Helvetica, sans-serif;
-	color: #808080;
+	font: 14px/24px 'pfbeausanspro-thin', Arial, Helvetica, sans-serif;
+	color: #1a1a1a;
+	-webkit-font-smoothing: antialiased;
 	background-color: #fff;
-	border: solid #e2dbbe;
-	border-width: 0 0 0 1px;
-	padding: 13px 12px;
+	border: solid #fff;
+	border-width: 0 0 0 2px;
+	padding: 14px 20px;
 }
+.tbl tbody tr:nth-child(even) td,
 .user-content .tbl tbody tr:nth-child(even) td{
-	background: #fcf7e3;
-	color: #f29700;
+	background: #f0e4bb;
 }
+.tbl td:first-child,
 .user-content .tbl td:first-child{
 	text-align: left;
 }
+.tbl tbody td:first-child,
+.tbl tfoot td:first-child,
 .user-content .tbl tbody td:first-child,
 .user-content .tbl tfoot td:first-child{
 	border-left-width: 0;
 }
+.tbl th,
+.tbl thead td,
 .user-content .tbl th,
 .user-content .tbl thead td{
-	line-height: 17px;
-	color: #fff;
-	background: #f29700;
-	padding: 16px 12px 17px;
+	font: 14px/24px 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
+	color: #0f4b01;
+	text-transform: uppercase;
+	background: #ffb500;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
+.tbl tfoot td,
 .user-content .tbl tfoot td{
-	background: #fef5d4;
-	color: #f29700;
+	background: #f0e4bb;
+	font: 14px/24px 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #0f4b01;
 }
 /*table styling end*/
 
@@ -1935,7 +1953,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	right: 0;
 	bottom: 1px;
 	text-align: center;
-	box-shadow: 0 0 0 1px #e4e4e4;
+	box-shadow: 0 0 0 1px #e6e6e6;
 	-webkit-transition-property: box-shadow;
 	transition-property: box-shadow;
 	-webkit-transition-duration: 0.6s;
@@ -1982,6 +2000,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .helpful-section{
 	position: relative;
 	background: #f7f7f7;
+	border-bottom: 1px solid #e6e6e6;
 }
 /*helpful*/
 .helpful{ background: #fff; }
@@ -2205,13 +2224,13 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .s-points__filters{
 	position: relative;
 	margin: 0 -10px;
+	padding: 0 0  30px;
 }
 .s-points__filters:before,
 .s-points__filters:after { content: ""; display: table; }
 .s-points__filters:after { clear: both; }
 .s-points__filters-item{
 	float: left;
-	height: 50px;
 	width: 50%;
 	padding: 0 10px 20px;
 	-webkit-box-sizing: border-box;
@@ -2230,22 +2249,22 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	box-sizing: border-box;
 }
 .select select{
-	border: none;
+	display: block;
+	font: 14px/24px 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
 	color: #0f4b01;
-	background: transparent;
-	font: 14px/24px 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	-webkit-font-smoothing: antialiased;
-	padding: 7px 45px 7px 15px;
+	padding: 13px 45px 13px 15px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	overflow: hidden;
+	white-space: nowrap;
 	text-indent: 0;
 	text-overflow: '';
-	white-space: nowrap;
-	cursor: pointer;
-	display: block;
 	width: 100%;
+	border: none;
+	background: transparent;
+	overflow: hidden;
+	cursor: pointer;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -2254,6 +2273,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .select select option{
 	outline: none;
 	text-transform: none;
+	font: 14px/24px 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
 }
 .select:before,
 .select:after{
@@ -2282,13 +2302,17 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 }
 /*select end*/
 
-.s-points__results{
-	padding: 0 0 20px;
+.s-points__no-result{
+	display: block;
+	font: 14px/24px 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
+	color: #0f4b01;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	padding: 20px 0;
 }
-.s-points__results-list,
-.user-content .s-points__results-list{
-	margin: 0 -10px;
-}
+.s-points__results-table,
+.user-content .s-points__results-table{ margin: 0; }
 
 .s-points__results-list li,
 .user-content .s-points__results-list li,
@@ -2365,7 +2389,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .info-holder{
 	display: table;
 	table-layout: fixed;
-	border: solid #e4e4e4;
+	border: solid #e6e6e6;
 	border-width: 0 1px 1px 0;
 }
 .info-row{
@@ -2374,7 +2398,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .info-item{
 	display: table-cell;
 	vertical-align: top;
-	border: solid #e4e4e4;
+	border: solid #e6e6e6;
 	border-width: 1px 0 0 1px;
 	padding: 40px 50px;
 }
