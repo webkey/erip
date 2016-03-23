@@ -12,6 +12,80 @@ $(window).resize(function () {
 });
 /*resize only width end*/
 
+/*ParallaxJs*/
+(function () {
+	var ParallaxJs = function (setting){
+		var options = $.extend({
+			parallaxElement: null,
+			parallaxArea: null
+		}, setting || {});
+
+		this.parallaxElement = document.querySelector(options.parallaxElement);
+		this.parallaxArea = document.querySelector(options.parallaxArea);
+		this.win = {
+			width: window.innerWidth,
+			height: window.innerHeight
+		};
+
+		this.bindEvents();
+	};
+
+	// from http://www.sberry.me/articles/javascript-event-throttling-debouncing
+	ParallaxJs.prototype.throttle = function(fn, delay) {
+		var allowSample = true;
+
+		return function(e) {
+			if (allowSample) {
+				allowSample = false;
+				setTimeout(function() { allowSample = true; }, delay);
+				fn(e);
+			}
+		};
+	};
+
+	ParallaxJs.prototype.bindEvents = function () {
+		var sell = this;
+		var parallaxElement = sell.parallaxElement;
+		var win = sell.win;
+		var cell = sell.parallaxArea;
+
+		//parallaxElement.style.WebkitTransition = '-webkit-transform 0.4s';
+		//parallaxElement.style.transition = 'transform 0.4s';
+
+		cell.addEventListener('mousemove', sell.throttle(function(ev) {
+			var xVal = -1/(win.height/2)*ev.clientY + 1,
+				yVal = 1/(win.width/2)*ev.clientX - 1,
+				transX = 20/(win.width)*ev.clientX - 10,
+				transY = 20/(win.height)*ev.clientY - 10,
+				transZ = 100/(win.height)*ev.clientY - 50;
+
+			parallaxElement.style.WebkitTransform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+			parallaxElement.style.transform = 'perspective(1000px) translate3d(' + transX + 'px,' + transY + 'px,' + transZ + 'px) rotate3d(' + xVal + ',' + yVal + ',0,2deg)';
+		}, 100));
+	};
+
+	window.ParallaxJs = ParallaxJs;
+}());
+
+function bgParallaxInit() {
+	var navBarBg = document.querySelector('.nav-bar-bg');
+	if (navBarBg) {
+		new ParallaxJs({
+			parallaxElement: '.nav-bar-bg',
+			parallaxArea: '.nav-bar'
+		});
+	}
+
+	var easyBg = document.querySelector('.easy-bg');
+	if (easyBg) {
+		new ParallaxJs({
+			parallaxElement: '.easy-bg',
+			parallaxArea: '.easy'
+		});
+	}
+}
+/*ParallaxJs end*/
+
 /* placeholder */
 function placeholderInit(){
 	$('[placeholder]').placeholder();
@@ -676,6 +750,7 @@ function lightboxPopup(){
 /** ready/load/resize document **/
 
 $(document).ready(function(){
+	bgParallaxInit();
 	placeholderInit();
 	stickyLayout();
 	showFormSearch();

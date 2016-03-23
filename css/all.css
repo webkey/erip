@@ -125,7 +125,7 @@ input[type="submit"].btn-default,
 input[type="button"].btn-default,
 input[type="reset"].btn-default,
 button.btn-default{
-	font: 14px/20px 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
+	font: 14px/19px 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 0.025em;
 	color: #fff;
@@ -2432,9 +2432,14 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	left: 50%;
 	bottom: 0;
 	margin: 0 0 -50px -113px;
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .easy-list{
 	margin: 0 -50px;
+	position: relative;
 }
 .easy-list:before,
 .easy-list:after { content: ""; display: table; }
@@ -3425,6 +3430,21 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .footer .nav-bar{
 	background: #f29700;
 	padding: 4px 0;
+	position: relative;
+	overflow: hidden;
+}
+.footer .nav-bar-bg{
+	background: url(../img/bg-footer-city.png) no-repeat;
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	width: 1200px;
+	height: 174px;
+	margin-left: -600px;
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 .nav-bar__list,
 .nav-bar__list ul{
