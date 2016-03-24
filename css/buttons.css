@@ -12,6 +12,8 @@ button{
 }
 [class|="btn"] input[type="submit"],
 [class*=" btn-"] input[type="submit"],
+[class|="btn"] input[type="button"],
+[class*=" btn-"] input[type="button"],
 [class|="btn"] input[type="reset"],
 [class*=" btn-"] input[type="reset"]{
 	background: url("../img/empty.png") repeat;
