@@ -3686,6 +3686,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	backface-visibility: hidden;
 }
 .footer .nav-bar .align-layout{ position: relative; }
+.footer .nav-bar__list>li>strong{ color: #fff; }
 .footer-container{
 	background: #f27200;
 	background: -moz-linear-gradient(-45deg,  #f27200 0%, #f29700 100%);
@@ -3726,7 +3727,7 @@ body:not(.mobile-device) .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	display: block;
 	font: 16px/24px 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	color: #fff;
+	color: #f29700;
 	padding: 0 0 21px;
 }
 .nav-bar__list ul li{
