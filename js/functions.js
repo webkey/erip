@@ -132,7 +132,8 @@ function stickyLayout(){
 	var $stickyJs = $(".sticky-js");
 	if ($stickyJs.length) {
 		$stickyJs.stick_in_parent({
-			'parent': '.wrapper'
+			'parent': '.wrapper',
+			'bottoming': false
 		});
 			//.on("sticky_kit:stick", function(e) {
 			//console.log("has stuck!", e.target);
@@ -809,7 +810,7 @@ $(document).ready(function(){
 	slidersInit();
 	sidebarBehavior();
 	actionsLayout();
-	//headerFixed();
+	headerFixed();
 	catalogMenuScroll();
 	catalogMenuSelect();
 	siteMapSwitcher();
