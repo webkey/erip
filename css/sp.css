@@ -20,6 +20,9 @@
 .depict-pin{ background-position: 0 -565px; width: 24px; height: 30px; }
 .depict-pin-h, a:hover .depict-pin{ background-position: 0 -615px; width: 24px; height: 30px; }
 .depict-quote{ background-position: 0 -665px; width: 22px; height: 16px; }
+.depict-clock{ background-position: 0 -701px; width: 40px; height: 40px; }
+.depict-handset{ background-position: 0 -761px; width: 40px; height: 40px; }
+.depict-email{ background-position: 0 -821px; width: 39px; height: 40px; }
 /*icons end*/
 
 /*social icons*/
