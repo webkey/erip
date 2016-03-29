@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang=""> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
-	<title>Расчет - Все страницы</title>
+	<title>Расчет - Платильщикам</title>
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -279,32 +279,226 @@
 
 		<!--main-->
 		<div class="main">
-			<!--breadcrumbs-->
-			<div class="breadcrumbs">
-				<div class="breadcrumbs-inner">
-					<ul class="breadcrumbs-list">
-						<li><a href="#">Главная</a></li>
-						<li><span title="О системе">Все страницы</span></li>
-					</ul>
-				</div>
-			</div>
-			<!--breadcrumbs end-->
-
 			<!--main content-->
 			<div class="content user-content full-page">
-				<div class="align-layout">
-					<ul>
-						<li><a href="index.html" target="_blank">Главная</a></li>
-						<li><a href="about.html" target="_blank">О системе</a></li>
-						<li><a href="payers.html" target="_blank">Плательщикам</a></li>
-						<li><a href="callback.html" target="_blank">Обратная связь</a></li>
-						<li><a href="typography.html" target="_blank">Стили</a></li>
-					</ul>
-				</div>
+				<!--callback section-->
+				<section class="callback-section tabs-wrap">
+					<div class="title-box">
+						<div class="align-center align-layout">
+							<h2>Обратная связь</h2>
+						</div>
+					</div>
+
+					<!--callback-->
+					<div class="callback tabs-container">
+						<!--helpful controls-->
+						<ul class="callback__controls tab-controls">
+							<li class="active"><a href="#callback-for-individuals"><span>Физическим лицам</span></a></li>
+							<li><a href="#callback-for-legal"><span>Юридическим лицам</span></a></li>
+						</ul>
+						<!--helpful controls end-->
+
+						<div class="callback__panel tabs-panel" id="callback-for-individuals">
+							<div class="align-layout">
+								<!--form callback-->
+								<div class="form-callback">
+									<form action="#" method="get">
+										<div class="form-row">
+											<div class="input-wrap">
+												<div class="label-holder">
+													<label for="">Фамилия, Имя, Отчество:</label>
+												</div>
+												<input type="text" placeholder="Свердлова Анна Владимировна" />
+											</div>
+											<div class="input-wrap">
+												<div class="label-holder">
+													<label for="">Телефон для связи:</label>
+												</div>
+												<input type="text" placeholder="8 (029) 255-25-25" />
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="input-wrap">
+												<div class="label-holder">
+													<label for="">Электроная почта: <span class="form-mark">*</span></label>
+												</div>
+												<input type="email" placeholder="sverdlova@mail.ru" />
+											</div>
+											<div class="input-wrap">
+												<div class="label-holder">
+													<label for="">Тема сообщения: <span class="form-mark">*</span></label>
+												</div>
+												<div class="select">
+													<select name="filter-type" id="">
+														<option value="-1">Электронные деньги</option>
+														<option value="110">Тема 2</option>
+														<option value="115">Тема длиннее 3</option>
+														<option value="119">Тема очень-очень-очень длинная 4</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="input-wrap">
+												<div class="label-holder">
+													<label for="">Сообщение: <span class="form-mark">*</span></label>
+												</div>
+
+												<textarea placeholder="Введите сообщение..."></textarea>
+											</div>
+											<div class="input-wrap">
+												<div class="form-row">
+													<div class="input-wrap">
+														<div class="label-holder">
+															<label for="">защита от спама: <span class="form-mark">*</span></label>
+														</div>
+														<div class="captcha-img">
+															<img src="img/img-captcha.jpg" alt="code" />
+														</div>
+														<a href="#" class="btn-captcha-refresh">
+															<i class="depict-refresh"></i>
+														</a>
+													</div>
+													<div class="input-wrap">
+														<div class="label-holder">
+															<label for="">код: <span class="form-mark">*</span></label>
+														</div>
+														<input type="text" value="" id="" />
+													</div>
+												</div>
+												<div class="form-buttons-group">
+													<div class="label-holder">
+														<span class="label">отправка или очистка формы:</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!--form callback end-->
+							</div>
+						</div>
+
+						<div class="callback__panel tabs-panel" id="callback-for-legal">
+							<div class="align-layout">
+
+							</div>
+						</div>
+					</div>
+					<!--helpful end-->
+
+					<div class="attention">
+						<div class="align-layout">
+							<h3>Обращаем Ваше внимание!</h3>
+							<p>Проверьте пожалуйста правильность написания адреса. Поля, отмеченные «<mark>*</mark>» являются обязательными
+								для заполнения. Только при условии, что адрес вашей электронной почты указан верно, вы получите ответ
+								на заданный вопрос и если в момент рассылки ответа на ваше письмо был доступен почтовый сервер,
+								где зарегистрирован ваш почтовый ящик. Не используйте в тексте ненормативную лексику.</p>
+						</div>
+					</div>
+				</section>
+				<!--callback section end-->
 			</div>
 			<!--main content end-->
 		</div>
 		<!--main end-->
+
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer-container">
+				<!--nav bar-->
+				<div class="nav-bar">
+					<div class="nav-bar-bg"></div>
+					<div class="align-layout">
+						<ul class="nav-bar__list">
+							<li class="align-left">
+								<strong>НКФО</strong>
+								<ul>
+									<li><a href="#">Структура</a></li>
+									<li><a href="#">Наблюдательный Совет</a></li>
+									<li><a href="#">Правление</a></li>
+									<li><a href="#">Акционеры</a></li>
+									<li><a href="#">Финансовые показатели деятельности</a></li>
+									<li><a href="#">Вакансии</a></li>
+									<li><a href="#">АИС ЖКУ</a></li>
+									<li><a href="#">Раскрытие информации</a></li>
+									<li><a href="#">Финансовая грамотность</a></li>
+									<li><a href="#">Электронное обращение</a></li>
+									<li><a href="#">Контакты</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>о системе</strong>
+								<ul>
+									<li><a href="#">Участники</a></li>
+									<li><a href="#">Нормативная база</a></li>
+									<li><a href="#">Публикации Видео</a></li>
+									<li><a href="#">Новости</a></li>
+									<li><a href="#">Личный кабинет</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>Расчетным агентам</strong>
+								<ul>
+									<li><a href="#">Платежные агенты</a></li>
+									<li><a href="#">Статистика (Рэнкинг банков)</a></li>
+									<li><a href="#">Договорные отношения</a></li>
+									<li><a href="#">Заявка в службу поддержки.</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>Производителям услуг</strong>
+								<ul>
+									<li><a href="#">Условия подключения</a></li>
+									<li><a href="#">Информационный ресурс</a></li>
+									<li><a href="#">Агрегаторы</a></li>
+								</ul>
+							</li>
+							<li>
+								<strong>потребителям услуг</strong>
+								<ul>
+									<li><a href="#">Популярные вопросы</a></li>
+									<li><a href="#">Задать вопрос</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--nav bar end-->
+				<!--useful-->
+				<div class="useful">
+					<div class="align-layout">
+						<ul class="useful-links">
+							<li>
+								<a href="#">
+									<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
+									<div class="useful-links__text"><span>Интернет-портал <span class="nobr">Президента РБ</span></span></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
+									<div class="useful-links__text"><span>Нацбанк</span></div>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
+									<div class="useful-links__text"><span>Правовой интернет-портал РБ</span></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--useful end-->
+			</div>
+			<div class="footer-copy">
+				<div class="footer-copy-i">
+					<span class="copyright">&copy; Центр банковских технологий, 2009-2016</span>
+				</div>
+			</div>
+		</footer>
+		<!--footer end-->
 	</div>
 	<!--main layout end-->
 

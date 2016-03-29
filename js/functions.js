@@ -573,26 +573,48 @@ function equalHeightInit(){
 /* tabs */
 function tabs() {
 	var $helpfulTabs = $('.helpful');
-	if (!$helpfulTabs) { return; }
+	if ($helpfulTabs) {
+		$helpfulTabs.responsiveTabs({
+			active: 0,
+			rotate: false,
+			startCollapsed: 'accordion',
+			collapsible: 'accordion',
+			setHash: false,
+			animation: 'fade', // slide
+			duration: 300, // default 500
+			animationQueue: true,
+			scrollToAccordion: true
+			//scrollToAccordionOffset: true
+			//activate: function(e, tab) {
+			//	console.log(tab);
+			//},
+			//activateState: function(e, state) {
+			//	console.log(state);
+			//}
+		});
+	}
 
-	$helpfulTabs.responsiveTabs({
-		active: 0,
-		rotate: false,
-		startCollapsed: 'accordion',
-		collapsible: 'accordion',
-		setHash: false,
-		animation: 'fade', // slide
-		duration: 300, // default 500
-		animationQueue: true,
-		scrollToAccordion: true
-		//scrollToAccordionOffset: true
-		//activate: function(e, tab) {
-		//	console.log(tab);
-		//},
-		//activateState: function(e, state) {
-		//	console.log(state);
-		//}
-	});
+	var $callbackTabs = $('.callback');
+	if ($callbackTabs) {
+		$callbackTabs.responsiveTabs({
+			active: 0,
+			rotate: false,
+			startCollapsed: 'accordion',
+			collapsible: 'accordion',
+			setHash: false,
+			animation: 'fade', // slide
+			duration: 300, // default 500
+			animationQueue: true,
+			scrollToAccordion: true
+			//scrollToAccordionOffset: true
+			//activate: function(e, tab) {
+			//	console.log(tab);
+			//},
+			//activateState: function(e, state) {
+			//	console.log(state);
+			//}
+		});
+	}
 }
 /* tabs end */
 
