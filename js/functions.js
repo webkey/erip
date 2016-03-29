@@ -505,21 +505,23 @@ function terminalsSwitcherInit(){
 	var $terminalItemDrop = $terminalItem.find('.terminals-item__drop');
 	var _activeClass = 'active';
 	var _duration = 400;
-	var flag = false;
+	var flag = true;
 
 	$terminalItem.on('click', 'h3', function () {
 		var $currentItem = $(this).closest('.terminals-item');
 		var $currentItemDrop = $currentItem.find($terminalItemDrop);
 
 		if($currentItem.hasClass(_activeClass)){
-			flag = true;
+			flag = false;
 		}
 
 		closeTerminalsDrop();
 
 		$currentItemDrop.stop().slideToggle(_duration);
+		console.log('flag: ', flag);
 		$currentItem.toggleClass(_activeClass, flag);
 
+		flag = true;
 		return false;
 	});
 
