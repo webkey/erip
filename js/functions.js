@@ -22,7 +22,6 @@ $(window).resize(function () {
 
 		this.parallaxElement = document.querySelector(options.parallaxElement);
 		this.parallaxArea = document.querySelector(options.parallaxArea);
-		console.log('this.parallaxElement: ', this.parallaxElement);
 		this.win = {
 			width: window.innerWidth,
 			height: window.innerHeight
@@ -506,15 +505,20 @@ function terminalsSwitcherInit(){
 	var $terminalItemDrop = $terminalItem.find('.terminals-item__drop');
 	var _activeClass = 'active';
 	var _duration = 400;
+	var flag = false;
 
 	$terminalItem.on('click', 'h3', function () {
 		var $currentItem = $(this).closest('.terminals-item');
 		var $currentItemDrop = $currentItem.find($terminalItemDrop);
 
+		if($currentItem.hasClass(_activeClass)){
+			flag = true;
+		}
+
 		closeTerminalsDrop();
 
 		$currentItemDrop.stop().slideToggle(_duration);
-		$currentItem.toggleClass(_activeClass, $currentItemDrop.is(':visible'));
+		$currentItem.toggleClass(_activeClass, flag);
 
 		return false;
 	});
