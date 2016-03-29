@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang=""> <!--<![endif]-->
 <head>
 	<meta charset="UTF-8">
-	<title>Расчет - Платильщикам</title>
+	<title>Расчет - Обратная связь</title>
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -306,30 +306,30 @@
 										<div class="form-row">
 											<div class="input-wrap">
 												<div class="label-holder">
-													<label for="">Фамилия, Имя, Отчество:</label>
+													<label for="individuals-field-name">Фамилия, Имя, Отчество: <span class="form-mark">*</span></label>
 												</div>
-												<input type="text" placeholder="Свердлова Анна Владимировна" />
+												<input type="text" placeholder="Свердлова Анна Владимировна" id="individuals-field-name" />
 											</div>
 											<div class="input-wrap">
 												<div class="label-holder">
-													<label for="">Телефон для связи:</label>
+													<label for="individuals-field-phone">Телефон для связи: <span class="form-mark">*</span></label>
 												</div>
-												<input type="text" placeholder="8 (029) 255-25-25" />
+												<input type="text" placeholder="8 (029) 255-25-25" id="individuals-field-phone" />
 											</div>
 										</div>
 										<div class="form-row">
 											<div class="input-wrap">
 												<div class="label-holder">
-													<label for="">Электроная почта: <span class="form-mark">*</span></label>
+													<label for="individuals-field-email">Электроная почта: <span class="form-mark">*</span></label>
 												</div>
-												<input type="email" placeholder="sverdlova@mail.ru" />
+												<input type="email" placeholder="sverdlova@mail.ru" id="individuals-field-email" />
 											</div>
 											<div class="input-wrap">
 												<div class="label-holder">
-													<label for="">Тема сообщения: <span class="form-mark">*</span></label>
+													<label for="individuals-field-theme">Тема сообщения: <span class="form-mark">*</span></label>
 												</div>
 												<div class="select">
-													<select name="filter-type" id="">
+													<select name="filter-type" id="individuals-field-theme">
 														<option value="-1">Электронные деньги</option>
 														<option value="110">Тема 2</option>
 														<option value="115">Тема длиннее 3</option>
@@ -341,34 +341,50 @@
 										<div class="form-row">
 											<div class="input-wrap">
 												<div class="label-holder">
-													<label for="">Сообщение: <span class="form-mark">*</span></label>
+													<label for="individuals-field-message">Сообщение: <span class="form-mark">*</span></label>
 												</div>
 
-												<textarea placeholder="Введите сообщение..."></textarea>
+												<textarea placeholder="Введите сообщение..." id="individuals-field-message"></textarea>
 											</div>
 											<div class="input-wrap">
 												<div class="form-row">
 													<div class="input-wrap">
 														<div class="label-holder">
-															<label for="">защита от спама: <span class="form-mark">*</span></label>
+															<span class="label">защита от спама: <span class="form-mark">*</span></span>
 														</div>
-														<div class="captcha-img">
-															<img src="img/img-captcha.jpg" alt="code" />
+														<div class="captcha">
+															<div class="captcha-img">
+																<img src="img/img-captcha.jpg" alt="code" />
+															</div>
+															<a href="#" class="btn-captcha-refresh">
+																<i class="depict-refresh"></i>
+															</a>
 														</div>
-														<a href="#" class="btn-captcha-refresh">
-															<i class="depict-refresh"></i>
-														</a>
 													</div>
 													<div class="input-wrap">
 														<div class="label-holder">
-															<label for="">код: <span class="form-mark">*</span></label>
+															<label for="individuals-field-code">код: <span class="form-mark">*</span></label>
 														</div>
-														<input type="text" value="" id="" />
+														<input type="text" value="" id="individuals-field-code" />
 													</div>
 												</div>
 												<div class="form-buttons-group">
 													<div class="label-holder">
 														<span class="label">отправка или очистка формы:</span>
+													</div>
+													<div class="form-buttons-wrap">
+														<div class="form-buttons-col">
+															<div class="btn-submit">
+																<i class="depict-form-send"></i> <span>отправить сообщение</span>
+																<input type="submit" value="">
+															</div>
+														</div>
+														<div class="form-buttons-col">
+															<div class="btn-reset">
+																<i class="depict-form-clear"></i> <span>очистить форму</span>
+																<input type="reset" value="">
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
