@@ -245,8 +245,9 @@ function actionsLayout(){
 		percentPosition: true
 	});
 
-	actionsSortable.on( 'layoutComplete', function( event, laidOutItems ) {
+	actionsSortable.on( 'layoutComplete', function() {
 		//$(".sticky-js").trigger("sticky_kit:recalc");
+		$(document.body).trigger("sticky_kit:recalc");
 	});
 }
 /*actions layout end*/
@@ -356,9 +357,10 @@ function catalogMenuSelect(){
 			.addClass('menu-active');
 		$(this).closest('li').addClass('active');
 
+		$(document.body).trigger("sticky_kit:recalc");
+
 		var $htmlAndBody = $('html, body');
 		if ($(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
-			console.log(1);
 			$htmlAndBody.stop().animate({
 				scrollTop: 0
 			}, scrollSpeed, "easeInOutExpo");
