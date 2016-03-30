@@ -245,8 +245,9 @@ function actionsLayout(){
 		percentPosition: true
 	});
 
-	actionsSortable.on( 'layoutComplete', function( event, laidOutItems ) {
+	actionsSortable.on( 'layoutComplete', function() {
 		//$(".sticky-js").trigger("sticky_kit:recalc");
+		$(document.body).trigger("sticky_kit:recalc");
 	});
 }
 /*actions layout end*/
@@ -335,30 +336,56 @@ function catalogMenuSelect(){
 		return;
 	}
 
-	var currentItemId = $navList.find('.active').find('a').attr("href");
-
-	$(currentItemId).show(0)
-		.addClass('menu-active');
-
+	var $catalogMenu = $('.catalog-menu');
 	var scrollSpeed = 900;
+	var animationSpeed = 500;
 
 	$navList.find('a').on('click', function(event){
 		event.preventDefault();
 
-		$('.catalog-menu-list').hide(0)
-			.removeClass('menu-active');
+		$('.catalog-menu-list')
+			.removeClass('menu-active')
+			.stop()
+			.animate({
+				opacity: 'hide'
+			}, animationSpeed);
 
-		$navList.find('.active')
+		$catalogMenu
+			.stop()
+			.animate({
+			height: 0
+		}, animationSpeed);
+
+		$navList.find('li')
 			.removeClass('active');
 
-		var navID = $(this).attr("href");
-		$(navID).show(0)
-			.addClass('menu-active');
-		$(this).closest('li').addClass('active');
+		var $currentItem = $(this);
+		var navID = $currentItem.attr("href");
 
+		if($(navID).is(':hidden')){
+			$(navID)
+				.closest($catalogMenu)
+				.stop()
+				.animate({
+					height: $(navID).outerHeight()
+				}, animationSpeed);
+
+			$(navID)
+				.addClass('menu-active')
+				.stop()
+				.animate({
+					opacity: 'toggle'
+				}, animationSpeed);
+
+			$currentItem.closest('li').addClass('active');
+		}
+
+		// sticky_kit recalculation
+		$(document.body).trigger("sticky_kit:recalc");
+
+		// scroll to top
 		var $htmlAndBody = $('html, body');
 		if ($(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
-			console.log(1);
 			$htmlAndBody.stop().animate({
 				scrollTop: 0
 			}, scrollSpeed, "easeInOutExpo");
@@ -827,6 +854,38 @@ function lightboxPopup(){
 }
 /*lightbox popup end*/
 
+/*buttons form*/
+function buttonsFromBehavior (){
+	var btnForm = $('.btn-form-js');
+	if(btnForm.length){
+		var btnSubmitActive = true;
+		var _activeStateClass = 'active-state';
+
+		btnForm.filter(':submit').on('mouseenter', function () {
+			var $currentBtn = $(this);
+			var $currentBtnWrap = $currentBtn.closest('.js-btn-form-wrap');
+
+			if(!btnSubmitActive){
+				$currentBtnWrap.removeClass(_activeStateClass);
+				btnSubmitActive = true;
+				return false;
+			}
+		});
+
+		btnForm.filter(':reset').on('mouseenter', function () {
+			var $currentBtn = $(this);
+			var $currentBtnWrap = $currentBtn.closest('.js-btn-form-wrap');
+
+			if(btnSubmitActive){
+				$currentBtnWrap.addClass(_activeStateClass);
+				btnSubmitActive = false;
+				return false;
+			}
+		});
+	}
+}
+/*buttons form end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -847,6 +906,7 @@ $(document).ready(function(){
 	tabs();
 	mapMainInit();
 	lightboxPopup();
+	buttonsFromBehavior();
 });
 
 $(window).load(function () {
