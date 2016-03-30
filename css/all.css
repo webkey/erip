@@ -1147,8 +1147,8 @@ a:hover [class*=" depict-files-"]:after{
 	display: inline;
 	float: left;
 	margin: 0 0 0 -100%;
-	width: 67px;
-	height: 59px;
+	width: 68px;
+	height: 60px;
 	background: #0f4b01;
 	border: none;
 	border-right: 1px solid #3f6f34;
@@ -1557,16 +1557,24 @@ a:hover [class*=" depict-files-"]:after{
 	margin: 0 0 0 -1px;
 	overflow: hidden;
 	display: none;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
 }
 html.no-js .catalog-menu-list{
 	display: block;
+	position: relative;
+	left: auto;
+	top: auto;
 }
 .catalog-menu-list li{
 	float: left;
 	width: 50%;
 	padding: 0 0 1px 1px;
 	position: relative;
-	opacity: 0;
+	opacity: 1;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1575,10 +1583,10 @@ html.no-js .catalog-menu-list{
 	-webkit-transition-duration: 0.2s, 0.5s;
 	transition-duration: 0.2s, 0.5s;
 }
-html.no-js .catalog-menu-list li,
+/*html.no-js .catalog-menu-list li,
 .catalog-menu-list.menu-active li{
 	opacity: 1;
-}
+}*/
 .catalog-menu-list li:hover{
 	background: #fef5d4;
 }

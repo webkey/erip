@@ -336,29 +336,54 @@ function catalogMenuSelect(){
 		return;
 	}
 
-	var currentItemId = $navList.find('.active').find('a').attr("href");
-
-	$(currentItemId).show(0)
-		.addClass('menu-active');
-
+	var $catalogMenu = $('.catalog-menu');
 	var scrollSpeed = 900;
+	var animationSpeed = 500;
 
 	$navList.find('a').on('click', function(event){
 		event.preventDefault();
 
-		$('.catalog-menu-list').hide(0)
-			.removeClass('menu-active');
+		$('.catalog-menu-list')
+			.removeClass('menu-active')
+			.stop()
+			.animate({
+				opacity: 'hide'
+			}, animationSpeed);
 
-		$navList.find('.active')
+		$catalogMenu
+			.stop()
+			.animate({
+			height: 0
+		}, animationSpeed);
+
+		$navList.find('li')
 			.removeClass('active');
 
-		var navID = $(this).attr("href");
-		$(navID).show(0)
-			.addClass('menu-active');
-		$(this).closest('li').addClass('active');
+		var $currentItem = $(this);
+		var navID = $currentItem.attr("href");
 
+		if($(navID).is(':hidden')){
+			$(navID)
+				.closest($catalogMenu)
+				.stop()
+				.animate({
+					height: $(navID).outerHeight()
+				}, animationSpeed);
+
+			$(navID)
+				.addClass('menu-active')
+				.stop()
+				.animate({
+					opacity: 'toggle'
+				}, animationSpeed);
+
+			$currentItem.closest('li').addClass('active');
+		}
+
+		// sticky_kit recalculation
 		$(document.body).trigger("sticky_kit:recalc");
 
+		// scroll to top
 		var $htmlAndBody = $('html, body');
 		if ($(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
 			$htmlAndBody.stop().animate({
