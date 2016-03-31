@@ -14,8 +14,12 @@ $(window).resize(function () {
 
 /*device detected*/
 var DESKTOP = device.desktop();
+//console.log('DESKTOP: ', DESKTOP);
 var MOBILE = device.mobile();
+//console.log('MOBILE: ', MOBILE);
 var TABLET = device.tablet();
+//console.log('MOBILE: ', MOBILE);
+/*device detected end*/
 
 /*parallax on mousemove*/
 (function () {
