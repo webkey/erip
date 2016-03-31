@@ -227,6 +227,10 @@ function slidersInit(){
 function sidebarBehavior(){
 	var $sidebar = $('.sidebar');
 	if($sidebar.length){
+		$(window).on('load', function () {
+			$($sidebar.html()).clone().appendTo($sidebar).removeClass('sidebar-small').addClass('sidebar-large');
+		});
+
 		var _activeClass = 'expanded-sidebar';
 		var timerClose;
 
