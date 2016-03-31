@@ -1,1 +1,29 @@
 @media only screen and (max-width: 979px){}
+
+/*news articles*/
+.news-article {
+	float: none;
+	width: auto;
+}
+.news-article_lg a {
+	height: auto;
+}
+.news-article h3{
+	height: auto;
+}
+/*news articles end*/
+
+/*advantages*/
+.advantages-item{
+	width: 49.98%;
+}
+/*advantages end*/
+
+/*info*/
+.info-item:first-child{
+	padding-left: 0;
+}
+.info-item:last-child{
+	padding-right: 0;
+}
+/*info end*/
