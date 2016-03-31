@@ -12,6 +12,11 @@ $(window).resize(function () {
 });
 /*resize only width end*/
 
+/*device detected*/
+var DESKTOP = device.desktop();
+var MOBILE = device.mobile();
+var TABLET = device.tablet();
+
 /*parallax on mousemove*/
 (function () {
 	var ParallaxJs = function (setting){
@@ -178,10 +183,30 @@ function showFormSearch() {
 
 /*sliders initial*/
 function slidersInit(){
+	/*pic-slider*/
+	var $picSlider = $('.pic-slider');
+	if($picSlider.length){
+		$picSlider.on('init', function () {
+			$(this).css({'visibility':'visible'});
+		}).slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			focusOnSelect: true,
+			autoplaySpeed: 7000,
+			speed: 600,
+			infinite: true,
+			dots: true,
+			arrows: true,
+			adaptiveHeight: true
+		});
+	}
+	/*pic-slider end*/
+
 	/*promo-slider*/
-	var sliderQuestions = $('.promo-slider');
-	if(sliderQuestions.length){
-		sliderQuestions.slick({
+	var $promoSlider = $('.promo-slider');
+	if($promoSlider.length){
+		$promoSlider.slick({
 			fade: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
@@ -262,7 +287,7 @@ function headerFixed(){
 	var minScrollTop = 120;
 
 	var previousScrollTop = $(window).scrollTop();
-	var desktop = device.desktop();
+
 	$(window).on('load scroll resizeByWidth', function () {
 
 		var currentScrollTop = $(window).scrollTop();
@@ -271,7 +296,7 @@ function headerFixed(){
 		page.toggleClass('logo-reduce', reduceLogo);
 		var showHeaderPanel = currentScrollTop < minScrollTop || currentScrollTop < previousScrollTop;
 
-		if (!desktop) {
+		if (!DESKTOP) {
 			page.find('.header-options').toggle(showHeaderPanel);
 		} else {
 			page.toggleClass('top-panel-show', showHeaderPanel);
@@ -336,29 +361,54 @@ function catalogMenuSelect(){
 		return;
 	}
 
-	var currentItemId = $navList.find('.active').find('a').attr("href");
-
-	$(currentItemId).show(0)
-		.addClass('menu-active');
-
+	var $catalogMenu = $('.catalog-menu');
 	var scrollSpeed = 900;
+	var animationSpeed = 500;
 
 	$navList.find('a').on('click', function(event){
 		event.preventDefault();
 
-		$('.catalog-menu-list').hide(0)
-			.removeClass('menu-active');
+		$('.catalog-menu-list')
+			.removeClass('menu-active')
+			.stop()
+			.animate({
+				opacity: 'hide'
+			}, animationSpeed);
 
-		$navList.find('.active')
+		$catalogMenu
+			.stop()
+			.animate({
+			height: 0
+		}, animationSpeed);
+
+		$navList.find('li')
 			.removeClass('active');
 
-		var navID = $(this).attr("href");
-		$(navID).show(0)
-			.addClass('menu-active');
-		$(this).closest('li').addClass('active');
+		var $currentItem = $(this);
+		var navID = $currentItem.attr("href");
 
+		if($(navID).is(':hidden')){
+			$(navID)
+				.closest($catalogMenu)
+				.stop()
+				.animate({
+					height: $(navID).outerHeight()
+				}, animationSpeed);
+
+			$(navID)
+				.addClass('menu-active')
+				.stop()
+				.animate({
+					opacity: 'toggle'
+				}, animationSpeed);
+
+			$currentItem.closest('li').addClass('active');
+		}
+
+		// sticky_kit recalculation
 		$(document.body).trigger("sticky_kit:recalc");
 
+		// scroll to top
 		var $htmlAndBody = $('html, body');
 		if ($(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
 			$htmlAndBody.stop().animate({
