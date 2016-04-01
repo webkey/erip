@@ -6,3 +6,9 @@
 	width: auto;
 }
 /*files item end*/
+
+/*movie section*/
+.movie .movie__item{
+	width: 49.98%;
+}
+/*movie section end*/

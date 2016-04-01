@@ -3160,6 +3160,9 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	background: #e6e6e6;
 	right: 0;
 }
+.about-info__list:before,
+.about-info__list:after { content: ""; display: table; }
+.about-info__list:after { clear: both; }
 .about-info .align-layout,
 .about-info .about-info__list{
 	position: relative;
@@ -3223,10 +3226,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	letter-spacing: -4px;
 }
 .movie__item{
-	display: inline-block;
-	vertical-align: top;
 	position: relative;
-	width: 33.28%;
 	padding: 0 10px 76px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -3234,6 +3234,11 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 
 	font-size: 16px;
 	letter-spacing: 0.025em;
+}
+.movie .movie__item{
+	display: inline-block;
+	vertical-align: top;
+	width: 33.28%;
 }
 .movie__item:after{
 	content: '';

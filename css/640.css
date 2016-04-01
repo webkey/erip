@@ -24,6 +24,15 @@ h2{
 }
 /*content img end*/
 
+/*pic slider*/
+.pic-slider .slick-arrow{
+	width: 70px;
+	height: 60px;
+}
+.pic-slider .slick-next:before{ left: 6px; }
+.pic-slider .slick-prev:before{ right: 6px; }
+/*pic slider*/
+
 /*sidebar*/
 .sidebar{
 	display: none;
