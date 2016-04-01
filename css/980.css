@@ -1,5 +1,39 @@
 @media only screen and (max-width: 979px){}
 
+/*form style*/
+.form-row {
+	margin: 0;
+	padding: 0;
+}
+.form-row .input-wrap{
+	display: block;
+	width: auto;
+	padding-left: 0;
+	padding-right: 0;
+}
+/*form style end*/
+
+/*files item*/
+.files .files-item{
+	width: 49.98%;
+}
+/*files item end*/
+
+/*site map*/
+.nav-bar__list>li.align-left{
+	float: none;
+}
+.nav-bar__list>li{
+	width: 49.98%;
+}
+/*site map end*/
+
+/*main navigation*/
+.nav-list{
+	display: none;
+}
+/*main navigation end*/
+
 /*news articles*/
 .news-article {
 	float: none;
@@ -27,3 +61,9 @@
 	padding-right: 0;
 }
 /*info end*/
+
+/*useful*/
+.useful-links li{
+	width: 49.48%;
+}
+/*useful end*/

@@ -1,1 +1,8 @@
 @media only screen and (max-width: 767px){}
+
+/*files item*/
+.files .files-item{
+	display: block;
+	width: auto;
+}
+/*files item end*/

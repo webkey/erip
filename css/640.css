@@ -1,1 +1,60 @@
 @media only screen and (max-width: 639px){}
+
+h1{
+	font-size: 30px;
+	line-height: 38px;
+	padding: 0 0 20px;
+}
+h2{
+	font-size: 30px;
+	line-height: 38px;
+	padding: 0 0 20px;
+}
+
+/*content img*/
+.imgc,
+.imgl,
+.imgr{
+	float: none;
+	display: block;
+	margin: 0 0 20px;
+	max-width: 100%;
+	text-align: left;
+	padding: 0;
+}
+/*content img end*/
+
+/*sidebar*/
+.sidebar{
+	display: none;
+}
+/*sidebar end*/
+
+/*site map*/
+.nav-bar__list>li {
+	display: block;
+	width: auto;
+	padding: 10px 10px 30px;
+}
+/*site map end*/
+
+/*local map*/
+.local-map{
+	height: 240px;
+}
+/*local map end*/
+
+/*useful*/
+.useful-links li{
+	display: block;
+	width: auto;
+}
+/*useful end*/
+
+/*layout main blocks*/
+.main-layout,
+.header,
+.site-map{
+	padding-left: 0;
+}
+/*layout main blocks end*/
