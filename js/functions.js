@@ -112,8 +112,6 @@ function bgParallaxOnScroll(){
 		var containerParallaxHeight = $containerParallax.outerHeight();
 		var scrolled = $(window).scrollTop();
 
-		console.log('scrolled: ', scrolled);
-
 		if($containerParallax.offset().top + containerParallaxHeight < scrolled){
 			return;
 		}
@@ -494,47 +492,46 @@ function siteMapSwitcher(){
 	};
 
 	FaqBehavior.prototype.bindEvents = function () {
-		var self = this,
-				_modifiersActive = this.modifiers.active;
+		var self = this;
+		var $itemPanel = self.$accordionPanel;
+		var _modifiersActive = self.modifiers.active;
+		var _duration = self._animateSpeed;
+		var _flag = true;
 
-		self.$accordionItem.on('click', function (e) {
-			e.preventDefault();
+		self.$accordionItem.on('click', function () {
+			var $currentItem = $(this).closest(self.$accordionItem);
+			var $currentItemPanel = $currentItem.find($itemPanel);
 
-			var current = $(this);
-
-			if(current.hasClass(_modifiersActive)){
-				current.find(self.$accordionHeader).css({
-					'height': 24
-				});
-
-				current.find(self.$accordionPanel).css({
-					'height': 24
-				});
-
-				current.removeClass(_modifiersActive);
-				return;
+			if($itemPanel.is(':animated')){
+				return false;
 			}
 
-			self.$accordionHeader.css({
-				'height': 24
-			});
+			if($currentItem.hasClass(_modifiersActive)){
+				_flag = false;
+			}
 
-			self.$accordionPanel.css({
-				'height': 24
-			});
+			self.closeAccordionPanels();
 
-			self.$accordionItem.removeClass(_modifiersActive);
+			$currentItemPanel.slideToggle(_duration);
+			$currentItem.toggleClass(_modifiersActive, _flag);
 
-			current.find(self.$accordionHeader).css({
-				'height':'auto'
-			});
+			_flag = true;
+			return false;
+		});
 
-			current.find(self.$accordionPanel).css({
-				'height':'auto'
-			});
+		$(document).click(function () {
+			self.closeAccordionPanels();
+		});
 
-			current.addClass(_modifiersActive);
-		})
+		$itemPanel.on('click', function(e){
+			e.stopPropagation();
+		});
+	};
+
+	FaqBehavior.prototype.closeAccordionPanels = function () {
+		var self = this;
+		self.$accordionPanel.slideUp(self._animateSpeed);
+		self.$accordionItem.removeClass(self.modifiers.active);
 	};
 
 	FaqBehavior.prototype.scrollPosition = function (scrollElement) {
@@ -571,6 +568,10 @@ function terminalsSwitcherInit(){
 		var $currentItem = $(this).closest('.terminals-item');
 		var $currentItemDrop = $currentItem.find($terminalItemDrop);
 
+		if($terminalItemDrop.is(':animated')){
+			return false;
+		}
+
 		if($currentItem.hasClass(_activeClass)){
 			flag = false;
 		}
@@ -578,7 +579,6 @@ function terminalsSwitcherInit(){
 		closeTerminalsDrop();
 
 		$currentItemDrop.stop().slideToggle(_duration);
-		console.log('flag: ', flag);
 		$currentItem.toggleClass(_activeClass, flag);
 
 		flag = true;
@@ -890,11 +890,15 @@ function lightboxPopup(){
 /*buttons form*/
 function buttonsFromBehavior (){
 	var btnForm = $('.btn-form-js');
-	if(btnForm.length){
+	if(btnForm.length && DESKTOP){
 		var btnSubmitActive = true;
 		var _activeStateClass = 'active-state';
 
 		btnForm.filter(':submit').on('mouseenter', function () {
+			if($(window).outerWidth() < 980){
+				return;
+			}
+
 			var $currentBtn = $(this);
 			var $currentBtnWrap = $currentBtn.closest('.js-btn-form-wrap');
 
@@ -906,6 +910,10 @@ function buttonsFromBehavior (){
 		});
 
 		btnForm.filter(':reset').on('mouseenter', function () {
+			if($(window).outerWidth() < 980){
+				return;
+			}
+
 			var $currentBtn = $(this);
 			var $currentBtnWrap = $currentBtn.closest('.js-btn-form-wrap');
 

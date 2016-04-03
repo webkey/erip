@@ -302,7 +302,7 @@
 
 						<div class="callback__panel tabs-panel" id="callback-for-individuals">
 							<div class="align-layout">
-								<!--form callback individuals-->
+								<!--form callback-->
 								<div class="form-callback">
 									<form action="#" method="get">
 										<div class="form-row">
@@ -349,18 +349,20 @@
 												<textarea placeholder="" id="individuals-field-message"></textarea>
 											</div>
 											<div class="input-wrap">
-												<div class="form-row">
+												<div class="form-row captcha-row">
 													<div class="input-wrap">
-														<div class="label-holder">
-															<span class="label">защита от спама: <span class="form-mark">*</span></span>
-														</div>
-														<div class="captcha">
-															<div class="captcha-img">
-																<img src="img/img-captcha.jpg" alt="code" />
+														<div class="captcha-wrap">
+															<div class="label-holder">
+																<span class="label">защита от спама: <span class="form-mark">*</span></span>
 															</div>
-															<a href="#" class="btn-captcha-refresh">
-																<i class="depict-refresh"></i>
-															</a>
+															<div class="captcha">
+																<div class="captcha-img">
+																	<img src="img/img-captcha.jpg" alt="code" />
+																</div>
+																<a href="#" class="btn-captcha-refresh">
+																	<i class="depict-refresh"></i>
+																</a>
+															</div>
 														</div>
 													</div>
 													<div class="input-wrap">
@@ -393,7 +395,7 @@
 										</div>
 									</form>
 								</div>
-								<!--form callback individuals end-->
+								<!--form callback end-->
 							</div>
 						</div>
 
@@ -460,18 +462,20 @@
 												<textarea placeholder="" id="legal-field-message"></textarea>
 											</div>
 											<div class="input-wrap">
-												<div class="form-row">
+												<div class="form-row captcha-row">
 													<div class="input-wrap">
-														<div class="label-holder">
-															<span class="label">защита от спама: <span class="form-mark">*</span></span>
-														</div>
-														<div class="captcha">
-															<div class="captcha-img">
-																<img src="img/img-captcha.jpg" alt="code" />
+														<div class="captcha-wrap">
+															<div class="label-holder">
+																<span class="label">защита от спама: <span class="form-mark">*</span></span>
 															</div>
-															<a href="#" class="btn-captcha-refresh">
-																<i class="depict-refresh"></i>
-															</a>
+															<div class="captcha">
+																<div class="captcha-img">
+																	<img src="img/img-captcha.jpg" alt="code" />
+																</div>
+																<a href="#" class="btn-captcha-refresh">
+																	<i class="depict-refresh"></i>
+																</a>
+															</div>
 														</div>
 													</div>
 													<div class="input-wrap">
@@ -738,11 +742,11 @@ background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 
 <!--JQuery library-->
 <!--jQuery with fallback to the 1.* for old IE-->
 <!--[if lt IE 9]>
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/vendor/jquery-1.12.1.min.js"></script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.1.min.js"><\/script>')</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js"><\/script>')</script>
 <!--<![endif]-->
 <!--JQuery UI-->
 <script src="js/vendor/jquery-ui.min.js"></script>

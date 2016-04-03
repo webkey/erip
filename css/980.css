@@ -148,3 +148,53 @@
 	width: 49.48%;
 }
 /*useful end*/
+
+/*form-callback*/
+.captcha-row{
+	display: table;
+	width: 100%;
+}
+.captcha-row .input-wrap{
+	display: table-cell;
+	vertical-align: top;
+}
+.captcha-wrap{
+	width: 225px;
+}
+.captcha-row .input-wrap:first-child + .input-wrap{
+	width: 100%;
+}
+.form-buttons-wrap{
+	height: auto;
+}
+.form-buttons-group .label-holder{
+	text-align: center;
+}
+.form-buttons-col,
+.active-state .form-buttons-col{
+	float: none;
+	width: 260px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.form-buttons-col:first-child{
+	padding-top: 0;
+}
+.form-buttons-col .btn-submit,
+.form-buttons-col .btn-reset{
+	border-radius: 4px;
+}
+.form-buttons-right [class*="btn-"]{
+	border-left: none;
+}
+.form-buttons-col [class*="btn-"] > span,
+.active-state .form-buttons-col [class*="btn-"] > span{
+	max-width: none;
+	opacity: 1;
+}
+.btn-submit:hover > i,
+.btn-reset:hover > i:before{
+	-webkit-animation: none !important;
+	animation: none !important;
+}
+/*form-callback end*/

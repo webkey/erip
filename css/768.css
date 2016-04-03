@@ -12,3 +12,39 @@
 	width: 49.98%;
 }
 /*movie section end*/
+
+/*call section*/
+.call-list{
+	padding-right: 235px;
+}
+.call-img {
+	right: 0;
+}
+/*call section end*/
+
+/*about desc*/
+.about-desc{
+	padding: 40px 0 5px;
+}
+.about-desc__list{
+	margin: 0;
+}
+.about-desc__col {
+	display: block;
+	width: auto;
+	height: auto;
+	padding: 0 0 40px;
+}
+.about-desc__img {
+	padding-right: 12px;
+	width: 98px;
+	text-align: center;
+}
+/*about desc end*/
+
+/*easy*/
+.easy-bg{
+	height: 246px;
+	width: 176px;
+}
+/*easy end*/
