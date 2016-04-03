@@ -496,26 +496,25 @@ function siteMapSwitcher(){
 		var $itemPanel = self.$accordionPanel;
 		var _modifiersActive = self.modifiers.active;
 		var _duration = self._animateSpeed;
-		var _flag = true;
 
 		self.$accordionItem.on('click', function () {
 			var $currentItem = $(this).closest(self.$accordionItem);
 			var $currentItemPanel = $currentItem.find($itemPanel);
 
 			if($itemPanel.is(':animated')){
-				return false;
+				return;
 			}
 
-			if($currentItem.hasClass(_modifiersActive)){
-				_flag = false;
+			if($currentItemPanel.is(':visible')){
+				self.closeAccordionPanels();
+				return;
 			}
 
 			self.closeAccordionPanels();
 
 			$currentItemPanel.slideToggle(_duration);
-			$currentItem.toggleClass(_modifiersActive, _flag);
+			$currentItem.toggleClass(_modifiersActive);
 
-			_flag = true;
 			return false;
 		});
 

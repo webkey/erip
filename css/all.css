@@ -2422,18 +2422,13 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	content: '';
 	position: absolute;
 	left: 0;
-	-webkit-transition: border 0.2s;
-	transition: border 0.2s;
-}
-.faq-item__angle:before,
-.faq-item__angle:after{
 	top: 0;
 	height: 0;
 	width: 15px;
 	margin: 7px 0 0;
 	border-top: 3px solid #ccc;
-	-webkit-transition-property: -webkit-transform;
-	transition-property: transform;
+	-webkit-transition-property: -webkit-transform, border;
+	transition-property: transform, border;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
