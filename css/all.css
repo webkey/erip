@@ -1385,9 +1385,9 @@ html.desktop .pic-slider .slick-arrow:hover:after{ opacity: 1; }
 	left: 0;
 	background: #0f4b01;
 	z-index: 5;
-	-webkit-transform: translateZ(0) translateY(-100%);
-	-ms-transform: translateZ(0) translateY(-100%);
-	transform: translateZ(0) translateY(-100%);
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	transform: translateY(-100%);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1559,8 +1559,6 @@ html.desktop .btn-site-map.active{
 	background: #fff;
 	-webkit-transition: all 0.4s cubic-bezier(1, 0, 0, 1), background 0.2s cubic-bezier(1, 0, 0, 1);
 	transition: all 0.4s cubic-bezier(1, 0, 0, 1), background 0.2s cubic-bezier(1, 0, 0, 1);
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
 }
 html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 /*for all line button site map end*/
@@ -3222,8 +3220,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	transition-duration: 0.3s;
 }
 .movie__video-img:hover i{ opacity: 1; }
-.movie__video-img:active i,
-.mfp-opened .movie__video-img i{
+.mfp-opened.movie__video-img i{
 	-webkit-transform: scale(3, 3);
 	-ms-transform: scale(3, 3);
 	transform: scale(3, 3);
@@ -4574,14 +4571,14 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	transform: translateX(150px);
 }
 .expanded-sidebar .header{
-	-webkit-transform: translateZ(0) translateY(-100%) translateX(150px);
-	-ms-transform: translateZ(0) translateY(-100%) translateX(150px);
-	transform: translateZ(0) translateY(-100%) translateX(150px);
+	-webkit-transform: translateY(-100%) translateX(150px);
+	-ms-transform: translateY(-100%) translateX(150px);
+	transform: translateY(-100%) translateX(150px);
 }
 .expanded-sidebar .top-panel-show .header{
-	-webkit-transform: translateZ(0) translateY(0) translateX(150px);
-	-ms-transform: translateZ(0) translateY(0) translateX(150px);
-	transform: translateZ(0) translateY(0) translateX(150px);
+	-webkit-transform: translateY(0) translateX(150px);
+	-ms-transform: translateY(0) translateX(150px);
+	transform: translateY(0) translateX(150px);
 }
 /*layout main blocks end*/
 

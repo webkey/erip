@@ -901,19 +901,12 @@ function lightboxPopup(){
 
 		fixedContentPos: false,
 		callbacks:{
-			beforeOpen: function() {
-				$body.addClass('mfp-opened');
-			},
 			beforeClose: function() {
-				$body.removeClass('mfp-opened');
+				$('.mfp-opened').removeClass('mfp-opened');
 			}
-			//close: function() {
-			//	console.log('Popup removal initiated (after removalDelay timer finished)');
-			//},
-			//afterClose: function() {
-			//	console.log('Popup is completely closed');
-			//}
 		}
+	}).on('click', function () {
+		$(this).addClass('mfp-opened');
 	});
 }
 /*lightbox popup end*/
