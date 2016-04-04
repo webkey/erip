@@ -3007,10 +3007,9 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .about-desc__bg{
 	position: absolute;
 	left: 0;
-	top: 50%;
+	bottom: 0;
 	width: 100%;
 	height: 811px;
-	margin: -405px 0 0;
 	background: #000 no-repeat 50% 50%;
 	-webkit-background-size: cover;
 	background-size: cover;

@@ -101,31 +101,11 @@ function bgParallaxOnMousemove() {
 
 /*parallax on scroll*/
 function bgParallaxOnScroll(){
-	var $bgParallax = $('.bg-parallax-js');
-	if(!$bgParallax.length){
-		return;
-	}
-
-	var $containerParallax = $('.container-parallax-js');
-
-	$(window).on('load scroll', function () {
-		var containerParallaxHeight = $containerParallax.outerHeight();
-		var containerParallaxTopPosition = $containerParallax.offset().top;
-		var scrolled = $(window).scrollTop();
-
-		if($containerParallax.offset().top + containerParallaxHeight < scrolled || $(window).outerHeight() + scrolled < containerParallaxTopPosition){
-			console.log(1);
-			return;
-		}
-
-		var _scrollSize = (scrolled - containerParallaxTopPosition)*0.5;
-		$bgParallax.css({
-			WebkitTransform: 'translateY(' + _scrollSize + 'px)',
-			transform: 'translateY(' + _scrollSize + 'px)'
+	if(DESKTOP){
+		skrollr.init({
+			forceHeight: false
 		});
-
-		$bgParallax.toggleClass('parallax-init', _scrollSize != 0);
-	});
+	}
 }
 /*parallax on scroll end*/
 
