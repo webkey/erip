@@ -58,3 +58,7 @@
 .aside__holder{
 	background: #fff;
 }
+.aside-panel-overlay{
+	width: 100%;
+	height: 100%;
+}
