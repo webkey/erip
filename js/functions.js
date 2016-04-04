@@ -123,12 +123,11 @@ function stickyLayout(){
 			'parent': '.wrapper',
 			'bottoming': false
 		});
-			//.on("sticky_kit:stick", function(e) {
-			//console.log("has stuck!", e.target);
-		//})
-		//	.on("sticky_kit:detach", function(e) {
-		//	console.log("has unstuck!", e.target);
-		//});
+		$(window).on('load resize', function () {
+			if($(window).outerWidth() < 1350){
+				$('.aside').trigger("sticky_kit:detach").attr('style','');
+			}
+		})
 	}
 }
 /*sticky layout end*/
@@ -244,27 +243,6 @@ function sidebarBehavior(){
 }
 /*sidebar behavior end*/
 
-/*actions layout*/
-function actionsLayout(){
-	var $actions = $('.actions');
-
-	if(!$actions.length){
-		return;
-	}
-
-	var actionsSortable = $actions.masonry({
-		// options
-		itemSelector: '.actions__item',
-		percentPosition: true
-	});
-
-	actionsSortable.on( 'layoutComplete', function() {
-		//$(".sticky-js").trigger("sticky_kit:recalc");
-		$(document.body).trigger("sticky_kit:recalc");
-	});
-}
-/*actions layout end*/
-
 /*header fixed*/
 function headerFixed(){
 	var page = $('body');
@@ -354,6 +332,9 @@ function catalogMenuSelect(){
 	$navList.find('a').on('click', function(event){
 		event.preventDefault();
 
+		$('body').removeClass('nav-show');
+		$('.btn-menu').removeClass('active');
+
 		$('.catalog-menu-list')
 			.removeClass('menu-active')
 			.stop()
@@ -425,9 +406,9 @@ function catalogMenuSelect(){
 		closeSiteMap();
 	});
 
-	//$navList.on('click', function(e){
-	//	e.stopPropagation();
-	//});
+	$navList.on('click', function(e){
+		e.stopPropagation();
+	});
 
 	$('.btn-nav-close').on('click', function(e){
 		closeSiteMap();
@@ -469,7 +450,7 @@ function siteMapSwitcher(){
 		e.stopPropagation();
 	});
 
-	$('.btn-menu-close').on('click', function(e){
+	$('.btn-site-map-close').on('click', function(e){
 		closeSiteMap();
 	});
 
@@ -479,6 +460,96 @@ function siteMapSwitcher(){
 	}
 }
 /*site map switcher end*/
+
+/*actions layout*/
+function actionsLayout(){
+	var $actions = $('.actions');
+	if(!$actions.length){
+		return;
+	}
+	// flag
+	var isActive = false;
+
+	$(window).on('load resize', function () {
+		if($(window).outerWidth() < 1350){
+			if (isActive) {
+				$('.actions').masonry('destroy');
+				// set flag
+				isActive = !isActive;
+			}
+		} else {
+			var actionsSortable = $actions.masonry({
+				itemSelector: '.actions__item',
+				percentPosition: true
+			});
+
+			// set flag
+			isActive = true;
+
+			actionsSortable.on( 'layoutComplete', function() {
+				$(document.body).trigger("sticky_kit:recalc");
+			});
+		}
+	})
+}
+/*actions layout end*/
+
+/*aside panel switcher*/
+function asidePanelSwitcher(){
+	var $btnSiteMap = $('.btn-aside');
+	if(!$btnSiteMap.length){
+		return;
+	}
+
+	var $body = $('body');
+	var $asidePanelOverlay = $('<div class="aside-panel-overlay">');
+	var siteMapShowClass = 'aside-panel-show';
+	var btnActiveClass = 'active';
+	var animateSpeed = 200;
+
+	$btnSiteMap.on('click', function (e) {
+		e.preventDefault();
+
+		var $currentBtn = $(this);
+
+		if($currentBtn.hasClass(btnActiveClass)){
+			closeSiteMap();
+			return;
+		}
+
+		$currentBtn.toggleClass(btnActiveClass, !$currentBtn.hasClass(btnActiveClass));
+		$body.toggleClass(siteMapShowClass, $currentBtn.hasClass(btnActiveClass));
+
+		$asidePanelOverlay
+				.prependTo('.main-layout')
+				.stop().fadeOut(0, function () {
+					$asidePanelOverlay.fadeIn(animateSpeed);
+				});
+
+		return false;
+	});
+
+	$(document).click(function () {
+		closeSiteMap();
+	});
+
+	$('.aside').on('click', function(e){
+		e.stopPropagation();
+	});
+
+	$('.aside-panel-close').on('click', function(e){
+		closeSiteMap();
+	});
+
+	function closeSiteMap(){
+		$btnSiteMap.removeClass(btnActiveClass);
+		$body.removeClass(siteMapShowClass);
+		$asidePanelOverlay.stop().fadeOut(animateSpeed, function () {
+			$asidePanelOverlay.remove();
+		})
+	}
+}
+/*aside panel switcher end*/
 
 /*faq behavior*/
 (function ($) {
@@ -891,7 +962,6 @@ function mapMainInit(){
 
 /*lightbox popup*/
 function lightboxPopup(){
-	var $body = $('body');
 	$('.popup-gmaps, .movie__video > a').magnificPopup({
 		disableOn: 700,
 		type: 'iframe',
@@ -961,13 +1031,14 @@ $(document).ready(function(){
 	showFormSearch();
 	slidersInit();
 	sidebarBehavior();
-	actionsLayout();
 	headerFixed();
-	catalogMenuScroll();
+	//catalogMenuScroll();
 	catalogMenuSelect();
 	siteMapSwitcher();
 	faqBehaviorInit();
 	terminalsSwitcherInit();
+	actionsLayout();
+	asidePanelSwitcher();
 	tabs();
 	mapMainInit();
 	lightboxPopup();
