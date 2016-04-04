@@ -1678,8 +1678,8 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 	opacity: 0;
 	z-index: 2;
 	cursor: pointer;
-	-webkit-transition-property: opacity, -webkit-transform;
-	transition-property: opacity, transform;
+	-webkit-transition-property: opacity;
+	transition-property: opacity;
 	-webkit-transition-duration: 0.2s, 0s;
 	transition-duration: 0.2s, 0s;
 	transition-timing-function: ease-in-out, cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -1687,15 +1687,8 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 }
 .site-map-show .btn-site-map-close{
 	opacity: 1;
-	-webkit-transition-delay: 0.6s, 0s;
-	transition-delay: 0.6s, 0s;
-}
-.btn-site-map-close:hover{
-	-webkit-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	transform: rotate(180deg);
-	-webkit-transition-duration: 0.2s, 0.9s;
-	transition-duration: 0.2s, 0.9s;
+	-webkit-transition-delay: 0.6s;
+	transition-delay: 0.6s;
 }
 .btn-site-map-close:before,
 .btn-site-map-close:after{
@@ -1744,10 +1737,15 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	-webkit-transition: width 0.2s;
-	transition: width 0.2s;
+	-webkit-transition-property: width, right;
+	transition-property: width, right;
+	-webkit-transition-duration: 0.35s;
+	transition-duration: 0.35s;
 }
-.form-opened .search-form{ width: 100%; }
+.form-opened .search-form{
+	width: 100%;
+	right: 0;
+}
 .search-form form{ position: relative; }
 .search-form .input-wrapper{
 	padding: 0 60px;
@@ -1898,7 +1896,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 	cursor: pointer;
-	z-index: 2;
+	display: none;
 }
 html.desktop .btn-aside:hover{
 	background: #fff;
@@ -4106,7 +4104,6 @@ html.desktop .sidebar-small:after{
 .aside__holder{
 	position: relative;
 	padding: 20px 20px 0;
-	background: #fff;
 }
 .actions{ margin: 0 -10px; }
 .actions:before,
@@ -4681,15 +4678,15 @@ html.desktop .sidebar-small:after{
 	transform: translateX(150px);
 }
 .expanded-sidebar .header{
-	-webkit-transform: translateY(-100%) translateX(150px);
-	-ms-transform: translateY(-100%) translateX(150px);
-	transform: translateY(-100%) translateX(150px);
+	-webkit-transform: translate(150px, -100%);
+	-ms-transform: translate(150px, -100%);
+	transform: translate(150px, -100%);
 }
 .expanded-sidebar .top-panel-show .header,
 .expanded-sidebar .aside-panel-show .header{
-	-webkit-transform: translateY(0) translateX(150px);
-	-ms-transform: translateY(0) translateX(150px);
-	transform: translateY(0) translateX(150px);
+	-webkit-transform: translate(150px, 0);
+	-ms-transform: translate(150px, 0);
+	transform: translate(150px, 0);
 }
 /*layout main blocks end*/
 

@@ -25,6 +25,7 @@
 }
 .nav-bar__list>li{
 	width: 49.98%;
+	padding: 30px 10px 15px;
 }
 /*site map end*/
 
@@ -269,3 +270,9 @@
 	animation: none !important;
 }
 /*form-callback end*/
+
+/*footer*/
+.footer .nav-bar {
+	padding: 15px 0 30px;
+}
+/*footer end*/
