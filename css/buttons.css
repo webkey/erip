@@ -30,4 +30,7 @@ button{
 	width: 100%;
 	z-index: 99;
 	border:0;
+	opacity: 0;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }

@@ -1,5 +1,19 @@
 @media only screen and (max-width: 767px){}
 
+/*catalog menu*/
+.catalog-menu-list li{
+	float: none;
+	width: auto;
+}
+.catalog-menu-list a{
+	height: auto;
+	padding: 16px 30px 16px 6%;
+}
+.catalog-menu-list li:before, .catalog-menu-list li:after{
+	right: 15px;
+}
+/*catalog menu end*/
+
 /*files item*/
 .files .files-item{
 	display: block;
