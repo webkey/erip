@@ -35,6 +35,15 @@
 	max-width: 100%;
 	z-index: 99;
 }
+.aside__holder{
+	background: #fff;
+}
+.aside-panel-overlay{
+	width: 100%;
+	height: 100%;
+}
+
+/*layout main blocks*/
 .aside,
 .expanded-sidebar .aside{
 	-webkit-transform: translate(100%, 0);
@@ -55,10 +64,4 @@
 	-ms-transform: translate(150px, 0);
 	transform: translate(150px, 0);
 }
-.aside__holder{
-	background: #fff;
-}
-.aside-panel-overlay{
-	width: 100%;
-	height: 100%;
-}
+/*layout main blocks end*/

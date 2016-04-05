@@ -45,6 +45,7 @@
 	border-width: 1px 0;
 	opacity: 0;
 	background: #0f4b01;
+	overflow: auto;
 	-webkit-transform: rotateX(-45deg);
 	transform: rotateX(-45deg);
 	-webkit-transform-origin: 100% 0% 0;
@@ -70,7 +71,7 @@
 	line-height: 24px;
 	display: block;
 	text-align: left;
-	padding: 14px 6% 0 60px;
+	padding: 14px 60px 0 60px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
