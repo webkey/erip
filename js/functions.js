@@ -1065,7 +1065,6 @@ $(document).ready(function(){
 	bgParallaxOnMousemove();
 	bgParallaxOnScroll();
 	placeholderInit();
-	stickyLayout();
 	showFormSearch();
 	slidersInit();
 	sidebarBehavior();
@@ -1081,6 +1080,7 @@ $(document).ready(function(){
 	mapMainInit();
 	lightboxPopup();
 	buttonsFromBehavior();
+	stickyLayout();
 });
 
 $(window).load(function () {
