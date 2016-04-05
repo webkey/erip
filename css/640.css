@@ -106,10 +106,13 @@ h2{
 
 /*sidebar*/
 .sidebar{
-	overflow: visible;
+	overflow: auto;
 	-webkit-transform: translate(-224px, 0);
 	-ms-transform: translate(-224px, 0);
 	transform: translate(-224px, 0);
+}
+.btn-sidebar{
+	display: block;
 }
 .sidebar-small{
 	display: none;
@@ -117,6 +120,9 @@ h2{
 .sidebar-large{
 	width: 230px;
 	border: none;
+	-webkit-transform: translate(-6px, 0);
+	-ms-transform: translate(-6px, 0);
+	transform: translate(-6px, 0);
 }
 /*sidebar end*/
 
@@ -258,6 +264,19 @@ h2{
 .easy-img{ padding: 0 0 10px; }
 /*easy end*/
 
+/*faq list*/
+.faq-item__angle{
+	left: 16px;
+}
+.faq-list h3{
+	padding: 20px 16px 17px 45px;
+}
+.faq-item p{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+/*faq list end*/
+
 /*actions*/
 .actions__inner{
 	padding: 8.2%;
@@ -332,6 +351,11 @@ h2{
 }
 .expanded-sidebar .top-panel-show .header,
 .expanded-sidebar .aside-panel-show .header{
+	-webkit-transform: translate(224px, 0);
+	-ms-transform: translate(224px, 0);
+	transform: translate(224px, 0);
+}
+.expanded-sidebar .btn-sidebar{
 	-webkit-transform: translate(224px, 0);
 	-ms-transform: translate(224px, 0);
 	transform: translate(224px, 0);

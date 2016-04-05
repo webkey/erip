@@ -215,6 +215,7 @@ function sidebarBehavior(){
 			$('.sidebar-small').clone().appendTo($sidebar).removeClass('sidebar-small').addClass('sidebar-large');
 		});
 
+		var $html = $('html');
 		var _activeClass = 'expanded-sidebar';
 		var timerClose;
 
@@ -222,28 +223,41 @@ function sidebarBehavior(){
 			$sidebar.on('mouseenter', function () {
 
 				clearTimeout(timerClose);
-				$('html').addClass(_activeClass);
+				$html.addClass(_activeClass);
 
 			}).on('mouseleave', function () {
 				clearTimeout(timerClose);
 
 				timerClose = setTimeout(function () {
-					$('html').removeClass(_activeClass);
+					$html.removeClass(_activeClass);
 				}, 200);
 			});
 		}
 
 		if(!DESKTOP){
-			$sidebar.on('click', function () {
+			$sidebar.on('click', function (e) {
+				e.preventDefault();
 				clearTimeout(timerClose);
-				$('html').addClass(_activeClass);
+				$html.addClass(_activeClass);
 			});
 		}
 
-		$(document).on('click', function () {
+		$('.btn-sidebar').on('click', function (e) {
+			e.preventDefault();
 			clearTimeout(timerClose);
 
-			$('html').removeClass(_activeClass);
+			if($html.hasClass(_activeClass)){
+				$html.removeClass(_activeClass);
+			} else {
+				$html.addClass(_activeClass);
+			}
+
+			e.stopPropagation();
+		});
+
+		$(document).on('click', function () {
+			clearTimeout(timerClose);
+			$html.removeClass(_activeClass);
 		});
 
 		$sidebar.on('click', function (e) {

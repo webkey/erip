@@ -33,7 +33,7 @@
 	width: 642px;
 	overflow: auto;
 	max-width: 100%;
-	z-index: 99;
+	z-index: 90;
 }
 .aside__holder{
 	background: #fff;
