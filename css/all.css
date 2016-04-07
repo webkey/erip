@@ -4882,3 +4882,38 @@ html.desktop .sidebar-small:after{
 		page-break-after: avoid;
 	}
 }
+
+/*fix for bitrix*/
+#bx-panel + .wrapper .sidebar{
+	position: absolute;
+	min-height: 0;
+	height: auto !important;
+}
+#bx-panel + .wrapper .sidebar .sidebar-small{
+	position: relative;
+}
+#bx-panel + .wrapper .main-layout{
+	position: relative;
+}
+#bx-panel + .wrapper .header{
+	position: absolute !important;
+	width: 60% !important;
+	top: 0 !important;
+	-webkit-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+}
+#bx-panel + .wrapper .header{
+	/*top: 39px !important;*/
+}
+@media only screen and (max-width: 1616px){
+	#bx-panel + .wrapper .header{
+		width: 960px !important;
+	}
+}
+@media only screen and (max-width: 1349px){
+	#bx-panel + .wrapper .header{
+		width: 100% !important;
+	}
+}
+/*fix for bitrix end*/
