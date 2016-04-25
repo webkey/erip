@@ -986,6 +986,8 @@ a:hover [class*=" depict-files-"]:after{
 .depict-files-pdf-h, .depict-files-pdf:after{ background-position: 0 -910px; width: 48px; height: 50px; }
 .depict-files-doc:before{ background-position: 0 -980px; width: 48px; height: 50px; }
 .depict-files-doc-h, .depict-files-doc:after{ background-position: 0 -1050px; width: 48px; height: 50px; }
+.depict-files-docx:before{ background-position: 0 -980px; width: 48px; height: 50px; }
+.depict-files-docx-h, .depict-files-docx:after{ background-position: 0 -1050px; width: 48px; height: 50px; }
 /*depict files end*/
 
 /*files item*/
@@ -1000,7 +1002,7 @@ a:hover [class*=" depict-files-"]:after{
 .files .files-item{
 	display: inline-block;
 	vertical-align: top;
-	width: 33.29%;
+	width: 49.98%;
 	padding: 0 10px 20px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1010,7 +1012,7 @@ a:hover [class*=" depict-files-"]:after{
 	display: block;
 	text-decoration: none;
 	color: #1a1a1a;
-	padding: 0 0 0 94px;
+	padding: 10px 10px 10px 74px;
 	min-height: 10px;
 	position: relative;
 	background: #fff;
@@ -1040,8 +1042,9 @@ a:hover [class*=" depict-files-"]:after{
 .file:after{
 	content: '';
 	display: inline-block;
-	display:-moz-inline-stack;
-	min-height: 100px;
+	display: -moz-inline-stack;
+	min-height: 60px;
+	height: 100%;
 	vertical-align: middle;
 }
 .file:hover:before{
@@ -1051,7 +1054,7 @@ a:hover [class*=" depict-files-"]:after{
 }
 .file [class*="depict-files-"]{
 	position: absolute;
-	left: 23px;
+	left: 13px;
 	top: 50%;
 	margin: -25px 0 0;
 }
@@ -1064,7 +1067,7 @@ a:hover [class*=" depict-files-"]:after{
 }
 .file__title{
 	display: block;
-	font: 16px/24px 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
+	font: 13px/20px 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	color: #1a1a1a;
 }

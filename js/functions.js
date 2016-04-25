@@ -752,6 +752,15 @@ function equalHeightInit(){
 			useParent: true, parent: $movie, resize: true
 		});
 	}
+
+	/*files*/
+	var $files = $('.files');
+	if ($files.length) {
+		$files.find('.file').equalHeight({
+			//amount: 3,
+			useParent: true, parent: $files, resize: true
+		});
+	}
 }
 /*equalHeight end*/
 

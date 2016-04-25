@@ -15,7 +15,8 @@
 
 /*files item*/
 .files .files-item{
-	width: 49.98%;
+	display: block;
+	width: auto;
 }
 /*files item end*/
 
