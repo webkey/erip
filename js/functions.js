@@ -1165,10 +1165,10 @@ function buttonsFromBehavior (){
 function multiAccordionInit() {
 	if($('.product-box__list').length){
 		new MultiAccordion({
-			accordionContainer: '.product-box__list',
+			accordionContainer: '.structure__list',
 			accordionItem: 'li',
-			accordionEvent: 'a',
-			collapsibleElement: '.product-box__list>li>ul, .product-box__sub-sub',
+			accordionEvent: 'li',
+			collapsibleElement: '.structure__list ul',
 			animateSpeed: 200,
 			resizeCollapsible: true,
 			collapsibleAll: true
@@ -1199,6 +1199,7 @@ $(document).ready(function(){
 	lightboxPopup();
 	buttonsFromBehavior();
 	stickyLayout();
+	multiAccordionInit();
 });
 
 $(window).load(function () {
