@@ -119,15 +119,24 @@ function placeholderInit(){
 function stickyLayout(){
 	var $stickyJs = $(".sticky-js");
 	if ($stickyJs.length) {
-		$stickyJs.stick_in_parent({
-			'parent': '.wrapper',
-			'bottoming': false
-		});
-		$(window).on('load resize', function () {
-			if($(window).outerWidth() < 1350){
-				$('.aside').trigger("sticky_kit:detach").attr('style','');
+		var resizeTimer;
+
+		$(window).on('load resize accordionEvent', function () {
+			$stickyJs.trigger("sticky_kit:detach").attr('style','');
+
+			if($(window).width() < 1350){
+				$stickyJs.trigger("sticky_kit:detach").attr('style','');
+				return;
 			}
-		})
+
+			clearTimeout(resizeTimer);
+			resizeTimer = setTimeout(function () {
+				$stickyJs.stick_in_parent({ // sticky element do not have relative
+					parent: '.wrapper', // parent must have relative
+					bottoming: false
+				});
+			}, 200);
+		});
 	}
 }
 /*sticky layout end*/
@@ -1072,24 +1081,31 @@ function buttonsFromBehavior (){
 (function () {
 	var MultiAccordion = function (settings) {
 		var options = $.extend({
+			accordionContainer: null, //блок-обертка аккордеона
+			accordionItem: null, //непосредственный родитель сворачиваемого элемента
+			accordionEvent: null, //элемент, по которому производим клик
+			collapsibleElement: null, //сворачиваемый элемент
+			totalCollapsible: null, //элемент, по клику на который сворачиваются все аккордены в наборе
+			according: true, //флаг, одновременного закрытия открытых элементов. эффект аккордеона
 			collapsibleAll: false,
-			animateSpeed: 300,
-			resizeCollapsible: false
+			resizeCollapsible: false, //флаг, сворачивание всех открытых аккордеонов при ресайзе
+			animateSpeed: 300
 		}, settings || {});
 
 		this.options = options;
 		var container = $(options.accordionContainer);
-		this.$accordionContainer = container; //блок с аккордеоном
-		this.$accordionItem = $(options.accordionItem, container); //непосредственный родитель сворачиваемого элемента
-		this.$accordionEvent = $(options.accordionEvent, container); //элемент, по которому производим клик
-		this.$collapsibleElement = $(options.collapsibleElement); //элемент, который сворачивается/разворачивается
+		this.$accordionContainer = container;
+		this.$accordionItem = $(options.accordionItem, container);
+		this.$accordionEvent = $(options.accordionEvent, container);
+		this.$collapsibleElement = $(options.collapsibleElement);
+		this.$totalCollapsible = $(options.totalCollapsible);
+		this._according = options.according;
 		this._collapsibleAll = options.collapsibleAll;
+		this._resizeCollapsible = options.resizeCollapsible;
 		this._animateSpeed = options.animateSpeed;
-		this.$totalCollapsible = $(options.totalCollapsible);//элемент, по клику на который сворачиваются все аккордены в наборе
-		this._resizeCollapsible = options.resizeCollapsible;//флаг, сворачивание всех открытых аккордеонов при ресайзе
 
 		this.modifiers = {
-			active: 'made-active'
+			active: 'active'
 		};
 
 		this.bindEvents();
@@ -1101,16 +1117,20 @@ function buttonsFromBehavior (){
 	MultiAccordion.prototype.totalCollapsible = function () {
 		var self = this;
 		self.$totalCollapsible.on('click', function () {
-			self.$collapsibleElement.slideUp(self._animateSpeed);
+			self.$collapsibleElement.slideUp(self._animateSpeed, function () {
+				self.eventClosed();
+			});
 			self.$accordionItem.removeClass(self.modifiers.active);
 		})
 	};
 
 	MultiAccordion.prototype.totalCollapsibleOnResize = function () {
 		var self = this;
-		$(window).on('resize', function () {
+		$(window).on('resizeByWidth', function () {
 			if(self._resizeCollapsible){
-				self.$collapsibleElement.slideUp(self._animateSpeed);
+				self.$collapsibleElement.slideUp(self._animateSpeed, function () {
+					self.eventClosed();
+				});
 				self.$accordionItem.removeClass(self.modifiers.active);
 			}
 		});
@@ -1126,10 +1146,10 @@ function buttonsFromBehavior (){
 
 		self.$accordionEvent.on('click', function (e) {
 			var current = $(this);
-			var currentAccordionItem = current.closest(anyAccordionItem);
+			var currentAccordionItem = current.closest(anyAccordionItem); // текущий непосредственный родитель сворачиваемого элемента
 
 			if (!currentAccordionItem.has(collapsibleElement).length){
-				return;
+				return; // если текущий непосредственный родитель сворачиваемого элемента не содержит сворачиваемый элемент
 			}
 
 			e.preventDefault();
@@ -1139,7 +1159,9 @@ function buttonsFromBehavior (){
 			}
 
 			if (current.siblings(collapsibleElement).is(':visible')){
-				currentAccordionItem.removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
+				currentAccordionItem.removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed, function () {
+					self.eventClosed();
+				});
 				currentAccordionItem.find(anyAccordionItem).removeClass(modifiers.active);
 				return;
 			}
@@ -1147,31 +1169,48 @@ function buttonsFromBehavior (){
 
 			if (self._collapsibleAll){
 				var siblingContainers = $(accordionContainer).not(current.closest(accordionContainer));
-				siblingContainers.find(collapsibleElement).slideUp(animateSpeed);
+				siblingContainers.find(collapsibleElement).slideUp(animateSpeed, function () {
+					self.eventClosed();
+				});
 				siblingContainers.find(anyAccordionItem).removeClass(modifiers.active);
 			}
 
-			currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
-			currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);
+			if (self._according) {
+				currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed, function () {
+					self.eventClosed();
+				});
+				currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);
+			}
 
 			currentAccordionItem.addClass(modifiers.active);
-			current.siblings(collapsibleElement).slideDown(animateSpeed);
+			current.siblings(collapsibleElement).slideDown(animateSpeed, function () {
+				self.eventOpened();
+			});
 		})
+	};
+
+	MultiAccordion.prototype.eventClosed = function() {
+		$(window).trigger('accordionClosed');
+		$(window).trigger('accordionEvent');
+	};
+
+	MultiAccordion.prototype.eventOpened = function() {
+		$(window).trigger('accordionOpened');
+		$(window).trigger('accordionEvent');
 	};
 
 	window.MultiAccordion = MultiAccordion;
 }());
 
 function multiAccordionInit() {
-	if($('.product-box__list').length){
+	if($('.structure__list').length){
 		new MultiAccordion({
 			accordionContainer: '.structure__list',
 			accordionItem: 'li',
-			accordionEvent: 'li',
-			collapsibleElement: '.structure__list ul',
-			animateSpeed: 200,
-			resizeCollapsible: true,
-			collapsibleAll: true
+			accordionEvent: '.structure__title',
+			collapsibleElement: '.structure__title + ul',
+			according: false,
+			animateSpeed: 300
 		});
 	}
 }
