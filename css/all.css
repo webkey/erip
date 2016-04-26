@@ -29,14 +29,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-access_time:before {
-	content: "\e901";
-}
-.icon-phone_in_talk:before {
-	content: "\e900";
-}
+.icon-access_time:before { content: "\e901"; }
+.icon-phone_in_talk:before { content: "\e900"; }
 /*iconmoon end*/
-
 
 /* pf-beau-sans-pro regular */
 @font-face {
@@ -2291,7 +2286,6 @@ html.desktop .btn-aside:hover{
 }
 /*third line button site map end*/
 
-
 /*.btn-aside.active .btn-lines > span:nth-child(1){
 	width: 24px;
 	-webkit-transform: translate(-9px, 5px) rotate(45deg);
@@ -3462,9 +3456,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*agency end*/
 /*info section end*/
 
-.about-section{
-	border-bottom: 1px solid #e6e6e6;
-}
+.about-section{ border-bottom: 1px solid #e6e6e6; }
 /*about desc*/
 .about-desc{
 	position: relative;
@@ -3714,9 +3706,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*docs section end*/
 
 /*call section*/
-.call-section{
-	position: relative;
-}
+.call-section{ position: relative; }
 .call-content{
 	position: relative;
 	padding: 57px 225px 53px 0;
