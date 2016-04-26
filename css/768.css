@@ -61,3 +61,13 @@
 	width: 560px;
 }
 /*aside end*/
+
+/*structure*/
+.structure__list ul li, .user-content .structure__list ul li, .structure__list ul ul li, .user-content .structure__list ul ul li, .user-content .structure__list ul li:first-child, .user-content .structure__list ul li:first-child{
+	padding-left: 40px;
+}
+.structure__list li:before, .structure__list li:first-child:before, .user-content .structure__list li:before, .user-content .structure__list li:first-child:before, .structure__list li:after{
+	width: 20px;
+	left: 20px;
+}
+/*structure end*/

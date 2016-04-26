@@ -1688,13 +1688,20 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 	transition-delay: 0s;
 }
 
+.site-map .nav-bar__list li {
+	font: 16px/20px 'pfbeausanspro-normal', Arial, Helvetica, sans-serif;
+}
+.site-map .nav-bar__list>li>strong{
+	font-size: 18px;
+}
+
 .site-map-overlay{
 	position: absolute;
 	left: 0;
 	top: 0;
 	height: 0;
 	width: 0;
-	background: #fff;
+	background: #f9f3e0;
 	/*slide overlay site map*/
 	opacity: 0;
 	-webkit-transition-property: height, width, opacity;
@@ -1734,7 +1741,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 
 .btn-site-map-close{
 	position: absolute;
-	right: 20px;
+	left: 20px;
 	top: 20px;
 	width: 24px;
 	height: 24px;
@@ -1757,12 +1764,12 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 .btn-site-map-close:after{
 	content: '';
 	position: absolute;
-	left: 2px;
+	left: -1px;
 	top: 11px;
-	height: 2px;
-	width: 19px;
+	height: 3px;
+	width: 26px;
 	border-radius: 3px;
-	background: #c6c6c6;
+	background: #f29700;
 	-webkit-transition-property: background;
 	transition-property: background;
 	-webkit-transition-duration: 0.6s;
@@ -1782,7 +1789,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 }
 .btn-site-map-close:hover:before,
 .btn-site-map-close:hover:after{
-	background: #a3a3a3;
+	background: #0f4b01;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
@@ -2137,6 +2144,14 @@ html.desktop .btn-aside:hover{
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNGY0ZjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f4f4f4 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f4f4f4 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
+
 }
 html.no-js .catalog-menu-list{
 	display: block;
@@ -2193,7 +2208,7 @@ html.no-js .catalog-menu-list li,
 	display: block;
 	overflow: hidden;
 	position: relative;
-	box-shadow: 0 0 0 1px #f5f0dc;
+	box-shadow: 0 0 0 1px #e6e6e6;
 	-webkit-transition-property: box-shadow;
 	transition-property: box-shadow;
 	-webkit-transition-duration: 0.2s;
@@ -2201,7 +2216,7 @@ html.no-js .catalog-menu-list li,
 }
 .catalog-menu-list a:hover{
 	color: #f29700;
-	box-shadow: 0 0 0 1px #fef5d4;
+	box-shadow: 0 0 0 1px #e6e6e6;
 	z-index: 1;
 }
 .catalog-menu-list a:before{
@@ -3783,18 +3798,17 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .structure__list li:before,
 .structure__list li:first-child:before,
 .user-content .structure__list li:before,
-.user-content .structure__list li:first-child:before{
+.user-content .structure__list li:first-child:before,
+.structure__list li:after{
 	content: '';
 	position: absolute;
-	right: 100%;
-	left: auto;
-	bottom: 0;
+	left: 40px;
 	top: 0;
+	bottom: 0;
 	height: auto;
 	width: 40px;
 	background: none;
-	margin: 0 -80px 0 0;
-	border: dashed #e6e6e6;
+	border: dashed #ccc;
 	border-width: 0 0 0 1px;
 }
 .structure__list li:last-child:before,
@@ -3803,13 +3817,10 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	height: 50px;
 }
 .structure__list li:after{
-	content: '';
-	position: absolute;
-	left: 40px;
 	top: 50px;
+	bottom: auto;
 	height: 0;
-	width: 40px;
-	border-top: 1px dashed #e6e6e6;
+	border-width: 1px 0 0;
 }
 .structure__list > li:before,
 .structure__list > li:first-child:before,
@@ -3849,6 +3860,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	font-size: 16px;
 	letter-spacing: normal;
 }
+div.structure__inner{ cursor: default; }
 .structure__title:before {
 	content: '';
 	display: inline-block;

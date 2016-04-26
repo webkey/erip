@@ -226,34 +226,46 @@ function sidebarBehavior(){
 
 		var $html = $('html');
 		var _activeClass = 'expanded-sidebar';
+		var delay = 450;
 		var timerClose;
+		var timerOpen;
 
 		if (DESKTOP) {
 			$sidebar.on('mouseenter', function () {
 
 				clearTimeout(timerClose);
-				$html.addClass(_activeClass);
+				clearTimeout(timerOpen);
+
+				timerOpen = setTimeout(function () {
+					$html.addClass(_activeClass);
+				}, delay);
 
 			}).on('mouseleave', function () {
 				clearTimeout(timerClose);
+				clearTimeout(timerOpen);
 
 				timerClose = setTimeout(function () {
 					$html.removeClass(_activeClass);
-				}, 200);
+				}, delay);
 			});
 		}
 
 		if(!DESKTOP){
 			$sidebar.on('click', function (e) {
-				e.preventDefault();
+				//e.preventDefault();
+
 				clearTimeout(timerClose);
+				clearTimeout(timerOpen);
+
 				$html.addClass(_activeClass);
 			});
 		}
 
 		$('.btn-sidebar').on('click', function (e) {
 			e.preventDefault();
+
 			clearTimeout(timerClose);
+			clearTimeout(timerOpen);
 
 			if($html.hasClass(_activeClass)){
 				$html.removeClass(_activeClass);
@@ -266,6 +278,8 @@ function sidebarBehavior(){
 
 		$(document).on('click', function () {
 			clearTimeout(timerClose);
+			clearTimeout(timerOpen);
+
 			$html.removeClass(_activeClass);
 		});
 
@@ -1089,6 +1103,7 @@ function buttonsFromBehavior (){
 			according: true, //флаг, одновременного закрытия открытых элементов. эффект аккордеона
 			collapsibleAll: false,
 			resizeCollapsible: false, //флаг, сворачивание всех открытых аккордеонов при ресайзе
+			totalExpand: false, //флаг, сворачивание всех открытых аккордеонов при ресайзе
 			animateSpeed: 300
 		}, settings || {});
 
@@ -1102,6 +1117,7 @@ function buttonsFromBehavior (){
 		this._according = options.according;
 		this._collapsibleAll = options.collapsibleAll;
 		this._resizeCollapsible = options.resizeCollapsible;
+		this._totalExpand = options.totalExpand;
 		this._animateSpeed = options.animateSpeed;
 
 		this.modifiers = {
@@ -1111,7 +1127,18 @@ function buttonsFromBehavior (){
 		this.bindEvents();
 		this.totalCollapsible();
 		this.totalCollapsibleOnResize();
+		if(this._totalExpand){
+			this.totalExpandBeforeStart();
+		}
+	};
 
+	MultiAccordion.prototype.totalExpandBeforeStart = function () {
+		var self = this;
+		self.$collapsibleElement.slideDown(self._animateSpeed, function () {
+			$(this).closest(self.$accordionItem).addClass(self.modifiers.active);
+
+			self.eventOpened();
+		});
 	};
 
 	MultiAccordion.prototype.totalCollapsible = function () {
@@ -1210,6 +1237,7 @@ function multiAccordionInit() {
 			accordionEvent: '.structure__title',
 			collapsibleElement: '.structure__title + ul',
 			according: false,
+			totalExpand: true,
 			animateSpeed: 300
 		});
 	}

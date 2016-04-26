@@ -39,7 +39,8 @@ h2{
 .logo-header > div{
 	padding: 15px 8px 0;
 }
-.btn-site-map{
+.btn-site-map,
+.site-map{
 	display: none;
 }
 /*header end*/
@@ -361,3 +362,23 @@ h2{
 	transform: translate(224px, 0);
 }
 /*layout main blocks end*/
+
+/*structure*/
+.structure__title{
+	line-height: 20px;
+	padding-right: 26px;
+}
+.structure__inner{ font-size: 14px; }
+.structure__angle{ right: 9px; }
+.structure__angle:before, .structure__angle:after{
+	width: 11px;
+	left: 2px;
+}
+.structure__list ul li, .user-content .structure__list ul li, .structure__list ul ul li, .user-content .structure__list ul ul li, .user-content .structure__list ul li:first-child, .user-content .structure__list ul li:first-child{
+	padding-left: 20px;
+}
+.structure__list li:before, .structure__list li:first-child:before, .user-content .structure__list li:before, .user-content .structure__list li:first-child:before, .structure__list li:after{
+	width: 10px;
+	left: 10px;
+}
+/*structure end*/
