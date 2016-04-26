@@ -170,9 +170,10 @@ h1{
 	text-align: center;
 	letter-spacing: -0.05em;
 	padding: 0 0 20px;
+	text-transform: uppercase;
 }
 h2{
-	font-size: 36px;
+	font-size: 34px;
 	line-height: 43px;
 	letter-spacing: -0.05em;
 	padding: 0 0 20px;
@@ -501,7 +502,7 @@ a:hover .arrow-more:after{ border-color: #fff; }
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.full-page{ padding: 0; }
+.full-page{ padding: 45px 0 0; }
 .align-layout,
 .text-layout{
 	max-width: 880px;
@@ -2015,7 +2016,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 }
 .btn-site-map-close:hover:before,
 .btn-site-map-close:hover:after{
-	background: #0f4b01;
+	background: #d03108;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
@@ -2312,7 +2313,18 @@ html.desktop .btn-aside:hover{
 /*HEADER end*/
 
 /*MAIN*/
-.title-box{ padding: 45px 0 30px; }
+.default-section{ padding: 0 0 45px; }
+.about-section,
+.news-section,
+.default-section,
+.default-section
+{
+	margin: 0 0 45px;
+	padding: 0 0 45px;
+}
+.title-box{ padding: 0 0 30px; }
+.heading{ padding: 0; }
+.default-section .title-box{ padding: 0 0 30px; }
 .title-box h1,
 .title-box h2{
 	letter-spacing: -0.05em;
@@ -2324,7 +2336,7 @@ html.desktop .btn-aside:hover{
 	padding-bottom: 25px;
 }
 .section-footer{
-	padding: 45px 0;
+	padding: 45px 0 0;
 	background: #fff;
 	position: relative;
 	z-index: 1;
@@ -2471,7 +2483,7 @@ html.no-js .catalog-menu-list li,
 /*promo slider*/
 .promo-slider{
 	height: 474px;
-	margin: 0;
+	margin: 0 0 45px;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -2765,8 +2777,11 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*news articles end*/
 
 /*faq section*/
-.faq-section{ background: #fff; }
-.faq-section .title-box{ padding: 50px 0 35px; }
+.faq-section{
+	background: #fff;
+	padding: 0 0 45px;
+}
+.faq-section .title-box{ padding: 0 0 35px; }
 .faq-item{ padding-bottom: 1px; }
 /*faq list*/
 .faq-list{ padding: 0 0 1px; }
@@ -2810,10 +2825,11 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	max-height: 480px;
 	white-space: normal;
 }
-.faq-item p{
+.faq-item h3 + p,
+.faq-item h3 + div{
 	font: 16px/24px 'pfbeausanspro-thin', Arial, Helvetica, sans-serif;
 	color: #1a1a1a;
-	padding: 0 30px 18px;
+	padding: 0 30px 18px 70px;
 	position: relative;
 	display: none;
 }
@@ -3446,7 +3462,9 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*agency end*/
 /*info section end*/
 
-.about-section{ border-bottom: 1px solid #e6e6e6; }
+.about-section{
+	border-bottom: 1px solid #e6e6e6;
+}
 /*about desc*/
 .about-desc{
 	position: relative;
@@ -3689,11 +3707,16 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*movie section end*/
 
 /*docs section*/
-.docs-section{ background: #f7f7f7; }
+.docs-section{
+	background: #f7f7f7;
+	padding-top: 45px;
+}
 /*docs section end*/
 
 /*call section*/
-.call-section{ position: relative; }
+.call-section{
+	position: relative;
+}
 .call-content{
 	position: relative;
 	padding: 57px 225px 53px 0;
@@ -3769,6 +3792,11 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 .call-item__text a{ color: #1a1a1a; }
 /*call section end*/
 
+.callback-section{
+	padding: 45px 0 0;
+	position: relative;
+	margin-top: -45px;
+}
 /*form callback*/
 .form-callback{ padding: 10px 0 35px; }
 .captcha:before,
