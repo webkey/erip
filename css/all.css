@@ -1404,7 +1404,7 @@ a:hover [class*=" depict-files-"]:after{
 
 /*pic slider*/
 .pic-slider{
-	margin: 0 0 40px;
+	margin: 0 0 70px;
 	position: relative;
 	z-index: 1;
 	visibility: hidden;
@@ -2309,10 +2309,7 @@ html.desktop .btn-aside:hover{
 /*MAIN*/
 .default-section{ padding: 0 0 45px; }
 .about-section,
-.news-section,
-.default-section,
-.default-section
-{
+.news-section{
 	margin: 0 0 45px;
 	padding: 0 0 45px;
 }
@@ -2506,6 +2503,7 @@ html.no-js .catalog-menu-list li,
 	margin: 0 auto 29px;
 	min-height: 280px;
 	position: relative;
+	text-shadow: 1px 1px 0 #000;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -2516,9 +2514,10 @@ html.no-js .catalog-menu-list li,
 	color: #fff;
 	text-align: center;
 	padding: 0 0 2px;
-	max-height: 72px;
+	max-height: 78px;
 	margin-bottom: 9px;
 	overflow: hidden;
+	text-shadow: 2px 2px 0 #000;
 }
 .promo-slider__item h3 a{
 	text-decoration: none;
@@ -2655,6 +2654,8 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	width: 12px;
 	height: 12px;
 	margin: 0;
+	box-sizing: content-box;
+	text-shadow: 1px 1px 0 #000;
 }
 .promo-slider .slick-dots li button {
 	width: 12px;
@@ -4146,8 +4147,26 @@ li.active > .structure__title .structure__angle:after{
 	-ms-transform: rotate(0deg);
 	transform: rotate(0deg);
 }
-
 /*structure end*/
+
+/*system nav*/
+.system-nav-orange{
+	color: #333;
+	font-size: 18px;
+	line-height: 24px;
+	padding: 0 0 45px;
+}
+.system-nav-orange .nav-current-page{
+	background-color: #F29700;
+	font-family: 'pfbeausanspro-bold', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #fff;
+	padding:1px 0;
+}
+.system-nav-orange .nav-title{ padding: 0 0 10px; }
+.system-nav-orange .nav-pages{ cursor: default; }
+.system-nav-orange  .nav-pages a{ cursor: pointer; }
+/*system nav end*/
 /*MAIN end*/
 
 /*SIDEBAR*/

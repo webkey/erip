@@ -1127,7 +1127,7 @@ function buttonsFromBehavior (){
 		this.bindEvents();
 		this.totalCollapsible();
 		this.totalCollapsibleOnResize();
-		if(this._totalExpand){
+		if(this._totalExpand || container.data('open') == 'all'){
 			this.totalExpandBeforeStart();
 		}
 	};
@@ -1237,7 +1237,6 @@ function multiAccordionInit() {
 			accordionEvent: '.structure__title',
 			collapsibleElement: '.structure__title + ul',
 			according: false,
-			totalExpand: true,
 			animateSpeed: 300
 		});
 	}
