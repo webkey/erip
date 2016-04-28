@@ -1230,7 +1230,7 @@ function buttonsFromBehavior (){
 }());
 
 function multiAccordionInit() {
-	if($('.structure__list').length){
+	if($('.m-accordion-js').length){
 		new MultiAccordion({
 			accordionContainer: '.structure__list',
 			accordionItem: 'li',
@@ -1270,7 +1270,23 @@ function multiSearchInit() {
 		"Scheme"
 	];
 	$( "#multi-search-tags" ).autocomplete({
-		source: availableTags
+		source: function( request, response ) {
+			$.ajax({
+				// url: "../ajax/autocomplete.json",
+				// dataType: "jsonp",
+				// data: {
+				// 	q: request.term
+				// },
+				// success: function( data ) {
+				// 	response( data );
+				// }
+
+				url: "/ajax/autocomplete.json",
+				dataType: 'json'
+				// data: data
+				// success: callback
+			});
+		}
 	});
 }
 /*multi search end*/

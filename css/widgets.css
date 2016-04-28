@@ -815,6 +815,8 @@ img.mfp-img{
 	margin: 0;
 	list-style: none;
 	padding: 12px 0;
+	max-height: 250px;
+	overflow: auto;
 	background: #fff;
 	border-radius: 4px;
 	border: 2px solid #f29700;
@@ -831,5 +833,8 @@ img.mfp-img{
 }
 .ui-autocomplete li:hover{
 	color: #f29700;
+}
+.ui-autocomplete-loading {
+	background: white url("../img/ui/ui-anim_basic_16x16.gif") right center no-repeat;
 }
 /*---ui-autocomplete end---*/
