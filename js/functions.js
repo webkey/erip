@@ -1245,47 +1245,13 @@ function multiAccordionInit() {
 
 /*multi search*/
 function multiSearchInit() {
-	var availableTags = [
-		"Правление НКФО",
-		"Председатель Правления",
-		"Заместитель Председателя Правления",
-		"Управление развития развития",
-		"Отдел бухгалтерского учета и отчетности",
-		"Заместитель Председателя Правления",
-		"Управление информационных технологий",
-		"Операционное управление",
-		"ColdFusion",
-		"Контакт-центр",
-		"Управление делами",
-		"Служба внутреннего аудита",
-		"Служба внутреннего контроля",
-		"Служба управления рисками",
-		"JavaScript",
-		"Lisp",
-		"Perl",
-		"PHP",
-		"Python",
-		"Ruby",
-		"Scala",
-		"Scheme"
-	];
 	$( "#multi-search-tags" ).autocomplete({
-		source: function( request, response ) {
-			$.ajax({
-				// url: "../ajax/autocomplete.json",
-				// dataType: "jsonp",
-				// data: {
-				// 	q: request.term
-				// },
-				// success: function( data ) {
-				// 	response( data );
-				// }
-
-				url: "/ajax/autocomplete.json",
-				dataType: 'json'
-				// data: data
-				// success: callback
-			});
+		source: "../erip/ajax/autocomplete.json",
+		minLength: 2,
+		select: function( event, ui ) {
+			log( ui.item ?
+			"Selected: " + ui.item.value + " aka " + ui.item.id :
+			"Nothing selected, input was " + this.value );
 		}
 	});
 }

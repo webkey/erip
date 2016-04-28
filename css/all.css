@@ -4089,7 +4089,6 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	letter-spacing: -4px;
 	text-transform: uppercase;
 	color: #333;
-
 	border: 1px solid #e6e6e6;
 	background: #fff;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -4148,8 +4147,8 @@ li.active > .structure__title .structure__angle:after{
 	transform: rotate(0deg);
 }
 
-.structure__list li:last-child:before,
-.user-content .structure__list li:last-child:before{
+.structure-less .structure__list li:last-child:before,
+.user-content .structure-less  .structure__list li:last-child:before{
 	height: 40px;
 }
 .structure-less .structure__list li:after{
