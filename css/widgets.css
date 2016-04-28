@@ -1,9 +1,97 @@
 /**
 	--- WIDGETS CONTAINS --- 
 
+	jquery ui;
 	slick slider;
 	responsive-tabs;
 */
+
+/*---jquery ui---*/
+/* Layout helpers
+----------------------------------*/
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0); /* support: IE8 */
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*---jquery ui---*/
 
 /**--- slick slider ---*/
 /*slick.css*/
@@ -684,7 +772,7 @@ img.mfp-img{
 	padding-top: 0
 }
 /* overlay at start */
-.mfp-fade.mfp-bg {
+.mfp-fade.mfp-bg{
 	opacity: 0;
 
 	-webkit-transition: all 0.15s ease-out;
@@ -692,16 +780,15 @@ img.mfp-img{
 	transition: all 0.15s ease-out;
 }
 /* overlay animate in */
-.mfp-fade.mfp-bg.mfp-ready {
+.mfp-fade.mfp-bg.mfp-ready{
 	opacity: 0.8;
 }
 /* overlay animate out */
-.mfp-fade.mfp-bg.mfp-removing {
+.mfp-fade.mfp-bg.mfp-removing{
 	opacity: 0;
 }
-
 /* content at start */
-.mfp-fade.mfp-wrap .mfp-content {
+.mfp-fade.mfp-wrap .mfp-content{
 	opacity: 0;
 
 	-webkit-transition: all 0.15s ease-out;
@@ -709,11 +796,40 @@ img.mfp-img{
 	transition: all 0.15s ease-out;
 }
 /* content animate it */
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content{
 	opacity: 1;
 }
 /* content animate out */
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content{
 	opacity: 0;
 }
 /*---Magnific Popup end---*/
+
+/*---ui-autocomplete---*/
+.ui-autocomplete{
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+
+	margin: 0;
+	list-style: none;
+	padding: 12px 0;
+	background: #fff;
+	border-radius: 4px;
+	border: 2px solid #f29700;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+	font: 18px/24px 'pfbeausanspro-thin', Arial, Helvetica, sans-serif;
+	color: #1a1a1a;
+}
+.ui-autocomplete li{
+	padding: 4px 27px;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.ui-autocomplete li:hover{
+	color: #f29700;
+}
+/*---ui-autocomplete end---*/

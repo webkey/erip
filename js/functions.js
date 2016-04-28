@@ -1243,6 +1243,38 @@ function multiAccordionInit() {
 }
 /*multi accordion end*/
 
+/*multi search*/
+function multiSearchInit() {
+	var availableTags = [
+		"Правление НКФО",
+		"Председатель Правления",
+		"Заместитель Председателя Правления",
+		"Управление развития развития",
+		"Отдел бухгалтерского учета и отчетности",
+		"Заместитель Председателя Правления",
+		"Управление информационных технологий",
+		"Операционное управление",
+		"ColdFusion",
+		"Контакт-центр",
+		"Управление делами",
+		"Служба внутреннего аудита",
+		"Служба внутреннего контроля",
+		"Служба управления рисками",
+		"JavaScript",
+		"Lisp",
+		"Perl",
+		"PHP",
+		"Python",
+		"Ruby",
+		"Scala",
+		"Scheme"
+	];
+	$( "#multi-search-tags" ).autocomplete({
+		source: availableTags
+	});
+}
+/*multi search end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -1266,6 +1298,7 @@ $(document).ready(function(){
 	buttonsFromBehavior();
 	stickyLayout();
 	multiAccordionInit();
+	multiSearchInit();
 });
 
 $(window).load(function () {
