@@ -1210,8 +1210,8 @@ a:hover [class*=" depict-files-"]:after{
 .depict-files-avi-h, .depict-files-avi:after{ background-position: 0 -490px; width: 47px; height: 50px; }
 .depict-files-flv:before{ background-position: 0 -560px; width: 47px; height: 50px; }
 .depict-files-flv-h, .depict-files-flv:after{ background-position: 0 -630px; width: 47px; height: 50px; }
-.depict-files-ppt:before{ background-position: 0 -700px; width: 48px; height: 50px; }
-.depict-files-ppt-h, .depict-files-ppt:after{ background-position: 0 -770px; width: 48px; height: 50px; }
+.depict-files-ppt:before, .depict-files-pptx:before{ background-position: 0 -700px; width: 48px; height: 50px; }
+.depict-files-ppt-h, .depict-files-ppt:after, .depict-files-pptx:after{ background-position: 0 -770px; width: 48px; height: 50px; }
 .depict-files-pdf:before{ background-position: 0 -840px; width: 48px; height: 50px; }
 .depict-files-pdf-h, .depict-files-pdf:after{ background-position: 0 -910px; width: 48px; height: 50px; }
 .depict-files-doc:before{ background-position: 0 -980px; width: 48px; height: 50px; }
@@ -2474,7 +2474,7 @@ html.no-js .catalog-menu-list li,
 /*promo slider*/
 .promo-slider{
 	height: 474px;
-	margin: 0 0 45px;
+	margin: -45px 0 45px;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
@@ -3100,7 +3100,10 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 /*tabs style default end*/
 
 /*helpful section*/
-.helpful-section{ position: relative; }
+.helpful-section{
+	position: relative;
+	padding: 45px 0 0;
+}
 /*helpful*/
 .helpful__note{ padding: 0 0 45px; }
 
@@ -3326,6 +3329,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	padding: 0 0 22px;
 }
 /*info*/
+.info-section{ padding: 45px 0 0; }
 .info{
 	position: relative;
 	border-top: 1px solid #e6e6e6;
