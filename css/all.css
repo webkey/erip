@@ -2096,6 +2096,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 	left: 0;
 	top: 0;
 	border: solid #136301;
+	box-sizing: content-box;
 }
 .btn-search i:before{
 	width: 11px;
@@ -2476,7 +2477,7 @@ html.no-js .catalog-menu-list li,
 /*promo slider*/
 .promo-slider{
 	height: 474px;
-	margin: -45px 0 45px;
+	margin: 0 0 45px;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;

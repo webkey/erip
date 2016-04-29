@@ -1166,14 +1166,15 @@ function buttonsFromBehavior (){
 	MultiAccordion.prototype.bindEvents = function () {
 		var self = this,
 				modifiers = this.modifiers,
-				animateSpeed = this._animateSpeed,
+				animateSpeed = self.options.animateSpeed,
 				accordionContainer = this.$accordionContainer,
-				anyAccordionItem = this.$accordionItem,
-				collapsibleElement = this.$collapsibleElement;
+				anyAccordionItem = self.options.accordionItem,
+				collapsibleElement = self.options.collapsibleElement;
 
-		self.$accordionEvent.on('click', function (e) {
+		self.$accordionContainer.on('click', self.options.accordionEvent, function (e) {
 			var current = $(this);
 			var currentAccordionItem = current.closest(anyAccordionItem); // текущий непосредственный родитель сворачиваемого элемента
+			console.log('current: ', currentAccordionItem);
 
 			if (!currentAccordionItem.has(collapsibleElement).length){
 				return; // если текущий непосредственный родитель сворачиваемого элемента не содержит сворачиваемый элемент
