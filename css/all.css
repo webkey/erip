@@ -156,6 +156,8 @@ body{
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'pfbeausanspro-bold-italic', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-style: normal;
 	margin: 0;
 	color: #f29700;
 }
@@ -4276,9 +4278,8 @@ li.active > .structure__title .structure__angle:after{
 }
 .sidebar-small,
 .sidebar-large{
-	position: absolute;
-	left: 0;
-	top: 0;
+	float: left;
+	position: relative;
 	min-height: 100%;
 	padding: 0 0 161px;
 	-webkit-transition-property: -webkit-transform;
@@ -4294,6 +4295,7 @@ li.active > .structure__title .structure__angle:after{
 }
 .sidebar-small{
 	width: 80px;
+	margin-right: -80px;
 	-webkit-transform: translate(150px, 0);
 	-ms-transform: translate(150px, 0);
 	transform: translate(150px, 0);
