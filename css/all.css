@@ -1723,7 +1723,7 @@ html.desktop .pic-slider .slick-arrow:hover:after{ opacity: 1; }
 	width: 100%;
 	height: 59px;
 	border-width: 0 0 1px;
-	border-color: #f5f0dc;
+	border-color: #e6e6e6;
 }
 .nav-list>li>a>span{
 	display: inline-block;
@@ -2407,7 +2407,7 @@ html.no-js .catalog-menu-list{
 }
 html.no-js .catalog-menu-list li,
 .catalog-menu-list.menu-active li{ opacity: 1; }
-.catalog-menu-list li:hover{ background: #fef5d4; }
+.catalog-menu-list li:hover{ background: #fff; }
 .catalog-menu-list li:before,
 .catalog-menu-list li:after{
 	content: '';
@@ -2446,7 +2446,8 @@ html.no-js .catalog-menu-list li,
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 }
-.catalog-menu-list a:hover{
+.catalog-menu-list a:hover,
+.catalog-menu-list li:hover a{
 	color: #f29700;
 	box-shadow: 0 0 0 1px #e6e6e6;
 	z-index: 1;
@@ -4394,6 +4395,7 @@ html.desktop .sidebar-small:after{
 .sb-phones,
 .sb-works{
 	text-align: center;
+	line-height: 16px;
 	height: 80px;
 	border-bottom: 1px solid #bf7600;
 	font-size: 0;
