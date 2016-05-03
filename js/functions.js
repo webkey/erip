@@ -373,6 +373,9 @@ function catalogMenuSelect(){
 	}
 
 	var $catalogMenu = $('.catalog-menu');
+	$(window).load(function () {
+		$catalogMenu.css('height','auto');
+	});
 	var scrollSpeed = 900;
 	var animationSpeed = 500;
 
