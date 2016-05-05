@@ -464,19 +464,18 @@
 
 	/*sidebar*/
 	.sidebar{
-		overflow: auto;
-		-webkit-transform: translate(-224px, 0);
-		-ms-transform: translate(-224px, 0);
-		transform: translate(-224px, 0);
+		/*overflow: auto;*/
+		/*-webkit-transform: translate(-224px, 0);*/
+		/*-ms-transform: translate(-224px, 0);*/
+		/*transform: translate(-224px, 0);*/
+		left: -224px;
 	}
 	.btn-sidebar{ display: block; }
+	.sidebar-holder{ width: 230px; }
 	.sidebar-small{ display: none; }
 	.sidebar-large{
 		width: 230px;
 		border: none;
-		-webkit-transform: translate(-6px, 0);
-		-ms-transform: translate(-6px, 0);
-		transform: translate(-6px, 0);
 	}
 	/*sidebar end*/
 
@@ -643,7 +642,12 @@
 	.main-layout,
 	.header,
 	.site-map{ padding-left: 6px; }
-
+	.expanded-sidebar .sidebar {
+		-webkit-transform: translate(224px, 0);
+		-ms-transform: translate(224px, 0);
+		transform: translate(224px, 0);
+		box-shadow: none;
+	}
 	.expanded-sidebar .main-layout,
 	.expanded-sidebar .site-map{
 		-webkit-transform: translate(224px, 0);

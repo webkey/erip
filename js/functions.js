@@ -221,70 +221,112 @@ function sidebarBehavior(){
 	var $sidebar = $('.sidebar');
 	if($sidebar.length){
 		$(window).on('load', function () {
-			$('.sidebar-small').clone().appendTo($sidebar).removeClass('sidebar-small').addClass('sidebar-large');
-		});
+			$('.sidebar-small').clone().prependTo($sidebar.find('.sidebar-holder')).removeClass('sidebar-small').addClass('sidebar-large');
 
-		var $html = $('html');
-		var _activeClass = 'expanded-sidebar';
-		var delay = 450;
-		var timerClose;
-		var timerOpen;
+			var $html = $('html');
+			// var $sidebarLayout = $('.sidebar-layout');
+			var _activeClass = 'expanded-sidebar';
+			var delay = 350;
+			var animateSpeed = 300;
+			var timerClose;
+			var timerOpen;
+			var $sidebarOverlay = $('<div class="sidebar-overlay">');
 
-		if (DESKTOP) {
-			$sidebar.on('mouseenter', function () {
-
-				clearTimeout(timerClose);
-				clearTimeout(timerOpen);
-
-				timerOpen = setTimeout(function () {
-					$html.addClass(_activeClass);
-				}, delay);
-
-			}).on('mouseleave', function () {
-				clearTimeout(timerClose);
-				clearTimeout(timerOpen);
-
-				timerClose = setTimeout(function () {
-					$html.removeClass(_activeClass);
-				}, delay);
-			});
-		}
-
-		if(!DESKTOP){
-			$sidebar.on('click', function (e) {
-				//e.preventDefault();
-
-				clearTimeout(timerClose);
-				clearTimeout(timerOpen);
-
-				$html.addClass(_activeClass);
-			});
-		}
-
-		$('.btn-sidebar').on('click', function (e) {
-			e.preventDefault();
-
-			clearTimeout(timerClose);
-			clearTimeout(timerOpen);
-
-			if($html.hasClass(_activeClass)){
-				$html.removeClass(_activeClass);
-			} else {
-				$html.addClass(_activeClass);
+			function createSidebarOverlay(flagClose) {
+				if(flagClose == "close"){
+					$sidebarOverlay.stop().fadeOut(animateSpeed, function () {
+						$sidebarOverlay.remove();
+					})
+				} else {
+					$sidebarOverlay
+						.insertBefore($sidebar)
+						.stop().fadeOut(0, function () {
+						$sidebarOverlay.fadeIn(animateSpeed);
+					});
+				}
 			}
 
-			e.stopPropagation();
-		});
+			if (DESKTOP) {
+				$sidebar.on('mouseenter', function () {
 
-		$(document).on('click', function () {
-			clearTimeout(timerClose);
-			clearTimeout(timerOpen);
+					clearTimeout(timerClose);
+					clearTimeout(timerOpen);
 
-			$html.removeClass(_activeClass);
-		});
+					timerOpen = setTimeout(function () {
+						$html.addClass(_activeClass);
 
-		$sidebar.on('click', function (e) {
-			e.stopPropagation();
+						// $sidebar.stop().animate({
+						// 	'left': 0
+						// }, animateSpeed);
+						//
+						// $sidebarLayout.stop().animate({
+						// 	'left': 0
+						// }, animateSpeed);
+						createSidebarOverlay();
+					}, delay);
+
+				}).on('mouseleave', function () {
+					clearTimeout(timerClose);
+					clearTimeout(timerOpen);
+
+					timerClose = setTimeout(function () {
+						$html.removeClass(_activeClass);
+
+						// $sidebar.stop().animate({
+						// 	'left': -150
+						// }, animateSpeed);
+						//
+						// $sidebarLayout.stop().animate({
+						// 	'left': -80
+						// }, animateSpeed);
+						createSidebarOverlay('close');
+					}, delay);
+				});
+			}
+
+			if(!DESKTOP){
+				$sidebar.on('click', function (e) {
+					//e.preventDefault();
+
+					clearTimeout(timerClose);
+					clearTimeout(timerOpen);
+
+					$html.addClass(_activeClass);
+					if($sidebarOverlay.is(':hidden')){
+						createSidebarOverlay();
+					}
+				});
+			}
+
+			$('.btn-sidebar').on('click', function (e) {
+				e.preventDefault();
+
+				clearTimeout(timerClose);
+				clearTimeout(timerOpen);
+
+				if($html.hasClass(_activeClass)){
+					$html.removeClass(_activeClass);
+					createSidebarOverlay('close');
+				} else {
+					$html.addClass(_activeClass);
+
+					createSidebarOverlay();
+				}
+
+				e.stopPropagation();
+			});
+
+			$(document).on('click', function () {
+				clearTimeout(timerClose);
+				clearTimeout(timerOpen);
+
+				$html.removeClass(_activeClass);
+				createSidebarOverlay('close');
+			});
+
+			$sidebar.on('click', function (e) {
+				e.stopPropagation();
+			});
 		});
 	}
 }
