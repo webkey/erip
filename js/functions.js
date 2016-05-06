@@ -1319,15 +1319,24 @@ function multiAccordionInit() {
 
 /*multi search*/
 function multiSearchInit() {
-	$( "#multi-search-tags" ).autocomplete({
+	$( "#multi-search-tags, .search-form input[type='search']" ).autocomplete({
 		source: "../erip/ajax/autocomplete.json",
 		minLength: 2,
+		open: function () {
+			var $this = $(this);
+			$this
+				.data("uiAutocomplete")
+				.menu.element.addClass($this.data('class'))
+				.css('max-width',$this.outerWidth());
+		},
 		select: function( event, ui ) {
 			log( ui.item ?
 			"Selected: " + ui.item.value + " aka " + ui.item.id :
 			"Nothing selected, input was " + this.value );
 		}
 	});
+
+	$( ".search-form input[type='search']" ).autocomplete( "option", "appendTo", ".header" );
 }
 /*multi search end*/
 

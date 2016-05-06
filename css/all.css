@@ -2164,7 +2164,8 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 }
 .search-form form{ position: relative; }
 .search-form .input-wrapper{
-	padding: 0 60px;
+	/*padding: 0 60px;*/
+	padding: 0;
 	opacity: 0;
 	-webkit-transition: opacity 0.4s;
 	transition: opacity 0.4s;
@@ -2177,7 +2178,7 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 .search-form input[type="text"]{
 	color: #0f4b01;
 	font: 16px/20px Tahoma, Geneva, sans-serif;
-	padding: 20px 0;
+	padding: 20px 60px;
 	height: 60px;
 	background: none;
 	box-shadow: none;
@@ -2296,6 +2297,35 @@ html.desktop .btn-site-map:hover .btn-lines span{ background: #333; }
 .form-opened .btn-search-open:before,
 .form-opened .btn-search-open:after{ opacity: 1; }
 /*search form opener end*/
+
+/*ui autocomplete drop*/
+.ui-autocomplete.main-search{
+	border-radius: 0;
+	border: none;
+	padding: 0;
+	background: #fbcd2a;
+	box-sizing: border-box;
+	box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.3);
+	border-top: 1px solid #dcb117;
+}
+.ui-autocomplete.main-search li{
+	padding: 7px 27px;
+	-webkit-transition-property: color, background;
+	transition-property: color, background;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.ui-autocomplete.main-search li:first-child{
+	padding-top: 12px;
+}
+.ui-autocomplete.main-search li:last-child{
+	padding-bottom: 12px;
+}
+.ui-autocomplete.main-search li:hover{
+	color: #fff;
+	background: #efc329;
+}
+/*ui autocomplete drop end*/
 /*search form end*/
 
 /*button aside*/
@@ -2510,7 +2540,7 @@ html.no-js .catalog-menu{ height: auto; }
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
 }
 html.no-js .catalog-menu-list{
-	display: block;
+	display: block !important;
 	position: relative;
 	left: auto;
 	top: auto;
@@ -4400,6 +4430,16 @@ li.active > .structure__title .structure__angle:after{
 	font-size: 18px;
 	padding-right: 50px;
 	margin: 0;
+	border-color: #7b7b7b;
+	background: #fff;
+	box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.14);
+}
+.multi-search__field input[type="text"]:hover,
+.multi-search__field input[type="text"]:focus{
+	border-color: #fbcd2a;
+}
+.multi-search__field input[type="text"]:focus{
+	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.14);
 }
 /*multi search end*/
 /*MAIN end*/
