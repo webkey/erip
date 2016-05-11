@@ -222,11 +222,13 @@ a{
 	text-decoration: underline;
 	cursor: default;
 }
+a[href*="tel"]{ color: #1a1a1a; }
 a:link{
 	cursor: pointer;
 	text-decoration: none;
 }
 a:hover{ text-decoration: underline; }
+a[href*="tel"]:hover{ text-decoration: none; }
 img{
 	border: none;
 	vertical-align: top;
@@ -4470,7 +4472,6 @@ li.active > .structure__title .structure__angle:after{
 	box-sizing: border-box;
 	overflow: hidden;
 }
-/*.expanded-sidebar .sidebar{*/
 .expanded-sidebar .sidebar{
 	-webkit-transform: translate(150px, 0);
 	-ms-transform: translate(150px, 0);
@@ -4594,8 +4595,21 @@ html.desktop .sidebar-small:after{
 	-webkit-transition: height 0.3s;
 	transition: height 0.3s;
 }
+.sb-phones a{
+	display: block;
+	height: 100%;
+	text-decoration: none;
+	-webkit-transition-property: color, background;
+	transition-property: color, background;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.sb-phones a:hover{
+	background: #0f4b01;
+	color: #fff;
+}
 .sidebar-large .sb-works{ height: 80px; }
-.sb-phones:before,
+.sb-phones > a:before,
 .sb-works:before{
 	content: '';
 	display: inline-block;
@@ -4620,8 +4634,13 @@ html.desktop .sidebar-small:after{
 	color: #0f4b01;
 	text-transform: uppercase;
 	margin: 0 0 5px;
-	-webkit-transition: max-height 0.3s;
-	transition: max-height 0.3s;
+	-webkit-transition-property: max-height, color;
+	transition-property: max-height, color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.sb-phones a:hover .sb-phones__title{
+	color: #fff;
 }
 .sb-phones__title{ max-height: 0; }
 .sidebar-large .sb-phones__title{ max-height: 12px; }
@@ -4656,6 +4675,13 @@ html.desktop .sidebar-small:after{
 	line-height: 28px;
 	color: #cf2f09;
 	padding-left: 28px;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.sidebar-large .sb-phones a:hover .sb-phones__body{
+	color: #fff;
 }
 .sb-phones__body [class*="icon-"],
 .sb-work__body [class*="icon-"]{
@@ -4670,8 +4696,8 @@ html.desktop .sidebar-small:after{
 	transform: translate(0, -50%);
 	-webkit-transition-property: all;
 	transition-property: all;
-	-webkit-transition-duration: 0.25s;
-	transition-duration: 0.25s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -4681,6 +4707,17 @@ html.desktop .sidebar-small:after{
 }
 .sidebar-large .sb-phones__body [class*="icon-"],
 .sidebar-large .sb-work__body [class*="icon-"]{ font-size: 24px; }
+.sidebar-large .sb-phones .sb-phones__body [class*="icon-"]:before{
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.sidebar-large .sb-phones a:hover .sb-phones__body [class*="icon-"]:before{
+	color: #fff;
+}
 .sidebar-large .sb-work__body [class*="icon-"]{ opacity: 1; }
 /*sb buttons end*/
 
