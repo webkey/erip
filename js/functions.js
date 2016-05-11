@@ -262,6 +262,8 @@ function sidebarBehavior(){
 						// $sidebarLayout.stop().animate({
 						// 	'left': 0
 						// }, animateSpeed);
+
+						
 						createSidebarOverlay();
 					}, delay);
 
