@@ -837,7 +837,7 @@ img.mfp-img{
 	max-height: 250px;
 	overflow: auto;
 	background: #fff;
-	border-radius: 4px;
+	border-radius: 0;
 	border: 2px solid #fbcd2a;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 	font: 18px/24px 'pfbeausanspro-thin', Arial, Helvetica, sans-serif;
