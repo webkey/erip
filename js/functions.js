@@ -237,7 +237,7 @@ function sidebarBehavior(){
 					$sidebarOverlay.stop().fadeOut(animateSpeed, function () {
 						$sidebarOverlay.remove();
 					})
-				} else {
+				} else if($sidebarOverlay.is(':hidden')) {
 					$sidebarOverlay
 						.insertBefore($sidebar)
 						.stop().fadeOut(0, function () {
@@ -255,13 +255,6 @@ function sidebarBehavior(){
 					timerOpen = setTimeout(function () {
 						$html.addClass(_activeClass);
 
-						// $sidebar.stop().animate({
-						// 	'left': 0
-						// }, animateSpeed);
-						//
-						// $sidebarLayout.stop().animate({
-						// 	'left': 0
-						// }, animateSpeed);
 						createSidebarOverlay();
 					}, delay);
 
@@ -272,13 +265,6 @@ function sidebarBehavior(){
 					timerClose = setTimeout(function () {
 						$html.removeClass(_activeClass);
 
-						// $sidebar.stop().animate({
-						// 	'left': -150
-						// }, animateSpeed);
-						//
-						// $sidebarLayout.stop().animate({
-						// 	'left': -80
-						// }, animateSpeed);
 						createSidebarOverlay('close');
 					}, delay);
 				});
