@@ -222,13 +222,13 @@ a{
 	text-decoration: underline;
 	cursor: default;
 }
-a[href*="tel"]{ color: #1a1a1a; }
+a[href^="tel"]{ color: #1a1a1a; }
 a:link{
 	cursor: pointer;
 	text-decoration: none;
 }
 a:hover{ text-decoration: underline; }
-a[href*="tel"]:hover{ text-decoration: none; }
+a[href^="tel"]:hover{ text-decoration: none; }
 img{
 	border: none;
 	vertical-align: top;
@@ -768,7 +768,7 @@ textarea{
 	padding: 16px 27px;
 	background: #fcf7e3;
 	box-shadow: none;
-	border-radius: 4px;
+	border-radius: 0;
 	border: 2px solid #fcf7e3;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -2502,6 +2502,7 @@ html.desktop .btn-aside:hover{
 }
 /*catalog menu*/
 .catalog-menu{
+	background: #fff;
 	position: relative;
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;
@@ -2540,7 +2541,7 @@ html.no-js .catalog-menu{ height: auto; }
 	background: linear-gradient(to bottom,  #fff 0%,#f4f4f4 100%);
 }
 html.no-js .catalog-menu-list{
-	/*display: block !important;*/
+	display: block !important;
 	position: relative;
 	left: auto;
 	top: auto;
@@ -2929,6 +2930,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	overflow: hidden;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
+	box-sizing: content-box;
 }
 .datetime{ padding: 0 0 20px; }
 .news-article a:hover time{ color: #f29700; }
@@ -4436,6 +4438,27 @@ li.active > .structure__title .structure__angle:after{
 	box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.14);
 }
 /*multi search end*/
+
+/*search list*/
+.search__list,
+.user-content .search__list{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.search__list li,
+.user-content .search__list li{ padding-top: 16px; }
+.user-content .search__list li:before{ top: 25px; }
+.search__list a{
+	text-decoration: none;
+	color: #1a1a1a;
+	padding-top: 5px;
+}
+.search__list a:hover{
+	text-decoration: none;
+	color: #f29700;
+}
+/*search list end*/
 /*MAIN end*/
 
 /*SIDEBAR*/
