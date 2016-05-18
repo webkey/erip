@@ -203,7 +203,7 @@ function slidersInit(){
 			fade: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			autoplay: true,
+			// autoplay: true,
 			focusOnSelect: true,
 			autoplaySpeed: 7000,
 			speed: 600,
@@ -1028,6 +1028,11 @@ function mapMainInit(){
 	//	map.setZoom(object[3]);
 	//}
 
+	var infoWindow = new google.maps.InfoWindow({
+		//content: ,
+		maxWidth: 220
+	});
+
 	function addMarker(index, map) {
 		var object = localObjects[index];
 		var marker = new google.maps.Marker({
@@ -1039,11 +1044,6 @@ function mapMainInit(){
 		});
 
 		markers.push(marker);
-
-		var infoWindow = new google.maps.InfoWindow({
-			//content: ,
-			maxWidth: 220
-		});
 
 		function onMarkerClick() {
 			var marker = this;
@@ -1342,9 +1342,11 @@ function multiSearchInit() {
 		minLength: 2,
 		open: function () {
 			var $this = $(this);
+			var dataClass = $this.data('class');
+			var dataClassValue = dataClass == undefined ? "default" : dataClass;
 			$this
 				.data("uiAutocomplete")
-				.menu.element.addClass($this.data('class'))
+				.menu.element.addClass('ui-widget-' + dataClassValue)
 				.css('max-width',$this.outerWidth());
 		},
 		select: function( event, ui ) {

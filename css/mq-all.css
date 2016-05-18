@@ -596,6 +596,22 @@
 	}
 	/*faq list end*/
 
+	/*multi search*/
+	.multi-search__field i{
+		right: 10px;
+	}
+	.multi-search__field input[type="text"]{
+		padding-left: 16px;
+		padding-right: 38px;
+	}
+
+	/*multi search form*/
+	.multi-search__form{ padding-top: 20px; }
+	.multi-search__form .multi-search__field{ margin: 0 0 30px; }
+	.multi-search__footer{ text-align: center; }
+	/*multi search form end*/
+	/*multi search end*/
+
 	/*actions*/
 	.actions__inner{ padding: 8.2%; }
 	.actions__align{
