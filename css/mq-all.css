@@ -448,7 +448,7 @@
 	.promo-slider__text{
 		font-size: 14px;
 		line-height: 20px;
-		max-height: 120px;
+		max-height: 100px;
 	}
 	.promo-slider .slick-dots{ bottom: 6px; }
 	/*promo slider*/
@@ -597,9 +597,7 @@
 	/*faq list end*/
 
 	/*multi search*/
-	.multi-search__field i{
-		right: 10px;
-	}
+	.multi-search__field i{ right: 5px; }
 	.multi-search__field input[type="text"]{
 		padding-left: 16px;
 		padding-right: 38px;
@@ -715,4 +713,9 @@
 		left: 10px;
 	}
 	/*structure end*/
+
+	.ui-autocomplete li{
+		left: 16px;
+		right: 16px;
+	}
 }

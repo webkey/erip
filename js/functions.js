@@ -203,13 +203,20 @@ function slidersInit(){
 			fade: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			// autoplay: true,
 			focusOnSelect: true,
 			autoplaySpeed: 7000,
 			speed: 600,
 			infinite: true,
 			dots: true,
 			arrows: true
+		});
+
+		$('input[type=text]').focus(function () {
+			// console.log('in');
+			$promoSlider.slick("slickSetOption", "draggable", false, false);
+		}).blur(function () {
+			// console.log('out');
+			$promoSlider.slick("slickSetOption", "draggable", true, false);
 		});
 	}
 	/*promo-slider end*/
