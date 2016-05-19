@@ -5126,12 +5126,12 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.6s;
 	transition-duration: 0.6s;
 }
-.actions__inner:hover{
+html.desktop .actions__inner:hover{
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
-	text-decoration: none;
 }
+.actions__inner:hover{ text-decoration: none; }
 .actions__bg{
 	position: absolute;
 	left: 0;
@@ -5145,7 +5145,7 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.6s;
 	transition-duration: 0.6s;
 }
-.actions__inner:hover .actions__bg{
+html.desktop .actions__inner:hover .actions__bg{
 	opacity: 0;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
@@ -5234,14 +5234,14 @@ html.desktop .sidebar-small:after{
 	background: #0f4b01;
 	opacity: 0;
 }
-.actions__inner:hover .actions__visual-ribbon:before,
-.actions__inner:active .actions__visual-ribbon:before{
+html.desktop .actions__inner:hover .actions__visual-ribbon:before,
+html.desktop .actions__inner:active .actions__visual-ribbon:before{
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 	opacity: 0;
 }
-.actions__inner:hover .actions__visual-ribbon:after,
-.actions__inner:active .actions__visual-ribbon:after{
+html.desktop .actions__inner:hover .actions__visual-ribbon:after,
+html.desktop .actions__inner:active .actions__visual-ribbon:after{
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 	opacity: 1;
@@ -5260,14 +5260,14 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 }
-.actions__inner:hover .actions__img{
+html.desktop .actions__inner:hover .actions__img{
 	-webkit-transform: translate(0, -20px);
 	-ms-transform: translate(0, -20px);
 	transform: translate(0, -20px);
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 }
-.actions__inner:active .actions__img{
+html.desktop .actions__inner:active .actions__img{
 	-webkit-transform: translate(0, 100%);
 	-ms-transform: translate(0, 100%);
 	transform: translate(0, 100%);
