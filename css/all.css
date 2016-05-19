@@ -5344,12 +5344,12 @@ html.desktop .sidebar-small:after{
 	left: auto;
 	right: 0;
 }
-.actions__item-alt .actions__inner:hover .actions__img{
+html.desktop .actions__item-alt .actions__inner:hover .actions__img{
 	-webkit-transform: translate(0, -20px);
 	-ms-transform: translate(0, -20px);
 	transform: translate(0, -20px);
 }
-.actions__item-alt .actions__inner:active .actions__img{
+html.desktop .actions__item-alt .actions__inner:active .actions__img{
 	-webkit-transform: translate(0, 100%);
 	-ms-transform: translate(0, 100%);
 	transform: translate(0, 100%);
@@ -5400,12 +5400,12 @@ html.desktop .sidebar-small:after{
 	transform: translate(-50%, 0);
 }
 .actions__item-lg .actions__content{ margin: 0; }
-.actions__item-lg .actions__inner:hover .actions__img{
+html.desktop .actions__item-lg .actions__inner:hover .actions__img{
 	-webkit-transform: translate(0, -20px);
 	-ms-transform: translate(0, -20px);
 	transform: translate(0, -20px);
 }
-.actions__item-lg .actions__inner:active .actions__img{
+html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	-webkit-transform: translate(0, 100%);
 	-ms-transform: translate(0, 100%);
 	transform: translate(0, 100%);
