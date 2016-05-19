@@ -71,11 +71,11 @@
 		-ms-transform: translate(0, 0);
 		transform: translate(0, 0);
 	}
-	.expanded-sidebar .aside-panel-show .aside{
+	/*.expanded-sidebar .aside-panel-show .aside{
 		-webkit-transform: translate(150px, 0);
 		-ms-transform: translate(150px, 0);
 		transform: translate(150px, 0);
-	}
+	}*/
 	/*layout main blocks end*/
 }
 
@@ -662,7 +662,7 @@
 		transform: translate(224px, 0);
 		box-shadow: none;
 	}
-	.expanded-sidebar .main-layout,
+	/*.expanded-sidebar .main-layout,
 	.expanded-sidebar .site-map{
 		-webkit-transform: translate(224px, 0);
 		-ms-transform: translate(224px, 0);
@@ -688,7 +688,7 @@
 		-webkit-transform: translate(224px, 0);
 		-ms-transform: translate(224px, 0);
 		transform: translate(224px, 0);
-	}
+	}*/
 	.expanded-sidebar .btn-sidebar{
 		-webkit-transform: translate(224px, 0);
 		-ms-transform: translate(224px, 0);
