@@ -204,6 +204,7 @@ function slidersInit(){
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			focusOnSelect: true,
+			autoplay: true,
 			autoplaySpeed: 7000,
 			speed: 600,
 			infinite: true,
@@ -214,9 +215,11 @@ function slidersInit(){
 		$('input[type=text]').focus(function () {
 			// console.log('in');
 			$promoSlider.slick("slickSetOption", "draggable", false, false);
+			$promoSlider.slick("slickSetOption", "autoplay", false, false);
 		}).blur(function () {
 			// console.log('out');
 			$promoSlider.slick("slickSetOption", "draggable", true, false);
+			$promoSlider.slick("slickSetOption", "autoplay", true, false);
 		});
 	}
 	/*promo-slider end*/

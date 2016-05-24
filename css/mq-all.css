@@ -597,7 +597,10 @@
 	/*faq list end*/
 
 	/*multi search*/
-	.multi-search__field i{ right: 5px; }
+	.multi-search__field i{
+		right: 0;
+		width: 38px;
+	}
 	.multi-search__field input[type="text"]{
 		padding-left: 16px;
 		padding-right: 38px;
