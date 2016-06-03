@@ -1468,6 +1468,21 @@ function selectResize(){
 }
 /* multiselect init end */
 
+/* news articles height */
+function newsArticlesHeight() {
+	$(window).on('load resizeByWidth', function () {
+		var articleHeight = 0,
+			articleHeights = 0;
+
+		$('.news-article').not(".news-article_lg").each(function () {
+			articleHeight = articleHeights = articleHeight + $(this).outerHeight();
+		});
+
+		$(".news-article_lg > a").css('min-height', articleHeights - 1);
+	})
+}
+/* news articles height end */
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -1495,6 +1510,7 @@ $(document).ready(function(){
 		customSelect($('.select select'));
 	}
 	tabs();
+	newsArticlesHeight();
 });
 
 $(window).load(function () {

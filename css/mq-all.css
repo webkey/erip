@@ -185,8 +185,12 @@
 		float: none;
 		width: auto;
 	}
-	.news-article_lg a { height: auto; }
-	.news-article h3{ height: auto; }
+	.news-article_lg a {
+		height: auto;
+		min-height: 0 !important;
+	}
+	.news-article figure{ display: none; }
+	.news-article h3{ min-height: 0; }
 	/*news articles end*/
 
 	/*advantages*/

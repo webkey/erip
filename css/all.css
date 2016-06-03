@@ -2936,7 +2936,6 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	-webkit-transition: background 0.2s, box-shadow 0.2s;
 	transition: background 0.2s, box-shadow 0.2s;
 }
-.news-article_lg a{ height: 475px; }
 .news-article a:hover{
 	background: #fcf7e3;
 	box-shadow: 0 0 0 1px #fcf7e3;
@@ -2981,12 +2980,12 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	padding: 0;
 	margin: 0 0 15px;
 	overflow: hidden;
-	height: 48px;
+	min-height: 48px;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
 .news-article a:hover h3{ color: #f29700; }
-.news-article__text{ padding: 0 0 12px; }
+.news-article__text{ padding: 0 0 20px; }
 /*news articles end*/
 
 .detail-news{ padding: 0 0 45px; }
