@@ -795,6 +795,7 @@ input[type="text"]:hover,
 input[type="password"]:hover,
 input[type="email"]:hover,
 input[type="search"]:hover,
+input[type="file"]:hover,
 textarea:hover{
 	border-color: #f29700;
 }
@@ -4671,7 +4672,6 @@ html.desktop .sidebar-small:after{
 	background: url(../img/glow-sidebar-lg.png) no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
-	box-sizing: content-box;
 }
 .logo-header{ display: none; }
 .sidebar-large .logo{ height: 161px; }
@@ -4720,7 +4720,6 @@ html.desktop .sidebar-small:after{
 	font-size: 0;
 	letter-spacing: -4px;
 	position: relative;
-	box-sizing: border-box;
 }
 .sb-works{
 	height: 161px;
@@ -4965,7 +4964,6 @@ html.desktop .sidebar-small:after{
 	margin: 0;
 	position: relative;
 	overflow: hidden;
-	box-sizing: content-box;
 }
 .sb-menu li{
 	display: table;
@@ -5074,10 +5072,11 @@ html.desktop .sidebar-small:after{
 	text-align: center;
 	font-size: 0;
 	letter-spacing: -4px;
-	white-space: nowrap;
 	height: 80px;
 	width: 100%;
 	box-shadow: 0 1px 0 #bf7600, 0 -1px 0 #bf7600;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-transition-property: padding;
 	transition-property: padding;
@@ -5096,24 +5095,27 @@ html.desktop .sidebar-small:after{
 }
 .expanded-sidebar .social-networks:after{ content: none; }
 .social-networks li{
-	display: none;
-	vertical-align: top;
-	padding: 0 9px 15px;
+	float: left;
+	padding: 0 10px 20px;
 	height: 60px;
 	width: 60px;
 	font-size: 14px;
 	letter-spacing: normal;
-	white-space: normal;
+	vertical-align: top;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	display: none;
 }
 .social-networks li:first-child{
-	display: block;
+	float: none;
 	margin: 0 auto;
+	display: block;
 }
-.sidebar-large .social-networks li{
-	display: inline-block;
+.sidebar-large .social-networks li{ display: block; }
+.sidebar-large .social-networks li:first-child{
+	float: left;
+	margin: 0;
 }
 .social-networks a{
 	float: left;
@@ -5126,7 +5128,6 @@ html.desktop .sidebar-small:after{
 	position: relative;
 	-webkit-transition: border 0.3s 0.1s;
 	transition: border 0.3s 0.1s;
-	box-sizing: content-box;
 }
 .social-networks a:hover{ border-color: transparent; }
 .social-networks a:before{
@@ -5165,7 +5166,7 @@ html.desktop .sidebar-small:after{
 .social-networks a:hover>[class*="depict-"]{ opacity: 0; }
 .social-networks a:hover>[class$="-h"]{ opacity: 1; }
 .sidebar-large .social-networks{
-	padding-left: 0;
+	padding-left: 25px;
 	height: auto;
 }
 /* social networks end */
@@ -5185,7 +5186,6 @@ html.desktop .sidebar-small:after{
 	background-size: cover;
 	-webkit-transition: width 0.3s, background 0.3s;
 	transition: width 0.3s, background 0.3s;
-	box-sizing: content-box;
 }
 .sidebar-large .developer{
 	background-image: url(../img/depict-dev-full-h.png);
@@ -5435,7 +5435,7 @@ html.desktop .actions__inner:hover .actions__img{
 	-webkit-transition-duration: 0.4s;
 	transition-duration: 0.4s;
 }
-html.desktop .actions__inner.active .actions__img{
+html.desktop .actions__inner:active .actions__img{
 	-webkit-transform: translate(0, 100%);
 	-ms-transform: translate(0, 100%);
 	transform: translate(0, 100%);
@@ -5447,8 +5447,6 @@ html.desktop .actions__inner.active .actions__img{
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	border-radius: 50%;
-	height: 146px;
-	width: 146px;
 }
 
 .actions__content{
@@ -5519,7 +5517,7 @@ html.desktop .actions__item-alt .actions__inner:hover .actions__img{
 	-ms-transform: translate(0, -20px);
 	transform: translate(0, -20px);
 }
-html.desktop .actions__item-alt .actions__inner.active .actions__img{
+html.desktop .actions__item-alt .actions__inner:active .actions__img{
 	-webkit-transform: translate(0, 100%);
 	-ms-transform: translate(0, 100%);
 	transform: translate(0, 100%);
@@ -5698,7 +5696,6 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	height: 70px;
 	padding: 5px 0;
 	position: relative;
-	box-sizing: content-box;
 }
 .useful-links a{
 	display: block;
