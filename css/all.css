@@ -4669,7 +4669,8 @@ html.desktop .sidebar-small:after{
 
 /*sb buttons*/
 .sb-phones,
-.sb-works{
+.sb-works,
+.sb-msi{
 	text-align: center;
 	line-height: 16px;
 	height: 80px;
@@ -4684,7 +4685,8 @@ html.desktop .sidebar-small:after{
 	-webkit-transition: height 0.3s;
 	transition: height 0.3s;
 }
-.sb-phones a{
+.sb-phones a,
+.sb-msi a{
 	display: block;
 	height: 100%;
 	text-decoration: none;
@@ -4693,12 +4695,14 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-.sb-phones a:hover{
+.sb-phones a:hover,
+.sb-msi a:hover{
 	background: #0f4b01;
 	color: #fff;
 }
 .sidebar-large .sb-works{ height: 80px; }
 .sb-phones > a:before,
+.sb-msi > a:before,
 .sb-works:before{
 	content: '';
 	display: inline-block;
@@ -4706,7 +4710,8 @@ html.desktop .sidebar-small:after{
 	vertical-align: middle;
 }
 .sb-phones__align,
-.sb-works__align{
+.sb-works__align,
+.sb-msi__align{
 	display: inline-block;
 	vertical-align: middle;
 	font-size: 14px;
@@ -4716,7 +4721,9 @@ html.desktop .sidebar-small:after{
 	transition: opacity 0.2s;
 }
 .sb-phones__title,
-.sb-works__title{
+.sb-works__title,
+.sb-msi__title,
+.sb-msi__title_alt{
 	display: block;
 	overflow: hidden;
 	font: 10px/12px Arial, Helvetica, sans-serif;
@@ -4728,26 +4735,77 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-.sb-phones a:hover .sb-phones__title{
+.sb-msi__title,
+.sb-msi__title_alt{
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: bold;
+	margin-bottom: 0;
+	color: #cf2f09;
+}
+.sb-msi__title_alt{
+	display: none;
+}
+.sb-phones a:hover .sb-phones__title,
+.sb-msi a:hover .sb-msi__title,
+.sb-msi a:hover .sb-msi__title_alt{
 	color: #fff;
 }
-.sb-phones__title{ max-height: 0; }
-.sidebar-large .sb-phones__title{ max-height: 12px; }
+.sb-phones__title{
+	max-height: 0;
+}
+.sidebar-large .sb-phones__title,
+.sidebar-large .sb-msi__title,
+.sidebar-large .sb-msi__title_alt{
+	max-height: 50px;
+}
+.sidebar-large .sb-msi__title{
+	display: none;
+}
+.sidebar-large .sb-msi__title_alt{
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	color: #0f4b01;
+}
 .sb-phones__body,
+.sb-msi__body,
 .sb-work__body{
 	display: inline-block;
 	vertical-align: top;
+	overflow: hidden;
 	position: relative;
 	padding-left: 28px;
 	white-space: nowrap;
-	-webkit-transition-property: font-size, color, padding;
-	transition-property: font-size, color, padding;
+	-webkit-transition-property: font-size, color, padding, max-height;
+	transition-property: font-size, color, padding, max-height;
 	-webkit-transition-duration: 0.2s;
 	transition-duration: 0.2s;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
-.sb-phones__body{
+.sb-msi__body{
+	display: block;
+	max-height: 0;
+}
+.sidebar-large .sb-msi__body{
+	max-height: none;
+}
+.sb-msi__btn{
+	display: inline-block;
+	vertical-align: top;
+	/*padding: 4px 10px;*/
+	/*border: 1px solid #cf2f09;*/
+	-webkit-transition-property: border-color;
+	transition-property: border-color;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+}
+.sb-msi a:hover .sb-msi__btn{
+	border-color: #fff;
+}
+.sb-phones__body,
+.sb-msi__body{
 	font: bold 24px/28px Arial, Helvetica, sans-serif;
 	letter-spacing: -0.05em;
 	color: #cf2f09;
@@ -4758,6 +4816,7 @@ html.desktop .sidebar-small:after{
 	padding-left: 0;
 }
 .sidebar-large .sb-phones__body,
+.sidebar-large .sb-msi__body,
 .sidebar-large .sb-work__body{
 	font-weight: bold;
 	font-size: 24px;
@@ -4769,7 +4828,13 @@ html.desktop .sidebar-small:after{
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
-.sidebar-large .sb-phones a:hover .sb-phones__body{
+.sidebar-large .sb-msi__body{
+	font-size: 20px;
+	line-height: 28px;
+	padding-left: 0;
+}
+.sidebar-large .sb-phones a:hover .sb-phones__body,
+.sidebar-large .sb-msi a:hover .sb-msi__body{
 	color: #fff;
 }
 .sb-phones__body [class*="icon-"],
@@ -4789,6 +4854,33 @@ html.desktop .sidebar-small:after{
 	transition-duration: 0.3s;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
+}
+.sb-msi [class*="icon-"]{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	left: auto;
+	top: auto;
+	margin-right: 2px;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+.sb-msi [class*="icon-"] + span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.sb-msi [class*="icon-"] svg{
+	width: 18px;
+	height: 18px;
+}
+.sb-msi [class*="icon-"] path{
+	fill: #cf2f09;
+	-webkit-transition: 0.3s fill;
+	transition: 0.3s fill;
+}
+.sb-msi a:hover [class*="icon-"] path{
+	fill: #fff;
 }
 .sb-work__body [class*="icon-"]{
 	opacity: 0;
