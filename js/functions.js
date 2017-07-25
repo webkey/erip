@@ -204,7 +204,7 @@ function slidersInit(){
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			focusOnSelect: true,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 7000,
 			speed: 600,
 			infinite: true,
