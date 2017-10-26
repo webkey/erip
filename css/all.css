@@ -5655,6 +5655,10 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	height: 226px;
 	margin-left: -119px;
 }
+.actions__item-lg .actions__img img{
+	width: 100%;
+	height: 100%;
+}
 
 /*aside panel overlay*/
 .aside-panel-overlay{
@@ -5836,6 +5840,15 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 }
 .footer-copy a{ color: #808080; }
 /*FOOTER end*/
+
+/*sticky*/
+.wrapper-sticky{
+	z-index: 2;
+}
+.wrapper-sticky ~ .wrapper-sticky{
+	z-index: 1;
+}
+/*sticky end*/
 
 /*layout main blocks*/
 .main-layout,
