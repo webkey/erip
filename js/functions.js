@@ -459,7 +459,9 @@ function catalogMenuSelect(){
 		}
 
 		// hcSticky recalculation
-		$(".main-layout").hcSticky('reinit');
+		if (window.innerWidth >= 1350) {
+			$(".main-layout").hcSticky('reinit');
+		}
 
 		// scroll to top
 		var $htmlAndBody = $('html, body');
@@ -587,7 +589,9 @@ function actionsLayout(){
 			isActive = true;
 
 			actionsSortable.on( 'layoutComplete', function() {
-				$(".main-layout").hcSticky('reinit');
+				if (window.innerWidth >= 1350) {
+					$(".main-layout").hcSticky('reinit');
+				}
 			});
 		}
 	})
@@ -762,7 +766,9 @@ function faqBehaviorInit() {
 	}
 
 	$(window).on('faqEvent', function () {
-		$(".main-layout").hcSticky('reinit');
+		if (window.innerWidth >= 1350) {
+			$(".main-layout").hcSticky('reinit');
+		}
 		// $(".aside").hcSticky('reinit');
 	})
 }
@@ -1397,7 +1403,9 @@ function multiAccordionInit() {
 		});
 
 		$(window).on('accordionEvent', function () {
-			$(".main-layout").hcSticky('reinit');
+			if (window.innerWidth >= 1350) {
+				$(".main-layout").hcSticky('reinit');
+			}
 			// $(".aside").hcSticky('reinit');
 		})
 	}
@@ -1542,6 +1550,201 @@ function newsArticlesHeight() {
 }
 /* news articles height end */
 
+/**
+ * !Simple popup (plugin)
+ * */
+;(function($){
+	var defaults = {
+		openerText: 'span',
+		popup: '.spl-popup__popup-js',
+		popupOption: '.spl-popup__popup-js a',
+		popupOptionText: 'span',
+		initClass: 'spl-popup--initialized',
+		outsideClick: true, // Close all if outside click
+		escapeClick: true, // Close all if escape key click
+		closeAfterSelect: false, // Close popup after selected option
+		preventOption: false, // Add preventDefault on click to option
+		selectValue: false, // Display the selected value in the opener
+		modifiers: {
+			isOpen: 'is-open',
+			activeItem: 'active-item'
+		}
+
+		// Callback functions
+		// afterInit: function () {} // Fire immediately after initialized
+		// afterChange: function () {} // Fire immediately after added or removed an open-class
+	};
+
+	function SimplePopup(element, options) {
+		var self = this;
+
+		self.config = $.extend(true, {}, defaults, options);
+
+		self.element = element;
+
+		self.callbacks();
+		self.event();
+		// close popup if clicked outside active element
+		if (self.config.outsideClick) {
+			self.clickOutside();
+		}
+		if (self.config.escapeClick) {
+			self.clickEscape();
+		}
+		self.eventDropItems();
+		self.init();
+	}
+
+	/** track events */
+	SimplePopup.prototype.callbacks = function () {
+		var self = this;
+		$.each(self.config, function (key, value) {
+			if(typeof value === 'function') {
+				self.element.on(key + '.SimplePopup', function (e, param) {
+					return value(e, self.element, param);
+				});
+			}
+		});
+	};
+
+	SimplePopup.prototype.event = function () {
+		var self = this;
+		self.element.on('click', function (event) {
+			event.preventDefault();
+			// event.stopPropagation();
+			var curOpener = $(this);
+			console.log("curOpener: ", curOpener);
+
+			var id = curOpener.attr('href').substring(1);
+			console.log("id: ", id);
+			var curPopup = $('#' + id);
+			console.log("curPopup: ", curPopup);
+
+			if (curPopup.hasClass(self.config.modifiers.isOpen)) {
+				curPopup.removeClass(self.config.modifiers.isOpen);
+				curOpener.removeClass(self.config.modifiers.isOpen);
+
+				// callback afterChange
+				self.element.trigger('afterChange.SimplePopup');
+				return;
+			}
+
+			curOpener.addClass(self.config.modifiers.isOpen);
+			curPopup.addClass(self.config.modifiers.isOpen);
+
+			event.stopPropagation();
+
+			// callback afterChange
+			self.element.trigger('afterChange.SimplePopup');
+		});
+	};
+
+	SimplePopup.prototype.clickOutside = function () {
+
+		var self = this;
+		$(document).on('click', function(event){
+			if( $(event.target).closest(self.config.popup).length ) {
+				return;
+			}
+
+			self.closeDrop();
+			event.stopPropagation();
+		});
+
+	};
+
+	SimplePopup.prototype.clickEscape = function () {
+
+		var self = this;
+		$(document).keyup(function(e) {
+			if (self.element.hasClass(self.config.modifiers.isOpen) && e.keyCode === 27) {
+				self.closeDrop();
+			}
+		});
+
+	};
+
+	SimplePopup.prototype.closeDrop = function (element) {
+
+		var self = this,
+			popup = $(this.config.popup),
+			curElement = $(element || self.element);
+
+		if (curElement.hasClass(self.config.modifiers.isOpen)) {
+			curElement.removeClass(self.config.modifiers.isOpen);
+			popup.removeClass(self.config.modifiers.isOpen);
+		}
+
+	};
+
+	SimplePopup.prototype.eventDropItems = function () {
+
+		var self = this;
+
+		self.element.on('click', self.config.popupOption, function (e) {
+			var cur = $(this);
+			var curParent = cur.parent();
+
+			if(curParent.hasClass(self.config.modifiers.activeItem)){
+				e.preventDefault();
+				return;
+			}
+			if(self.config.preventOption){
+				e.preventDefault();
+			}
+
+			var curContainer = cur.closest(self.element);
+
+			curContainer.find(self.config.popupOption).parent().removeClass(self.config.modifiers.activeItem);
+
+			curParent
+				.addClass(self.config.modifiers.activeItem);
+
+			if(self.config.selectValue){
+				curContainer
+					.find(self.config.opener).find(self.config.openerText)
+					.text(cur.find(self.config.popupOptionText).text());
+			}
+
+			if(self.config.closeAfterSelect) {
+				self.closeDrop();
+			}
+
+		});
+
+	};
+
+	SimplePopup.prototype.init = function () {
+
+		this.element.addClass(this.config.initClass);
+
+		this.element.trigger('afterInit.SimplePopup');
+
+	};
+
+	$.fn.SimplePopup = function (options) {
+		'use strict';
+
+		return this.each(function(){
+			new SimplePopup($(this), options);
+		});
+
+	};
+})(jQuery);
+
+/**
+ * !Toggle popup initial
+ * */
+function toggleDropInit() {
+	var $popupOpener = $('.social-share__opener-js');
+	if($popupOpener.length){
+		$popupOpener.SimplePopup({
+			popup: '.social-share__drop-js',
+			selectValue: false
+		})
+	}
+}
+
 /** ready/load/resize document **/
 
 $(window).on('load', function () {
@@ -1573,5 +1776,6 @@ $(document).ready(function(){
 	}
 	tabs();
 	newsArticlesHeight();
+	toggleDropInit();
 	stickyLayout();
 });

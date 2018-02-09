@@ -726,6 +726,15 @@
 		width: 10px;
 		left: 10px;
 	}
+	.structure-less li.has-qr-code > .structure__title{
+		padding-right: 20px;
+		padding-bottom: 47px;
+	}
+	.structure-less .structure__title .btn-qr-code{
+		position: absolute;
+		width: 100%;
+		height: auto;
+	}
 	/*structure end*/
 
 	.ui-autocomplete li{

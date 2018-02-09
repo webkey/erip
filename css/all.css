@@ -503,6 +503,74 @@ a:hover .arrow-more:after{ border-color: #fff; }
 
 .btn-default .depict-download{ margin: -1px 10px -1px 0; }
 /*btn-default end*/
+
+/*btn-qr-code*/
+.btn-qr-code{
+	display: inline-block;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 10px 10px 10px 40px;
+	font-family: 'pfbeausanspro-semibold-italic', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: normal;
+	color: #0f4b01;
+	overflow: hidden;
+	z-index: 1;
+	background: #ffb106;
+}
+.btn-qr-code::before,
+.btn-qr-code::after{
+	content: "";
+	display: block;
+	position: absolute;
+}
+.btn-qr-code::before{
+	left: 10px;
+	top: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzU1OTlFNEIwREE1MTFFODhFRkVGMDZDNzg0NDVCRDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzU1OTlFNEMwREE1MTFFODhFRkVGMDZDNzg0NDVCRDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NTU5OUU0OTBEQTUxMUU4OEVGRUYwNkM3ODQ0NUJEMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NTU5OUU0QTBEQTUxMUU4OEVGRUYwNkM3ODQ0NUJEMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoOeLZwAAAGlSURBVHjalFTbSsNAEN3Eomia1CpUbBUURMkP9Av0q/0Jn7w8KZoUSqVoN1HxoXUGz8rpsrG6cLKXyc6cuexEvfNuYYzJBKn5HlYwExxgP8OcYX4SdCBX2UiwL6gEry35DMzySEm58daGDK17521FTAcR0DScrIAXm7oZX077UDZWxrH5+1hgPoNXIyhSpbVMJ4LDSGK4WMFojrWLmaV/VNGW4FiUPuiBMiy9nyzOnJxdVYVHAeNTt9Ck5HCn8gJsYL30qoBHD0bN3sVO6hhYT5mhfQVXMzDVS48wqOtaXNX712A/4aQUYPpBDNsBQxrTGzDfxvkau6yW+149voH9s2CDzruCF6rFDvanLtYtsCioaGdgkUBhU/zcfS2baumA3Clp/y4YkowTV4DdZ8iCbXgh+hLuoCjzZHkgkYZdrigJERV2m96zDVRBIuUS+wpvG7pNTsx8g/pCrlDkKf2zsttYTzZ2Tw1k0v90m1Bc54F1Ill2rJey3HSZWQyQpBq1G64jrz1xJ9ExoeLOKAyuwdaSmJ9Lv3WbUFvbpfV9IPPllwADAI3YeOPOfxPmAAAAAElFTkSuQmCC');
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: contain;
+	background-size: contain;
+	box-sizing: border-box;
+}
+.btn-qr-code::after{
+	width: 200%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #ffb106;
+	background: -moz-linear-gradient(left, #ffb106 0%, #ff8108 50%, #ffb106 100%);
+	background: -webkit-linear-gradient(left, #ffb106 0%,#ff8108 50%, #ffb106 100%);
+	background: linear-gradient(left, #ffb106 0%,#ff8108 50%, #ffb106 100%);
+	z-index: -1;
+	will-change: opacity;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+.btn-qr-code > span{
+	display: block;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	position: relative;
+	white-space: nowrap;
+}
+.btn-qr-code:hover{
+	text-decoration: none;
+}
+.btn-qr-code:hover::after{
+	/*-webkit-transform: translate(-50%, 0);*/
+	/*-ms-transform: translate(-50%, 0);*/
+	/*transform: translate(-50%, 0);*/
+	opacity: 0;
+}
+/*btn-qr-code end*/
 /*btn end*/
 
 /*USER CONTENT*/
@@ -4487,11 +4555,20 @@ li.active > .structure__title .structure__angle:after{
 	-webkit-transition-duration: 0.6s;
 	transition-duration: 0.6s;
 }
+.structure-less li.has-qr-code > .structure__title{
+	padding-right: 110px;
+}
+.structure-less .structure__title .btn-qr-code{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+}
 .structure-less .structure__title:before{ height: 24px; }
 .structure-less .structure__inner{
 	font-size: 14px;
 }
-.structure__list li:hover > .structure__title{ background: #fcf7e3; }
+.structure__list li:hover > .structure__title{ background: #fffdf6; }
 /*structure end*/
 
 /*system nav*/
@@ -5998,3 +6075,17 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	}
 }
 /*fix for bitrix end*/
+
+.social-share__list{
+	display: none;
+	position: fixed;
+	width: 320px;
+	height: 500px;
+	left: 50%;
+	top: 50%;
+	margin: -250px 0 0 -160px;
+	background-color: rgba(255, 255, 255, 0.53);
+}
+.social-share__list.is-open{
+	display: block;
+}
