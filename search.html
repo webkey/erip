@@ -360,7 +360,7 @@
 														<li class="has-qr-code">
 															<div class="structure__title">
 																<div class="structure__inner">Управление развития развития</div>
-																<a href="#" class="btn-qr-code btn-qr-code-js"><span>QR-code</span></a>
+																<a href="#qr-code-popup" class="qr-code-btn btn-qr-code-js"><span>QR-code</span></a>
 															</div>
 														</li>
 														<li>
@@ -552,22 +552,6 @@
 							</ul>
 						</div>
 						<!--structure end-->
-						<div class="social-share" data-select="false">
-							<a href="#popup-id-zoo" class="social-share__opener social-share__opener-js">
-								opener ZOO
-							</a>
-							<div class="social-share__list social-share__drop-js" id="popup-id-zoo">
-								ZOO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cum dolorem eaque, eligendi id in ipsa minima modi natus necessitatibus nemo neque nesciunt nisi odio quibusdam reprehenderit, sed tempore voluptate!
-							</div>
-						</div>
-						<div class="social-share" data-select="false">
-							<a href="#popup-id-foo" class="social-share__opener social-share__opener-js">
-								opener FOO
-							</a>
-							<div class="social-share__list social-share__drop-js" id="popup-id-foo">
-								FOO Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cum dolorem eaque, eligendi id in ipsa minima modi natus necessitatibus nemo neque nesciunt nisi odio quibusdam reprehenderit, sed tempore voluptate!
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -782,6 +766,20 @@ background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 
 		</div>
 	</aside>
 	<!--aside end-->
+</div>
+
+<div class="popup-default popup-default-js" id="qr-code-popup">
+	<a href="#" class="popup-default__close popup-default__close-js">x close</a>
+	<div class="popup-default__align">
+		<div class="popup-default__layout">
+			<div class="popup-default__img">
+				<img src="img/img-qr-code.jpg" alt="qr-code" />
+			</div>
+			<div class="popup-default__footer">
+				<a href="#" class="btn-default btn-default-alt"><span class="btn-default__inner">Скачать QR-Code</span></a>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--JQuery library-->

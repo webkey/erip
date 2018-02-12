@@ -20,7 +20,9 @@
 }
 
 @media only screen and (max-width: 1349px){
-	.main-layout, .header, .site-map{
+	.main-layout,
+	.header,
+	.site-map{
 		float: none;
 		width: 100%;
 		box-shadow: none;
@@ -730,7 +732,7 @@
 		padding-right: 20px;
 		padding-bottom: 47px;
 	}
-	.structure-less .structure__title .btn-qr-code{
+	.structure-less .structure__title .qr-code-btn{
 		position: absolute;
 		width: 100%;
 		height: auto;

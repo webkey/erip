@@ -458,6 +458,25 @@ button{
 .btn-default:hover .btn-default__inner>span{ border-color: transparent; }
 .btn-default:active{ bottom: -1px; }
 
+.btn-default-alt{
+	color: #fff;
+}
+.btn-default-alt:before{
+	opacity: 0;
+}
+.btn-default-alt:after{
+	opacity: 1;
+}
+.btn-default-alt:hover{
+	color: #f29700;
+}
+.btn-default-alt:hover:before{
+	opacity: 1;
+}
+.btn-default-alt:hover:after{
+	opacity: 0;
+}
+
 .arrow-more{
 	display: inline-block;
 	vertical-align: top;
@@ -505,7 +524,7 @@ a:hover .arrow-more:after{ border-color: #fff; }
 /*btn-default end*/
 
 /*btn-qr-code*/
-.btn-qr-code{
+.qr-code-btn{
 	display: inline-block;
 	display: flex;
 	align-items: center;
@@ -520,13 +539,13 @@ a:hover .arrow-more:after{ border-color: #fff; }
 	z-index: 1;
 	background: #ffb106;
 }
-.btn-qr-code::before,
-.btn-qr-code::after{
+.qr-code-btn::before,
+.qr-code-btn::after{
 	content: "";
 	display: block;
 	position: absolute;
 }
-.btn-qr-code::before{
+.qr-code-btn::before{
 	left: 10px;
 	top: 50%;
 	width: 20px;
@@ -539,7 +558,7 @@ a:hover .arrow-more:after{ border-color: #fff; }
 	background-size: contain;
 	box-sizing: border-box;
 }
-.btn-qr-code::after{
+.qr-code-btn::after{
 	width: 200%;
 	height: 100%;
 	left: 0;
@@ -553,7 +572,7 @@ a:hover .arrow-more:after{ border-color: #fff; }
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
-.btn-qr-code > span{
+.qr-code-btn > span{
 	display: block;
 	overflow: hidden;
 	-ms-text-overflow: ellipsis;
@@ -561,10 +580,10 @@ a:hover .arrow-more:after{ border-color: #fff; }
 	position: relative;
 	white-space: nowrap;
 }
-.btn-qr-code:hover{
+.qr-code-btn:hover{
 	text-decoration: none;
 }
-.btn-qr-code:hover::after{
+.qr-code-btn:hover::after{
 	/*-webkit-transform: translate(-50%, 0);*/
 	/*-ms-transform: translate(-50%, 0);*/
 	/*transform: translate(-50%, 0);*/
@@ -3830,10 +3849,6 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	z-index: 3;
 	padding: 45px 0;
 }
-.agency h3{
-	text-align: center;
-	padding: 0 0 45px;
-}
 /*agency list*/
 .agency-list,
 .agency-list .pay-list{ padding-bottom: 50px; }
@@ -4558,7 +4573,7 @@ li.active > .structure__title .structure__angle:after{
 .structure-less li.has-qr-code > .structure__title{
 	padding-right: 110px;
 }
-.structure-less .structure__title .btn-qr-code{
+.structure-less .structure__title .qr-code-btn{
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -6075,17 +6090,85 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	}
 }
 /*fix for bitrix end*/
-
-.social-share__list{
+html.spl-popup--is-open{
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+}
+.popup-default{
 	display: none;
 	position: fixed;
-	width: 320px;
-	height: 500px;
-	left: 50%;
-	top: 50%;
-	margin: -250px 0 0 -160px;
-	background-color: rgba(255, 255, 255, 0.53);
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+	z-index: 9999;
 }
-.social-share__list.is-open{
+.popup-default__align{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+.popup-default__layout{
+	max-width: 320px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+.popup-default.spl-popup--is-open{
 	display: block;
+}
+.popup-default__close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 60px;
+	height: 60px;
+	z-index: 2;
+	cursor: pointer;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-color: #c71217;
+}
+.popup-default__close:before,
+.popup-default__close:after{
+	content: '';
+	position: absolute;
+	left: 18px;
+	top: 28px;
+	height: 3px;
+	width: 24px;
+	border-radius: 3px;
+	background-color: #fff;
+}
+.popup-default__close:before{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.popup-default__close:after{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.popup-default__close:hover{
+	background-color: #f29700;
+}
+.popup-default__img{
+	margin-bottom: 30px;
+}
+.popup-default__img:last-child{
+	margin-bottom: 0;
+}
+.popup-default__img img{
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.popup-default__footer{
+	text-align: center;
 }

@@ -1557,18 +1557,10 @@ function newsArticlesHeight() {
 	var defaults = {
 		openerText: 'span',
 		popup: '.spl-popup__popup-js',
-		popupOption: '.spl-popup__popup-js a',
-		popupOptionText: 'span',
-		initClass: 'spl-popup--initialized',
+		closeBtn: '.spl-popup__close-js',
+		addClass: 'spl-popup--initialized',
 		outsideClick: true, // Close all if outside click
-		escapeClick: true, // Close all if escape key click
-		closeAfterSelect: false, // Close popup after selected option
-		preventOption: false, // Add preventDefault on click to option
-		selectValue: false, // Display the selected value in the opener
-		modifiers: {
-			isOpen: 'is-open',
-			activeItem: 'active-item'
-		}
+		escapeClick: true // Close all if escape key click
 
 		// Callback functions
 		// afterInit: function () {} // Fire immediately after initialized
@@ -1581,6 +1573,15 @@ function newsArticlesHeight() {
 		self.config = $.extend(true, {}, defaults, options);
 
 		self.element = element;
+		self.initClass = 'spl-popup--initialized';
+		self.classes = {
+			opener: 'spl-popup__opener-js',
+			closeBtn: 'spl-popup__close-js',
+			popup: 'spl-popup__popup-js'
+		};
+		self.modifiers = {
+			isOpen: 'spl-popup--is-open'
+		};
 
 		self.callbacks();
 		self.event();
@@ -1591,13 +1592,13 @@ function newsArticlesHeight() {
 		if (self.config.escapeClick) {
 			self.clickEscape();
 		}
-		self.eventDropItems();
 		self.init();
 	}
 
 	/** track events */
 	SimplePopup.prototype.callbacks = function () {
 		var self = this;
+
 		$.each(self.config, function (key, value) {
 			if(typeof value === 'function') {
 				self.element.on(key + '.SimplePopup', function (e, param) {
@@ -1609,30 +1610,42 @@ function newsArticlesHeight() {
 
 	SimplePopup.prototype.event = function () {
 		var self = this;
+
 		self.element.on('click', function (event) {
-			event.preventDefault();
-			// event.stopPropagation();
 			var curOpener = $(this);
-			console.log("curOpener: ", curOpener);
 
 			var id = curOpener.attr('href').substring(1);
-			console.log("id: ", id);
 			var curPopup = $('#' + id);
-			console.log("curPopup: ", curPopup);
 
-			if (curPopup.hasClass(self.config.modifiers.isOpen)) {
-				curPopup.removeClass(self.config.modifiers.isOpen);
-				curOpener.removeClass(self.config.modifiers.isOpen);
+			if (curPopup.hasClass(self.modifiers.isOpen)) {
+				self.closePopup();
 
-				// callback afterChange
 				self.element.trigger('afterChange.SimplePopup');
+
+				event.preventDefault();
+				event.stopPropagation();
 				return;
 			}
 
-			curOpener.addClass(self.config.modifiers.isOpen);
-			curPopup.addClass(self.config.modifiers.isOpen);
+			// close same popup
+			self.closePopup();
 
+			// open current popup
+			$('html').addClass(self.modifiers.isOpen);
+			curOpener.addClass(self.modifiers.isOpen);
+			curPopup.addClass(self.modifiers.isOpen);
+
+			event.preventDefault();
 			event.stopPropagation();
+
+			// callback afterChange
+			self.element.trigger('afterChange.SimplePopup');
+		});
+
+		$(self.config.closeBtn).on('click', function (event) {
+			self.closePopup();
+
+			event.preventDefault();
 
 			// callback afterChange
 			self.element.trigger('afterChange.SimplePopup');
@@ -1643,11 +1656,11 @@ function newsArticlesHeight() {
 
 		var self = this;
 		$(document).on('click', function(event){
-			if( $(event.target).closest(self.config.popup).length ) {
+			if( $(event.target).closest('.' + self.classes.popup).length ) {
 				return;
 			}
 
-			self.closeDrop();
+			self.closePopup();
 			event.stopPropagation();
 		});
 
@@ -1657,66 +1670,29 @@ function newsArticlesHeight() {
 
 		var self = this;
 		$(document).keyup(function(e) {
-			if (self.element.hasClass(self.config.modifiers.isOpen) && e.keyCode === 27) {
-				self.closeDrop();
+			if (e.keyCode === 27) {
+				self.closePopup();
 			}
 		});
 
 	};
 
-	SimplePopup.prototype.closeDrop = function (element) {
-
-		var self = this,
-			popup = $(this.config.popup),
-			curElement = $(element || self.element);
-
-		if (curElement.hasClass(self.config.modifiers.isOpen)) {
-			curElement.removeClass(self.config.modifiers.isOpen);
-			popup.removeClass(self.config.modifiers.isOpen);
-		}
-
-	};
-
-	SimplePopup.prototype.eventDropItems = function () {
+	SimplePopup.prototype.closePopup = function () {
 
 		var self = this;
 
-		self.element.on('click', self.config.popupOption, function (e) {
-			var cur = $(this);
-			var curParent = cur.parent();
-
-			if(curParent.hasClass(self.config.modifiers.activeItem)){
-				e.preventDefault();
-				return;
-			}
-			if(self.config.preventOption){
-				e.preventDefault();
-			}
-
-			var curContainer = cur.closest(self.element);
-
-			curContainer.find(self.config.popupOption).parent().removeClass(self.config.modifiers.activeItem);
-
-			curParent
-				.addClass(self.config.modifiers.activeItem);
-
-			if(self.config.selectValue){
-				curContainer
-					.find(self.config.opener).find(self.config.openerText)
-					.text(cur.find(self.config.popupOptionText).text());
-			}
-
-			if(self.config.closeAfterSelect) {
-				self.closeDrop();
-			}
-
-		});
+		$('.' + self.initClass).removeClass(self.modifiers.isOpen);
+		$('html').removeClass(self.modifiers.isOpen);
 
 	};
 
 	SimplePopup.prototype.init = function () {
 
-		this.element.addClass(this.config.initClass);
+		var self = this;
+
+		this.element.addClass(self.initClass).addClass(self.classes.opener);
+		$(self.config.closeBtn).addClass(self.initClass).addClass(self.classes.closeBtn);
+		$(self.config.popup).addClass(self.initClass).addClass(self.classes.popup);
 
 		this.element.trigger('afterInit.SimplePopup');
 
@@ -1735,12 +1711,12 @@ function newsArticlesHeight() {
 /**
  * !Toggle popup initial
  * */
-function toggleDropInit() {
-	var $popupOpener = $('.social-share__opener-js');
-	if($popupOpener.length){
-		$popupOpener.SimplePopup({
-			popup: '.social-share__drop-js',
-			selectValue: false
+function simplePopupInit() {
+	var $zooOpener = $('.btn-qr-code-js');
+	if($zooOpener.length){
+		$zooOpener.SimplePopup({
+			popup: '.popup-default-js',
+			closeBtn: ".popup-default__close-js"
 		})
 	}
 }
@@ -1776,6 +1752,6 @@ $(document).ready(function(){
 	}
 	tabs();
 	newsArticlesHeight();
-	toggleDropInit();
+	simplePopupInit();
 	stickyLayout();
 });
