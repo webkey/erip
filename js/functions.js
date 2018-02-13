@@ -933,11 +933,15 @@ function tabs() {
 					refreshSelectInTabs(select);
 				}
 
-				setTimeout(function () {
-					if (window.innerWidth >= 1350) {
-						$(".sticky-js").hcSticky('reinit');
-					}
-				}, 2000)
+				//
+				if(!$('.wrapper-sticky').length){
+					console.log(0);
+				}
+				if($('.wrapper-sticky').length){
+					setTimeout(function () {
+						$(".main-layout").hcSticky('reinit');
+					}, 800)
+				}
 			}
 			// activateState: function(e, state) {
 			//
