@@ -903,13 +903,12 @@ function tabs() {
 					refreshSelectInTabs(select);
 				}
 
-				// if (window.innerWidth >= 1350) {
-				// 	$(".sticky-js").hcSticky('reinit');
-				// }
+				if($('.wrapper-sticky').length){
+					setTimeout(function () {
+						$(".main-layout").hcSticky('reinit');
+					}, 500)
+				}
 			}
-			//activateState: function(e, state) {
-			//	console.log(state);
-			//}
 		});
 	}
 
@@ -933,19 +932,12 @@ function tabs() {
 					refreshSelectInTabs(select);
 				}
 
-				//
-				if(!$('.wrapper-sticky').length){
-					console.log(0);
-				}
 				if($('.wrapper-sticky').length){
 					setTimeout(function () {
 						$(".main-layout").hcSticky('reinit');
-					}, 800)
+					}, 500)
 				}
 			}
-			// activateState: function(e, state) {
-			//
-			// }
 		});
 	}
 }
