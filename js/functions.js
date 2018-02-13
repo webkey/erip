@@ -902,6 +902,10 @@ function tabs() {
 				if (DESKTOP && select.length) {
 					refreshSelectInTabs(select);
 				}
+
+				// if (window.innerWidth >= 1350) {
+				// 	$(".sticky-js").hcSticky('reinit');
+				// }
 			}
 			//activateState: function(e, state) {
 			//	console.log(state);
@@ -928,6 +932,12 @@ function tabs() {
 				if (DESKTOP && select.length) {
 					refreshSelectInTabs(select);
 				}
+
+				setTimeout(function () {
+					if (window.innerWidth >= 1350) {
+						$(".sticky-js").hcSticky('reinit');
+					}
+				}, 2000)
 			}
 			// activateState: function(e, state) {
 			//
