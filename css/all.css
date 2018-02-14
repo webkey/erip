@@ -6002,21 +6002,38 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 	height: 100%;
 	left: 0;
 	top: 0;
-	background-color: #fff;
 	z-index: 9999;
-}
-.popup-default__align{
 	overflow-x: hidden;
 	overflow-y: auto;
-	height: 100%;
+	padding: 20px 0;
+	background-color: rgba(0, 0, 0, 0.31);
+	box-sizing: border-box;
 }
-.popup-default__layout{
-	max-width: 320px;
-	margin: 0 auto;
-	padding: 40px 20px;
+@media only screen and (max-width: 479px){
+	.popup-default{
+		padding: 0;
+		background-color: #fff;
+	}
 }
 .popup-default.spl-popup--is-open{
 	display: block;
+}
+.popup-default__holder{
+	display: table;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.popup-default__cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+.popup-default__layout{
+	position: relative;
+	max-width: 320px;
+	margin: 0 auto;
+	padding: 80px 20px 40px;
+	background-color: #fff;
 }
 .popup-default__close{
 	position: absolute;
@@ -6053,6 +6070,11 @@ html.desktop .actions__item-lg .actions__inner:active .actions__img{
 }
 .popup-default__close:hover{
 	background-color: #f29700;
+}
+@media only screen and (max-width: 479px){
+	.popup-default__close{
+		position: fixed;
+	}
 }
 .popup-default__img{
 	margin-bottom: 30px;

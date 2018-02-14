@@ -769,15 +769,19 @@ background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 
 </div>
 
 <div class="popup-default popup-default-js" id="qr-code-popup">
-	<a href="#" class="popup-default__close popup-default__close-js">x close</a>
-	<div class="popup-default__align">
-		<div class="popup-default__layout">
-			<div class="popup-default__img">
-				<img src="img/img-qr-code.jpg" alt="qr-code" />
+	<div class="popup-default__holder">
+		<div class="popup-default__cell">
+
+			<div class="popup-default__layout">
+				<a href="#" class="popup-default__close popup-default__close-js" title="Закрыть">x close</a>
+				<div class="popup-default__img">
+					<img src="img/img-qr-code.jpg" alt="qr-code" />
+				</div>
+				<div class="popup-default__footer">
+					<a href="#" class="btn-default btn-default-alt" title="Скачать QR-Code"><span class="btn-default__inner">Скачать QR-Code</span></a>
+				</div>
 			</div>
-			<div class="popup-default__footer">
-				<a href="#" class="btn-default btn-default-alt"><span class="btn-default__inner">Скачать QR-Code</span></a>
-			</div>
+
 		</div>
 	</div>
 </div>
