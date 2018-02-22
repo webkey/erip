@@ -1650,8 +1650,7 @@ function newsArticlesHeight() {
 			event.preventDefault();
 			event.stopPropagation();
 
-			// callback afterChange
-			self.element.trigger('afterOpen.SimplePopup', curPopup);
+
 		});
 
 		$(self.config.closeBtn).on('click', function (event) {
@@ -1731,11 +1730,7 @@ function simplePopupInit() {
 		$popupDefault.SimplePopup({
 			popup: '.popup-default-js',
 			closeBtn: '.popup-default__close-js',
-			openerInset: '.btn-qr-code-js',
-			afterOpen: function (e, el, popup) {
-				console.log("popup: ", popup);
-			}
-		})
+			openerInset: '.btn-qr-code-js'
 	}
 }
 
