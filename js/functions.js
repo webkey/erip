@@ -1561,10 +1561,11 @@ function newsArticlesHeight() {
  * */
 ;(function($){
 	var defaults = {
-		openerText: 'span',
 		popup: '.spl-popup__popup-js',
 		closeBtn: '.spl-popup__close-js',
+		noCloseWrap: '.spl-popup__no-close-js',
 		addClass: 'spl-popup--initialized',
+		openerInset: false,
 		outsideClick: true, // Close all if outside click
 		escapeClick: true // Close all if escape key click
 
@@ -1578,12 +1579,17 @@ function newsArticlesHeight() {
 
 		self.config = $.extend(true, {}, defaults, options);
 
-		self.element = element;
+		if(self.config.openerInset === false) {
+			self.element = element;
+		} else {
+			self.element = $(self.config.openerInset);
+		}
 		self.initClass = 'spl-popup--initialized';
 		self.classes = {
-			opener: 'spl-popup__opener-js',
-			closeBtn: 'spl-popup__close-js',
-			popup: 'spl-popup__popup-js'
+			popup: 'sp-Popup',
+			opener: 'sp-PopupOpener',
+			closeBtn: 'sp-PopupClose',
+			noClose: 'sp-disableCloseOnClick'
 		};
 		self.modifiers = {
 			isOpen: 'spl-popup--is-open'
@@ -1617,7 +1623,7 @@ function newsArticlesHeight() {
 	SimplePopup.prototype.event = function () {
 		var self = this;
 
-		self.element.on('click', function (event) {
+		$(document).on('click', '.' + self.classes.opener, function (event) {
 			var curOpener = $(this);
 
 			var id = curOpener.attr('href').substring(1);
@@ -1626,7 +1632,7 @@ function newsArticlesHeight() {
 			if (curPopup.hasClass(self.modifiers.isOpen)) {
 				self.closePopup();
 
-				self.element.trigger('afterChange.SimplePopup');
+				self.element.trigger('afterClose.SimplePopup', curPopup);
 
 				event.preventDefault();
 				event.stopPropagation();
@@ -1645,16 +1651,17 @@ function newsArticlesHeight() {
 			event.stopPropagation();
 
 			// callback afterChange
-			self.element.trigger('afterChange.SimplePopup');
+			self.element.trigger('afterOpen.SimplePopup', curPopup);
 		});
 
 		$(self.config.closeBtn).on('click', function (event) {
 			self.closePopup();
+			var curPopup = $(this).closest(self.config.popup);
 
 			event.preventDefault();
 
 			// callback afterChange
-			self.element.trigger('afterChange.SimplePopup');
+			self.element.trigger('afterClose.SimplePopup', curPopup);
 		});
 	};
 
@@ -1662,7 +1669,7 @@ function newsArticlesHeight() {
 
 		var self = this;
 		$(document).on('click', function(event){
-			if( $(event.target).closest('.' + self.classes.popup).length ) {
+			if( $(event.target).closest('.' + self.classes.noClose).length ) {
 				return;
 			}
 
@@ -1699,6 +1706,7 @@ function newsArticlesHeight() {
 		this.element.addClass(self.initClass).addClass(self.classes.opener);
 		$(self.config.closeBtn).addClass(self.initClass).addClass(self.classes.closeBtn);
 		$(self.config.popup).addClass(self.initClass).addClass(self.classes.popup);
+		$(self.config.noCloseWrap).addClass(self.classes.noClose);
 
 		this.element.trigger('afterInit.SimplePopup');
 
@@ -1718,11 +1726,15 @@ function newsArticlesHeight() {
  * !Toggle popup initial
  * */
 function simplePopupInit() {
-	var $zooOpener = $('.btn-qr-code-js');
-	if($zooOpener.length){
-		$zooOpener.SimplePopup({
+	var $popupDefault = $('.popup-default-init-js');
+	if($popupDefault.length){
+		$popupDefault.SimplePopup({
 			popup: '.popup-default-js',
-			closeBtn: ".popup-default__close-js"
+			closeBtn: '.popup-default__close-js',
+			openerInset: '.btn-qr-code-js',
+			afterOpen: function (e, el, popup) {
+				console.log("popup: ", popup);
+			}
 		})
 	}
 }

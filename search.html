@@ -340,7 +340,7 @@
 
 					<div class="text-layout">
 						<!--structure-->
-						<div class="structure structure-less m-accordion-js">
+						<div class="structure structure-less m-accordion-js popup-default-init-js">
 							<ul class="structure__list">
 								<li class="active">
 									<div class="structure__title">
@@ -366,6 +366,7 @@
 														<li>
 															<div class="structure__title">
 																<div class="structure__inner">Отдел бухгалтерского учета и отчетности</div>
+																<a href="#qr-code-popup2" class="qr-code-btn btn-qr-code-js"><span>QR-code</span></a>
 															</div>
 														</li>
 													</ul>
@@ -772,7 +773,24 @@ background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 
 	<div class="popup-default__holder">
 		<div class="popup-default__cell">
 
-			<div class="popup-default__layout">
+			<div class="popup-default__layout spl-popup__no-close-js">
+				<a href="#" class="popup-default__close popup-default__close-js" title="Закрыть">x close</a>
+				<div class="popup-default__img">
+					<img src="img/img-qr-code.jpg" alt="qr-code" />
+				</div>
+				<div class="popup-default__footer">
+					<a href="#" class="btn-default btn-default-alt" title="Скачать QR-Code"><span class="btn-default__inner">Скачать QR-Code</span></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="popup-default popup-default-js" id="qr-code-popup2">
+	<div class="popup-default__holder">
+		<div class="popup-default__cell">
+
+			<div class="popup-default__layout spl-popup__no-close-js">
 				<a href="#" class="popup-default__close popup-default__close-js" title="Закрыть">x close</a>
 				<div class="popup-default__img">
 					<img src="img/img-qr-code.jpg" alt="qr-code" />
