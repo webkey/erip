@@ -1614,6 +1614,7 @@ function newsArticlesHeight() {
 		$.each(self.config, function (key, value) {
 			if(typeof value === 'function') {
 				self.element.on(key + '.SimplePopup', function (e, param) {
+					console.log('callback!');
 					return value(e, self.element, param);
 				});
 			}
@@ -1623,7 +1624,7 @@ function newsArticlesHeight() {
 	SimplePopup.prototype.event = function () {
 		var self = this;
 
-		$(document).on('click', '.' + self.classes.opener, function (event) {
+		$(document).on('click', '.btn-qr-code-js', function (event) {
 			var curOpener = $(this);
 
 			var id = curOpener.attr('href').substring(1);
@@ -1724,14 +1725,23 @@ function newsArticlesHeight() {
 /**
  * !Toggle popup initial
  * */
+
 function simplePopupInit() {
 	var $popupDefault = $('.popup-default-init-js');
-	if($popupDefault.length){
+	if ($popupDefault.length) {
 		$popupDefault.SimplePopup({
 			popup: '.popup-default-js',
 			closeBtn: '.popup-default__close-js',
-			openerInset: '.btn-qr-code-js'
+			openerInset: '.btn-qr-code-js',
+			afterClose: function (e, el, popup) {
+				console.log('afterClose, el: ', el);
+				console.log('afterClose, popup: ', popup);
+			}
+		})
 	}
+	setTimeout(function () {
+		$('#test-item').append('<a href="#qr-code-popup2" class="qr-code-btn btn-qr-code-js"><span>QR-code</span></a>');
+	}, 1500)
 }
 
 /** ready/load/resize document **/
