@@ -4486,7 +4486,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	padding-left: 80px;
 }
 
-.structure__title {
+.structure__title, .structure__content {
 	padding: 8px 56px 8px 16px;
 	position: relative;
 	font-size: 0;
@@ -4498,6 +4498,10 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	border: 1px solid #e6e6e6;
 	background: #fff;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+.structure__content{
+	font-size: 14px;
+	letter-spacing: normal;
 }
 .structure__inner{
 	display: inline-block;

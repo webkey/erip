@@ -1332,7 +1332,7 @@ function buttonsFromBehavior (){
 				return; // если текущий непосредственный родитель сворачиваемого элемента не содержит сворачиваемый элемент
 			}
 
-			e.preventDefault();
+			// e.preventDefault();
 
 			if (current.parent().prop("tagName") !== currentAccordionItem.prop("tagName")) {
 				current = current.parent();
