@@ -277,12 +277,12 @@ a:hover {
 .desktop .pay-list a.desktop {
 	display: block;
 }
-@media only screen and (max-width: 1023px) {
+@media (max-width: 767px) {
 	.pay-list li {
 		width: 25%;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media (max-width: 639px) {
 	.pay-list li {
 		width: 33.33%;
 	}
