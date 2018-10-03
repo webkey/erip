@@ -1,0 +1,52 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	// hide element
+	// ---------------------------------------------------------------------------
+	.sidebar,
+	.btn-back,
+	.print-hidden,
+	.images-slider,
+	.print,
+	.footer-figure-left,
+	.footer-figure-right,
+	.footer-nav,
+	.footer-gov,
+	.liked,
+	[class*="bg-figure"],
+	.info__divider,
+	.meter,
+	.view-switcher,
+	.card-bar__nav,
+	.expander__angle,
+	.spec-hide,
+	.spec-hide
+		display: none !important
+
+
+	// hide ::before
+	// ---------------------------------------------------------------------------
+	.products__list,
+	.products__figure,
+	.expander__panel,
+	.calc__box,
+	.map-legend__list li,
+	.spec-hide-before,
+	.spec-hide-before
+		&::before
+			display: none
+
+
+	// hide ::after
+	// ---------------------------------------------------------------------------
+	.products__list,
+	.products__figure,
+	.expander__panel,
+	.expander__hand,
+	.calc__box,
+	.spec-hide-after,
+	.spec-hide-after
+		&::after
+			display: none

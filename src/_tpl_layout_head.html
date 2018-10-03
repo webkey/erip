@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 9]>      <html class="no-js old-ie" lang=""> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9" lang=""> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>@@title</title>
+	<!--Mobile optimized-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--Favicon-->
+	<link href="favicon.ico" rel="shortcut icon">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!--fotorama-->
+	<link href="js/fotorama/fotorama.css" rel="stylesheet" media="all">
+	<!--Main style-->
+	<link href="css/all.css?rev=@@hash" rel="stylesheet" media="all">
+	<link href="css/components.css?rev=@@hash" rel="stylesheet" media="all">
+	<!--Media queries style-->
+	<link href="css/mq-all.css?rev=@@hash" rel="stylesheet" media="screen">
+	<!--Modernizr-->
+	<script src="js/vendor/modernizr-3.3.1.custom.min.js"></script>
+	<!--Special-->
+	<link href="css/special-version-base.css?rev=@@hash" rel="stylesheet" media="screen">
+	<script>
+		var cssPath = 'css/';
+	</script>
+</head>
+<body@@if(context.pageClass){ class="@@pageClass"}>
+<!--[if lt IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+@@include('_tpl_spec-panel.html')
+
+@@include('_tpl_PAGE_WRAP.html', {"pageWrap": "START" })
+
+@@include('_tpl_layout_header.html', {"currentItem": "@@currentItem" })

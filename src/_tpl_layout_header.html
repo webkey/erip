@@ -1,0 +1,196 @@
+<!--HEADER-->
+<header class="header">
+	<div class="layout">
+		<div class="header-holder">
+			@@include("_tpl_spacial--tools-btn.html", {
+				"classes": "spec-btn-switcher spec-btn-switcher-js",
+				"icon": "includes/svg/icon-special-on.svg",
+				"text": "Версия для слабовидящих",
+				"title": "Перейти на версию сайта для слабовидящих"
+			})
+			@@include("_tpl_spacial--tools-btn.html", {
+				"classes": "spec-btn-switcher to_normal spec-btn-switcher-js",
+				"icon": "includes/svg/icon-special-off.svg",
+				"text": "Обычная версия",
+				"title": "Перейти на обычную версию сайта"
+			})
+			<!--user options-->
+			<ul class="user-options">
+				<li class="map-link">
+					<a href="#">
+						@@include("./includes/svg/icon-pin.svg")
+						<span>Карта филиалов</span>
+						<span class="text-for-mobile">Филиалы</span>
+					</a>
+				</li>
+				<li class="appeal-link">
+					<a href="el-appeal.html">
+						@@include("./includes/svg/icon-treatment.svg")
+						<span>Электронные обращения</span>
+						<span class="text-for-mobile">Обращения</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						@@include("./includes/svg/icon-cabinet.svg")
+						<span>Кабинет</span>
+						<span class="text-for-mobile">Кабинет</span>
+					</a>
+				</li>
+				<li>
+					<a class="js-logout-btn" href="#">
+						@@include("./includes/svg/icon-logout.svg")
+						<span>Выйти</span>
+						<span class="text-for-mobile">Выйти</span>
+					</a>
+				</li>
+				<li class="search-link">
+					<a href="#" title="Поиск">
+						@@include("./includes/svg/icon-search-main.svg")
+						<span>Поиск</span>
+						<span class="text-for-mobile">Поиск</span>
+					</a>
+				</li>
+				<li class="translate-ling">
+					<div id="google_translate_element"></div><script type="text/javascript">
+					function googleTranslateElementInit() {
+						new google.translate.TranslateElement({pageLanguage: 'ru', includedLanguages: 'be,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+					}
+				</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+				</li>
+			</ul>
+			<!--user options end-->
+			<!--logo-->
+			<a href="index.html" class="logo">
+				<strong class="logo-img">
+					Могилевоблгаз
+					<img style="display: none;" src="img/logo-print.png" alt="logo">
+				</strong>
+				<div class="logo-text">
+					<div class="logo-title">
+						<strong>Могилевоблгаз</strong>
+						<span>Производственное республиканское унитарное предприятие</span>
+					</div>
+					<b>Профессионализм. Обязательность. Стабильность</b>
+				</div>
+			</a>
+			<!--logo end-->
+			<a href="#" class="btn-menu btn-menu-mobile js-btn-menu"><i></i><span>Меню</span></a>
+		</div>
+	</div>
+</header>
+<!--HEADER end-->
+
+<!--MAIN NAVIGATION-->
+<div class="main-nav">
+	<div class="main-nav-frame">
+		<div class="layout">
+			<div class="main-nav-holder">
+				<a href="#" class="btn-menu js-btn-menu"><i></i><span>Меню</span></a>
+				<nav class="nav">
+					<ul class="nav__list">
+						<li class="has-drop@@if(currentItem == "О предприятии"){ current}">
+							<a href="#"><span>О предприятии</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li><a href="#"><span>История</span></a></li>
+									<li><a href="#"><span>Структура</span></a></li>
+									<li><a href="#"><span>Гимн предприятия</span></a></li>
+									<li><a href="#"><span>Молодежная органзация</span></a></li>
+									<li><a href="#"><span>Ветеранская организация</span></a></li>
+									<li><a href="#"><span>Газета РУП «Могилевоблгаз»</span></a></li>
+									<li><a href="#"><span>Доска почета</span></a></li>
+									<li><a href="contacts.html"><span>Контакты</span></a></li>
+									<li><a href="#"><span>График приема</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="has-drop@@if(currentItem == "Пресс-центр"){ current}">
+							<a href="#"><span>Пресс-центр</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li class="current"><a href="news.html"><span>Новости</span></a></li>
+									<li class="has-drop">
+										<a href="#"><span>Статьи</span><i class="nav-depict-icons-angle"></i></a>
+										<div class="sub1-nav__drop js-nav-drop">
+											<ul class="sub2-nav__list">
+												<li><a href="#"><span>Управление качеством</span></a></li>
+												<li><a href="#"><span>Энергоэффективность</span></a></li>
+												<li><a href="#"><span>Правила безопасности</span></a></li>
+												<li><a href="#"><span>Учет природного и сжиженного газа</span></a></li>
+												<li><a href="#"><span>Льготы по реализации газа</span></a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="has-drop@@if(currentItem == "Населению"){ current}">
+							<a href="#"><span>Населению</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li><a href="#"><span>Основные виды работ, оказываемые физическим лицам (в т.ч. ремонт и тех. обслуживание)</span></a></li>
+									<li><a href="#"><span>Снабжение природным газом</span></a></li>
+									<li><a href="#"><span>Снабжение сжиженным газом</span></a></li>
+									<li><a href="#"><span>Газификация</span></a></li>
+									<li><a href="#"><span>Административные процедуры</span></a></li>
+									<li><a href="#"><span>Цены</span></a></li>
+									<li><a href="faq.html"><span>Вопрос-ответ</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="has-drop@@if(currentItem == "Юр. лицам"){ current}">
+							<a href="#"><span>Юр. лицам</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li><a href="#"><span>Сервисные центры</span></a></li>
+									<li><a href="#"><span>Снабжение природным газом</span></a></li>
+									<li><a href="#"><span>Снабжение сжиженным газом</span></a></li>
+									<li><a href="#"><span>Ремонт и тех. обслуживание</span></a></li>
+									<li><a href="#"><span>Газификация</span></a></li>
+									<li><a href="#"><span>Административные процедуры</span></a></li>
+									<li><a href="#"><span>Цены</span></a></li>
+									<li><a href="#"><span>Закупки</span></a></li>
+									<li><a href="faq.html"><span>Вопрос-ответ</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="has-drop@@if(currentItem == "Услуги"){ current}">
+							<a href="temp_services.html"><span>Услуги</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li class="has-drop">
+										<a href="temp_el-services.html"><span>Электронные услуги</span><i class="nav-depict-icons-angle"></i></a>
+										<div class="sub1-nav__drop js-nav-drop">
+											<ul class="sub2-nav__list">
+												<li><a href="calc.html"><span>Калькулятор расчета суммы к оплате за потребленный газ</span></a></li>
+												<li><a href="calc-card.html"><span>Получение информации о состоянии оплаты за потребленный газ и наличии/отсутствии льгот для бытовых абонентов Могилевской области</span></a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="shop.html"><span>Магазин</span></a></li>
+									<li><a href="#"><span>Перевод автомобилей на СУГ, ремонт, освидетельствование</span></a></li>
+									<li><a href="#"><span>Ремонт и поверка средств измерений</span></a></li>
+									<li><a href="#"><span>Транспортные услуги</span></a></li>
+									<li><a href="#"><span>Электрофизические измерения</span></a></li>
+									<li><a href="#"><span>Центральная лаборатория контроля качества сварочных работ</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="has-drop@@if(currentItem == "Обратная связь"){ current}">
+							<a href="#"><span>Обратная связь</span></a>
+							<div class="nav__drop js-nav-drop">
+								<ul class="sub1-nav__list">
+									<li><a href="el-appeal.html"><span>Электронное обращение</span></a></li>
+									<li><a href="faq.html"><span>Вопрос-ответ</span></a></li>
+									<li><a href="#"><span>Анкета удовлетворенности потребителей</span></a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!--MAIN NAVIGATION end-->

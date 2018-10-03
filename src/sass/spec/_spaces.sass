@@ -1,0 +1,105 @@
+@import ../../libs/include-media/dist/include-media
+@import ../utils/special-version-variables
+@import ../utils/mixins
+
+.#{$spec-mod}
+	// vertical space - default
+	// ---------------------------------------------------------------------------
+	h1, h2, h3, h4, h5, h6,
+	p, hr, blockquote,
+	blockquote q,
+	blockquote > p,
+	.files,
+	.files .files-item,
+	.promo-slider__bg,
+	.card__title,
+	.card-visual,
+	.card-description,
+	.expander,
+	.expander__header,
+	.info-container__item,
+	.custom-date .input-holder,
+	.regard__item,
+	.gallery,
+	.spec-bottom-space,
+	.spec-bottom-space
+		margin-bottom: $spec-bottom-space
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - section
+	// ---------------------------------------------------------------------------
+	.promo-section,
+	.regard-section,
+	.links-section,
+	.info-center-section,
+	.branches-section,
+	.news,
+	.promo-shop,
+	.products,
+	.spec-bottom-space-section,
+	.spec-bottom-space-section
+		margin-bottom: $spec-bottom-space-section
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - item
+	// ---------------------------------------------------------------------------
+	.content-head,
+	.datetime,
+	.promo-slider__item,
+	.r-tabs .tabs-panel,
+	.info__item,
+	.heading,
+	.news__item,
+	.bottom-space,
+	.products__list,
+	.products__item,
+	.card-bar,
+	.card-bar__panel,
+	.expander__item,
+	.info-container,
+	.contacts-map,
+	.contacts-map__info,
+	.contacts-map__frame,
+	.calc-form,
+	.map-legend,
+	.spec-bottom-space-item,
+	.spec-bottom-space-item
+		margin-bottom: $spec-bottom-space-item
+
+		&:last-child
+			margin-bottom: 0
+
+	// vertical space - element
+	// ---------------------------------------------------------------------------
+	.links__item,
+	.info__img,
+	.info__label,
+	.news__img,
+	.products__figure,
+	.products__inner,
+	.card-visual__figure,
+	.product__bay,
+	.card__features,
+	.card__title h1,
+	.section-title,
+	.expander__panel .expander__header,
+	.info-container__row,
+	.info-container__row_lg,
+	.map-popup__row,
+	.map-popup__row-title,
+	.calc__row,
+	.calc__col,
+	.calc__btn,
+	.calc__box .captcha,
+	.map-legend__list li,
+	.custom-date .flatpickr-input,
+	.spec-bottom-space-element,
+	.spec-bottom-space-element
+		margin-bottom: $spec-bottom-space-element
+
+		&:last-child
+			margin-bottom: 0
