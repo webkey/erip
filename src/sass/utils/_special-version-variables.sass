@@ -358,17 +358,22 @@ $main-nav-height--spec--sm: 60px
 		display: none
 		content: ""
 		position: absolute
-		left: 50%
-		margin: -1px 0 -1px -#{round($spec-panel__btn-arr-size / 2)}
+		//left: 50%
+		left: 3px
+		//margin: -1px 0 -1px -#{round($spec-panel__btn-arr-size / 2)}
+		margin: 3px 0
 		pointer-events: none
+
+		border-top: 3px solid currentColor
+		width: calc(100% - 6px)
 
 	&::before
 		bottom: 100%
-		+triangle("bottom", currentColor, round($spec-panel__btn-arr-size / 2), 0.8)
+		//+triangle("bottom", currentColor, round($spec-panel__btn-arr-size / 2), 0.8)
 
 	&::after
 		top: 100%
-		+triangle("top", currentColor, round($spec-panel__btn-arr-size / 2), 0.8)
+		//+triangle("top", currentColor, round($spec-panel__btn-arr-size / 2), 0.8)
 
 	// hover, focus
 	&:hover, &:focus

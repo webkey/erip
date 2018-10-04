@@ -229,7 +229,7 @@ function sidebarBehavior(){
 	var $sidebar = $('.sidebar');
 	if($sidebar.length){
 		$(window).on('load', function () {
-			$('.sidebar-small').clone().prependTo($sidebar.find('.sidebar-holder')).removeClass('sidebar-small').addClass('sidebar-large');
+			$('.sidebar-small').clone().prependTo($sidebar.find('.sidebar-holder')).removeClass('sidebar-small').addClass('sidebar-large sidebar-copied-js');
 
 			var $html = $('html');
 			// var $sidebarLayout = $('.sidebar-layout');
@@ -1421,7 +1421,7 @@ function multiAccordionInit() {
 /*multi search*/
 function multiSearchInit() {
 	$( "#multi-search-tags, .search-form input[type='search']" ).autocomplete({
-		source: "../erip/ajax/autocomplete.json",
+		source: "/ajax/autocomplete.json",
 		minLength: 2,
 		open: function () {
 			var $this = $(this);

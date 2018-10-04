@@ -4862,7 +4862,8 @@ html.desktop .sidebar-small:after{
 /*sb buttons*/
 .sb-phones,
 .sb-works,
-.sb-msi{
+.sb-msi,
+.sb-spec{
 	text-align: center;
 	line-height: 16px;
 	height: 80px;
@@ -4913,6 +4914,9 @@ html.desktop .sidebar-small:after{
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
+.sb-spec__align{
+	height: 100%;
+}
 .sb-phones__title,
 .sb-works__title,
 .sb-msi__title,
@@ -4936,30 +4940,34 @@ html.desktop .sidebar-small:after{
 	margin-bottom: 0;
 	color: #cf2f09;
 }
-.sb-msi__title_alt{
-	display: none;
-}
 .sb-phones a:hover .sb-phones__title,
 .sb-msi a:hover .sb-msi__title,
 .sb-msi a:hover .sb-msi__title_alt{
 	color: #fff;
 }
-.sb-phones__title{
+/*.sb-phones__title{
 	max-height: 0;
-}
-.sidebar-large .sb-phones__title,
+}*/
+/*.sidebar-large .sb-phones__title,
 .sidebar-large .sb-msi__title,
 .sidebar-large .sb-msi__title_alt{
 	max-height: 50px;
-}
-.sidebar-large .sb-msi__title{
-	display: none;
-}
+}*/
 .sidebar-large .sb-msi__title_alt{
-	display: block;
 	font-size: 12px;
 	font-weight: normal;
 	color: #0f4b01;
+}
+.sb-phones__title,
+.sb-msi__title_alt{
+	display: none;
+}
+.sidebar-large .sb-phones__title,
+.sidebar-large .sb-msi__title_alt{
+	display: block;
+}
+.sidebar-large .sb-msi__title{
+	display: none;
 }
 .sb-phones__body,
 .sb-msi__body,
@@ -5328,6 +5336,8 @@ html.desktop .sidebar-small:after{
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	text-indent: -9999px;
+	overflow: hidden;
 	border: solid #bf7600;
 	border-width: 1px 0 0;
 	background: url(../img/depict-dev.png) no-repeat 50% 50%;

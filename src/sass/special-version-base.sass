@@ -5,6 +5,8 @@
 @import utils/placeholders
 
 // variables
+$base-color: #f29700
+$base-color-alt: #0f4b01
 $displace: 1px
 // variables end
 
@@ -477,92 +479,63 @@ $icon-spacing--space: 3px // h
 
 /*button switch special version
 .spec-btn-switcher
-	position: fixed
-	left: 10px
-	top: 10px
-	padding-left: 1.9em
-	//font-family: Arial, Helvetica, sans-serif
-	font-family: 'lato-regular', sans-serif
-	font-size: 18px
-	line-height: 30px
-	letter-spacing: normal
-	color: inherit
-	font-style: normal
-	box-sizing: border-box
-	z-index: 9999
+	display: block
+	position: relative
 
-	.#{$spec-mod} &
-		font-family: inherit
-		font-weight: bold
+	// in sidebar
+	.sidebar &
+		height: 100%
+		padding: 30px 5px 0
+		font-family: Arial, Helvetica, sans-serif
+		//font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif
+		font-size: 10px
+		line-height: 12px
+		letter-spacing: normal
+		text-transform: uppercase
+		color: $base-color-alt
+		font-style: normal
+		// transition
+		$prop: background-color, color
+		word-wrap: break-word
+		will-change: $prop
+		transition:
+			property: $prop
+			duration: 0.2s
+			//timing-function: ease-in-out
 
-	body:not(.#{$spec-mod}) &.to_normal
-		display: none
-
-	.#{$spec-mod} &:not(.to_normal)
-		display: none
-
-	svg
-		+size(1.4em)
-		position: absolute
-		left: 0
-		top: 50%
-		transform: translate(0, -50%)
 		box-sizing: border-box
-
-	path
-		fill: currentColor
-
-	// in header
-	.header &
-		position: absolute
-		left: auto
-		right: 15px
-		top: 15px
-
-		+media('<tab-lg')
-			right: 55px
-			top: 5px
-			color: white
-
-		.home-page &
-			color: white
-
-		span
-			+media('<tab-lg')
-				display: inline-block
-				vertical-align: top
-				font-size: 14px
-
-			+media('<mob-lg')
-				//width: 110px
-				//font-size: 14px
-				//line-height: 16px
-				width: 95px
-				font-size: 13px
-				line-height: 15px
-
-		&:not(.to_normal)
-			+media('<559px')
-				right: 40px
-				top: 0
-				height: 40px
-				width: 40px
-				padding-left: 0
-				box-shadow: inset 1px 0 0 rgba(white, 0.35)
-
-			+media('<mob-md')
-				right: 30px
-
-			svg
-				+media('<559px')
-					left: 50%
-					transform: translate(-50%, -50%)
-
-			span
-				+media('<559px')
-					display: none
+		z-index: 9999
 
 		.#{$spec-mod} &
+			font-family: inherit
+			font-weight: bold
+
+		body:not(.#{$spec-mod}) &.to_normal
+			display: none
+
+		.#{$spec-mod} &:not(.to_normal)
+			display: none
+
+		svg
+			//+size(1.4em)
+			+size(30px)
+			position: absolute
+			left: 50%
+			top: 0
+			transform: translate(-50%, 0)
+			box-sizing: border-box
+
+		path
+			fill: currentColor
+			// transition
+			$prop: fill
+			will-change: $prop
+			transition:
+				property: $prop
+				duration: 0.2s
+				//timing-function: ease-in-out
+
+		//.#{$spec-mod} &
 			color: currentColor
 			top: auto
 			right: 0
@@ -585,8 +558,45 @@ $icon-spacing--space: 3px // h
 				width: auto
 				line-height: inherit
 
+		// hover
+		&:hover
+			color: white
+			background-color: $base-color-alt
+			text-decoration: none
+
+	// Только для текущего проекта
+	.sidebar-large &
+		display: flex
+		align-items: center
+		padding: 0 12px 0 64px
+		font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif
+		font-size: 14px
+		line-height: 17px
+		text-align: left
+		color: #000
+
+		svg
+			left: 23px
+			top: 50%
+			transform: translate(0, -50%)
+
+		path
+			color: $base-color-alt
+
+	.sidebar &,
+	.sidebar-large &
+		// hover
+		&:hover
+			color: white
+			background-color: $base-color-alt
+			text-decoration: none
+
+			path
+				color: currentColor
+
 	// in footer
 	.footer &
+		padding-left: 1.9em
 		position: absolute
 		left: auto
 		top: auto
@@ -597,6 +607,18 @@ $icon-spacing--space: 3px // h
 			color: currentColor
 			position: relative
 			bottom: auto
+
+		svg
+			//+size(1.4em)
+			+size(30px)
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translate(0, -50%)
+			box-sizing: border-box
+
+		path
+			fill: currentColor
 
 /*button switch special version end
 

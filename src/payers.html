@@ -1,10 +1,13 @@
 <!doctype html>
 <!--[if lte IE 9]><html class="no-js lte-ie9" lang=""> <![endif]-->
 <!--[if lt IE 9]><html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang=""> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
 <head>
 	<meta charset="UTF-8">
-	<title>Расчет - Платильщикам</title>
+	<title>Плательщикам</title>
 	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,1215 +17,1448 @@
 	<link href="favicon.ico" rel="shortcut icon">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
 	<!--Main style-->
-	<link href="css/all.css" rel="stylesheet" media="screen">
+	<link href="css/all.css?rev=@@hash" rel="stylesheet" media="all">
 	<!--Media queries style-->
-	<link href="css/mq-all.css" rel="stylesheet" media="screen">
+	<link href="css/mq-all.css?rev=@@hash" rel="stylesheet" media="screen">
 	<!--Modernizr-->
 	<script src="js/vendor/modernizr.min.js"></script>
+	<!--Special-->
+	<link href="css/special-version-base.css?rev=@@hash" rel="stylesheet" media="screen">
+	<!--Если для специальной версии создаются отдельные шаблоны код ниже не нужен-->
+	<script>
+		var cssPath = 'css/';
+	</script>
 </head>
-<body class="home-page top-panel-show">
-<!--[if lt IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-<div class="wrapper">
-	<!--sidebar-->
-	<aside class="sidebar">
-		<div class="sidebar-layout">
-			<div class="sidebar-holder">
-				<div class="sidebar-inner sidebar-small">
-					<div class="sidebar-frame">
-						<!--logo-->
-						<strong class="logo"> <a href="index.html"> <img src="img/logo.png" alt="Расчет" /> <span class="logo__text">Единое Расчётное Информационное Пространство</span> </a> </strong>
-						<!--logo end-->
-						<!--sb buttons-->
-						<div class="sb-msi">
-							<a href="#">
-								<div class="sb-msi__align">
-									<div class="sb-msi__title">
-										<i class="icon-sing-in">
-											<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
-												<path fill="#cf2f09" d="M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z"></path>
-												<path fill="#cf2f09" d="M10 8l-5-4v2h-5v4h5v2z"></path>
-											</svg>
-										</i>
-										<span>МСИ</span>
-									</div>
-									<div class="sb-msi__title_alt">Межбанковская система идентификации</div>
-									<div class="sb-msi__body">
-										<div class="sb-msi__btn">
+<body class="top-panel-show">
+	<!--[if lt IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+	<!--Special Version Tools Panel-->
+	<div class="spec-panel spec-panel-js">
+		<div class="spec-panel__layout">
+			<div class="spec-panel__holder">
+				<div class="spec-panel__item">
+					<div class="spec-panel__label">Размер шрифта:</div>
+					<div class="spec-panel__btn-group spec-panel__btn-group-js">
+						<a href="#" class="spec-panel__btn spec-panel__btn_size_sm spec-btn-js" aria-label="Маленкий размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_sm" title="Маленкий размер шрифта">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+								<path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"></path>
+							</svg>
+							<span>Маленкий размер шрифта</span>
+						</a>
+						<a href="#" class="spec-panel__btn spec-panel__btn_size_md spec-btn-js" aria-label="Средний размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_norm" title="Средний размер шрифта" data-default="true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"></path>
+							</svg>
+							<span>Средний размер шрифта</span>
+						</a>
+						<a href="#" class="spec-panel__btn spec-panel__btn_size_lg spec-btn-js" aria-label="Большой размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_lg" title="Большой размер шрифта">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"></path>
+							</svg>
+							<span>Большой размер шрифта</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-panel__item">
+					<div class="spec-panel__label">Цвета сайта:</div>
+					<div class="spec-panel__btn-group spec-panel__btn-group-js">
+						<a href="#" class="spec-panel__btn spec-panel__btn_color_def spec-btn-js" aria-label="Черным по белому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_def" title="Черным по белому" data-default="true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z"></path>
+							</svg>
+							<span>Черным по белому</span>
+						</a>
+						<a href="#" class="spec-panel__btn spec-panel__btn_color_white spec-btn-js" aria-label="Белым по черному" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_white" title="Белым по черному">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z"></path>
+							</svg>
+							<span>Белым по черному</span>
+						</a>
+						<a href="#" class="spec-panel__btn spec-panel__btn_color_blue spec-btn-js" aria-label="Темно-синим по голубому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_blue" title="Темно-синим по голубому">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z"></path>
+							</svg>
+							<span>Темно-синим по голубому</span>
+						</a>
+						<a href="#" class="spec-panel__btn spec-panel__btn_color_green spec-btn-js" aria-label="Зеленым по темно-коричневому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_green" title="Зеленым по темно-коричневому">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M5 17v2h14v-2H5zm4.5-4.2h5l.9 2.2h2.1L12.75 4h-1.5L6.5 15h2.1l.9-2.2zM12 5.98L13.87 11h-3.74L12 5.98z"></path>
+							</svg>
+							<span>Зеленым по темно-коричневому</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-panel__footer">
+					<div class="spec-panel__btn-group">
+						<a href="all-pages.html" class="spec-panel__btn spec-panel__btn_search" aria-label="Поиск по сайту" title="Поиск по сайту">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+							</svg>
+							<span>Поиск</span>
+						</a>
+					</div>
+					<div class="spec-panel__btn-group">
+						<a href="#" class="spec-panel__btn spec-panel__btn_settings spec-btn-settings-js" aria-label="Открыть/закрыть расширенные настройки" title="Открыть/закрыть расширенные настройки">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 20 20">
+								<path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"></path>
+							</svg>
+							<span>Настройки</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Special Version Full Settings -->
+		<div class="spec-drop spec-settings-js">
+			<div class="spec-drop__layout">
+				<div class="spec-drop__title">Настройки текста:</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Выберите начертание шрифта:</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_sans-serif spec-btn-js" aria-label="Шрифт без засечек" data-mod-name="font-style" data-mod-value="vspec-mod_font-style_sans-serif" title="Шрифт без засечек" data-default="true">
+							<i class="icon"></i>
+							<span>Без засечек (sans serif)</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_serif spec-btn-js" aria-label="Шрифт с засечками" data-mod-name="font-style" data-mod-value="vspec-mod_font-style_serif" title="Шрифт с засечками">
+							<i class="icon"></i>
+							<span>С засечками (serif)</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_monospace spec-btn-js" aria-label="Шрифт моноширинный" data-mod-name="font-style" data-mod-value="vspec-mod_font-style_monospace" title="Шрифт моноширинный">
+							<i class="icon"></i>
+							<span>Моноширинный (monospace)</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Размер шрифта:</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_size_sm spec-btn-js" aria-label="Маленький размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_sm" title="Маленький размер шрифта">
+							<i class="icon"></i>
+							<span>Маленький</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_size_md spec-btn-js" aria-label="Средний размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_norm" title="Средний размер шрифта" data-default="true">
+							<i class="icon"></i>
+							<span>Средний</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_size_lg spec-btn-js" aria-label="Большой размер шрифта" data-mod-name="font-size" data-mod-value="vspec-mod_font-size_lg" title="Большой размер шрифта">
+							<i class="icon"></i>
+							<span>Большой</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Интервал между буквами (Кернинг):</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_spacing_norm spec-btn-js" aria-label="Стандартный интервал" data-mod-name="spacing" data-mod-value="vspec-mod_spacing_norm" title="Стандартный интервал" data-default="true">
+							<i class="icon"></i>
+							<span>Стандартный</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_spacing_md spec-btn-js" aria-label="Средний интервал" data-mod-name="spacing" data-mod-value="vspec-mod_spacing_md" title="Средний интервал">
+							<i class="icon"></i>
+							<span>Средний</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_spacing_lg spec-btn-js" aria-label="Большой интервал" data-mod-name="spacing" data-mod-value="vspec-mod_spacing_lg" title="Большой интервал">
+							<i class="icon"></i>
+							<span>Большой</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Интервал между строками:</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_line_sm spec-btn-js" aria-label="Одинарный интервал" data-mod-name="line-height" data-mod-value="vspec-mod_line-height_sm" title="Одинарный интервал">
+							<i class="icon"></i>
+							<span>Одинарный<br> интервал</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_line_md spec-btn-js" aria-label="Полуторный интервал" data-mod-name="line-height" data-mod-value="vspec-mod_line-height_md" title="Полуторный интервал" data-default="true">
+							<i class="icon"></i>
+							<span>Полуторный<br> интервал</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_line_lg spec-btn-js" aria-label="Двойной интервал" data-mod-name="line-height" data-mod-value="vspec-mod_line-height_lg" title="Двойной интервал">
+							<i class="icon"></i>
+							<span>Двойной<br> интервал</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__title">Выбор цветовой схемы:</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Цвета сайта:</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_color_def spec-btn-js" aria-label="Черным по белому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_def" title="Черным по белому" data-default="true">
+							<i class="icon"></i>
+							<span>Черным по белому</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_color_white spec-btn-js" aria-label="Белым по черному" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_white" title="Белым по черному">
+							<i class="icon"></i>
+							<span>Белым по черному</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_color_blue spec-btn-js" aria-label="Темно-синим по голубому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_blue" title="Темно-синим по голубому">
+							<i class="icon"></i>
+							<span>Темно-синим по голубому</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_color_brown spec-btn-js" aria-label="Коричневым по бежевому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_brown" title="Коричневым по бежевому">
+							<i class="icon"></i>
+							<span>Коричневым по бежевому</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_color_green spec-btn-js" aria-label="Зеленым по темно-коричневому" data-mod-name="scheme-color" data-mod-value="vspec-mod_scheme-color_green" title="Зеленым по темно-коричневому">
+							<i class="icon"></i>
+							<span>Зеленым по темно-коричневому</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__title">Графика:</div>
+				<div class="spec-drop__item">
+					<div class="spec-drop__label">Изображение:</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_img spec-btn-js" aria-label="Включить изображения" data-mod-name="img" data-mod-value="vspec-mod_img_on" title="Включить изображения">
+							<i class="icon"></i>
+							<span>Включить</span>
+						</a>
+						<a href="#" class="spec-drop__btn spec-drop__btn_img spec-btn-js" aria-label="Выключить изображения" data-mod-name="img" data-mod-value="vspec-mod_img_off" title="Выключить изображения" data-default="true">
+							<i class="icon"></i>
+							<span>Выключить</span>
+						</a>
+					</div>
+					<div class="spec-drop__btn-group spec-drop__btn-group-js">
+						<a href="#" class="spec-drop__btn spec-drop__btn_mono spec-btn-js" aria-label="Монохромные изображения" data-mod-name="mono" data-mod-value="vspec-mod_mono" data-title-on="Отключить монохромность изображений" data-title-off="Включить монохромность изображений" data-toggle data-default="true">
+							<i class="icon"></i>
+							<span>Монохромные изображения</span>
+						</a>
+					</div>
+				</div>
+				<div class="spec-drop__footer">
+					<div class="spec-drop__btn-group">
+						<a href="#" class="spec-drop__btn spec-drop__btn_settings spec-btn-reset-js" aria-label="Сбросить пользовательские настройки" title="Сбросить пользовательские настройки">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"></path>
+							</svg>
+							<span>Вернуть стандартные настройки</span>
+						</a>
+					</div>
+					<div class="spec-drop__btn-group">
+						<a href="#" class="spec-drop__btn spec-drop__btn_switcher spec-btn-switcher-js" aria-label="Переключить на обычнаю версию сайта" title="Переключить на обычнаю версию сайта">
+							<svg class="icon-spec-off" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 1792 1792" width="24">
+								<path d="M555 1335l78-141q-87-63-136-159t-49-203q0-121 61-225-229 117-381 353 167 258 427 375zm389-759q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm363-191q0 7-1 9-105 188-315 566t-316 567l-49 89q-10 16-28 16-12 0-134-70-16-10-16-28 0-12 44-87-143-65-263.5-173t-208.5-245q-20-31-20-69t20-69q153-235 380-371t496-136q89 0 180 17l54-97q10-16 28-16 5 0 18 6t31 15.5 33 18.5 31.5 18.5 19.5 11.5q16 10 16 27zm37 447q0 139-79 253.5t-209 164.5l280-502q8 45 8 84zm448 128q0 35-20 69-39 64-109 145-150 172-347.5 267t-419.5 95l74-132q212-18 392.5-137t301.5-307q-115-179-282-294l63-112q95 64 182.5 153t144.5 184q20 34 20 69z"></path>
+							</svg>
+							<span>Обычная версия сайта</span>
+						</a>
+					</div>
+					<div class="spec-drop__btn-group">
+						<a href="#" class="spec-drop__btn spec-drop__btn_settings spec-btn-settings-js" aria-label="Закрыть расширенные настройки" title="Закрыть расширенные настройки">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+							<span>Закрыть</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Special Version Full Settings end -->
+	</div>
+	<!--Special Version Tools Panel end-->
+	<!--WRAPPER-->
+	<div class="wrapper">
+		<!--sidebar-->
+		<aside class="sidebar">
+			<div class="sidebar-layout">
+				<div class="sidebar-holder">
+					<div class="sidebar-inner sidebar-small">
+						<div class="sidebar-frame">
+							<!--logo-->
+							<strong class="logo"> <a href="index.html"> <img src="img/logo.png" alt="Расчет" /> <span class="logo__text">Единое Расчётное Информационное Пространство</span> </a> </strong>
+							<!--logo end-->
+							<!--sb buttons-->
+							<div class="sb-msi">
+								<a href="#">
+									<div class="sb-msi__align">
+										<div class="sb-msi__title">
 											<i class="icon-sing-in">
 												<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
 													<path fill="#cf2f09" d="M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z"></path>
 													<path fill="#cf2f09" d="M10 8l-5-4v2h-5v4h5v2z"></path>
 												</svg>
 											</i>
-											<span>Вход</span>
+											<span>МСИ</span>
 										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="sb-phones">
-							<a href="tel:141">
-								<div class="sb-phones__align">
-									<div class="sb-phones__title">контактный телефон:</div>
-									<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
-								</div>
-							</a>
-						</div>
-						<div class="sb-works">
-							<div class="sb-works__align">
-								<div class="sb-works__title">время работы:</div>
-								<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
-							</div>
-						</div>
-						<!--sb buttons end-->
-						<!--sb menu-->
-						<ul class="sb-menu">
-							<li>
-								<a href="#">
-									<div class="sb-menu__view-normal">
-										<i class="depict-tel"></i> <span class="sb-menu__inner">Пункты приема</span>
-									</div>
-									<div class="sb-menu__view-alt">
-										<i class="depict-tel"></i> <span class="sb-menu__inner">Пункты приёма платежей</span>
+										<div class="sb-msi__title_alt">Межбанковская система идентификации</div>
+										<div class="sb-msi__body">
+											<div class="sb-msi__btn">
+												<i class="icon-sing-in">
+													<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+														<path fill="#cf2f09" d="M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z"></path>
+														<path fill="#cf2f09" d="M10 8l-5-4v2h-5v4h5v2z"></path>
+													</svg>
+												</i>
+												<span>Вход</span>
+											</div>
+										</div>
 									</div>
 								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="sb-menu__view-normal">
-										<i class="depict-faq"></i> <span class="sb-menu__inner">Вопросы и ответы</span>
-									</div>
-									<div class="sb-menu__view-alt">
-										<i class="depict-faq"></i> <span class="sb-menu__inner">Часто задаваемые вопросы</span>
+							</div>
+							<div class="sb-phones">
+								<a href="tel:141">
+									<div class="sb-phones__align">
+										<div class="sb-phones__title">контактный телефон:</div>
+										<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
 									</div>
 								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="sb-menu__view-normal">
-										<i class="depict-stat"></i> <span class="sb-menu__inner">Статистика системы</span>
-									</div>
-									<div class="sb-menu__view-alt">
-										<i class="depict-stat"></i> <span class="sb-menu__inner">Статистика системы</span>
-									</div>
-								</a>
-							</li>
-						</ul>
-						<!--sb menu end-->
-						<!--social networks-->
-						<ul class="social-networks">
-							<li>
-								<a href="#" class="soc-facebook"> <span>facebook</span> <i class="soc-depict-fb"></i> <i class="soc-depict-fb-h"></i> </a>
-							</li>
-							<li>
-								<a href="#" class="soc-twitter"> <span>twitter</span> <i class="soc-depict-twitter"></i> <i class="soc-depict-twitter-h"></i> </a>
-							</li>
-							<li>
-								<a href="#" class="vk"> <span>vk</span> <i class="soc-depict-vk"></i> <i class="soc-depict-vk-h"></i> </a>
-							</li>
-						</ul>
-						<!--social networks end-->
-						<!--developer-->
-						<a href="#" class="developer"></a>
-						<!--developer end-->
-					</div>
-				</div>
-			</div>
-		</div>
-	</aside>
-	<a href="#" class="btn-sidebar"><span>Дополнительное меню</span></a>
-	<!--sidebar end-->
-
-	<!--site map-->
-	<div class="site-map js-popup-menu" id="site-map-popup">
-		<div class="site-map-layout">
-			<div class="site-map-overlay"></div>
-			<div class="site-map-holder">
-				<div class="align-layout">
-					<ul class="nav-bar__list">
-						<li class="align-left">
-							<strong>НКФО</strong>
-							<ul>
-								<li><a href="#">Структура</a></li>
-								<li><a href="#">Наблюдательный Совет</a></li>
-								<li><a href="#">Правление</a></li>
-								<li><a href="#">Акционеры</a></li>
-								<li><a href="#">Финансовые показатели деятельности</a></li>
-								<li><a href="#">Вакансии</a></li>
-								<li><a href="#">АИС ЖКУ</a></li>
-								<li><a href="#">Раскрытие информации</a></li>
-								<li><a href="#">Финансовая грамотность</a></li>
-								<li><a href="#">Электронное обращение</a></li>
-								<li><a href="#">Контакты</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>о системе</strong>
-							<ul>
-								<li><a href="#">Участники</a></li>
-								<li><a href="#">Нормативная база</a></li>
-								<li><a href="#">Публикации Видео</a></li>
-								<li><a href="#">Новости</a></li>
-								<li><a href="#">Личный кабинет</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>Расчетным агентам</strong>
-							<ul>
-								<li><a href="#">Платежные агенты</a></li>
-								<li><a href="#">Статистика (Рэнкинг банков)</a></li>
-								<li><a href="#">Договорные отношения</a></li>
-								<li><a href="#">Заявка в службу поддержки.</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>Производителям услуг</strong>
-							<ul>
-								<li><a href="#">Условия подключения</a></li>
-								<li><a href="#">Информационный ресурс</a></li>
-								<li><a href="#">Агрегаторы</a></li>
-							</ul>
-						</li>
-						<li>
-							<strong>потребителям услуг</strong>
-							<ul>
-								<li><a href="#">Популярные вопросы</a></li>
-								<li><a href="#">Задать вопрос</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="btn-site-map-close" title="Закрыть"></div>
-		</div>
-	</div>
-	<!--site map end-->
-
-	<!--header-->
-	<header class="header">
-		<div class="header-layout">
-			<!--logo in header-->
-			<strong class="logo logo-header">
-				<a href="index.html">
-					<img src="img/logo.png" alt="Расчет">
-					<span class="logo__text">Единое Расчётное Информационное Пространство</span>
-				</a>
-			</strong>
-			<!--logo in header end-->
-
-			<!-- main navigation -->
-			<nav class="nav">
-				<div class="nav-layout">
-					<!--button menu-->
-					<a href="#" class="btn-menu"><span>Меню</span></a>
-					<!--button menu end-->
-
-					<ul class="nav-list">
-						<li><a href="#about-company-submenu"><span>О компании</span></a></li>
-						<li><a href="#about-system-submenu"><span>О системе</span></a></li>
-						<li><a href="#for-payers-menu"><span>Плательщикам</span></a></li>
-						<li><a href="#for-org-menu"><span>Организациям</span></a></li>
-						<li><a href="#for-banks-menu"><span>Банкам</span></a></li>
-					</ul>
-				</div>
-			</nav>
-			<!-- main navigation end -->
-
-			<!--button site map-->
-			<a href="#" class="btn-site-map" title="Карта сайта">
-				<div class="btn-lines">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</a>
-			<!--button site map-->
-
-			<!--search form-->
-			<div class="search-form js-search-form">
-				<form action="#">
-					<div class="btn-search">
-						<i></i>
-						<input type="submit" value="" title="Поиск">
-					</div>
-					<div class="input-wrapper">
-						<input type="search" placeholder="Поиск по сайту">
-					</div>
-					<strong class="btn-search-open js-search-open">
-						<span>Поиск</span>
-					</strong>
-				</form>
-			</div>
-			<!--search form end-->
-
-			<!--button menu-->
-			<a href="#" class="btn-aside" title="Акции и новости">
-				<div class="btn-lines">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</a>
-			<!--button menu end-->
-		</div>
-	</header>
-	<!--header end-->
-
-	<!--main layout-->
-	<div class="main-layout sticky-js">
-		<!--catalog menu-->
-		<div class="catalog-menu">
-			<ul class="catalog-menu-list" id="about-company-submenu">
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-				<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
-				<li><a href="#"><span>Пункты обслуживания</span></a></li>
-				<li><a href="#"><span>Где можно оплатить</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-			</ul>
-			<ul class="catalog-menu-list" id="about-system-submenu">
-				<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
-				<li><a href="#"><span>Пункты обслуживания</span></a></li>
-				<li><a href="#"><span>Где можно оплатить</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-			</ul>
-			<ul class="catalog-menu-list" id="for-payers-menu">
-				<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="typography.html"><span>Информация о системе</span></a></li>
-				<li><a href="typography.html"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
-				<li><a href="typography.html"><span>Пункты обслуживания</span></a></li>
-				<li><a href="typography.html"><span>Где можно оплатить</span></a></li>
-				<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="typography.html"><span>Информация о системе</span></a></li>
-				<li><a href="typography.html"><span>Информация о системе</span></a></li>
-			</ul>
-			<ul class="catalog-menu-list" id="for-org-menu">
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-				<li><a href="#"><span>Пункты обслуживания</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-			</ul>
-			<ul class="catalog-menu-list" id="for-banks-menu">
-				<li><a href="#"><span>Где можно оплатить</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
-				<li><a href="#"><span>Информация о системе</span></a></li>
-			</ul>
-		</div>
-		<!--catalog menu-->
-
-		<!--main-->
-		<div class="main">
-			<!--main content-->
-			<div class="content user-content full-page">
-				<div class="title-box">
-					<div class="align-center align-layout">
-						<h2>Плательщикам</h2>
-						<p></p>
-					</div>
-				</div>
-
-				<!--promo slider-->
-				<section class="promo-slider">
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Живи полной жизнью</h3>
-							<p class="promo-slider__text">Экономь своё время при покупке билетов в кино, театр, кинотеатр, самолёт через систему "Расчет" (ЕРИП).</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-02.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor sit amet</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet consectetur est facere fuga laudantium minima minus modi, molestias necessitatibus non nostrum odio, perferendis quisquam repudiandae sapiente suscipit voluptates, voluptatibus.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-03.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-04.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-					<article class="promo-slider__item">
-						<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-05.jpg);"></div>
-						<div class="promo-slider__content">
-							<h3>Lorem ipsum dolor</h3>
-							<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
-						</div>
-						<footer><a href="#" class="btn-more">Подробнее</a></footer>
-					</article>
-				</section>
-				<!--promo slider-->
-
-				<!--advantages-->
-				<section class="advantages-section">
-					<div class="align-layout">
-						<div class="title-box">
-							<div class="align-center align-layout">
-								<h2>Преимущества системы</h2>
 							</div>
-						</div>
-						<article class="advantages">
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-01.png" alt="image description" />
-								</figure>
-								<h3>Широкий спектр услуг</h3>
-								<p>Система «Расчет» предоставляет данные по широкому спектру услуг, доступных к оплате.</p>
-							</section>
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-02.png" alt="image description" />
-								</figure>
-								<h3>предоставляем гарантии</h3>
-								<p>При использовании системы «Расчет» Вам гарантируется достоверность предоставляемой информации по платежам, а так же гарантируется осуществление платежей при успешно проведенной операции.</p>
-							</section>
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-03.png" alt="image description" />
-								</figure>
-								<h3>единая база по услугам</h3>
-								<p>Всем расчетным агентам, подключенным к системе, предоставляется единая база по услугам, которые можно оплатить с использованием «Расчет», с учетом тарифов, установленных производителем услуг.</p>
-							</section>
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-04.png" alt="image description" />
-								</figure>
-								<h3>сохранение данных о платежах</h3>
-								<p>Данные по осуществленным платежам сохраняются в системе и при повторном обращении к платежу его реквизиты и новые требования к оплате услуги будут видны в пунктах банковского обслуживания любого расчетного агента.</p>
-							</section>
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-05.png" alt="image description" />
-								</figure>
-								<h3>платежи без комиссии</h3>
-								<p>Главное преимущество системы «Расчёт» для плательщиков есть её функциональность и возможность совершать платежи без комиссии (если комиссия не предусмотрена Производителем услуг).</p>
-							</section>
-							<section class="advantages-item">
-								<figure class="advantages-img">
-									<img src="img/advantage-06.png" alt="image description" />
-								</figure>
-								<h3>единый централизованный контакт-центр</h3>
-								<p>В случае возникновения трудностей Вы можете обратиться в единый централизованный контакт-центр системы «Расчет», в котором опытные операторы помогут Вам справиться со сложившейся ситуацией.</p>
-							</section>
-						</article>
-					</div>
-				</section>
-				<!--advantages end-->
-
-				<!--helpful section-->
-				<section class="helpful-section tabs-wrap">
-					<div class="title-box">
-						<div class="align-center align-layout">
-							<h2>Полезная информация</h2>
-							<p>Вашему вниманию представлен каталог пунктов банковского обслуживания (коротко ПБО) и следующие типы терминалов для оплаты услуг.</p>
-						</div>
-					</div>
-
-					<!--helpful-->
-					<div class="helpful tabs-container">
-						<!--helpful controls-->
-						<ul class="helpful__controls tab-controls">
-							<li class="active"><a href="#tabs-helpful-01"><span>Где можно оплатить</span></a></li>
-							<li><a href="#tabs-helpful-02"><span>Пункты обслуживания</span></a></li>
-						</ul>
-						<!--helpful controls end-->
-
-						<div class="helpful__panel tabs-panel" id="tabs-helpful-01">
-							<div class="align-layout">
-
-								<div class="helpful__note">Системой «Расчет» можно воспользоваться для оплаты некоторых услуг через платежную
-									систему WEBPAY, а также с помощью систем электронных денег:</div>
-								<!--cells-list / pay list-->
-								<ul class="cells-list pay-list">
-									<li><a href="#"><img src="img/logotype-pay-belgi.png" alt="image description" /></a></li>
-									<li><a href="#"><img src="img/logotype-pay-webpay.png" alt="image description" /></a></li>
-									<li><a href="#"><img src="img/logotype-pay-easypay.png" alt="image description" /></a></li>
-									<li><a href="#"><img src="img/logotype-pay-webmoney.png" alt="image description" /></a></li>
-								</ul>
-								<!--cells-list / pay list end-->
-
-								<!--terminals-->
-								<section class="terminals">
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «АСБ Беларусбанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>ПСТ+Cash-In</li>
-													<li>ПСТ</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Белагропромбанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>ПСТ+Cash-In</li>
-													<li>ПСТ</li>
-													<li>Платежный терминал</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-													<li>Автооплата</li>
-													<li>Мобильный банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Приорбанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>ПСТ+Cash-In</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-													<li>Автооплата</li>
-													<li>Cash-In</li>
-													<li>Мобильный банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Белгазпромбанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>ПСТ+Cash-In</li>
-													<li>ПСТ</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-													<li>Автооплата</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Белинвестбанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ЗАО «МТБанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>ПСТ</li>
-													<li>Интернет-банк</li>
-													<li>ПСТ+Cash-In</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «БПС-Сбербанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>ПСТ+Cash-In</li>
-													<li>ПСТ</li>
-													<li>Платежный терминал</li>
-													<li>Интернет-банк</li>
-													<li>СМС-банк</li>
-													<li>Автооплата</li>
-													<li>Мобильный банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Банк Москва-Минск»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Банк БелВЭБ»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Банкомат</li>
-													<li>ПСТ+Cash-In</li>
-													<li>Интернет-банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ЗАО «Альфа-банк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>ПСТ+Cash-In</li>
-													<li>Интернет-банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-									<article class="terminals-item">
-										<div class="terminals-item__holder">
-											<h3>
-												<i class="terminals-item__angle"></i>
-												<span class="text-inner">ОАО «Технобанк»</span>
-											</h3>
-											<div class="terminals-item__drop">
-												<ul>
-													<li>Касса</li>
-													<li>Интернет-банк</li>
-												</ul>
-											</div>
-										</div>
-									</article>
-								</section>
-								<!--terminals end-->
-
-								<div class="terminals-more align-center">
-									<a href="#" class="btn-default"><span class="btn-default__inner">Еще <i class="arrow-more"></i></span></a>
+							<div class="sb-works">
+								<div class="sb-works__align">
+									<div class="sb-works__title">время работы:</div>
+									<div class="sb-work__body"><i class="icon-access_time"></i><span>8:00 - 20:00</span></div>
 								</div>
 							</div>
-						</div>
-
-						<div class="helpful__panel tabs-panel" id="tabs-helpful-02">
-							<div class="align-layout">
-								<div class="helpful__note">Для осуществления поиска интересующих Вас ПБО, выберите регион и населенный пункт. Отобразится список всех ПБО, имеющихся в выбранном населенном пункте. В случае, если Вас интересует конкретный банк (конкретный тип ПБО), выбирете нужный банк (тип ПБО).</div>
-								<!--service points-->
-								<div class="s-points">
-									<div class="s-points__filters">
-										<div class="s-points__filters-item">
-											<label class="select" for="select-filter-region">
-												<select name="filter-region" id="select-filter-region">
-													<option value="-1">Регион</option>
-													<option value="1">Брестская область</option>
-													<option value="2">Витебская область</option>
-													<option value="3">Гомельская область</option>
-													<option value="4">Гродненская область</option>
-													<option value="5">Минская область</option>
-													<option value="6">Могилёвская область</option>
-													<option value="7">Примечания</option>
-												</select>
-											</label>
-										</div>
-										<div class="s-points__filters-item">
-											<label class="select" for="select-filter-locality">
-												<select name="filter-locality" id="select-filter-locality">
-													<option value="-1">Населенный пункт</option>
-													<option value="1">Березино</option>
-													<option value="2">Борисов</option>
-													<option value="3">Вилейка</option>
-													<option value="4">Воложин</option>
-													<option value="5">Дзержинск</option>
-													<option value="6">Клецк</option>
-													<option value="7">Копыль</option>
-													<option value="8">Крупки</option>
-													<option value="9">Логойск</option>
-													<option value="10">Любань</option>
-													<option value="11">Заславль</option>
-													<option value="12">Молодечно</option>
-													<option value="13">Мядель</option>
-													<option value="14">Несвиж </option>
-													<option value="15">Марьина Горка</option>
-													<option value="16">Слуцк </option>
-													<option value="17">Смолевичи</option>
-													<option value="18">Солигорск</option>
-													<option value="19">Старые Дороги</option>
-													<option value="20">Столбцы</option>
-													<option value="21">Узда</option>
-													<option value="22">Червень</option>
-												</select>
-											</label>
-										</div>
-										<div class="s-points__filters-item">
-											<label class="select" for="select-filter-bank">
-												<select name="filter-bank" id="select-filter-bank">
-													<option value="-1">Банк</option>
-													<option value="964">ОАО "Белагропромбанк"</option>
-													<option value="175">ЗАО "БСБ Банк"</option>
-													<option value="226">ОАО "Банк БелВЭБ"</option>
-													<option value="765">ОАО "БНБ-Банк"</option>
-													<option value="117">ЗАО "МТБанк"</option>
-													<option value="273">ЗАО "ИнтерПэйБанк"</option>
-													<option value="369">ОАО "БПС-Сбербанк"</option>
-													<option value="782">ОАО "Паритетбанк"</option>
-													<option value="735">ОАО "Евроторгинвестбанк"</option>
-													<option value="272">ОАО "Банк Москва-Минск"</option>
-													<option value="749">"Приорбанк" ОАО</option>
-													<option value="795">ОАО "Беларусбанк"</option>
-													<option value="270">ЗАО "Альфа-банк"</option>
-													<option value="108">ЗАО Банк ВТБ (Беларусь)</option>
-													<option value="820">ЗАО "Цептер Банк"</option>
-													<option value="742">ОАО "Белгазпромбанк"</option>
-													<option value="704">ЗАО "БТА Банк"</option>
-													<option value="182">ОАО "Технобанк"</option>
-													<option value="755">ЗАО "Идея Банк"</option>
-													<option value="888">ЗАО "Евробанк"</option>
-													<option value="266">"Франсабанк" ОАО</option>
-													<option value="739">ОАО "Белинвестбанк"</option>
-													<option value="110">ЗАО "РРБ-Банк"</option>
-													<option value="288">ЗАО "Трастбанк"</option>
-													<option value="898">ЗАО "АБСОЛЮТБАНК"</option>
-												</select>
-											</label>
-										</div>
-										<div class="s-points__filters-item">
-											<label class="select" for="select-filter-type">
-												<select name="filter-type" id="select-filter-type">
-													<option value="-1">Тип пбо</option>
-													<option value="110">РКЦ</option>
-													<option value="115">Банкомат</option>
-													<option value="119">Cash-In</option>
-													<option value="113">ПСТ+Cash-In</option>
-													<option value="122">Платежный терминал</option>
-													<option value="123">ПСТ (платежно-справочный терминал)</option>
-												</select>
-											</label>
-										</div>
-									</div>
-
-									<div class="s-points__results">
-										<strong class="s-points__no-result" style="display: none;">Пунктов обслуживания не найдено</strong>
-										<div class="table_auto s-points__results-table">
-											<table class="tbl">
-												<thead>
-													<tr>
-														<th>банк</th>
-														<th>Место размещения</th>
-														<th>тип</th>
-														<th>Адрес</th>
-														<th>Режим работы</th>
-														<th>карта</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
-														<td> РКЦ</td>
-														<td> 2й Велосипедный <br> переулок,30</td>
-														<td>
-															<div>вт.-сб: 10.00-17.00</div>
-															<div>вс: 10.00-16.00</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
-														<td> РКЦ</td>
-														<td> Проспект <br> Машерова,19</td>
-														<td>
-															<div>пн-пт: 9.00-19.00</div>
-															<div>сб: 9.30-17.15</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
-														<td> РКЦ</td>
-														<td> 2й Велосипедный <br> переулок,30</td>
-														<td>
-															<div>вт.-сб: 10.00-17.00</div>
-															<div>вс: 10.00-16.00</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
-														<td> РКЦ</td>
-														<td> Проспект <br> Машерова,19</td>
-														<td>
-															<div>пн-пт: 9.00-19.00</div>
-															<div>сб: 9.30-17.15</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
-														<td> РКЦ</td>
-														<td> 2й Велосипедный <br> переулок,30</td>
-														<td>
-															<div>вт.-сб: 10.00-17.00</div>
-															<div>вс: 10.00-16.00</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
-														<td> РКЦ</td>
-														<td> Проспект <br> Машерова,19</td>
-														<td>
-															<div>пн-пт: 9.00-19.00</div>
-															<div>сб: 9.30-17.15</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
-														<td> РКЦ</td>
-														<td> 2й Велосипедный <br> переулок,30</td>
-														<td>
-															<div>вт.-сб: 10.00-17.00</div>
-															<div>вс: 10.00-16.00</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-													<tr>
-														<td> ОАО "Белагропромбанк"</td>
-														<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
-														<td> РКЦ</td>
-														<td> Проспект <br> Машерова,19</td>
-														<td>
-															<div>пн-пт: 9.00-19.00</div>
-															<div>сб: 9.30-17.15</div>
-														</td>
-														<td style="text-align: center;">
-															<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<!--service points end-->
-							</div>
-						</div>
-					</div>
-					<!--helpful end-->
-				</section>
-				<!--helpful section end-->
-
-				<!--info section-->
-				<section class="info-section">
-					<div class="title-box">
-						<div class="align-center align-layout">
-							<h2>Информация о системе</h2>
-							<p>Система «Расчет» предоставляет Вам (Плательщику) возможность произвести оплату за полученные
-								услуги и товары в любом удобном для Вас месте, в удобное для Вас время, в удобном для Вас
-								пункте банковского обслуживания.</p>
-						</div>
-					</div>
-					<!--info-->
-					<article class="info">
-						<div class="align-layout">
-							<div class="info-holder">
-								<div class="info-row">
-									<section class="info-item">
-										<div class="info-item__inner">
-											<h3>Вы можете оплачивать услуги в 24 банках и свыше 13000 ПБО:</h3>
-											<ul>
-												<li>кассы банка;</li>
-												<li>банкоматы;</li>
-												<li>инфокиоски;</li>
-												<li>устройства приема наличных денег.</li>
-											</ul>
-										</div>
-									</section>
-									<section class="info-item">
-										<div class="info-item__inner">
-											<h3>Для оплаты услуг используя систему «Расчет» необходимо:</h3>
-											<ul>
-												<li>выбрать расчётного агента в системе;</li>
-												<li>выбрать удобный для вас способ оплаты;</li>
-												<li>выбрать подходящий вам пункт «ПБО»;</li>
-												<li>выбрать раздел «расчёт» (ерип);</li>
-												<li>выбрать услугу для оплаты.</li>
-											</ul>
-										</div>
-									</section>
-								</div>
-							</div>
-						</div>
-					</article>
-					<!--info end-->
-					<!--easy-->
-					<article class="easy">
-						<div class="align-layout">
-							<h3>Наибольшие удобства система «Расчет» создает:</h3>
-							<div class="easy-bg"></div>
-							<div class="easy-list">
-								<div class="easy-item">
+							<!--sb buttons end-->
+							<!--sb menu-->
+							<ul class="sb-menu">
+								<li>
 									<a href="#">
-										<div class="easy-img">
-											<img src="img/img-easy-01.png" alt="image description" />
+										<div class="sb-menu__view-normal">
+											<i class="depict-tel"></i> <span class="sb-menu__inner">Пункты приема</span>
 										</div>
-										<div class="easy-text">Для пользователей Интернет-банка</div>
+										<div class="sb-menu__view-alt">
+											<i class="depict-tel"></i> <span class="sb-menu__inner">Пункты приёма платежей</span>
+										</div>
 									</a>
-								</div>
-								<div class="easy-item">
+								</li>
+								<li>
 									<a href="#">
-										<div class="easy-img">
-											<img src="img/img-easy-02.png" alt="image description" />
+										<div class="sb-menu__view-normal">
+											<i class="depict-faq"></i> <span class="sb-menu__inner">Вопросы и ответы</span>
 										</div>
-										<div class="easy-text">Для пользователей систем электронных денег</div>
+										<div class="sb-menu__view-alt">
+											<i class="depict-faq"></i> <span class="sb-menu__inner">Часто задаваемые вопросы</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="sb-menu__view-normal">
+											<i class="depict-stat"></i> <span class="sb-menu__inner">Статистика системы</span>
+										</div>
+										<div class="sb-menu__view-alt">
+											<i class="depict-stat"></i> <span class="sb-menu__inner">Статистика системы</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<!--sb menu end-->
+							<div class="sb-spec">
+								<div class="sb-spec__align">
+									<a href="#" class="spec-btn-switcher spec-btn-switcher-js" aria-label="Перейти на версию сайта для слабовидящих" title="Перейти на версию сайта для слабовидящих">
+										<svg class="icon-spec-on" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 1792 1792" width="24">
+											<path d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z"></path>
+										</svg>
+										<span>Версия для слабовидящих</span>
+									</a>
+									<a href="#" class="spec-btn-switcher to_normal spec-btn-switcher-js" aria-label="Перейти на обычную версию сайта" title="Перейти на обычную версию сайта">
+										<svg class="icon-spec-off" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 1792 1792" width="24">
+											<path d="M555 1335l78-141q-87-63-136-159t-49-203q0-121 61-225-229 117-381 353 167 258 427 375zm389-759q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm363-191q0 7-1 9-105 188-315 566t-316 567l-49 89q-10 16-28 16-12 0-134-70-16-10-16-28 0-12 44-87-143-65-263.5-173t-208.5-245q-20-31-20-69t20-69q153-235 380-371t496-136q89 0 180 17l54-97q10-16 28-16 5 0 18 6t31 15.5 33 18.5 31.5 18.5 19.5 11.5q16 10 16 27zm37 447q0 139-79 253.5t-209 164.5l280-502q8 45 8 84zm448 128q0 35-20 69-39 64-109 145-150 172-347.5 267t-419.5 95l74-132q212-18 392.5-137t301.5-307q-115-179-282-294l63-112q95 64 182.5 153t144.5 184q20 34 20 69z"></path>
+										</svg>
+										<span>Обычная версия</span>
 									</a>
 								</div>
 							</div>
-						</div>
-					</article>
-					<!--easy end-->
-					<!--agency-->
-					<div class="agency">
-						<div class="align-layout">
-							<h3>Перечень Расчетных агентов, осуществляющих прием платежей в бюджет:</h3>
-							<!--cells-list / agency list-->
-							<ul class="cells-list agency-list">
-								<li><a href="#"><img src="img/bank-03.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-01.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-11.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-20.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-07.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-04.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-15.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-06.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-10.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-12.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-17.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-18.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-13.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/logotype-agency-14.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/logotype-agency-15.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-05.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-02.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/logotype-agency-18.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-19.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-08.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-21.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-16.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/logotype-agency-23.png" alt="image description" /></a></li>
-								<li><a href="#"><img src="img/bank-14.png" alt="image description" /></a></li>
+							<!--social networks-->
+							<ul class="social-networks">
+								<li>
+									<a href="#" class="soc-facebook"> <span>facebook</span> <i class="soc-depict-fb"></i> <i class="soc-depict-fb-h"></i> </a>
+								</li>
+								<li>
+									<a href="#" class="soc-twitter"> <span>twitter</span> <i class="soc-depict-twitter"></i> <i class="soc-depict-twitter-h"></i> </a>
+								</li>
+								<li>
+									<a href="#" class="vk"> <span>vk</span> <i class="soc-depict-vk"></i> <i class="soc-depict-vk-h"></i> </a>
+								</li>
 							</ul>
-							<!--cells-list / agency list end-->
+							<!--social networks end-->
+							<!--developer-->
+							<a href="http://astronim.by/index.html" target="_blank" class="developer">Astronim*Support</a>
+							<!--developer end-->
 						</div>
 					</div>
-					<!--agency end-->
-				</section>
-				<!--info section end-->
+				</div>
 			</div>
-			<!--main content end-->
-		</div>
-		<!--main end-->
-
-		<!--footer-->
-		<footer class="footer">
-			<div class="footer-container">
-				<!--nav bar-->
-				<div class="nav-bar">
-					<div class="nav-bar-bg"></div>
+		</aside>
+		<a href="#" class="btn-sidebar"><span>Дополнительное меню</span></a>
+		<!--sidebar end-->
+		<!--site map-->
+		<div class="site-map js-popup-menu" id="site-map-popup">
+			<div class="site-map-layout">
+				<div class="site-map-overlay"></div>
+				<div class="site-map-holder">
 					<div class="align-layout">
 						<ul class="nav-bar__list">
 							<li class="align-left">
-								<strong>НКФО</strong>
+								<strong>О компании</strong>
 								<ul>
-									<li><a href="#">Структура</a></li>
-									<li><a href="#">Наблюдательный Совет</a></li>
-									<li><a href="#">Правление</a></li>
-									<li><a href="#">Акционеры</a></li>
-									<li><a href="#">Финансовые показатели деятельности</a></li>
-									<li><a href="#">Вакансии</a></li>
-									<li><a href="#">АИС ЖКУ</a></li>
-									<li><a href="#">Раскрытие информации</a></li>
-									<li><a href="#">Финансовая грамотность</a></li>
-									<li><a href="#">Электронное обращение</a></li>
-									<li><a href="#">Контакты</a></li>
+									<li><a href="/nkfo/o-kompanii/">О НКФО ЕРИП</a></li>
+									<li><a href="/nkfo/struktura/">Структура</a></li>
+									<li><a href="/nkfo/nablyudatelnyy-sovet/">Наблюдательный Совет</a></li>
+									<li><a href="/nkfo/pravlenie/">Правление</a></li>
+									<li><a href="/nkfo/raskrytie-informatsii/">Раскрытие информации</a></li>
+									<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-N">Финансовая отчетность по НСФО</a></li>
+									<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-M">Финансовая отчетность по МСФО</a></li>
+									<li><a href="/nkfo/finansovaya-gramotnost/">Финансовая грамотность</a></li>
+									<li><a href="/nkfo/konsultativnyy-sovet/">Консультативный совет</a></li>
+									<li><a href="/nkfo/tekhnologicheskiy-sovet/">Технологический совет</a></li>
+									<li><a href="/nkfo/zakupki/">Закупки</a></li>
+									<li><a href="/nkfo/vakansii">Вакансии</a></li>
+									<li><a href="/nkfo/kontakty/">Контакты</a></li>
+									<li><a href="/nkfo/elektronnoe-obrashchenie/">Электронное обращение</a></li>
+									<li><a href="/nkfo/informatsiya-dlya-aktsionerov">Информация для акционеров</a></li>
+									<li><a href="/nkfo/pr-sluzhba">PR-служба</a></li>
+									<li><a href="/nkfo/litsenzii-sertifikaty-i-attestaty-nkfo-erip/">Лицензии, сертификаты и аттестаты НКФО ЕРИП</a></li>
 								</ul>
 							</li>
 							<li>
-								<strong>о системе</strong>
+								<strong>О системе</strong>
 								<ul>
-									<li><a href="#">Участники</a></li>
-									<li><a href="#">Нормативная база</a></li>
-									<li><a href="#">Публикации Видео</a></li>
-									<li><a href="#">Новости</a></li>
-									<li><a href="#">Личный кабинет</a></li>
+									<li><a href="/o-sisteme/o-sisteme/">О системе</a></li>
+									<li><a href="/o-sisteme/normativnaya-baza/">Нормативная база</a></li>
+									<li><a href="/o-sisteme/publikatsii/">Публикации</a></li>
+									<li><a href="/o-sisteme/novosti/">Новости</a></li>
 								</ul>
 							</li>
 							<li>
-								<strong>Расчетным агентам</strong>
+								<strong>Банкам</strong>
 								<ul>
-									<li><a href="#">Платежные агенты</a></li>
-									<li><a href="#">Статистика (Рэнкинг банков)</a></li>
-									<li><a href="#">Договорные отношения</a></li>
-									<li><a href="#">Заявка в службу поддержки.</a></li>
+									<li><a href="/bankam/ais-raschet/">АИС "Расчет"</a></li>
+									<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/">Межбанковская система идентификации</a></li>
 								</ul>
 							</li>
 							<li>
-								<strong>Производителям услуг</strong>
+								<strong>Плательщикам</strong>
 								<ul>
-									<li><a href="#">Условия подключения</a></li>
-									<li><a href="#">Информационный ресурс</a></li>
-									<li><a href="#">Агрегаторы</a></li>
+									<li><a href="/platelshchikam/ais-raschet/">АИС "Расчет"</a></li>
+									<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/">Межбанковская система идентификации (МСИ)</a></li>
 								</ul>
 							</li>
 							<li>
-								<strong>потребителям услуг</strong>
+								<strong>Организациям</strong>
 								<ul>
-									<li><a href="#">Популярные вопросы</a></li>
-									<li><a href="#">Задать вопрос</a></li>
+									<li><a href="/organizatsiyam/ais-raschet/">АИС "Расчет"</a></li>
+									<li><a href="/organizatsiyam/ais-raschet-zhkuu/">АИС "Расчет-ЖКУ"</a></li>
 								</ul>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<!--nav bar end-->
-				<!--useful-->
-				<div class="useful">
-					<div class="align-layout">
-						<ul class="useful-links">
-							<li>
-								<a href="#">
-									<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
-									<div class="useful-links__text"><span>Интернет-портал <span class="nobr">Президента РБ</span></span></div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
-									<div class="useful-links__text"><span>Нацбанк</span></div>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
-									<div class="useful-links__text"><span>Правовой интернет-портал РБ</span></div>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--useful end-->
+				<div class="btn-site-map-close" title="Закрыть"></div>
 			</div>
-			<div class="footer-copy">
-				<div class="footer-copy-i">
-					<span class="copyright">&copy; <a href="#">Центр банковских технологий</a>, <span class="nowrap">2009-2016</span></span>
-				</div>
-			</div>
-		</footer>
-		<!--footer end-->
-	</div>
-	<!--main layout end-->
-
-	<!--aside-->
-	<aside class="aside sticky-js">
-		<div class="aside__holder">
-			<!--actions-->
-			<article class="actions">
-				<section class="actions__item">
-					<a href="#" class="actions__inner">
-						<div class="actions__bg"></div>
-						<div class="actions__holder">
-							<div class="actions__align">
-								<div class="actions__visual">
-									<span class="actions__visual-ribbon"></span>
-									<div class="actions__img">
-										<img src="img/img-actions-01.png" alt="image description" />
-									</div>
-								</div>
-								<div class="actions__content">
-									<h3>1 апреля 2016 г. планируется подключить к АИС «Расчет» все рабочие места во всех отделениях почтовой связи РУП «Белпочта».</h3>
-									<div class="actions__text"></div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</section>
-				<section class="actions__item actions__item-alt">
-					<a href="#" class="actions__inner">
-						<div class="actions__bg"></div>
-						<div class="actions__holder">
-							<div class="actions__align">
-								<div class="actions__visual">
-									<span class="actions__visual-ribbon"></span>
-									<div class="actions__img">
-										<img src="img/img-actions-02.png" alt="image description" />
-									</div>
-								</div>
-								<div class="actions__content">
-									<h3>Операция частичного погашение кредитов ОАО «Белагропромбанк» доступна посредствам системы «Расчет». </h3>
-									<div class="actions__text"></div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</section>
-				<section class="actions__item actions__item-lg">
-					<a href="#" class="actions__inner">
-						<div class="actions__bg" style="background: #ffb106;
-background: -moz-linear-gradient(-45deg,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%);
-background: -webkit-linear-gradient(-45deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);
-background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
-						<div class="actions__holder">
-							<div class="actions__align">
-								<div class="actions__visual">
-									<span class="actions__visual-ribbon"></span>
-									<div class="actions__img">
-										<img src="img/img-actions-11-lg.png" alt="image description" />
-									</div>
-								</div>
-								<div class="actions__content">
-									<h3>Рассмотрение договоров на подключение к АИС «Расчет» ОАО «Небанковская кредитно-финансовая организация ЕРИП» будет осуществляться с 1 апреля 2016 г.</h3>
-									<div class="actions__text"></div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</section>
-				<section class="actions__item">
-					<a href="#" class="actions__inner">
-						<div class="actions__bg"></div>
-						<div class="actions__holder">
-							<div class="actions__align">
-								<div class="actions__visual">
-									<span class="actions__visual-ribbon"></span>
-									<div class="actions__img">
-										<img src="img/img-actions-07.png" alt="image description" />
-									</div>
-								</div>
-								<div class="actions__content">
-									<h3>Изменился порядок оплаты за электроэнергию для жителей Минского района.</h3>
-									<div class="actions__text"></div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</section>
-				<section class="actions__item actions__item-alt">
-					<a href="#" class="actions__inner">
-						<div class="actions__bg"></div>
-						<div class="actions__holder">
-							<div class="actions__align">
-								<div class="actions__visual">
-									<span class="actions__visual-ribbon"></span>
-									<div class="actions__img">
-										<img src="img/img-actions-10.png" alt="image description" />
-									</div>
-								</div>
-								<div class="actions__content">
-									<h3>ООО «Школа робототехники» изменила формат ввода лицевых счетов при оплате.</h3>
-									<div class="actions__text">Информацию о лицевых счетах плательщики могут уточнить у Производителя услуг.</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</section>
-			</article>
-			<!--actions end-->
 		</div>
-	</aside>
-	<!--aside end-->
-</div>
-
-<!--JQuery library-->
-<!--jQuery with fallback to the 1.* for old IE-->
-<!--[if lt IE 9]>
+		<!--site map end-->
+		<!--header-->
+		<header class="header">
+			<div class="header-layout">
+				<!--logo in header-->
+				<strong class="logo logo-header">
+					<a href="index.html">
+						<img src="img/logo.png" alt="Расчет">
+						<span class="logo__text">Единое Расчётное Информационное Пространство</span>
+					</a>
+				</strong>
+				<!--logo in header end-->
+				<!-- main navigation -->
+				<nav class="nav">
+					<div class="nav-layout">
+						<!--button menu-->
+						<a href="#" class="btn-menu"><span>Меню</span></a>
+						<!--button menu end-->
+						<ul class="nav-list">
+							<li><a href="#about-company-submenu"><span>О компании</span></a></li>
+							<li><a href="#about-system-submenu"><span>О системе</span></a></li>
+							<li><a href="#for-payers-menu"><span>Плательщикам</span></a></li>
+							<li><a href="#for-org-menu"><span>Организациям</span></a></li>
+							<li><a href="#for-banks-menu"><span>Банкам</span></a></li>
+						</ul>
+					</div>
+				</nav>
+				<!-- main navigation end -->
+				<!--button site map-->
+				<a href="#" class="btn-site-map" title="Карта сайта">
+					<div class="btn-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<!--button site map-->
+				<!--search form-->
+				<div class="search-form js-search-form">
+					<form action="#">
+						<div class="btn-search">
+							<i></i>
+							<input type="submit" value="" title="Поиск">
+						</div>
+						<div class="input-wrapper">
+							<input type="search" placeholder="Поиск по сайту">
+						</div>
+						<strong class="btn-search-open js-search-open">
+							<span>Поиск</span>
+						</strong>
+					</form>
+				</div>
+				<!--search form end-->
+				<!--button menu-->
+				<a href="#" class="btn-aside" title="Акции и новости">
+					<div class="btn-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<!--button menu end-->
+			</div>
+		</header>
+		<!--header end-->
+		<!--main layout-->
+		<div class="main-layout sticky-js">
+			<!--catalog menu-->
+			<div class="catalog-menu">
+				<ul class="catalog-menu-list" id="about-company-submenu">
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+					<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+					<li><a href="#"><span>Пункты обслуживания</span></a></li>
+					<li><a href="#"><span>Где можно оплатить</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+				</ul>
+				<ul class="catalog-menu-list" id="about-system-submenu">
+					<li><a href="#"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+					<li><a href="#"><span>Пункты обслуживания</span></a></li>
+					<li><a href="#"><span>Где можно оплатить</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+				</ul>
+				<ul class="catalog-menu-list" id="for-payers-menu">
+					<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="typography.html"><span>Информация о системе</span></a></li>
+					<li><a href="typography.html"><span>Где можно оплатить услуги РУП Белпочта</span></a></li>
+					<li><a href="typography.html"><span>Пункты обслуживания</span></a></li>
+					<li><a href="typography.html"><span>Где можно оплатить</span></a></li>
+					<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="typography.html"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="typography.html"><span>Информация о системе</span></a></li>
+					<li><a href="typography.html"><span>Информация о системе</span></a></li>
+				</ul>
+				<ul class="catalog-menu-list" id="for-org-menu">
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+					<li><a href="#"><span>Пункты обслуживания</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+				</ul>
+				<ul class="catalog-menu-list" id="for-banks-menu">
+					<li><a href="#"><span>Где можно оплатить</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Преимущества нашей системы при оплате</span></a></li>
+					<li><a href="#"><span>Информация о системе</span></a></li>
+				</ul>
+			</div>
+			<!--catalog menu-->
+			<!--main-->
+			<div class="main">
+				<!--main content-->
+				<div class="content user-content full-page">
+					<div class="title-box">
+						<div class="align-center align-layout">
+							<h2>Плательщикам</h2>
+							<p></p>
+						</div>
+					</div>
+					<!--promo slider-->
+					<section class="promo-slider">
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-01.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Живи полной жизнью</h3>
+								<p class="promo-slider__text">Экономь своё время при покупке билетов в кино, театр, кинотеатр, самолёт через систему "Расчет" (ЕРИП).</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-02.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor sit amet</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet consectetur est facere fuga laudantium minima minus modi, molestias necessitatibus non nostrum odio, perferendis quisquam repudiandae sapiente suscipit voluptates, voluptatibus.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-03.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-04.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+						<article class="promo-slider__item">
+							<div class="promo-slider__bg" style="background-image: url(img/img-promo-slider-05.jpg);"></div>
+							<div class="promo-slider__content">
+								<h3>Lorem ipsum dolor</h3>
+								<p class="promo-slider__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, aut deleniti, doloremque eveniet facilis ipsa laboriosam laudantium maiores minus perferendis placeat quas quasi quidem sed.</p>
+							</div>
+							<footer><a href="#" class="btn-more">Подробнее</a></footer>
+						</article>
+					</section>
+					<!--promo slider-->
+					<!--advantages-->
+					<section class="advantages-section">
+						<div class="align-layout">
+							<div class="title-box">
+								<div class="align-center align-layout">
+									<h2>Преимущества системы</h2>
+								</div>
+							</div>
+							<article class="advantages">
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-01.png" alt="image description" />
+									</figure>
+									<h3>Широкий спектр услуг</h3>
+									<p>Система «Расчет» предоставляет данные по широкому спектру услуг, доступных к оплате.</p>
+								</section>
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-02.png" alt="image description" />
+									</figure>
+									<h3>предоставляем гарантии</h3>
+									<p>При использовании системы «Расчет» Вам гарантируется достоверность предоставляемой информации по платежам, а так же гарантируется осуществление платежей при успешно проведенной операции.</p>
+								</section>
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-03.png" alt="image description" />
+									</figure>
+									<h3>единая база по услугам</h3>
+									<p>Всем расчетным агентам, подключенным к системе, предоставляется единая база по услугам, которые можно оплатить с использованием «Расчет», с учетом тарифов, установленных производителем услуг.</p>
+								</section>
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-04.png" alt="image description" />
+									</figure>
+									<h3>сохранение данных о платежах</h3>
+									<p>Данные по осуществленным платежам сохраняются в системе и при повторном обращении к платежу его реквизиты и новые требования к оплате услуги будут видны в пунктах банковского обслуживания любого расчетного агента.</p>
+								</section>
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-05.png" alt="image description" />
+									</figure>
+									<h3>платежи без комиссии</h3>
+									<p>Главное преимущество системы «Расчёт» для плательщиков есть её функциональность и возможность совершать платежи без комиссии (если комиссия не предусмотрена Производителем услуг).</p>
+								</section>
+								<section class="advantages-item">
+									<figure class="advantages-img">
+										<img src="img/advantage-06.png" alt="image description" />
+									</figure>
+									<h3>единый централизованный контакт-центр</h3>
+									<p>В случае возникновения трудностей Вы можете обратиться в единый централизованный контакт-центр системы «Расчет», в котором опытные операторы помогут Вам справиться со сложившейся ситуацией.</p>
+								</section>
+							</article>
+						</div>
+					</section>
+					<!--advantages end-->
+					<!--helpful section-->
+					<section class="helpful-section tabs-wrap">
+						<div class="title-box">
+							<div class="align-center align-layout">
+								<h2>Полезная информация</h2>
+								<p>Вашему вниманию представлен каталог пунктов банковского обслуживания (коротко ПБО) и следующие типы терминалов для оплаты услуг.</p>
+							</div>
+						</div>
+						<!--helpful-->
+						<div class="helpful tabs-container">
+							<!--helpful controls-->
+							<ul class="helpful__controls tab-controls">
+								<li class="active"><a href="#tabs-helpful-01"><span>Где можно оплатить</span></a></li>
+								<li><a href="#tabs-helpful-02"><span>Пункты обслуживания</span></a></li>
+							</ul>
+							<!--helpful controls end-->
+							<div class="helpful__panel tabs-panel" id="tabs-helpful-01">
+								<div class="align-layout">
+									<div class="helpful__note">Системой «Расчет» можно воспользоваться для оплаты некоторых услуг через платежную
+										систему WEBPAY, а также с помощью систем электронных денег:</div>
+									<!--cells-list / pay list-->
+									<ul class="cells-list pay-list">
+										<li><a href="#"><img src="img/logotype-pay-belgi.png" alt="image description" /></a></li>
+										<li><a href="#"><img src="img/logotype-pay-webpay.png" alt="image description" /></a></li>
+										<li><a href="#"><img src="img/logotype-pay-easypay.png" alt="image description" /></a></li>
+										<li><a href="#"><img src="img/logotype-pay-webmoney.png" alt="image description" /></a></li>
+									</ul>
+									<!--cells-list / pay list end-->
+									<!--terminals-->
+									<section class="terminals">
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «АСБ Беларусбанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>ПСТ+Cash-In</li>
+														<li>ПСТ</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Белагропромбанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>ПСТ+Cash-In</li>
+														<li>ПСТ</li>
+														<li>Платежный терминал</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+														<li>Автооплата</li>
+														<li>Мобильный банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Приорбанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>ПСТ+Cash-In</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+														<li>Автооплата</li>
+														<li>Cash-In</li>
+														<li>Мобильный банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Белгазпромбанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>ПСТ+Cash-In</li>
+														<li>ПСТ</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+														<li>Автооплата</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Белинвестбанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ЗАО «МТБанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>ПСТ</li>
+														<li>Интернет-банк</li>
+														<li>ПСТ+Cash-In</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «БПС-Сбербанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>ПСТ+Cash-In</li>
+														<li>ПСТ</li>
+														<li>Платежный терминал</li>
+														<li>Интернет-банк</li>
+														<li>СМС-банк</li>
+														<li>Автооплата</li>
+														<li>Мобильный банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Банк Москва-Минск»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Банк БелВЭБ»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Банкомат</li>
+														<li>ПСТ+Cash-In</li>
+														<li>Интернет-банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ЗАО «Альфа-банк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>ПСТ+Cash-In</li>
+														<li>Интернет-банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+										<article class="terminals-item">
+											<div class="terminals-item__holder">
+												<h3>
+													<i class="terminals-item__angle"></i>
+													<span class="text-inner">ОАО «Технобанк»</span>
+												</h3>
+												<div class="terminals-item__drop">
+													<ul>
+														<li>Касса</li>
+														<li>Интернет-банк</li>
+													</ul>
+												</div>
+											</div>
+										</article>
+									</section>
+									<!--terminals end-->
+									<div class="terminals-more align-center">
+										<a href="#" class="btn-default"><span class="btn-default__inner">Еще <i class="arrow-more"></i></span></a>
+									</div>
+								</div>
+							</div>
+							<div class="helpful__panel tabs-panel" id="tabs-helpful-02">
+								<div class="align-layout">
+									<div class="helpful__note">Для осуществления поиска интересующих Вас ПБО, выберите регион и населенный пункт. Отобразится список всех ПБО, имеющихся в выбранном населенном пункте. В случае, если Вас интересует конкретный банк (конкретный тип ПБО), выбирете нужный банк (тип ПБО).</div>
+									<!--service points-->
+									<div class="s-points">
+										<div class="s-points__filters">
+											<div class="s-points__filters-item">
+												<label class="select" for="select-filter-region">
+													<select name="filter-region" id="select-filter-region">
+														<option value="-1">Регион</option>
+														<option value="1">Брестская область</option>
+														<option value="2">Витебская область</option>
+														<option value="3">Гомельская область</option>
+														<option value="4">Гродненская область</option>
+														<option value="5">Минская область</option>
+														<option value="6">Могилёвская область</option>
+														<option value="7">Примечания</option>
+													</select>
+												</label>
+											</div>
+											<div class="s-points__filters-item">
+												<label class="select" for="select-filter-locality">
+													<select name="filter-locality" id="select-filter-locality">
+														<option value="-1">Населенный пункт</option>
+														<option value="1">Березино</option>
+														<option value="2">Борисов</option>
+														<option value="3">Вилейка</option>
+														<option value="4">Воложин</option>
+														<option value="5">Дзержинск</option>
+														<option value="6">Клецк</option>
+														<option value="7">Копыль</option>
+														<option value="8">Крупки</option>
+														<option value="9">Логойск</option>
+														<option value="10">Любань</option>
+														<option value="11">Заславль</option>
+														<option value="12">Молодечно</option>
+														<option value="13">Мядель</option>
+														<option value="14">Несвиж </option>
+														<option value="15">Марьина Горка</option>
+														<option value="16">Слуцк </option>
+														<option value="17">Смолевичи</option>
+														<option value="18">Солигорск</option>
+														<option value="19">Старые Дороги</option>
+														<option value="20">Столбцы</option>
+														<option value="21">Узда</option>
+														<option value="22">Червень</option>
+													</select>
+												</label>
+											</div>
+											<div class="s-points__filters-item">
+												<label class="select" for="select-filter-bank">
+													<select name="filter-bank" id="select-filter-bank">
+														<option value="-1">Банк</option>
+														<option value="964">ОАО "Белагропромбанк"</option>
+														<option value="175">ЗАО "БСБ Банк"</option>
+														<option value="226">ОАО "Банк БелВЭБ"</option>
+														<option value="765">ОАО "БНБ-Банк"</option>
+														<option value="117">ЗАО "МТБанк"</option>
+														<option value="273">ЗАО "ИнтерПэйБанк"</option>
+														<option value="369">ОАО "БПС-Сбербанк"</option>
+														<option value="782">ОАО "Паритетбанк"</option>
+														<option value="735">ОАО "Евроторгинвестбанк"</option>
+														<option value="272">ОАО "Банк Москва-Минск"</option>
+														<option value="749">"Приорбанк" ОАО</option>
+														<option value="795">ОАО "Беларусбанк"</option>
+														<option value="270">ЗАО "Альфа-банк"</option>
+														<option value="108">ЗАО Банк ВТБ (Беларусь)</option>
+														<option value="820">ЗАО "Цептер Банк"</option>
+														<option value="742">ОАО "Белгазпромбанк"</option>
+														<option value="704">ЗАО "БТА Банк"</option>
+														<option value="182">ОАО "Технобанк"</option>
+														<option value="755">ЗАО "Идея Банк"</option>
+														<option value="888">ЗАО "Евробанк"</option>
+														<option value="266">"Франсабанк" ОАО</option>
+														<option value="739">ОАО "Белинвестбанк"</option>
+														<option value="110">ЗАО "РРБ-Банк"</option>
+														<option value="288">ЗАО "Трастбанк"</option>
+														<option value="898">ЗАО "АБСОЛЮТБАНК"</option>
+													</select>
+												</label>
+											</div>
+											<div class="s-points__filters-item">
+												<label class="select" for="select-filter-type">
+													<select name="filter-type" id="select-filter-type">
+														<option value="-1">Тип пбо</option>
+														<option value="110">РКЦ</option>
+														<option value="115">Банкомат</option>
+														<option value="119">Cash-In</option>
+														<option value="113">ПСТ+Cash-In</option>
+														<option value="122">Платежный терминал</option>
+														<option value="123">ПСТ (платежно-справочный терминал)</option>
+													</select>
+												</label>
+											</div>
+										</div>
+										<div class="s-points__results">
+											<strong class="s-points__no-result" style="display: none;">Пунктов обслуживания не найдено</strong>
+											<div class="table_auto s-points__results-table">
+												<table class="tbl">
+													<thead>
+														<tr>
+															<th>банк</th>
+															<th>Место размещения</th>
+															<th>тип</th>
+															<th>Адрес</th>
+															<th>Режим работы</th>
+															<th>карта</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
+															<td> РКЦ</td>
+															<td> 2й Велосипедный <br> переулок,30</td>
+															<td>
+																<div>вт.-сб: 10.00-17.00</div>
+																<div>вс: 10.00-16.00</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
+															<td> РКЦ</td>
+															<td> Проспект <br> Машерова,19</td>
+															<td>
+																<div>пн-пт: 9.00-19.00</div>
+																<div>сб: 9.30-17.15</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
+															<td> РКЦ</td>
+															<td> 2й Велосипедный <br> переулок,30</td>
+															<td>
+																<div>вт.-сб: 10.00-17.00</div>
+																<div>вс: 10.00-16.00</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
+															<td> РКЦ</td>
+															<td> Проспект <br> Машерова,19</td>
+															<td>
+																<div>пн-пт: 9.00-19.00</div>
+																<div>сб: 9.30-17.15</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
+															<td> РКЦ</td>
+															<td> 2й Велосипедный <br> переулок,30</td>
+															<td>
+																<div>вт.-сб: 10.00-17.00</div>
+																<div>вс: 10.00-16.00</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
+															<td> РКЦ</td>
+															<td> Проспект <br> Машерова,19</td>
+															<td>
+																<div>пн-пт: 9.00-19.00</div>
+																<div>сб: 9.30-17.15</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса №10 <br> РКЦ №19</td>
+															<td> РКЦ</td>
+															<td> 2й Велосипедный <br> переулок,30</td>
+															<td>
+																<div>вт.-сб: 10.00-17.00</div>
+																<div>вс: 10.00-16.00</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.3562278855475!2d27.588566315858362!3d53.87209468009255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd1d85a184749%3A0x234d0ae16d048910!2zMi3QuSDQktC10LvQvtGB0LjQv9C10LTQvdGL0Lkg0L_QtdGALiAzMCwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742409300" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+														<tr>
+															<td> ОАО "Белагропромбанк"</td>
+															<td> Прих.-расх.касса <br> №1 РКЦ №9</td>
+															<td> РКЦ</td>
+															<td> Проспект <br> Машерова,19</td>
+															<td>
+																<div>пн-пт: 9.00-19.00</div>
+																<div>сб: 9.30-17.15</div>
+															</td>
+															<td style="text-align: center;">
+																<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.86934082439!2d27.560372115860034!3d53.9162976801024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf90a961f57b%3A0x3593f422f0f17249!2z0L_RgNC-0YHQvy4g0JzQsNGI0LXRgNC-0LLQsCAxOSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sru!4v1458742469624" class="popup-gmaps"><i class="depict-pin"></i></a>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!--service points end-->
+								</div>
+							</div>
+						</div>
+						<!--helpful end-->
+					</section>
+					<!--helpful section end-->
+					<!--info section-->
+					<section class="info-section">
+						<div class="title-box">
+							<div class="align-center align-layout">
+								<h2>Информация о системе</h2>
+								<p>Система «Расчет» предоставляет Вам (Плательщику) возможность произвести оплату за полученные
+									услуги и товары в любом удобном для Вас месте, в удобное для Вас время, в удобном для Вас
+									пункте банковского обслуживания.</p>
+							</div>
+						</div>
+						<!--info-->
+						<article class="info">
+							<div class="align-layout">
+								<div class="info-holder">
+									<div class="info-row">
+										<section class="info-item">
+											<div class="info-item__inner">
+												<h3>Вы можете оплачивать услуги в 24 банках и свыше 13000 ПБО:</h3>
+												<ul>
+													<li>кассы банка;</li>
+													<li>банкоматы;</li>
+													<li>инфокиоски;</li>
+													<li>устройства приема наличных денег.</li>
+												</ul>
+											</div>
+										</section>
+										<section class="info-item">
+											<div class="info-item__inner">
+												<h3>Для оплаты услуг используя систему «Расчет» необходимо:</h3>
+												<ul>
+													<li>выбрать расчётного агента в системе;</li>
+													<li>выбрать удобный для вас способ оплаты;</li>
+													<li>выбрать подходящий вам пункт «ПБО»;</li>
+													<li>выбрать раздел «расчёт» (ерип);</li>
+													<li>выбрать услугу для оплаты.</li>
+												</ul>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</article>
+						<!--info end-->
+						<!--easy-->
+						<article class="easy">
+							<div class="align-layout">
+								<h3>Наибольшие удобства система «Расчет» создает:</h3>
+								<div class="easy-bg"></div>
+								<div class="easy-list">
+									<div class="easy-item">
+										<a href="#">
+											<div class="easy-img">
+												<img src="img/img-easy-01.png" alt="image description" />
+											</div>
+											<div class="easy-text">Для пользователей Интернет-банка</div>
+										</a>
+									</div>
+									<div class="easy-item">
+										<a href="#">
+											<div class="easy-img">
+												<img src="img/img-easy-02.png" alt="image description" />
+											</div>
+											<div class="easy-text">Для пользователей систем электронных денег</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</article>
+						<!--easy end-->
+						<!--agency-->
+						<div class="agency">
+							<div class="align-layout">
+								<h3>Перечень Расчетных агентов, осуществляющих прием платежей в бюджет:</h3>
+								<!--cells-list / agency list-->
+								<ul class="cells-list agency-list">
+									<li><a href="#"><img src="img/bank-03.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-01.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-11.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-20.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-07.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-04.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-15.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-06.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-10.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-12.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-17.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-18.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-13.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/logotype-agency-14.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/logotype-agency-15.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-05.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-02.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/logotype-agency-18.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-19.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-08.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-21.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-16.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/logotype-agency-23.png" alt="image description" /></a></li>
+									<li><a href="#"><img src="img/bank-14.png" alt="image description" /></a></li>
+								</ul>
+								<!--cells-list / agency list end-->
+							</div>
+						</div>
+						<!--agency end-->
+					</section>
+					<!--info section end-->
+				</div>
+				<!--main content end-->
+			</div>
+			<!--main end-->
+			<!--footer-->
+			<footer class="footer">
+				<div class="footer-container">
+					<!--nav bar-->
+					<div class="nav-bar">
+						<div class="nav-bar-bg"></div>
+						<div class="align-layout">
+							<ul class="nav-bar__list">
+								<li class="align-left">
+									<strong>О компании</strong>
+									<ul>
+										<li><a href="/nkfo/o-kompanii/">О НКФО ЕРИП</a></li>
+										<li><a href="/nkfo/struktura/">Структура</a></li>
+										<li><a href="/nkfo/nablyudatelnyy-sovet/">Наблюдательный Совет</a></li>
+										<li><a href="/nkfo/pravlenie/">Правление</a></li>
+										<li><a href="/nkfo/raskrytie-informatsii/">Раскрытие информации</a></li>
+										<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-N">Финансовая отчетность по НСФО</a></li>
+										<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-M">Финансовая отчетность по МСФО</a></li>
+										<li><a href="/nkfo/finansovaya-gramotnost/">Финансовая грамотность</a></li>
+										<li><a href="/nkfo/konsultativnyy-sovet/">Консультативный совет</a></li>
+										<li><a href="/nkfo/tekhnologicheskiy-sovet/">Технологический совет</a></li>
+										<li><a href="/nkfo/zakupki/">Закупки</a></li>
+										<li><a href="/nkfo/vakansii">Вакансии</a></li>
+										<li><a href="/nkfo/kontakty/">Контакты</a></li>
+										<li><a href="/nkfo/elektronnoe-obrashchenie/">Электронное обращение</a></li>
+										<li><a href="/nkfo/informatsiya-dlya-aktsionerov">Информация для акционеров</a></li>
+										<li><a href="/nkfo/pr-sluzhba">PR-служба</a></li>
+										<li><a href="/nkfo/litsenzii-sertifikaty-i-attestaty-nkfo-erip/">Лицензии, сертификаты и аттестаты НКФО ЕРИП</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>О системе</strong>
+									<ul>
+										<li><a href="/o-sisteme/o-sisteme/">О системе</a></li>
+										<li><a href="/o-sisteme/normativnaya-baza/">Нормативная база</a></li>
+										<li><a href="/o-sisteme/publikatsii/">Публикации</a></li>
+										<li><a href="/o-sisteme/novosti/">Новости</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>Банкам</strong>
+									<ul>
+										<li><a href="/bankam/ais-raschet/">АИС "Расчет"</a></li>
+										<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/">Межбанковская система идентификации</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>Плательщикам</strong>
+									<ul>
+										<li><a href="/platelshchikam/ais-raschet/">АИС "Расчет"</a></li>
+										<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/">Межбанковская система идентификации (МСИ)</a></li>
+									</ul>
+								</li>
+								<li>
+									<strong>Организациям</strong>
+									<ul>
+										<li><a href="/organizatsiyam/ais-raschet/">АИС "Расчет"</a></li>
+										<li><a href="/organizatsiyam/ais-raschet-zhkuu/">АИС "Расчет-ЖКУ"</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--nav bar end-->
+					<!--useful-->
+					<div class="useful">
+						<div class="align-layout">
+							<ul class="useful-links">
+								<li>
+									<a href="#">
+										<div class="useful-links__icon"><img src="img/depict-useful-01.png" alt=""></div>
+										<div class="useful-links__text"><span>Интернет-портал <span class="nobr">Президента РБ</span></span></div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="useful-links__icon"><img src="img/depict-useful-02.png" alt=""></div>
+										<div class="useful-links__text"><span>Нацбанк</span></div>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<div class="useful-links__icon"><img src="img/depict-useful-03.png" alt=""></div>
+										<div class="useful-links__text"><span>Правовой интернет-портал РБ</span></div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--useful end-->
+				</div>
+				<div class="footer-copy">
+					<div class="footer-copy-i">
+						<span class="copyright">&copy; <a href="#">Центр банковских технологий</a>, <span class="nowrap">2009-2016</span></span>
+					</div>
+				</div>
+			</footer>
+			<!--footer end-->
+		</div>
+		<!--main layout end-->
+		<!--aside-->
+		<aside class="aside sticky-js">
+			<div class="aside__holder">
+				<!--actions-->
+				<article class="actions">
+					<section class="actions__item">
+						<a href="#" class="actions__inner">
+							<div class="actions__bg"></div>
+							<div class="actions__holder">
+								<div class="actions__align">
+									<div class="actions__visual">
+										<span class="actions__visual-ribbon"></span>
+										<div class="actions__img">
+											<img src="img/img-actions-01.png" alt="image description" />
+										</div>
+									</div>
+									<div class="actions__content">
+										<h3>1 апреля 2016 г. планируется подключить к АИС «Расчет» все рабочие места во всех отделениях почтовой связи РУП «Белпочта».</h3>
+										<div class="actions__text"></div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</section>
+					<section class="actions__item actions__item-alt">
+						<a href="#" class="actions__inner">
+							<div class="actions__bg"></div>
+							<div class="actions__holder">
+								<div class="actions__align">
+									<div class="actions__visual">
+										<span class="actions__visual-ribbon"></span>
+										<div class="actions__img">
+											<img src="img/img-actions-02.png" alt="image description" />
+										</div>
+									</div>
+									<div class="actions__content">
+										<h3>Операция частичного погашение кредитов ОАО «Белагропромбанк» доступна посредствам системы «Расчет». </h3>
+										<div class="actions__text"></div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</section>
+					<section class="actions__item actions__item-lg">
+						<a href="#" class="actions__inner">
+							<div class="actions__bg" style="background: #ffb106;
+	background: -moz-linear-gradient(-45deg,  #ffb106 0%, #ffaa06 20%, #ff8c08 72%, #ff8108 100%);
+	background: -webkit-linear-gradient(-45deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);
+	background: linear-gradient(135deg,  #ffb106 0%,#ffaa06 20%,#ff8c08 72%,#ff8108 100%);"></div>
+							<div class="actions__holder">
+								<div class="actions__align">
+									<div class="actions__visual">
+										<span class="actions__visual-ribbon"></span>
+										<div class="actions__img">
+											<img src="img/img-actions-11-lg.png" alt="image description" />
+										</div>
+									</div>
+									<div class="actions__content">
+										<h3>Рассмотрение договоров на подключение к АИС «Расчет» ОАО «Небанковская кредитно-финансовая организация ЕРИП» будет осуществляться с 1 апреля 2016 г.</h3>
+										<div class="actions__text"></div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</section>
+					<section class="actions__item">
+						<a href="#" class="actions__inner">
+							<div class="actions__bg"></div>
+							<div class="actions__holder">
+								<div class="actions__align">
+									<div class="actions__visual">
+										<span class="actions__visual-ribbon"></span>
+										<div class="actions__img">
+											<img src="img/img-actions-07.png" alt="image description" />
+										</div>
+									</div>
+									<div class="actions__content">
+										<h3>Изменился порядок оплаты за электроэнергию для жителей Минского района.</h3>
+										<div class="actions__text"></div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</section>
+					<section class="actions__item actions__item-alt">
+						<a href="#" class="actions__inner">
+							<div class="actions__bg"></div>
+							<div class="actions__holder">
+								<div class="actions__align">
+									<div class="actions__visual">
+										<span class="actions__visual-ribbon"></span>
+										<div class="actions__img">
+											<img src="img/img-actions-10.png" alt="image description" />
+										</div>
+									</div>
+									<div class="actions__content">
+										<h3>ООО «Школа робототехники» изменила формат ввода лицевых счетов при оплате.</h3>
+										<div class="actions__text">Информацию о лицевых счетах плательщики могут уточнить у Производителя услуг.</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</section>
+				</article>
+				<!--actions end-->
+			</div>
+		</aside>
+		<!--aside end-->
+	</div>
+	<!--wrapper end-->
+	<!--JQuery library-->
+	<!--jQuery with fallback to the 1.* for old IE-->
+	<!--[if lt IE 9]>
 <script src="js/vendor/jquery-1.12.1.min.js"></script><![endif]-->
-<!--[if gte IE 9]><!-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js"><\/script>')</script>
-<!--<![endif]-->
-<!--JQuery UI-->
-<script src="js/vendor/jquery-ui.min.js"></script>
-<!--Map-->
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<!--Widgets-->
-<script src="js/widgets.js"></script>
-<!--Main functions-->
-<script src="js/functions.js"></script>
+	<!--[if gte IE 9]><!-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-2.2.2.min.js"><\/script>')
+	</script>
+	<!--<![endif]-->
+	<!--Special-->
+	<script src="js/special.js?rev=@@hash"></script>
+	<!--JQuery UI-->
+	<script src="js/vendor/jquery-ui.min.js"></script>
+	<!--Widgets-->
+	<script src="js/widgets.js"></script>
+	<!--Main functions-->
+	<script src="js/functions.js"></script>
 </body>
+
 </html>

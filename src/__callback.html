@@ -1,0 +1,254 @@
+@@include('_tpl_layout_head.html', { "title": "Обратная связь", "pageClass": "", "currentItem": "Обратная связь" })
+
+
+
+<!--main content-->
+<div class="content user-content full-page">
+	<!--callback section-->
+	<section class="callback-section tabs-wrap">
+		<div class="title-box">
+			<div class="align-center align-layout">
+				<h2>Обратная связь</h2>
+			</div>
+		</div>
+
+		<!--callback-->
+		<div class="callback tabs-container">
+			<!--helpful controls-->
+			<ul class="callback__controls tab-controls">
+				<li class="active"><a href="#callback-for-individuals"><span>Физическим лицам</span></a></li>
+				<li><a href="#callback-for-legal"><span>Юридическим лицам</span></a></li>
+			</ul>
+			<!--helpful controls end-->
+
+			<div class="callback__panel tabs-panel" id="callback-for-individuals">
+				<div class="align-layout">
+					<!--form callback-->
+					<div class="form-callback">
+						<form action="#" method="get">
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="individuals-field-name">Фамилия, Имя, Отчество: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="individuals-field-name" />
+								</div>
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="individuals-field-phone">Телефон для связи: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="individuals-field-phone" />
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="individuals-field-email">Электроная почта: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="individuals-field-email" />
+								</div>
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="individuals-field-theme">Тема сообщения: <span class="form-mark">*</span></label>
+									</div>
+									<div class="select">
+										<select name="filter-type" id="individuals-field-theme">
+											<option value="1">Электронные деньги</option>
+											<option value="2">Тема 2</option>
+											<option value="3">Тема длиннее 3</option>
+											<option value="4">Тема очень-очень-очень длинная 4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="individuals-field-message">Сообщение: <span class="form-mark">*</span></label>
+									</div>
+
+									<textarea placeholder="" id="individuals-field-message"></textarea>
+								</div>
+								<div class="input-wrap">
+									<div class="form-row captcha-row">
+										<div class="input-wrap">
+											<div class="captcha-wrap">
+												<div class="label-holder">
+													<span class="label">защита от спама: <span class="form-mark">*</span></span>
+												</div>
+												<div class="captcha">
+													<div class="captcha-img">
+														<img src="img/img-captcha.jpg" alt="code" />
+													</div>
+													<a href="#" class="btn-captcha-refresh">
+														<i class="depict-refresh"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="input-wrap">
+											<div class="label-holder">
+												<label for="individuals-field-code">код: <span class="form-mark">*</span></label>
+											</div>
+											<input type="text" value="" id="individuals-field-code" />
+										</div>
+									</div>
+									<div class="form-buttons-group js-btn-form-wrap">
+										<div class="label-holder">
+											<span class="label">отправка или очистка формы:</span>
+										</div>
+										<div class="form-buttons-wrap">
+											<div class="form-buttons-col form-buttons-left">
+												<div class="btn-submit">
+													<i class="depict-form-send"></i> <span>отправить сообщение</span>
+													<input type="submit" class="btn-form-js" value="">
+												</div>
+											</div>
+											<div class="form-buttons-col form-buttons-right">
+												<div class="btn-reset">
+													<i class="depict-form-clear"></i> <span>очистить форму</span>
+													<input type="reset" class="btn-form-js" value="">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!--form callback end-->
+				</div>
+			</div>
+
+			<div class="callback__panel tabs-panel" id="callback-for-legal">
+				<div class="align-layout">
+					<!--form callback legal-->
+					<div class="form-callback">
+						<form action="#" method="get">
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-name">Фамилия, Имя, Отчество: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="legal-field-name" />
+								</div>
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-phone">Телефон для связи: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="legal-field-phone" />
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-org">Название организации: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="legal-field-org" />
+								</div>
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-adr">Юридический адрес: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="legal-field-adr" />
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-email">Электроная почта: <span class="form-mark">*</span></label>
+									</div>
+									<input type="text" placeholder="" id="legal-field-email" />
+								</div>
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-theme">Тема сообщения: <span class="form-mark">*</span></label>
+									</div>
+									<div class="select">
+										<select name="filter-type" id="legal-field-theme">
+											<option value="1">Электронные деньги</option>
+											<option value="2">Тема 2</option>
+											<option value="3">Тема длиннее 3</option>
+											<option value="4">Тема очень-очень-очень длинная 4</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="input-wrap">
+									<div class="label-holder">
+										<label for="legal-field-message">Сообщение: <span class="form-mark">*</span></label>
+									</div>
+
+									<textarea placeholder="" id="legal-field-message"></textarea>
+								</div>
+								<div class="input-wrap">
+									<div class="form-row captcha-row">
+										<div class="input-wrap">
+											<div class="captcha-wrap">
+												<div class="label-holder">
+													<span class="label">защита от спама: <span class="form-mark">*</span></span>
+												</div>
+												<div class="captcha">
+													<div class="captcha-img">
+														<img src="img/img-captcha.jpg" alt="code" />
+													</div>
+													<a href="#" class="btn-captcha-refresh">
+														<i class="depict-refresh"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="input-wrap">
+											<div class="label-holder">
+												<label for="legal-field-code">код: <span class="form-mark">*</span></label>
+											</div>
+											<input type="text" value="" id="legal-field-code" />
+										</div>
+									</div>
+									<div class="form-buttons-group js-btn-form-wrap">
+										<div class="label-holder">
+											<span class="label">отправка или очистка формы:</span>
+										</div>
+										<div class="form-buttons-wrap">
+											<div class="form-buttons-col form-buttons-left">
+												<div class="btn-submit">
+													<i class="depict-form-send"></i> <span>отправить сообщение</span>
+													<input type="submit" class="btn-form-js" value="">
+												</div>
+											</div>
+											<div class="form-buttons-col form-buttons-right">
+												<div class="btn-reset">
+													<i class="depict-form-clear"></i> <span>очистить форму</span>
+													<input type="reset" class="btn-form-js" value="">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!--form callback legal end-->
+				</div>
+			</div>
+		</div>
+		<!--helpful end-->
+
+		<div class="attention">
+			<div class="align-layout">
+				<h3>Обращаем Ваше внимание!</h3>
+				<p>Проверьте пожалуйста правильность написания адреса. Поля, отмеченные «<mark>*</mark>» являются обязательными
+					для заполнения. Только при условии, что адрес вашей электронной почты указан верно, вы получите ответ
+					на заданный вопрос и если в момент рассылки ответа на ваше письмо был доступен почтовый сервер,
+					где зарегистрирован ваш почтовый ящик. Не используйте в тексте ненормативную лексику.</p>
+			</div>
+		</div>
+	</section>
+	<!--callback section end-->
+</div>
+<!--main content end-->
+
+
+
+@@include("_tpl_layout_foot.html")
