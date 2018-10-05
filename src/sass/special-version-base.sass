@@ -4,12 +4,6 @@
 @import utils/mixins
 @import utils/placeholders
 
-// variables
-$base-color: #f29700
-$base-color-alt: #0f4b01
-$displace: 1px
-// variables end
-
 .spec-panel
 	display: none
 	position: relative
@@ -49,7 +43,8 @@ $displace: 1px
 	overflow-y: hidden
 	overflow-x: hidden
 	box-sizing: border-box
-	+spec-reset-bg
+	//+spec-reset-bg
+	+spec-bg-gradient
 
 	&:hover,
 	.touchevents &,
@@ -476,156 +471,3 @@ $icon-spacing--space: 3px // h
 		background-color: $spec-bg-color--scheme-green
 
 // Special Version Advanced Settings end
-
-/*button switch special version
-.spec-btn-switcher
-	display: block
-	position: relative
-
-	// in sidebar
-	.sidebar &
-		height: 100%
-		padding: 30px 5px 0
-		font-family: Arial, Helvetica, sans-serif
-		//font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif
-		font-size: 10px
-		line-height: 12px
-		letter-spacing: normal
-		text-transform: uppercase
-		color: $base-color-alt
-		font-style: normal
-		// transition
-		$prop: background-color, color
-		word-wrap: break-word
-		will-change: $prop
-		transition:
-			property: $prop
-			duration: 0.2s
-			//timing-function: ease-in-out
-
-		box-sizing: border-box
-		z-index: 9999
-
-		.#{$spec-mod} &
-			font-family: inherit
-			font-weight: bold
-
-		body:not(.#{$spec-mod}) &.to_normal
-			display: none
-
-		.#{$spec-mod} &:not(.to_normal)
-			display: none
-
-		svg
-			//+size(1.4em)
-			+size(30px)
-			position: absolute
-			left: 50%
-			top: 0
-			transform: translate(-50%, 0)
-			box-sizing: border-box
-
-		path
-			fill: currentColor
-			// transition
-			$prop: fill
-			will-change: $prop
-			transition:
-				property: $prop
-				duration: 0.2s
-				//timing-function: ease-in-out
-
-		//.#{$spec-mod} &
-			color: currentColor
-			top: auto
-			right: 0
-			bottom: 60px
-
-			+media('<tab-lg')
-				top: auto
-				bottom: 24px
-				right: 0
-
-			+media('<mob-lg')
-				order: 4
-				position: relative
-				top: auto
-				bottom: auto
-				right: auto
-				align-self: self-start
-
-			span
-				width: auto
-				line-height: inherit
-
-		// hover
-		&:hover
-			color: white
-			background-color: $base-color-alt
-			text-decoration: none
-
-	// Только для текущего проекта
-	.sidebar-large &
-		display: flex
-		align-items: center
-		padding: 0 12px 0 64px
-		font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif
-		font-size: 14px
-		line-height: 17px
-		text-align: left
-		color: #000
-
-		svg
-			left: 23px
-			top: 50%
-			transform: translate(0, -50%)
-
-		path
-			color: $base-color-alt
-
-	.sidebar &,
-	.sidebar-large &
-		// hover
-		&:hover
-			color: white
-			background-color: $base-color-alt
-			text-decoration: none
-
-			path
-				color: currentColor
-
-	// in footer
-	.footer &
-		padding-left: 1.9em
-		position: absolute
-		left: auto
-		top: auto
-		bottom: 10px
-		color: rgba(white, 0.8)
-
-		.#{$spec-mod} &
-			color: currentColor
-			position: relative
-			bottom: auto
-
-		svg
-			//+size(1.4em)
-			+size(30px)
-			position: absolute
-			left: 0
-			top: 50%
-			transform: translate(0, -50%)
-			box-sizing: border-box
-
-		path
-			fill: currentColor
-
-/*button switch special version end
-
-// только для текущего проекта
-.footer-nav
-	position: relative
-
-//.nav-opened-before .spec-panel
-	+media('<mob-md')
-		transform: translate(0, -110%)

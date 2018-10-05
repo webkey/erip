@@ -6,21 +6,19 @@
 	// hide element
 	// ---------------------------------------------------------------------------
 	.sidebar,
-	.btn-back,
-	.print-hidden,
-	.images-slider,
-	.print,
-	.footer-figure-left,
-	.footer-figure-right,
-	.footer-nav,
-	.footer-gov,
-	.liked,
-	[class*="bg-figure"],
-	.info__divider,
-	.meter,
-	.view-switcher,
-	.card-bar__nav,
-	.expander__angle,
+	.sidebar-overlay,
+	.sidebar-large, // копия сайдбарара, добавленная скриптом
+	.sidebar .logo,
+	.btn-sidebar,
+	.header .search-form,
+	.btn-site-map,
+	.site-map,
+	.about-desc,
+	.about-info__img,
+	.btn-default .depict-download,
+	.call-img,
+	.footer-container,
+	.social-networks a > i,
 	.spec-hide,
 	.spec-hide
 		display: none !important
@@ -28,11 +26,12 @@
 
 	// hide ::before
 	// ---------------------------------------------------------------------------
-	.products__list,
-	.products__figure,
-	.expander__panel,
-	.calc__box,
-	.map-legend__list li,
+	.about-info__col,
+	.about-info,
+	.about-info__list,
+	.file,
+	.social-networks a,
+	.call-item,
 	.spec-hide-before,
 	.spec-hide-before
 		&::before
@@ -41,11 +40,10 @@
 
 	// hide ::after
 	// ---------------------------------------------------------------------------
-	.products__list,
-	.products__figure,
-	.expander__panel,
-	.expander__hand,
-	.calc__box,
+	.about-info,
+	.about-info__list,
+	.file,
+	.social-networks,
 	.spec-hide-after,
 	.spec-hide-after
 		&::after

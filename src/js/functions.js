@@ -134,7 +134,7 @@ function stickyLayout(){
 	}
 
 	$(window).on('debouncedresize', function () {
-		if(window.innerWidth < 1350) {
+		if($(".sticky-js").length && window.innerWidth < 1350) {
 			$stickyJs.hcSticky('off');
 		}
 	});
@@ -459,7 +459,7 @@ function catalogMenuSelect(){
 		}
 
 		// hcSticky recalculation
-		if (window.innerWidth >= 1350) {
+		if ($(".sticky-js").length && window.innerWidth >= 1350) {
 			$(".main-layout").hcSticky('reinit');
 		}
 
@@ -589,7 +589,7 @@ function actionsLayout(){
 			isActive = true;
 
 			actionsSortable.on( 'layoutComplete', function() {
-				if (window.innerWidth >= 1350) {
+				if ($(".sticky-js").length && window.innerWidth >= 1350) {
 					$(".main-layout").hcSticky('reinit');
 				}
 			});
@@ -766,7 +766,7 @@ function faqBehaviorInit() {
 	}
 
 	$(window).on('faqEvent', function () {
-		if (window.innerWidth >= 1350) {
+		if ($(".sticky-js").length && window.innerWidth >= 1350) {
 			$(".main-layout").hcSticky('reinit');
 		}
 		// $(".aside").hcSticky('reinit');
@@ -1409,7 +1409,7 @@ function multiAccordionInit() {
 		});
 
 		$(window).on('accordionEvent', function () {
-			if (window.innerWidth >= 1350) {
+			if ($(".sticky-js").length && window.innerWidth >= 1350) {
 				$(".main-layout").hcSticky('reinit');
 			}
 			// $(".aside").hcSticky('reinit');

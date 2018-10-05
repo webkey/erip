@@ -22,7 +22,8 @@
 				panel: pref + '__toolbar',
 				switcher: pref + '__switcher'
 			},
-			path = cssPath || 'css/',
+			// path = cssPath || 'css/',
+			path = 'css/',
 			cookieName = {
 				specVersionOn: 'special-version-on',
 				specVersionSettings: 'special-version-settings',

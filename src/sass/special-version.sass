@@ -3,6 +3,9 @@
 @import utils/functions
 @import utils/mixins
 @import utils/placeholders
+// include css-files
+//@import url(../css/normalize.css)
+//@import url(../css/widgets.css)
 
 /*=========== SPECIAL VERSION ===========
 .vspec--hide-page
@@ -155,6 +158,11 @@ body.#{$spec-mod}
 // ------------------------------------------------------------
 @import spec/layout
 
+/* special version buttons
+/* ============================================================
+
+@import spec/btn
+
 /* special version typography
 /* ============================================================
 
@@ -178,109 +186,83 @@ body.#{$spec-mod}
 /* to top end
 
 .#{$spec-mod}
-	&, &.home-page
-		.layout
-			max-width: calc(#{$spec-text-page} + #{nth($spec-page-space, 2)} * 2)
-			margin: 0 auto
-			box-sizing: border-box
-			+padding-horizontal(nth($spec-page-space, 2))
+	.full-page
+		h1, h2, h3, h4, h5, h6
+			max-width: none
 
-			//+media('<desk-hd')
-				max-width: calc(#{$spec-text-page} + #{nth($spec-page-space, 2)} * 2 + #{nth($spec-panel-size, 2)})
-				+padding-horizontal(calc(#{nth($spec-page-space, 2)} + #{nth($spec-panel-size, 2)}), nth($spec-page-space, 2))
+	// sidebar
+	.sidebar
+		width: auto !important
 
-			+media('<desk-sm')
-				max-width: none
-				//+padding-horizontal(calc(#{nth($spec-page-space--md, 2)} + #{nth($spec-panel-size, 2)}), nth($spec-page-space--md, 2))
-				+padding-horizontal(nth($spec-page-space--md, 2))
+	// header
+	.header-layout
+		text-align: center
 
-			+media('<mob-md')
-				+padding-horizontal(nth($spec-page-space--sm, 2))
+	.logo
+		display: inline-block
+		vertical-align: top
+		width: auto
+		height: auto
+		background: none
+		border: none
+		z-index: auto
+		box-sizing: border-box
+		margin-bottom: 20px
 
-	.header
-		color: currentColor
-
-	.header-holder
-		min-height: 0
-		padding-top: 0
-		padding-bottom: calc(#{round($main-nav-height--spec / 2)} + 1em)
-
-		+media('<desk-ml')
-			padding-bottom: calc(#{round($main-nav-height--spec--sm / 2)} + 1em)
-
-		+media('<tab-lg')
+		a
 			height: auto
-			padding-bottom: 0.5em
-			border: 0 solid currentColor
-			border-width: 0 0 1px
-
-		+media('<mob-lg')
+			padding: 0
+			display: block
 			display: flex
-			flex-direction: column
-			padding-bottom: 0
-			padding-top: 10px
-			border: none
+			justify-content: flex-start
+			align-items: center
+			text-align: left
 
-		&::before, &::after
-			display: none
+		img, .logo__text
+			display: inline-block
+			margin: 0
+
+		img
+			margin-right: 1em
+
+		.logo__text
+			left: auto
+			top: auto
+			opacity: 1
+
+	// nav
+	.nav-list
+		max-height: none !important
+		display: flex
+		justify-content: center
+		align-items: flex-start
+		flex-wrap: wrap
+
+		li
+			display: inline-block
+			margin: 0.3em 0.6em 0.3em 0
+
+		a
+			&::before, &::after
+				display: none
 
 	.main
-		padding-top: $spec-bottom-space-section
-		padding-bottom: $spec-bottom-space-section
+		$space: $spec-bottom-space-item
+		padding-top: $space
+		padding-bottom: $space
 
-		+media('<desk-ml')
+		//+media('<desk-ml')
 			$space: 2.5em
 			padding-top: $space
 			padding-bottom: $space
 
-		+media('<tab-sm')
+		//+media('<tab-sm')
 			$space: 2em
 			padding-top: $space
 			padding-bottom: $space
 
 	.content
-		//border: $spec-border-width solid $spec-text-color
-		//margin-left: 0
-		margin: 0 auto
-		max-width: $spec-text-layout
 		background: none
-		border: none
-
-		+media('<desk-sm')
-			max-width: $spec-text-layout--sm
-
-		+media('<tab-sm')
-			max-width: none
-
-	&.home-page .content
-		max-width: none
-
-		.promo-section, .regard-section, .links-section, .info-center-section
-			max-width: $spec-text-layout // костиль для главной страници, чтобы не ограничивать ширину блока с картой
-			+push-auto
-
-			+media('<desk-sm')
-				max-width: $spec-text-layout--sm
-
-			+media('<tab-sm')
-				max-width: none
-
-	// Убираем js пересчет размеров футера
-	// Прижать к тизу нужно попытаться css методами
-	// Пока не нашел подходящего решения.
-	//&
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		align-items: stretch
-
-		.wrapper
-			flex-shrink: 0 // нужно, если прижимать к низу с помощью flex
-			flex-grow: 0 // нужно, если прижимать к низу с помощью flex
-			overflow: visible // нужно, если прижимать к низу с помощью flex
-			min-height: 0
-			height: auto
-			width: 100% // нужно, если прижимать к низу с помощью flex
 
 	.wrapper
 		min-height: 0
@@ -289,280 +271,47 @@ body.#{$spec-mod}
 		overflow-x: hidden
 		z-index: 6
 
-		//+media('<mob-md')
-			padding-top: nth($spec-panel-size--sm, 1)
-
-	.spacer
-		display: none !important
-
 	.footer
-		//width: 100% // нужно, если прижимать к низу с помощью flex
-		margin-top: 0 !important
 		border-top: $spec-border-width solid currentColor
+		padding: 20px 0
 
-	.footer,
-	.footer-gov,
-	.footer-bottom
-		background: none
-
-	.footer-common
-		padding-top: 1em
-
-	.footer-bottom
-		padding-top: 1em
-		padding-bottom: 1em
-
-		+media('<tab-lg')
-			padding-top: 0.5em
-
-	.footer-bottom-holder
-		padding-top: 0
-		padding-bottom: 0
-		display: flex
-		justify-content: space-between
-		align-items: flex-start
-		line-height: 1
-		+clear
-
-		+media('<tab-lg')
-			display: block
-
-		&::after
-			content: none
-
-	.footer-col
-		//float: left
-		font-size: 18px
-		line-height: 24px
-		letter-spacing: $spec-letter-spacing--normal
-		padding: 0 10px
-
-		+media('<tab-lg')
-			padding: 0.5em 0 0
-
-		&:first-child
-			padding-left: 0
-
-		&:last-child
-			padding-right: 0
-			text-align: right
-
-			+media('<tab-lg')
-				text-align: left
-
-	// developer
-	.developer
-		.text-inner
-			display: inline
-
-	.developer_logo
-		display: inline
-		text-indent: 0
-		padding: 0
-		width: auto
-		height: auto
-		top: auto
-
-		&::before, &::after
-			display: none
-
-	// logo
-	.logo
-		float: none
-		display: block
-		-webkit-tap-highlight-color: transparent
-
-		+media('<tab-lg')
-			padding-left: 65px
-
-	.logo-img
-		+media('<tab-lg')
-			left: 0
-
-	.logo-img, .logo::before
-		height: 100px
-
-		+media('<1280px')
-			height: 80px
-
-		+media('<tab-lg')
-			height: 60px
-
-	.logo-title
-		text-align: left
-
-		& > strong
-			background-image: url(../img/logo-text--bw.svg)
-			background-repeat: no-repeat
-			background-position: 0 50%
-			+font(0, 0)
-			//background-size: contain
-
-			.#{$spec-mod--scheme-wb} &
-				background-image: url(../img/logo-text--wb.svg)
-
-			.#{$spec-mod--scheme-blue} &
-				background-image: url(../img/logo-text--blue.svg)
-
-			.#{$spec-mod--scheme-brown} &
-				background-image: url(../img/logo-text--brown.svg)
-
-			.#{$spec-mod--scheme-green} &
-				background-image: url(../img/logo-text--green.svg)
-
-	.copyright
-		vertical-align: top
-		padding: 0
-
-	// main-nav
-	.main-nav
-		height: $main-nav-height--spec
-		margin-top: -#{round($main-nav-height--spec / 2)}
-
-		+media('<desk-ml')
-			height: $main-nav-height--spec--sm
-			margin-top: -#{round($main-nav-height--spec--sm / 2)}
-
-	.main-nav-frame
-		box-shadow: none
-		transition: none
-
-		&::before
-			display: none
-
-	.nav-fixed & .main-nav-frame
-		&::before
-			display: none
-
-	.main-nav-holder
-		$shadow: 0 0 0 $spec-border-width
-		box-shadow: $shadow $spec-text-color
-		padding-left: $main-nav-height--spec
-		background: none
-		transition: none
-
-		.#{$spec-mod--scheme-wb} &
-			box-shadow: $shadow $spec-text-color--scheme-wb
-
-		.#{$spec-mod--scheme-blue} &
-			box-shadow: $shadow $spec-text-color--scheme-blue
-
-		.#{$spec-mod--scheme-brown} &
-			box-shadow: $shadow $spec-text-color--scheme-brown
-
-		.#{$spec-mod--scheme-green} &
-			box-shadow: $shadow $spec-text-color--scheme-green
-
-	// navigation list
-	.nav
-		box-shadow: none
-
-	.nav__list
-		a
-			font-family: inherit
-
-		& > li
-			& > a
-				display: flex
-				justify-content: center
-				align-items: center
-				height: $main-nav-height--spec
-				color: currentColor
-				+spec-reset-bg
-				border: 0 solid currentColor
-				border-left-width: $spec-border-width
-				padding: 0 5px
-
-				+media('<desk-ml')
-					height: $main-nav-height--spec--sm
-
-				&:before
-					display: none
-
-			&:first-child > a
-				border-left-width: 0
-
-			// hover
-			&.hover > a,
-			& > a:hover,
-			& > a:focus
-				color: currentColor
-				text-decoration: none
-				border-color: currentColor
-
-			&.has-drop.hover,
-			&.current.hover_next,
-			&.current.hover_prev
-				& > a
-					border-color: currentColor
-
-			// current
-			&.current > a
-				text-decoration: none
-				+spec-reset-bg-invert
-
-		[class*="nav-depict-icons-angle"]
-			&::before, &::after
-				background-color: currentColor
-
-	[class*="nav__drop"]
-		border: $spec-border-width solid currentColor
-		box-shadow: none
-		//display: none
-
-		a
-			padding: 10px 40px
-			+font(18px, 24px)
-			background: none
-			border-top: $spec-border-width solid currentColor
-
-			+media('<desk-ml')
-				+font(16px, 20px)
-
-		li.hover > a
-			background: none
-
-	//.nav__list li.hover,
-	//.no-js .nav__list li:hover,
-	//.nav__list li.active
-		& > [class*="nav__drop"]
-			display: block
-
-	[class*="nav__list"] > li:first-child > [class*="nav__drop"]
-		border: $spec-border-width solid currentColor
-
-	// button open menu / close popups
-
-	.btn-menu, .btn-menu-close
+	.btn-menu
 		+size($main-nav-height--spec)
-		display: block
+		display: inline-block
 		display: flex
+		display: none
 		justify-content: center
 		line-height: 24px
 		align-items: center
-		color: $spec-text-color
+		//color: $spec-text-color
+		color: currentColor
 		transition: none
 		box-sizing: border-box
 		border: 0 solid currentColor
-		background-color: $spec-bg-color
+		//background-color: $spec-bg-color
+		background: none
 		text-decoration: underline
 		-webkit-tap-highlight-color: transparent
 
-		.#{$spec-mod--scheme-wb} &
+		//.#{$spec-mod--scheme-wb} &
 			background-color: $spec-bg-color--scheme-wb
 			color: $spec-text-color--scheme-wb
 
-		.#{$spec-mod--scheme-blue} &
+		//.#{$spec-mod--scheme-blue} &
 			background-color: $spec-bg-color--scheme-blue
 			color: $spec-text-color--scheme-blue
 
-		.#{$spec-mod--scheme-brown} &
+		//.#{$spec-mod--scheme-brown} &
 			background-color: $spec-bg-color--scheme-brown
 			color: $spec-text-color--scheme-brown
 
-		.#{$spec-mod--scheme-green} &
+		//.#{$spec-mod--scheme-green} &
 			background-color: $spec-bg-color--scheme-green
 			color: $spec-text-color--scheme-green
+
+		+media('<tab-lg')
+			display: inline-block
+			display: flex
 
 		&::before
 			display: none
@@ -586,658 +335,51 @@ body.#{$spec-mod}
 				transition: none
 				background: currentColor
 
-	.btn-menu
-		border-right-width: $spec-border-width
-
-		+media('<desk-ml')
-			height: $main-nav-height--spec--sm
-
-	.btn-menu-mobile
-		display: none
-		border: none
-		height: auto
-		width: auto
-		background: none
-		position: absolute
-		right: 0
-		top: 0
-		margin-top: 0.4em
-
-		+media('<tab-lg')
-			display: block
-
-		+media('<mob-lg')
-			margin-top: 24px
-
-	.user-options
-		display: flex
-		align-items: flex-start
-		flex-wrap: wrap
-		position: relative
-		top: auto
-		right: auto
-		width: auto
-		height: auto
-		padding: 0.5em 0
-		margin: 0
-		+spec-font-size--note
-		background: none
-
-		+media('<tab-lg')
-			border: 0 solid currentColor
-			border-width: 0 0 1px
-			margin-bottom: 0.5em
-			padding-right: 80px
-
-		+media('<mob-lg')
-			order: 3
-			padding-right: 0
-			margin-top: 10px
-			border-width: 1px 0
-
-		li
-			position: relative // В обычной версии на планшете два последних пункта позиционируются. Отменяем это
-			right: auto // В обычной версии на планшете два последних пункта позиционируются. Отменяем это
-			top: auto // В обычной версии на планшете два последних пункта позиционируются. Отменяем это
-			left: auto // В обычной версии на планшете два последних пункта позиционируются. Отменяем это
-			bottom: auto // В обычной версии на планшете два последних пункта позиционируются. Отменяем это
-			height: auto
-			width: auto
-			padding: 0
-			margin: 0 1em 0 0
-
-			+media('<mob-md')
-				display: block
-				margin: 0
-				flex-basis: 100%
-
-		a
-			padding: 0
-			height: auto
-			width: auto
-			color: currentColor
-			box-shadow: none
-			text-decoration: none
-			border: none
-
-			.touchevents
-				-webkit-tap-highlight-color: transparent
-
-			&::before
-				display: none
-
-			span
-				display: inline
-				vertical-align: middle
-				border: none
-				line-height: inherit
-				transition: none
-				text-decoration: underline
-
-				&.text-for-mobile
-					display: none
-
-			&:hover
-				background-color: transparent
-				color: currentColor
-				box-shadow: none
-
-				svg path
-					fill: currentColor
-
-				span
-					text-decoration: none
-
-		svg
-			//display: none
-			display: inline-block
-			vertical-align: middle
-			+size(24px)
-			transition: none
-
-			path
-				fill: currentColor
-
-		.translate-ling
-
-			a
-				span
-					text-decoration: none
-
-		.goog-te-gadget-simple
-			border-color: currentColor
-			+padding-horizontal(0)
+	// icon
+	[class*="icon-"]
+		font-style: normal
 
 	// breadcrumbs
-	.breadcrumbs-list
-		padding: 0
-		height: auto
-		min-height: 0
-		overflow: visible
+	.breadcrumbs
 		+spec-font-size--note
 
+	.breadcrumbs-list
 		li, a, span
 			display: inline
 			vertical-align: baseline
+			line-height: inherit
+			white-space: normal
 
 		li
-			display: inline
-			padding: 0 0.4em 0 1em
+			padding: 0
+			margin: 0 0.4em 0 0
 
 			&::before
 				color: inherit
 
 			&, &:first-child
 				&::before
+					position: relative
+					left: auto
+					top: auto
+					display: inline
 					background: none
 					width: auto
 					height: auto
 					border: none
-					margin: 0
+					margin: 0 0.4em 0 0
 
-			&:first-child
-				padding-left: 0
-
-			span
-				line-height: inherit
-				border: none !important
-				white-space: normal
+			&:last-child
+				& > span
+					display: inline
+					white-space: normal
+					max-width: none
+					overflow: visible
+					text-overflow: unset
 
 		a
 			&:hover, &:focus
 				color: inherit
-
-	// social networks
-	.social-networks
-		li
-			padding-left: 0
-
-		a
-			&::before
-				transition: none
-				border-color: currentColor
-
-		path
-			fill: currentColor
-
-		// hover
-		a:hover
-			path
-				fill: currentColor
-
-	// content foot
-	.content-foot
-		border: none
-		margin: 0
-		padding-top: $spec-bottom-space-section
-
-	.user-content > .text-layout + .content-foot
-		margin-top: 0 !important
-
-	.content-foot .share-box + div
-		border-top: $spec-border-width solid currentColor
-
-	// share box
-	.share-box__label
-		float: none
-
-	.share-box
-		padding-bottom: $spec-bottom-space
-
-		.social-networks
-			float: none
-			margin: 0
-			padding: 0
-			text-align: left
-
-	// nav page
-	.nav-page
-		font-size: inherit
-		letter-spacing: inherit
-		height: auto
-		padding: $spec-bottom-space 0 0
-		border-top: $spec-border-width solid currentColor
-
-	.nav-page__item
-		display: block
-		border: none
-		float: none
-		text-align: left
-		color: inherit
-
-		a
-			display: inline
-			color: inherit
-			background: none
-
-			& > span
-				display: inline
-				vertical-align: initial
-				padding: 0
-				width: auto
-				font-size: inherit
-				line-height: inherit
-				font-family: inherit
-				text-transform: none
-				font-weight: bold
-				letter-spacing: inherit
-
-			i
-				display: none
-
-				&::before, &::after
-					background-color: currentColor !important
-
-			&:hover
-				color: inherit
-				background-color: inherit
-
-		// disabled
-		&.disabled
-			background: none
-
-			& a, & a:hover
-				text-decoration: none
-				cursor: default
-				color: inherit
-				opacity: 0.5
-				background-color: inherit
-
-	.nav-articles .nav-page__item
-		width: auto
-
-	// promo-slider
-	.promo-slider
-		margin-left: 0
-
-	.promo-slider__item
-		border: none
-
-		&::before
-			display: none
-
-	.promo-slider__bg
-		position: relative
-		left: auto
-		top: auto
-		height: auto
-		width: 320px
-		max-width: 100%
-
-		&::before
-			content: ''
-			display: block
-			+ratio(16, 9)
-
-	.promo-slider__content
-		position: relative
-		left: auto
-		top: auto
-		height: auto
-		width: auto
-		text-align: left
-		background: none
-
-		&::before
-			display: none
-
-	.promo-slider__frame
-		display: block
-		width: auto
-		max-width: none
-
-	.promo-slider__title,
-	.promo-slider__text
-		max-height: none
-
-	// regard
-	.regard-section
-		background: none
-		box-shadow: none
-
-	.regard
-		border: none
-		box-shadow: none
-
-	.regard__item
-		padding: 0
-		width: auto
-		float: none
-		height: auto
-		background: none !important
-		opacity: 1
-		box-shadow: none
-		border: none
-
-		&:nth-child(even)
-			box-shadow: none
-			border: none
-
-		&::before
-			display: none
-
-	.regard__inner
-		position: relative
-		left: auto
-		top: auto
-		right: auto
-		bottom: auto
-		padding: 0
-		text-decoration: underline
-
-		&:hover
-			text-decoration: none
-
-		&::before
-			display: none
-
-		& > span
-			display: inline
-			vertical-align: baseline
-			width: auto
-			+spec-font-size--item
-			font-weight: bold
-			text-transform: uppercase
-
-	[class*="depict-regard"]
-		display: inline-block
-		vertical-align: baseline
-
-	// links
-	.r-tabs
-		.tab-controls
-			display: none
-
-		.r-tabs-accordion-title
-			display: block
-
-		.r-tabs-anchor
-			text-decoration: none
-			cursor: default
-
-		.tabs-panel
-			display: block !important
-
-	.links__list
-		.links__item
-			display: block
-			padding: 0
-			width: auto
-			box-shadow: none
-
-			&.links__empty
-				display: none
-
-	.links__inner
-		display: inline
-		box-shadow: none
-		background: none
-		text-decoration: none
-
-		&::before
-			display: none
-
-	.links__holder
-		display: inline
-		position: relative
-		left: auto
-		top: auto
-		width: auto
-		height: auto
-
-		&::after
-			display: none
-
-	.links__frame
-		width: auto
-		display: inline
-		text-align: left
-		vertical-align: baseline
-
-	.links__icon
-		display: inline-block
-		vertical-align: baseline
-		margin-right: 1em
-
-		svg
-			polygon, rect, path
-				transition: none
-				fill: currentColor
-
-	.no-touchevents & a:hover .links__icon
-		svg
-			polygon, rect, path
-				fill: currentColor
-
-	.links__content
-		max-width: none
-		display: inline-block
-		vertical-align: baseline
-
-	.links__title
-		display: inline
-		max-height: none
-		overflow: visible
-		text-decoration: underline
-
-		br
-			display: none
-
-	// hover
-	.no-touchevents & .links__inner:hover
-		box-shadow: none
-		background: none
-
-		.links__title
-			color: inherit
-			text-decoration: none
-
-	// info center
-	.info-center-content
-		max-width: none
-
-	.info-center-header
-		font-weight: bold
-
-	.info__list
-		text-align: left
-		margin: 0
-
-	.info__item
-		display: block
-
-	.info__inner
-		width: auto
-		height: auto
-		overflow: visible
-		padding: 0
-		background: none
-		box-shadow: none
-		border: none
-
-	.info__label
-		display: inline-block
-		vertical-align: top
-		position: relative
-		left: auto
-		top: auto
-		overflow: visible
-		+spec-font-size--note
-		font-weight: normal
-		text-transform: uppercase
-		background: none
-		border: 1px solid currentColor
-		
-	.info__img
-		transform: none
-		background: none
-		overflow: visible
-
-		&::before
-			content: none
-
-	.info__figure
-		position: relative
-		left: auto
-		top: auto
-		width: auto
-		height: auto
-		transform: none
-		text-align: left
-
-		img
-			margin: 0
-
-	.info__content
-		margin-bottom: $spec-bottom-space-element
-
-	.info__title, .info__text
-		transform: none
-		opacity: 1
-		visibility: visible
-
-		.text-wrap
-			max-height: none
-			overflow: visible
-
-	.btn__info
-		margin: 0
-
-	.product__price
-
-		.byn, .byr
-			display: inline
-			color: inherit
-			font-size: inherit
-			font-weight: bold
-
-			&::before
-				display: none
-
-		.price-unit
-			+spec-font-size--note
-
-	// hover
-	.no-touchevents & a.info__inner:hover
-		box-shadow: none
-
-	.no-touchevents & .show-animation a:hover
-		.info__img,
-		.info__content
-			opacity: 1
-			visibility: visible
-			transform: none
-
-	//branches
-	.branches
-		padding-left: 0
-
-		+media('<tab-lg')
-			min-height: 0
-
-	.branches-map-svg
-		path, polygon
-			stroke: currentColor
-			transition: none
-			fill: $spec-bg-color
-
-			.#{$spec-mod--scheme-wb} &
-				fill: $spec-bg-color--scheme-wb
-
-			.#{$spec-mod--scheme-blue} &
-				fill: $spec-bg-color--scheme-blue
-
-			.#{$spec-mod--scheme-brown} &
-				fill: $spec-bg-color--scheme-brown
-
-			.#{$spec-mod--scheme-green} &
-				fill: $spec-bg-color--scheme-green
-
-		text
-			font-family: inherit
-			fill: currentColor !important
-			transition: none
-			letter-spacing: normal
-			word-spacing: normal
-			line-height: $spec-line-height--small
-
-	// hover
-	.no-touchevents &, &
-		.branches-map-svg
-			a
-				.touchevents &
-					-webkit-tap-highlight-color: transparent
-					user-select: none
-
-				&:hover, &.active
-					path, polygon
-						fill: currentColor
-						stroke: currentColor
-
-					.branches-map-logo
-						fill: $spec-bg-color
-
-						.#{$spec-mod--scheme-wb} &
-							fill: $spec-bg-color--scheme-wb
-
-						.#{$spec-mod--scheme-blue} &
-							fill: $spec-bg-color--scheme-blue
-
-						.#{$spec-mod--scheme-brown} &
-							fill: $spec-bg-color--scheme-brown
-
-						.#{$spec-mod--scheme-green} &
-							fill: $spec-bg-color--scheme-green
-
-	// branches-popup
-	.branches-popup
-		+media('<mob-lg')
-			position: fixed
-			//left: calc(#{round(nth($spec-panel-size, 2) / 2)} + 50%) !important
-			top: 50% !important
-			transform: translate(-50%, -50%)
-
-		+media('<mob-md')
-			left: 50% !important
-
-	.branches-popup__holder
-		border: $spec-border-width solid currentColor
-		box-shadow: none
-
-		+media('<mob-lg')
-			box-shadow: 0 0 50px rgba($spec-text-color, 0.25)
-
-			.#{$spec-mod--scheme-wb} &
-				box-shadow: 0 0 50px rgba($spec-text-color--scheme-wb, 0.50)
-
-			.#{$spec-mod--scheme-blue} &
-				box-shadow: 0 0 50px rgba($spec-text-color--scheme-blue, 0.25)
-
-			.#{$spec-mod--scheme-brown} &
-				box-shadow: 0 0 50px rgba($spec-text-color--scheme-brown, 0.25)
-
-			.#{$spec-mod--scheme-green} &
-				box-shadow: 0 0 50px rgba($spec-text-color--scheme-green, 0.25)
-
-	.branches-popup__close
-		&::before, &::after
-			background-color: currentColor
-
-		.no-touchevents &:hover
-			&::before, &::after
-				background-color: currentColor
-
-	.branches-popup__cornet
-		display: none
-
-	.branches-popup__title, .branches-popup__subtitle
-		font-family: inherit
-		font-weight: bold
-		color: currentColor
-
-	.branches-popup dl svg path
-		fill: currentColor
-		stroke: currentColor
 
 	// user form
 	.user-form
@@ -1293,303 +435,6 @@ body.#{$spec-mod}
 			width: auto
 			display: block
 
-	// tabs
-	.custom-tabs__panels
-		border-color: currentColor
-		border-width: 0 $spec-border-width $spec-border-width
-		background: none
-
-	.custom-tabs__panel
-		box-sizing: border-box
-		padding: $spec-bottom-space-item nth($spec-page-space, 2)
-
-		+media('<desk-sm')
-			padding: $spec-bottom-space-item nth($spec-page-space--md, 2)
-
-		+media('<mob-md')
-			padding: $spec-bottom-space-item nth($spec-page-space--sm, 2)
-
-	.custom-tabs__nav
-		margin-bottom: -$spec-border-width
-
-	.custom-tabs__tab
-		font-family: inherit
-		color: inherit
-		min-height: 0
-		height: 4em
-		box-sizing: border-box
-
-		a
-			display: flex
-			align-items: center
-			justify-content: center
-			text-align: center
-			border: $spec-border-width solid currentColor
-			background: none
-			min-height: 0
-			height: 100%
-			box-sizing: border-box
-
-			& > span
-				font-weight: bold
-				max-height: none
-				text-align: center
-				line-height: 1.2
-
-				+media('<mob-md')
-					font-size: 16px
-
-			&::before
-				display: none
-
-			&.active
-				color: currentColor
-				background: none
-				border-bottom-color: transparent
-				text-decoration: none
-				cursor: default
-
-			.no-touchevents &:hover
-				background: none
-
-	.years, .sorting
-		position: relative
-		top: auto
-		right: auto
-		margin-right: 0
-		border: none
-		width: 8em
-		height: auto
-
-		a
-			padding: 0.1em 0.5em
-
-			& > span
-				display: inline
-				vertical-align: initial
-				transition: none
-
-		& > a
-			position: relative
-			border: none
-			text-align: left
-			padding-right: 1.5em
-
-			&::before
-				display: none
-
-			&::after
-				content: ''
-				display: block
-				position: absolute
-				right: 0
-				top: 50%
-				+size(0.4em)
-				border: 0 solid currentColor
-				border-width: 0 0.1em 0.1em 0
-				transform: rotate(0.125turn)
-				margin: -0.35em 0.7em 0 0
-
-			& > i
-				display: none
-
-	.years-drop, .sorting-drop
-		border: none
-		padding: 0
-		margin: 0
-
-		li
-			padding: 0.1em 0
-
-		a
-			text-align: left
-
-			&:hover
-				color: currentColor
-
-			&.active
-				text-decoration: none
-				cursor: default
-				background-color: $spec-bg-color
-				color: $spec-text-color
-
-				.#{$spec-mod--scheme-wb} &
-					background-color: $spec-bg-color--scheme-wb
-					color: $spec-text-color--scheme-wb
-
-				.#{$spec-mod--scheme-blue} &
-					background-color: $spec-bg-color--scheme-blue
-					color: $spec-text-color--scheme-blue
-
-				.#{$spec-mod--scheme-brown} &
-					background-color: $spec-bg-color--scheme-brown
-					color: $spec-text-color--scheme-brown
-
-				.#{$spec-mod--scheme-green} &
-					background-color: $spec-bg-color--scheme-green
-					color: $spec-text-color--scheme-green
-
-	//news
-	.news
-		min-height: 0
-
-	.news__item
-		border: none
-
-	.news__inner
-		display: initial
-		padding: 0
-
-		&::after
-			display: none
-
-	.news__img
-		float: none
-		margin-top: 0
-		margin-right: 0
-
-	.news__data
-		background: none
-		position: relative
-		left: auto
-		top: auto
-
-	// hover
-	.no-touchevents & .news__inner:hover
-		background: none
-
-		.news__title
-			color: inherit
-
-	// promo shop
-	.promo-shop
-		border: none
-
-	// filters
-	.filters__list
-		+margin-horizontal(-0.5em)
-		font-size: inherit
-		letter-spacing: inherit
-
-		+clear
-
-	.filters__item
-		float: left
-		+padding-horizontal(0.25em)
-		margin-bottom: 0.25em
-
-		a
-			+padding-horizontal(0.25em)
-
-	.filters__item
-		a:hover, a:focus, &.active a
-			text-decoration: none
-			+spec-reset-bg-invert
-
-	// sorting
-	.sorting
-		& > a
-			border: none
-
-	// products
-	//.products__list
-		font-size: inherit
-		letter-spacing: inherit
-		+margin-horizontal(0)
-		border: none
-
-		&::before, &::after
-			content: none
-
-	.products__item
-		height: auto !important
-
-		.btn-bay
-			position: static
-			left: auto
-			bottom: auto
-			transform: none
-
-	//.products__item
-		display: block
-		width: auto
-		border: none
-		padding: 0
-
-	//.products__inner
-		padding: 0
-		height: auto
-		transition: none
-		position: static
-		background: none
-
-	a.products__inner
-		&:hover, &:focus
-			background: none
-
-	.products__figure
-		//float: none
-		//font-size: inherit
-		//letter-spacing: inherit
-		//margin-top: 0
-		//margin-right: 0
-		//margin-left: 0
-		width: 240px
-		max-width: 100%
-
-		//&::before
-			display: none
-
-	//.products__img
-		&, & img
-			position: relative
-			left: auto
-			top: auto
-			width: auto
-			height: auto
-			font-size: inherit
-			letter-spacing: inherit
-			transform: none
-			max-height: none
-
-	.products__img
-		img
-			max-width: 100%
-
-	//.products__content
-		padding: 0
-		text-align: left
-		overflow: visible
-
-	//card
-	.card__state i
-		&::before, &::after
-			background-color: currentColor
-			transition: none
-
-	.card-visual__img
-		img
-			margin: 0
-
-	.card__features
-		li
-			&, &:first-child
-				&::before
-					content: ''
-
-		b, strong
-			font-weight: bold
-
-	//card bar
-	.card-bar
-		position: relative
-
-	.card-bar__panels
-		display: block !important
-
-	.card-bar__panel
-		position: static !important
-
 	// jFiler
 	.jFiler
 		color: inherit
@@ -1607,233 +452,113 @@ body.#{$spec-mod}
 			+spec-font-reset
 			text-align: center
 
-	// expander
-	.expander__hand:hover
-		.expander__title
-			color: inherit
+	// files
+	.file
+		display: inline-block
+		vertical-align: top
+		height: auto !important
 
-	.expander__panel
-		display: block !important
-
-	// calc
-	.calc__box
-		padding: $spec-bottom-space 0
-		border-top: $spec-border-width solid currentColor
-
-		&:first-child
-			border-top: none
-			padding-top: 0
-
-		&:last-child
-			border-bottom: none
-			padding-bottom: 0
-
-	.calc__col
-		display: flex
-		justify-content: flex-start
-		align-items: center
-
-		.label-alt
-			line-height: 1.2
-
-	.label-alt + input[type="text"],
-	.calc__title + input[type="text"],
-	.calc__title + select
-		+spec-reset-bg
-		border-color: currentColor
-		color: currentColor
-		transition: none
-		max-width: 100%
-
-		+media('<mob-md')
-			width: 100%
-
-		&.error
-			border-color: currentColor !important
-			color: currentColor
-
-	.calc__box .captcha
-		padding: 0
-
-	// .ui-spinner
-	.ui-spinner
-		border-color: currentColor
-		flex-shrink: 0
-
-	.ui-spinner-input
-		color: currentColor
-		appearance: none
-
-		&:hover, &:focus
-			border-color: currentColor
-			outline: none
-
-
-	.ui-spinner-button
-		box-sizing: border-box
-		border: 0 solid currentColor
-		transform: none
-		color: inherit
-		+spec-reset-bg-invert
-
-		&, &:focus
-			&, .no-touchevents &
-				&::before, &::after
-					background-color: currentColor
-
-	.ui-spinner-up
-		border-left-width: 1px
-
-	.ui-spinner-down
-		border-right-width: 1px
-
-	// info map
-	.accident-icon
-		border: 2px solid currentColor
-		box-sizing: border-box
-		$size: 44px
-		width: $size
-		height: $size
-
-	.info-map-label .info-map-count span
-		border: 1px solid currentColor
-		box-sizing: border-box
-		$size: 22px
-		min-width: $size
-		height: $size
-		border-radius: round($size / 2)
-		line-height: 20px
-
-	.map-legend__list
-		li
-			display: flex
-			justify-content: flex-start
-			align-items: center
-
-		.accident-icon
+		[class*="depict-files-"]
+			float: left
 			position: relative
 			left: auto
 			top: auto
-			transform: none
-			margin-right: 1em
-			//$size: 2.2em
-			$size: 50px
-			width: $size
-			height: $size
-			flex-basis: $size
-			min-width: $size
-			border-color: transparent
+			margin: 0.5em 20px 0 0
 
-			svg
-				//$size: 1.33em
-				$size: 30px
-				width: $size
-				height: $size
-				margin: -#{round-float($size / 2, 2)} 0 0 -#{round-float($size / 2, 2)}
+		.file__content
+			overflow: hidden
 
-			& ~ .text-inner
-				padding-left: 0
+		&:hover
+			[class*="depict-files-"],
+			[class*=" depict-files-"]
+				&::before
+					opacity: 1
 
-	.custom-date .input-holder .input-button
-		&::after, &::before
+				&::after
+					display: none
+
+			.file__title,
+			.file__info
+				color: inherit
+
+	// movie
+	.movie__item
+		h3
+			height: auto !important
+
+	.movie__text
+		height: auto !important
+
+	.movie__video-img
+		position: relative
+		display: inline-block
+		vertical-align: top
+
+		i
 			display: none
 
-	// gallery
-	.gallery
-		display: none !important
+		&::after
+			display: none
 
-	// flatpickr
-	.custom-date .flatpickr-input
-		background: none
-		color: currentColor
+		& > span
+			display: block
 
-	.info-map-svg
-		path, polygon
-			stroke: currentColor
-			transition: none
-			fill: $spec-bg-color
+	// call section
+	.call-content h2
+		max-width: none
 
-			.#{$spec-mod--scheme-wb} &
-				fill: $spec-bg-color--scheme-wb
+	.call-list
+		display: flex
+		flex-wrap: wrap
 
-			.#{$spec-mod--scheme-blue} &
-				fill: $spec-bg-color--scheme-blue
+	.call-item
+		display: inline-block
+		display: flex
+		padding-right: 10px
 
-			.#{$spec-mod--scheme-brown} &
-				fill: $spec-bg-color--scheme-brown
+	.call-item__row
+		display: flex
+		justify-content: flex-start
+		align-items: flex-start
 
-			.#{$spec-mod--scheme-green} &
-				fill: $spec-bg-color--scheme-green
+	.call-item__img, .call-item__text
+		display: inline-block
+		margin-right: 10px
 
-		text
-			fill: currentColor
-			transition: none
-			letter-spacing: normal
+	// social network
+	.social-networks
+		li
+			display: inline-block
+			vertical-align: top
+			margin-right: 1em
+			margin-bottom: 1em
 
 		a
-			text-decoration: none
+			float: none
+			text-indent: 0
+			overflow: visible
+			width: auto
+			height: auto
+			border: none
+			border-radius: 0
+			box-sizing: border-box
+			transition: none
+			font-weight: bold
 
-	// hover
-	.no-touchevents &, &
-		.info-map-svg
-			a.has-labels
+	// developer
+	.developer
+		display: inline
+		height: auto
+		width: auto
+		position: relative
+		bottom: auto
+		left: auto
+		text-indent: 0
+		overflow: visible
+		border: none
+		background: none
+		box-sizing: border-box
 
-				&:hover, &.active
-					path, polygon
-						fill: currentColor
-						stroke: currentColor
-
-					.branches-map-logo
-						fill: $spec-bg-color
-
-						.#{$spec-mod--scheme-wb} &
-							fill: $spec-bg-color--scheme-wb
-
-						.#{$spec-mod--scheme-blue} &
-							fill: $spec-bg-color--scheme-blue
-
-						.#{$spec-mod--scheme-brown} &
-							fill: $spec-bg-color--scheme-brown
-
-						.#{$spec-mod--scheme-green} &
-							fill: $spec-bg-color--scheme-green
-
-	.tbl-dates
-		border: 1px solid currentColor
-
-		td, th
-			padding: 0.5em
-			+spec-font-size--note
-			border-color: currentColor
-
-	.custom-tooltip
-		border-color: currentColor
-		color: currentColor
-
-	.custom-tooltip:after,
-	.custom-tooltip:before
-		color: currentColor
-
-	.custom-tooltip:after
-		border-color: rgba(255, 255, 255, 0)
-		border-bottom-color: $spec-bg-color
-
-		.#{$spec-mod--scheme-wb} &
-			border-bottom-color: $spec-bg-color--scheme-wb
-
-		.#{$spec-mod--scheme-blue} &
-			border-bottom-color: $spec-bg-color--scheme-blue
-
-		.#{$spec-mod--scheme-brown} &
-			border-bottom-color: $spec-bg-color--scheme-brown
-
-		.#{$spec-mod--scheme-green} &
-			border-bottom-color: $spec-bg-color--scheme-green
-
-	.custom-tooltip:before
-		border-color: rgba(230, 230, 230, 0)
-		border-bottom-color: currentColor
-
-@import spec/popups
+//@import spec/popups
 
 /*=========== SPECIAL VERSION end ===========

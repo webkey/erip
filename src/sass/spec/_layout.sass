@@ -3,26 +3,26 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	.someclass,
-	.someclass
-		padding:
-			left: $spec-space
-			right: $spec-space
+	.header,
+	.main-layout
+		box-sizing: border-box
+		max-width: calc(#{$spec-text-page} + #{nth($spec-page-space, 2)} * 2)
+		+margin-horizontal(auto)
+		+padding-horizontal(nth($spec-page-space, 2))
 
-		+media('<mob-lg')
-			padding:
-				left: $spec-space--sm
-				right: $spec-space--sm
+		+media('<tab-lg')
+			max-width: none
+			+padding-horizontal(nth($spec-page-space--md, 2))
 
 		+media('<mob-md')
-			padding:
-				left: $spec-space--mob
-				right: $spec-space--mob
+			+padding-horizontal(nth($spec-page-space--sm, 2))
 
+	.main
+		margin: 0 auto
+		max-width: $spec-text-layout
 
-	.text-layout .full-width
-		margin-left: 0
-		margin-right: 0
+		+media('<tab-lg')
+			max-width: $spec-text-layout--sm
 
-	.user-content > .text-layout > *:last-child
-		margin-bottom: 0 !important
+		+media('<tab-sm')
+			max-width: none

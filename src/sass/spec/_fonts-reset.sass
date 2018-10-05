@@ -34,40 +34,9 @@
 	.files,
 	.files .files-item,
 	.file,
+	.file__title,
+	.file__info,
 	.btn-menu,
-	.footer-bottom,
-	.footer-bottom-holder,
-	.footer-col,
-	.promo-slider__item,
-	.links__list,
-	.links__list .links__item,
-	.links__holder,
-	.links__title,
-	.info-center-header,
-	.info__item,
-	.info__label,
-	.branches-popup__holder,
-	.form-note,
-	.form-note__item,
-	.user-options,
-	.user-options li,
-	.user-options a,
-	.years a,
-	.years a > span,
-	.years-drop > a,
-	.sorting a,
-	.sorting a > span,
-	.sorting-drop > a,
-	.info-container__item,
-	.filters__item,
-	.products__item,
-	.card__state,
-	.card__features b,
-	.card__features strong,
-	.custom-tabs__tab,
-	.custom-tabs__tab a,
-	.custom-tabs__tab a > span,
-	.tbl-dates, .tbl-dates td, .tbl-dates th,
 	.font-reset,
 	.font-reset
 		+spec-font-reset
@@ -76,14 +45,6 @@
 
 	// Шрифт по умолчанию, текст статьи, текст внутренней страницы
 	// ---------------------------------------------------------------------------
-	.promo-slider__text-add,
-	.promo-slider__text,
-	.regard__inner,
-	.regard__inner > span,
-	.info__text,
-	.news__text,
-	.product__price,
-	.products__text,
 	.font-of-text,
 	.font-of-text
 		padding: 0
@@ -97,6 +58,7 @@
 
 	// H1, Заголовок страницы
 	// ---------------------------------------------------------------------------
+	.font-of-title,
 	.font-of-title
 		padding: 0
 		margin-bottom: $spec-bottom-space-element
@@ -118,8 +80,7 @@
 
 	// H2, Заголовки секций
 	// ---------------------------------------------------------------------------
-	.info-center-caption,
-	.expander__title,
+	.logo__text,
 	.font-of-section,
 	.font-of-section
 		padding: 0
@@ -142,17 +103,6 @@
 
 	// H3, Заголовки пунктов, Заголовки элементов в списке
 	// ---------------------------------------------------------------------------
-	.promo-slider__title,
-	.r-tabs .r-tabs-accordion-title,
-	.info__title,
-	.news__title,
-	.share-box__label,
-	.info-container__sub-title,
-	.products__title,
-	.expander__panel .expander__title,
-	.info-container__title,
-	.map-popup__row-title,
-	.calc__title,
 	.font-of-item,
 	.font-of-item
 		padding: 0
@@ -175,7 +125,8 @@
 
 	// Мелкий текст: сноски, даты и т.д.
 	// ---------------------------------------------------------------------------
-	.news__data,
+	.file__info,
+	.font-of-small,
 	.font-of-small
 		padding: 0
 		margin-bottom: $spec-bottom-space-element

@@ -3,12 +3,13 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	.depict-regard-number,
-	.links__title,
-	.links__inner,
-	.info__inner,
-	.info__content,
-	.info__text,
+	.file,
+	[class|="depict-files"]:before,
+	[class*=" depict-files-"]:before,
+	[class|="depict-files"]:after,
+	[class*=" depict-files-"]:after,
+	.file__title,
+	.file__info,
 	.no-transition,
 	.no-transition
 		transition: none

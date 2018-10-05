@@ -1,0 +1,133 @@
+/*button switch special version */
+.spec-btn-switcher {
+	display: block;
+	position: relative;
+}
+
+.sidebar .spec-btn-switcher {
+	height: 100%;
+	padding: 30px 5px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	letter-spacing: normal;
+	text-transform: uppercase;
+	color: #0f4b01;
+	font-style: normal;
+	word-wrap: break-word;
+	will-change: background-color, color;
+	transition-property: background-color, color;
+	transition-duration: 0.2s;
+	box-sizing: border-box;
+	z-index: 9999;
+}
+
+.vspec .sidebar .spec-btn-switcher {
+	font-family: inherit;
+	font-weight: bold;
+}
+
+body:not(.vspec) .sidebar .spec-btn-switcher.to_normal {
+	display: none;
+}
+
+.vspec .sidebar .spec-btn-switcher:not(.to_normal) {
+	display: none;
+}
+
+.sidebar .spec-btn-switcher svg {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	-ms-transform: translate(-50%, 0);
+	    transform: translate(-50%, 0);
+	box-sizing: border-box;
+}
+
+.sidebar .spec-btn-switcher path {
+	fill: currentColor;
+	will-change: fill;
+	transition-property: fill;
+	transition-duration: 0.2s;
+}
+
+.sidebar .spec-btn-switcher:hover {
+	color: white;
+	background-color: #0f4b01;
+	text-decoration: none;
+}
+
+.sidebar-large .spec-btn-switcher {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	    align-items: center;
+	padding: 0 12px 0 64px;
+	font-family: 'pfbeausanspro-semibold', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: left;
+	color: #000;
+}
+
+.sidebar-large .spec-btn-switcher svg {
+	left: 23px;
+	top: 50%;
+	-ms-transform: translate(0, -50%);
+	    transform: translate(0, -50%);
+}
+
+.sidebar-large .spec-btn-switcher path {
+	color: #0f4b01;
+}
+
+.sidebar .spec-btn-switcher:hover,
+.sidebar-large .spec-btn-switcher:hover {
+	color: white;
+	background-color: #0f4b01;
+	text-decoration: none;
+}
+
+.sidebar .spec-btn-switcher:hover path,
+.sidebar-large .spec-btn-switcher:hover path {
+	color: currentColor;
+}
+
+.footer .spec-btn-switcher {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 2.4em;
+	position: absolute;
+	left: auto;
+	top: auto;
+	bottom: 10px;
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+}
+
+.vspec .footer .spec-btn-switcher {
+	color: currentColor;
+	position: relative;
+	bottom: auto;
+}
+
+.footer .spec-btn-switcher svg {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	-ms-transform: translate(0, -50%);
+	    transform: translate(0, -50%);
+	box-sizing: border-box;
+}
+
+.footer .spec-btn-switcher path {
+	fill: currentColor;
+}
+
+/*button switch special version end */
+
+/*# sourceMappingURL=special-switcher.css.map */

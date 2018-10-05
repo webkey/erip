@@ -1,5 +1,7 @@
 @import url(normalize.css);
 @import url(widgets.css);
+/* spec version */
+@import url(special-switcher.css);
 
 /*fonts*/
 /*iconmoon*/
@@ -4125,6 +4127,9 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+}
+.movie__video-img > span{
+	display: none;
 }
 /*movie section end*/
 

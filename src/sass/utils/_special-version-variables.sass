@@ -227,7 +227,7 @@ $spec-page-space--sm: (round-float(15px / $spec-font-size, 2) * 1em) (round-floa
 
 // Максимальная ширина контента
 // ---------------------------------------------------------------------------
-$spec-text-page: 1280px !default
+$spec-text-page: 920px !default
 $spec-text-layout: 44em !default // Задавать нужно в em, чтобы при изменении размера шрифта, количество символов в строке сохранялось. Примерно 85 символов в строке
 $spec-text-layout--sm: 36em !default // Для небольших экранов
 
@@ -279,22 +279,43 @@ $spec-border-width: 2px
 =spec-reset-bg-invert()
 	color: $spec-bg-color
 	background-color: $spec-text-color
+	border-color: $spec-text-color
 
 	.#{$spec-mod--scheme-wb} &
 		color: $spec-bg-color--scheme-wb
 		background-color: $spec-text-color--scheme-wb
+		border-color: $spec-text-color--scheme-wb
 
 	.#{$spec-mod--scheme-blue} &
 		color: $spec-bg-color--scheme-blue
 		background-color: $spec-text-color--scheme-blue
+		border-color: $spec-text-color--scheme-blue
 
 	.#{$spec-mod--scheme-brown} &
 		color: $spec-bg-color--scheme-brown
 		background-color: $spec-text-color--scheme-brown
+		border-color: $spec-text-color--scheme-brown
 
 	.#{$spec-mod--scheme-green} &
 		color: $spec-bg-color--scheme-green
 		background-color: $spec-text-color--scheme-green
+		border-color: $spec-text-color--scheme-green
+
+// Special gradient background
+=spec-bg-gradient($direct: 180deg)
+	+linear-gradient($direct, tint($spec-text-color, 2%) 0%, tint($spec-text-color, 15%) 100%)
+
+	.#{$spec-mod--scheme-wb} &
+		+linear-gradient($direct, tint($spec-bg-color--scheme-wb, 50%) 0%, $spec-bg-color--scheme-wb 100%)
+
+	.#{$spec-mod--scheme-blue} &
+		+linear-gradient($direct, tint($spec-bg-color--scheme-blue, 20%) 0%, $spec-bg-color--scheme-blue 100%)
+
+	.#{$spec-mod--scheme-brown} &
+		+linear-gradient($direct, tint($spec-bg-color--scheme-brown, 70%) 0%, $spec-bg-color--scheme-brown 100%)
+
+	.#{$spec-mod--scheme-green} &
+		+linear-gradient($direct, tint($spec-bg-color--scheme-green, 70%) 0%, $spec-bg-color--scheme-green 100%)
 
 // Reset all styles
 =spec-reset-full()
@@ -317,7 +338,7 @@ $spec-border-width: 2px
 	margin: 0
 	transform: none
 	border: none
-	background-color: transparent
+	background: none
 	box-shadow: none
 	opacity: 1
 	visibility: visible
@@ -334,6 +355,7 @@ $spec-border-width: 2px
 	color: inherit
 	text-align: left
 	text-transform: none
+	box-sizing: border-box
 
 // Список классов-исключений для тегов ul, ol
 // Добавляются к типографическим стилям списков ul, ol, чтобы не применять стили для указанных классов
@@ -423,3 +445,8 @@ $main-nav-height--spec--sm: 60px
 
 			+media('<mob-md')
 				display: none
+
+// color
+$base-color: #f29700 !default
+$base-color-alt: #0f4b01 !default
+$displace: 1px !default
