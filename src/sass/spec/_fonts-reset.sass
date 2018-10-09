@@ -31,12 +31,20 @@
 	blockquote cite,
 	.label-holder,
 	label, .label,
+	.form-mark,
 	.files,
 	.files .files-item,
 	.file,
 	.file__title,
 	.file__info,
 	.btn-menu,
+	.form-row .input-wrap,
+	.unif-form .errors,
+	input[type="checkbox"] + label,
+	input[type="radio"] + label,
+	.nav-current-page,
+	.btn-submit > span,
+	.btn-reset > span,
 	.font-reset,
 	.font-reset
 		+spec-font-reset
@@ -73,6 +81,9 @@
 		color: inherit
 		text-align: left
 
+		+media('<mob-lg')
+			word-wrap: break-word
+
 		&:last-child
 			margin-bottom: 0
 
@@ -80,7 +91,6 @@
 
 	// H2, Заголовки секций
 	// ---------------------------------------------------------------------------
-	.logo__text,
 	.font-of-section,
 	.font-of-section
 		padding: 0
@@ -96,6 +106,9 @@
 		color: inherit
 		text-align: left
 
+		+media('<mob-lg')
+			word-wrap: break-word
+
 		&:last-child
 			margin-bottom: 0
 
@@ -103,6 +116,7 @@
 
 	// H3, Заголовки пунктов, Заголовки элементов в списке
 	// ---------------------------------------------------------------------------
+	.r-tabs-anchor,
 	.font-of-item,
 	.font-of-item
 		padding: 0
@@ -118,6 +132,9 @@
 		color: inherit
 		text-align: left
 
+		+media('<mob-lg')
+			word-wrap: break-word
+
 		&:last-child
 			margin-bottom: 0
 
@@ -126,6 +143,7 @@
 	// Мелкий текст: сноски, даты и т.д.
 	// ---------------------------------------------------------------------------
 	.file__info,
+	.datetime,
 	.font-of-small,
 	.font-of-small
 		padding: 0

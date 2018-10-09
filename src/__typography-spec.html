@@ -1,4 +1,4 @@
-@@include('_tpl_layout_head.html', { "title": "Стили", "pageClass": "", "currentItem": "Стили", "specUrl": "typography-spec.html" })
+@@include('_tpl_layout_head_spec.html', { "title": "Стили", "pageClass": "", "currentItem": "Стили", "specUrl": "typography.html" })
 
 
 
@@ -432,7 +432,7 @@
 		<!--style default button end-->
 
 		<!--form style-->
-		<form action="#" method="get">
+		<form action="#" method="get" class="unif-form">
 			<div class="label-holder">
 				<label for="text-field-for-example">Пример текстового поля с плейсхолдером: <span class="form-mark">*</span></label>
 			</div>
@@ -442,11 +442,14 @@
 			</div>
 			<input class="error" type="text" placeholder="Невалидное поле" id="text-field-error-for-example" />
 			<div class="form-row">
-				<div class="input-wrap">
+				<div class="input-wrap field required error">
 					<div class="label-holder">
 						<label for="individuals-field-name">Фамилия, Имя, Отчество: <span class="form-mark">*</span></label>
 					</div>
-					<input type="text" placeholder="" id="individuals-field-name" />
+					<div class="string">
+						<input type="text" placeholder="" id="individuals-field-name" />
+					</div>
+					<span class="errors">Поле обязательно для заполнения</span>
 				</div>
 				<div class="input-wrap">
 					<div class="label-holder">
@@ -620,4 +623,4 @@
 
 
 
-@@include("_tpl_layout_foot.html", {"hasMap": "true", "specUrl": "typography-spec.html"})
+@@include("_tpl_layout_foot_spec.html", {"hasMap": "true", "specUrl": "typography.html"})

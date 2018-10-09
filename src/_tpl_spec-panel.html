@@ -3,7 +3,7 @@
 	<div class="spec-panel__layout">
 		<div class="spec-panel__holder">
 			<div class="spec-panel__item">
-				<div class="spec-panel__label">Размер шрифта:</div>
+				<div class="spec-panel__label">Размер<br> шрифта:</div>
 				<div class="spec-panel__btn-group spec-panel__btn-group-js">
 					@@include("_tpl_spacial--tools-btn.html", {
 						"classes": "spec-panel__btn spec-panel__btn_size_sm spec-btn-js",
@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="spec-panel__item">
-				<div class="spec-panel__label">Цвета сайта:</div>
+				<div class="spec-panel__label">Цвета<br> сайта:</div>
 				<div class="spec-panel__btn-group spec-panel__btn-group-js">
 					@@include("_tpl_spacial--tools-btn.html", {
 						"classes": "spec-panel__btn spec-panel__btn_color_def spec-btn-js",
@@ -66,6 +66,15 @@
 			</div>
 
 			<div class="spec-panel__footer">
+				<div class="spec-panel__btn-group">
+					@@include("_tpl_spacial--tools-btn.html", {
+						"href": "@@specUrl",
+						"classes": "spec-panel__btn spec-panel__btn_switcher",
+						"icon": "includes/svg/icon-special-off.svg",
+						"text": "Обычная версия",
+						"title": "Переключить на обычнаю версию сайта"
+					})
+				</div>
 				<div class="spec-panel__btn-group">
 					@@include("_tpl_spacial--tools-btn.html", {
 						"classes": "spec-panel__btn spec-panel__btn_search",

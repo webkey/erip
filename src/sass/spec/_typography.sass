@@ -3,6 +3,7 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
+
 	h1, h2, h3, h4, h5, h6
 		font-weight: bold
 		text-align: left
@@ -66,14 +67,14 @@
 		border-color: currentColor
 		border-width: $spec-border-width
 
-	table
+	table, .tbl
+		border-color: currentColor
+
 		td, th
-			font-family: inherit
-			font-size: inherit
-			line-height: inherit
-			color: currentColor
+			+spec-font-reset
+			text-transform: none
 			border: 1px solid currentColor
-			+spec-reset-bg
+			background: none
 
 		th
 			font-weight: bold
@@ -114,17 +115,29 @@
 	input[type="search"],
 	textarea,
 	.select select
+		$height: 50px
+		$lh: 24px
+		$bd-width: 2px
 		font:
 			family: inherit
 			weight: normal
 			style: normal
-			size: $spec-font-size
+			size: 18px
+		line-height: $lh
+		height: $height
+		padding: #{round(($height - $lh) / 2 - $bd-width)} 10px
 		letter-spacing: inherit
 		box-shadow: none
 		color: inherit
 		transition: none
 		background: none
-		border-color: currentColor
+		border-radius: 0
+		border: $bd-width solid currentColor
+		box-sizing: border-box
+		margin-bottom: $spec-bottom-space
+
+		&:last-child
+			margin-bottom: 0
 
 		.touchevents &
 			appearance: none
@@ -145,58 +158,32 @@
 			color: currentColor
 			transition: none
 
-	.label-holder, label
-		color: inherit
-		font-size: inherit
-		line-height: inherit
-		letter-spacing: inherit
-
 	.select:before, .select:after
 		+spec-reset-bg-invert
 
-	input[type="checkbox"] + label,
-	input[type="radio"] + label,
-	.check-label, .radio-label
-		color: inherit
+	// checkbox, radio
+	input[type="checkbox"], input[type="radio"]
+		float: none
+		display: inline-block
+		vertical-align: middle
+		margin-right: 0.3em
 
-	input[type="checkbox"],
-	input[type="radio"]
-		&:not(:disabled)
-			&:checked
-				& + span,
-				& + label > span
-					color: inherit
+		& + label
+			display: inline-block
+			vertical-align: middle
 
-	input[type="checkbox"]:not(:disabled) + label:before,
-	.check-label > span > i:before
-		border-color: currentColor
+			& > span
+				padding: 0
+				z-index: auto
+				display: inline
+				vertical-align: baseline
 
-	input[type="checkbox"]
-		&:not(:disabled)
-			& + span,
-			& + label > span
-				&:before, &:after
-					background-color: currentColor
+				&::before, &::after
+					display: none !important
 
-	input[type="radio"]
-		&:not(:disabled)
-			& + label,
-			& + span
-				&:before
-					border-color: currentColor
-
-	//input[type="radio"]:not(:disabled) + label > span:after,
-	//input[type="radio"]:not(:disabled) + span > i:after
-	input[type="radio"]
-		&:not(:disabled)
-			& + label > span,
-			& + span > i
-				&:after
-					background-color: currentColor
-
-	input[type="submit"], input[type="button"], input[type="reset"], button
-		&.btn-default-alt
-			@extend .btn-default-alt
+	// select
+	.select
+		background: none
 
 	// list
 	ul, ol
@@ -248,12 +235,38 @@
 						border: none
 						background-color: currentColor
 
+	//blockquote
 	blockquote
 		max-width: 34em
+		background: none
+		margin-left: auto
+		margin-right: auto
 
 		q
 			+spec-font-size--item
+			font-style: italic
 			border-color: currentColor
+			padding: 0
+
+			&::before, &::after
+				display: none
 
 		cite
 			font-style: italic
+
+	//imgc
+	.imgc, .imgr, .imgl
+		padding: 0
+		margin: 0 auto $spec-bottom-space
+
+	.imgr
+		margin-left: 1em
+
+		+media('<mob-lg')
+			margin-left: auto
+
+	.imgl
+		margin-right: 1em
+
+		+media('<mob-lg')
+			margin-right: auto

@@ -8,8 +8,9 @@
 	display: none
 	position: relative
 	width: nth($spec-panel-size, 2)
-	max-width: #{$spec-text-page}
-	margin: 0 auto 20px
+	//max-width: #{$spec-text-page}
+	max-width: 1200px
+	margin: 0 auto 40px
 	line-height: $spec-line-height--small
 	z-index: 995
 	box-sizing: border-box
@@ -25,6 +26,9 @@
 
 	+media('<tab-lg')
 		border-width: 0 0 $spec-border-width
+
+	+media('<mob-lg')
+		margin-bottom: 20px
 
 	+media('<mob-md')
 		margin-bottom: 10px
@@ -55,10 +59,11 @@
 	display: flex
 	justify-content: flex-start
 	box-sizing: border-box
-	padding: 0 round($spec-panel-inner-space / 2)
+	//padding: 0 round($spec-panel-inner-space / 2)
 
 	+media('<mob-md')
-		padding: 0 round($spec-panel-inner-space--sm / 2)
+		//padding: 0 round($spec-panel-inner-space--sm / 2)
+		padding: 0
 
 .spec-panel__layout,
 .spec-panel__holder,
@@ -86,8 +91,8 @@
 	padding-right: round($spec-panel-inner-space / 2)
 	//font-family: Arial, Helvetica, sans-serif
 	font-family: inherit
-	font-size: 18px
-	line-height: 22px
+	font-size: 16px
+	line-height: 18px
 	letter-spacing: normal
 	word-spacing: normal
 	word-break: normal
@@ -115,11 +120,13 @@
 	display: inline-block
 	vertical-align: top
 	display: flex
-	justify-content: flex-start
+	justify-content: center
 	align-items: center
+	text-align: center
 	width: $spec-panel__btn-size
 	height: $spec-panel__btn-size
 	margin-right: round($spec-panel-inner-space / 2)
+	padding: 2px 0
 	font-size: 18px
 	line-height: 22px
 	letter-spacing: normal
@@ -146,9 +153,17 @@
 		margin-right: 0
 
 	& > span
+		display: inline-block // if not support flex-box
 		display: none
+		vertical-align: middle
+		text-align: left
+		margin-right: 5px
 
-	svg
+	& > svg + span
+		margin-right: 0
+		margin-left: 5px
+
+	//svg
 		display: block
 		position: absolute
 		left: 50%
@@ -156,8 +171,14 @@
 		transform: translate(-50%, -50%)
 		box-sizing: border-box
 
+	svg
+		display: inline-block
+		vertical-align: middle
+		box-sizing: border-box
+
 		+media('<mob-md')
-			transform: translate(-50%, -50%) scale(0.85)
+			//transform: translate(-50%, -50%) scale(0.85)
+			transform: scale(0.85)
 
 	path
 		fill: currentColor
@@ -240,18 +261,20 @@ $icon-spacing--space: 3px // h
 			margin-left: #{$icon-spacing--space + round(nth($icon-spacing--size, 2)*0.5)}
 
 // Setting btn
-.spec-panel__btn_settings, .spec-panel__btn_search
+.spec-panel__btn_settings, .spec-panel__btn_search, .spec-panel__btn_switcher
 	+media('>=tab-lg')
 		width: auto
-		padding-left: 40px
-		padding-right: 10px
+		padding: 2px 0.5em
+		//padding-left: 40px
+		//padding-right: 10px
 
-		svg
+		//svg
 			left: 5px
 			transform: translate(0, -50%)
 
 		& > span
 			display: block
+			white-space: nowrap
 
 // Special Version Advanced Settings
 .spec-drop
@@ -349,7 +372,7 @@ $icon-spacing--space: 3px // h
 	align-items: center
 	margin: round($spec-panel-inner-space / 2)
 	margin-left: 0
-	padding: 0 0.5em
+	padding: 5px 0.5em
 	//+spec-font-size--normal
 	//letter-spacing: normal
 	//word-spacing: normal

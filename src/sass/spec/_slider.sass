@@ -3,11 +3,18 @@
 @import ../utils/mixins
 
 .#{$spec-mod}
-	.promo-slider,
+	.pic-slider
+		.slick-list
+			height: auto !important
+			transform: none !important
+			overflow: visible
+
 		&, &.slick-dotted
 			font-size: inherit
 			line-height: inherit
 			letter-spacing: inherit
+			padding: 0
+			margin-bottom: $spec-bottom-space-item
 
 		&.slick-slider
 			user-select: auto !important
@@ -32,6 +39,7 @@
 			top: auto !important
 			float: none !important
 			z-index: auto !important
+			margin-bottom: $spec-bottom-space
 
 		.slick-arrow
 			display: none !important

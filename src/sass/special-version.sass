@@ -199,6 +199,9 @@ body.#{$spec-mod}
 		text-align: center
 
 	.logo
+		position: relative // важно
+		left: auto
+		top: auto
 		display: inline-block
 		vertical-align: top
 		width: auto
@@ -209,26 +212,47 @@ body.#{$spec-mod}
 		box-sizing: border-box
 		margin-bottom: 20px
 
+		+media('<mob-lg')
+			text-align: center
+
 		a
 			height: auto
 			padding: 0
-			display: block
+			display: inline-block
 			display: flex
 			justify-content: flex-start
 			align-items: center
 			text-align: left
 
+			+media('<mob-lg')
+				display: inline-block
+				vertical-align: top
+
 		img, .logo__text
 			display: inline-block
 			margin: 0
 
+			+media('<mob-lg')
+				display: block
+				text-align: center
+
 		img
 			margin-right: 1em
+
+			+media('<mob-lg')
+				margin: 0 auto
 
 		.logo__text
 			left: auto
 			top: auto
 			opacity: 1
+			font-family: inherit
+			font-weight: bold
+			font-size: 24px
+			line-height: 28px
+			color: currentColor
+			letter-spacing: normal
+			word-spacing: normal
 
 	// nav
 	.nav-list
@@ -238,11 +262,20 @@ body.#{$spec-mod}
 		align-items: flex-start
 		flex-wrap: wrap
 
+		+media('<mob-lg')
+			font-size: 16px
+			line-height: 20px
+			letter-spacing: normal
+			word-spacing: normal
+
 		li
 			display: inline-block
 			margin: 0.3em 0.6em 0.3em 0
 
 		a
+			-webkit-tap-highlight-color: transparent
+			user-select: none
+
 			&::before, &::after
 				display: none
 
@@ -275,65 +308,9 @@ body.#{$spec-mod}
 		border-top: $spec-border-width solid currentColor
 		padding: 20px 0
 
+	// mobile menu switcher
 	.btn-menu
-		+size($main-nav-height--spec)
-		display: inline-block
-		display: flex
-		display: none
-		justify-content: center
-		line-height: 24px
-		align-items: center
-		//color: $spec-text-color
-		color: currentColor
-		transition: none
-		box-sizing: border-box
-		border: 0 solid currentColor
-		//background-color: $spec-bg-color
-		background: none
-		text-decoration: underline
-		-webkit-tap-highlight-color: transparent
-
-		//.#{$spec-mod--scheme-wb} &
-			background-color: $spec-bg-color--scheme-wb
-			color: $spec-text-color--scheme-wb
-
-		//.#{$spec-mod--scheme-blue} &
-			background-color: $spec-bg-color--scheme-blue
-			color: $spec-text-color--scheme-blue
-
-		//.#{$spec-mod--scheme-brown} &
-			background-color: $spec-bg-color--scheme-brown
-			color: $spec-text-color--scheme-brown
-
-		//.#{$spec-mod--scheme-green} &
-			background-color: $spec-bg-color--scheme-green
-			color: $spec-text-color--scheme-green
-
-		+media('<tab-lg')
-			display: inline-block
-			display: flex
-
-		&::before
-			display: none
-
-		& > span
-			display: inline
-			vertical-align: middle
-			font-size: 18px
-			line-height: 24px
-			font-weight: bold
-			letter-spacing: $spec-letter-spacing--normal
-			text-transform: uppercase
-
-			+media('<mob-md')
-				font-size: 14px
-
-		& > i
-			display: none
-
-			&, &::before, &::after
-				transition: none
-				background: currentColor
+		display: none !important
 
 	// icon
 	[class*="icon-"]
@@ -452,6 +429,24 @@ body.#{$spec-mod}
 			+spec-font-reset
 			text-align: center
 
+	// btn
+	.btn-default
+		span
+			border: none
+
+		.arrow-more
+			display: none
+
+	// custom table
+	.tbl
+		tbody tr:nth-child(even) td
+			background: none
+
+		tfoot td
+			+spec-font-reset
+			font-weight: bold
+			background: none
+
 	// files
 	.file
 		display: inline-block
@@ -481,6 +476,89 @@ body.#{$spec-mod}
 			.file__info
 				color: inherit
 
+	// catalog menu
+	$catalog-menu-border-width: 2px
+	.catalog-menu
+		background: none
+		box-sizing: border-box
+
+		&::after
+			content: none
+
+	.catalog-menu-list
+		width: 100%
+		box-shadow: none
+		visibility: visible
+		word-wrap: break-word
+		//box-shadow: inset 0 0 0 $catalog-menu-border-width currentColor
+		//padding: round($catalog-menu-border-width/2)
+		padding: 1em
+		border: $catalog-menu-border-width solid currentColor
+
+		li
+			padding: 0
+			transition: none
+			box-sizing: border-box
+			float: none
+			display: inline
+			width: auto
+			margin: 0 1em 0 0
+
+			&::before, &::after
+				border-color: currentColor
+				display: none
+
+		a
+			display: inline
+			box-shadow: none
+			box-sizing: border-box
+			height: auto
+			padding: 0
+			+spec-font-reset
+			//box-shadow: 0 0 0 round($catalog-menu-border-width/2) currentColor
+			//border: round($catalog-menu-border-width/2) solid currentColor
+
+			&::before
+				content: none
+
+			&:hover
+				color: currentColor !important
+				background: none !important
+				//box-shadow:  0 0 0 round($catalog-menu-border-width/2) currentColor, inset 0 0 0 $catalog-menu-border-width currentColor
+				box-shadow:  none
+
+			span
+				display: inline
+				vertical-align: baseline
+				max-width: none
+
+		.has-submenu
+			display: block
+			margin: 1em 0 0 0
+
+			&:first-child
+				margin-top: 0
+
+			& > a
+				color: currentColor
+				font-family: inherit
+				font-size: inherit
+				line-height: inherit
+				text-transform: uppercase
+
+			ul
+				margin: 0
+
+				&::before, &::after
+					display: none
+
+				a
+					padding-left: 0
+
+					&::after
+						border-color: currentColor
+						display: none
+
 	// movie
 	.movie__item
 		h3
@@ -507,21 +585,21 @@ body.#{$spec-mod}
 	.call-content h2
 		max-width: none
 
-	.call-list
+	//.call-list
 		display: flex
 		flex-wrap: wrap
 
-	.call-item
+	//.call-item
 		display: inline-block
 		display: flex
 		padding-right: 10px
 
-	.call-item__row
+	//.call-item__row
 		display: flex
 		justify-content: flex-start
 		align-items: flex-start
 
-	.call-item__img, .call-item__text
+	//.call-item__img, .call-item__text
 		display: inline-block
 		margin-right: 10px
 
@@ -546,7 +624,14 @@ body.#{$spec-mod}
 			font-weight: bold
 
 	// developer
+	.developer-box
+		text-align: right
+
 	.developer
+		font-size: 14px
+		line-height: 18px
+		text-align: left
+		opacity: 0.8
 		display: inline
 		height: auto
 		width: auto
@@ -558,6 +643,73 @@ body.#{$spec-mod}
 		border: none
 		background: none
 		box-sizing: border-box
+
+	// form
+	.unif-form
+		.field.error
+			&, & .uploader .action
+				background: none
+
+		.errors
+			padding: 0 0.5em
+			font-weight: bold
+			font-style: italic
+
+	.btn-submit,
+	.btn-reset
+		& > span
+			opacity: 1 !important
+			max-width: none !important
+
+	// tabs
+	.r-tabs-panel
+		display: block !important
+		opacity: 1 !important
+
+	.r-tabs-anchor
+		text-decoration: none
+		cursor: default
+
+	// faq
+	.faq-item
+		h3
+			max-height: none
+			height: auto
+			box-shadow: none
+			color: inherit
+			cursor: initial
+			margin-bottom: $spec-bottom-space-element
+
+			& + div, & + p
+				display: block !important
+
+	.heading + .default-section .title-box
+		padding: 0
+
+	// news articles
+	.news-article
+		a
+			min-height: 0 !important
+			text-decoration: none
+
+		h3
+			min-height: 0
+			transition: none
+			text-decoration: underline
+
+		a:hover
+			time, h3, p
+				color: inherit
+				text-decoration: none
+
+	figure img
+		position: relative
+		left: auto
+		top: auto
+		width: 320px
+		max-width: 100%
+		margin: 0
+
 
 //@import spec/popups
 

@@ -465,7 +465,8 @@ function catalogMenuSelect(){
 
 		// scroll to top
 		var $htmlAndBody = $('html, body');
-		if ($(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
+		console.log(DESKTOP);
+		if (DESKTOP && $(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
 			$htmlAndBody.stop().animate({
 				scrollTop: 0
 			}, scrollSpeed, "easeInOutExpo");
@@ -1770,7 +1771,7 @@ $(document).ready(function(){
 	buttonsFromBehavior();
 	multiAccordionInit();
 	multiSearchInit();
-	if(DESKTOP){
+	if(DESKTOP && !$('.vspec').length){
 		customSelect($('.select select'));
 	}
 	tabs();

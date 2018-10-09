@@ -19,7 +19,6 @@
 	transition-property: background-color, color;
 	transition-duration: 0.2s;
 	box-sizing: border-box;
-	z-index: 9999;
 }
 
 .vspec .sidebar .spec-btn-switcher {

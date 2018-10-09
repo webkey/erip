@@ -263,7 +263,8 @@ strong em{
 	font-weight:normal;
 	font-style:normal;
 }
-*::selection{
+/*.vspec - main class of special version*/
+body:not(.vspec) *::selection{
 	background: #f29700;
 	color: #fff;
 }
@@ -6249,3 +6250,37 @@ html.spl-popup--is-open{
 	padding: 0 !important;
 	overflow: hidden !important;
 }
+
+
+
+/* style */
+.unif-form .importantField
+{
+	display: none;
+}
+.unif-form .success
+{
+	display: none;
+	background: #3DB355;
+	color: #fff;
+	border: 1px solid #005000;
+	padding: 10px;
+	margin: 0 0 10px 0;
+}
+
+.unif-form .field.error,
+.unif-form .field.error .uploader .action
+{
+	background-color: #ffd4d4;
+}
+
+.unif-form .errors
+{
+	display: block;
+	color: #f00;
+	padding: 0 5px;
+	font-size: 16px;
+	letter-spacing: normal;
+	text-align: center;
+}
+/* style  end*/

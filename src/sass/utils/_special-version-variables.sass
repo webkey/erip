@@ -303,7 +303,7 @@ $spec-border-width: 2px
 
 // Special gradient background
 =spec-bg-gradient($direct: 180deg)
-	+linear-gradient($direct, tint($spec-text-color, 2%) 0%, tint($spec-text-color, 15%) 100%)
+	+linear-gradient($direct, tint($spec-text-color, 1%) 0%, tint($spec-text-color, 10%) 100%)
 
 	.#{$spec-mod--scheme-wb} &
 		+linear-gradient($direct, tint($spec-bg-color--scheme-wb, 50%) 0%, $spec-bg-color--scheme-wb 100%)
@@ -356,13 +356,14 @@ $spec-border-width: 2px
 	text-align: left
 	text-transform: none
 	box-sizing: border-box
+	perspective: none
 
 // Список классов-исключений для тегов ul, ol
 // Добавляются к типографическим стилям списков ul, ol, чтобы не применять стили для указанных классов
 // Example: $not-list-classes: ':not(.class1):not(.class2)'
 // Enter: .user-content ul:not(.class1):not(.class1)
 // ==========================================================================
-$not-list-classes: ':not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list)'
+$not-list-classes: ':not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list)'
 
 
 // Main Navigation

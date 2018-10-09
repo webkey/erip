@@ -94,6 +94,8 @@ body.vspec {
 .vspec .files-item,
 .vspec .file,
 .vspec .file__content,
+.vspec .form-row,
+.vspec .input-wrap,
 .vspec .align-layout,
 .vspec .text-layout,
 .vspec .header,
@@ -134,6 +136,34 @@ body.vspec {
 .vspec .footer-copy,
 .vspec .footer-copy-i,
 .vspec .copyright,
+.vspec .blockquote,
+.vspec .default-section,
+.vspec .system-nav-orange,
+.vspec .nav-title,
+.vspec .nav-pages,
+.vspec .content-widget,
+.vspec .callback-section,
+.vspec .callback,
+.vspec .r-tabs-accordion-title,
+.vspec .r-tabs-panel,
+.vspec .form-callback,
+.vspec .r-tabs-anchor,
+.vspec .attention,
+.vspec .form-buttons-wrap,
+.vspec .form-buttons-col,
+.vspec .faq-list,
+.vspec .faq-item,
+.vspec .faq-item h3 + div,
+.vspec .faq-item h3 + p,
+.vspec .news-section,
+.vspec .news-articles,
+.vspec .news-article,
+.vspec .news-article a,
+.vspec .news-article figure,
+.vspec .news-article footer,
+.vspec .news-article time,
+.vspec .news-article .news-article__text,
+.vspec .faq-section,
 .vspec .reset-full,
 .vspec .reset-full {
 	display: block;
@@ -172,6 +202,7 @@ body.vspec {
 	text-align: left;
 	text-transform: none;
 	box-sizing: border-box;
+	perspective: none;
 }
 
 .vspec h1, .vspec h2, .vspec h3, .vspec h4, .vspec h5, .vspec h6, .vspec p,
@@ -188,12 +219,20 @@ body.vspec {
 .vspec blockquote cite,
 .vspec .label-holder,
 .vspec label, .vspec .label,
+.vspec .form-mark,
 .vspec .files,
 .vspec .files .files-item,
 .vspec .file,
 .vspec .file__title,
 .vspec .file__info,
 .vspec .btn-menu,
+.vspec .form-row .input-wrap,
+.vspec .unif-form .errors,
+.vspec input[type="checkbox"] + label,
+.vspec input[type="radio"] + label,
+.vspec .nav-current-page,
+.vspec .btn-submit > span,
+.vspec .btn-reset > span,
 .vspec .font-reset,
 .vspec .font-reset {
 	font-family: inherit;
@@ -245,12 +284,18 @@ body.vspec {
 	text-align: left;
 }
 
+@media (max-width: 639px) {
+	.vspec .font-of-title,
+	.vspec .font-of-title {
+		word-wrap: break-word;
+	}
+}
+
 .vspec .font-of-title:last-child,
 .vspec .font-of-title:last-child {
 	margin-bottom: 0;
 }
 
-.vspec .logo__text,
 .vspec .font-of-section,
 .vspec .font-of-section {
 	padding: 0;
@@ -267,12 +312,19 @@ body.vspec {
 	text-align: left;
 }
 
-.vspec .logo__text:last-child,
+@media (max-width: 639px) {
+	.vspec .font-of-section,
+	.vspec .font-of-section {
+		word-wrap: break-word;
+	}
+}
+
 .vspec .font-of-section:last-child,
 .vspec .font-of-section:last-child {
 	margin-bottom: 0;
 }
 
+.vspec .r-tabs-anchor,
 .vspec .font-of-item,
 .vspec .font-of-item {
 	padding: 0;
@@ -289,12 +341,22 @@ body.vspec {
 	text-align: left;
 }
 
+@media (max-width: 639px) {
+	.vspec .r-tabs-anchor,
+	.vspec .font-of-item,
+	.vspec .font-of-item {
+		word-wrap: break-word;
+	}
+}
+
+.vspec .r-tabs-anchor:last-child,
 .vspec .font-of-item:last-child,
 .vspec .font-of-item:last-child {
 	margin-bottom: 0;
 }
 
 .vspec .file__info,
+.vspec .datetime,
 .vspec .font-of-small,
 .vspec .font-of-small {
 	padding: 0;
@@ -312,6 +374,7 @@ body.vspec {
 }
 
 .vspec .file__info:last-child,
+.vspec .datetime:last-child,
 .vspec .font-of-small:last-child,
 .vspec .font-of-small:last-child {
 	margin-bottom: 0;
@@ -343,25 +406,37 @@ body.vspec {
 .vspec .call-img,
 .vspec .footer-container,
 .vspec .social-networks a > i,
+.vspec .btn-aside,
+.vspec .tab-controls,
+.vspec .btn-submit > i,
+.vspec .btn-reset > i,
+.vspec .faq-item__angle,
+.vspec .promo-slider,
 .vspec .spec-hide,
 .vspec .spec-hide {
 	display: none !important;
 }
 
+.vspec .header-layout::before,
 .vspec .about-info__col::before,
 .vspec .about-info::before,
 .vspec .about-info__list::before,
 .vspec .file::before,
 .vspec .social-networks a::before,
 .vspec .call-item::before,
+.vspec input[type="checkbox"] + label::before,
+.vspec input[type="radio"] + label::before,
 .vspec .spec-hide-before::before,
 .vspec .spec-hide-before::before {
 	display: none;
 }
 
+.vspec .header-layout::after,
 .vspec .about-info::after,
 .vspec .about-info__list::after,
 .vspec .file::after,
+.vspec input[type="checkbox"] + label::after,
+.vspec input[type="radio"] + label::after,
 .vspec .social-networks::after,
 .vspec .spec-hide-after::after,
 .vspec .spec-hide-after::after {
@@ -396,31 +471,31 @@ body.vspec {
 	background-color: #3b2716;
 }
 
-.vspec .reset-bg-invert {
+.vspec .unif-form .errors, .vspec mark, .vspec .reset-bg-invert, .vspec .nav-current-page {
 	color: #fff;
 	background-color: #000;
 	border-color: #000;
 }
 
-.vspec-mod_scheme-color_white .vspec .reset-bg-invert {
+.vspec-mod_scheme-color_white .vspec .unif-form .errors, .vspec-mod_scheme-color_white .vspec mark, .vspec-mod_scheme-color_white .vspec .reset-bg-invert, .vspec-mod_scheme-color_white .vspec .nav-current-page {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .reset-bg-invert {
+.vspec-mod_scheme-color_blue .vspec .unif-form .errors, .vspec-mod_scheme-color_blue .vspec mark, .vspec-mod_scheme-color_blue .vspec .reset-bg-invert, .vspec-mod_scheme-color_blue .vspec .nav-current-page {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .reset-bg-invert {
+.vspec-mod_scheme-color_brown .vspec .unif-form .errors, .vspec-mod_scheme-color_brown .vspec mark, .vspec-mod_scheme-color_brown .vspec .reset-bg-invert, .vspec-mod_scheme-color_brown .vspec .nav-current-page {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .reset-bg-invert {
+.vspec-mod_scheme-color_green .vspec .unif-form .errors, .vspec-mod_scheme-color_green .vspec mark, .vspec-mod_scheme-color_green .vspec .reset-bg-invert, .vspec-mod_scheme-color_green .vspec .nav-current-page {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
@@ -443,6 +518,11 @@ body.vspec {
 .vspec .movie-section,
 .vspec .docs-section,
 .vspec .call-section,
+.vspec .callback-section,
+.vspec .faq-list,
+.vspec .default-section,
+.vspec .news-section,
+.vspec .faq-section,
 .vspec .spec-bottom-space-section,
 .vspec .spec-bottom-space-section {
 	margin-bottom: 3.6em;
@@ -452,6 +532,11 @@ body.vspec {
 .vspec .movie-section:last-child,
 .vspec .docs-section:last-child,
 .vspec .call-section:last-child,
+.vspec .callback-section:last-child,
+.vspec .faq-list:last-child,
+.vspec .default-section:last-child,
+.vspec .news-section:last-child,
+.vspec .faq-section:last-child,
 .vspec .spec-bottom-space-section:last-child,
 .vspec .spec-bottom-space-section:last-child {
 	margin-bottom: 0;
@@ -460,6 +545,12 @@ body.vspec {
 .vspec .breadcrumbs,
 .vspec .movie,
 .vspec .movie__item,
+.vspec .tabs-panel,
+.vspec .callback,
+.vspec .tabs-container,
+.vspec .r-tabs,
+.vspec .faq-item,
+.vspec .news-article,
 .vspec .spec-bottom-space-item,
 .vspec .spec-bottom-space-item {
 	margin-bottom: 2.4em;
@@ -468,6 +559,12 @@ body.vspec {
 .vspec .breadcrumbs:last-child,
 .vspec .movie:last-child,
 .vspec .movie__item:last-child,
+.vspec .tabs-panel:last-child,
+.vspec .callback:last-child,
+.vspec .tabs-container:last-child,
+.vspec .r-tabs:last-child,
+.vspec .faq-item:last-child,
+.vspec .news-article:last-child,
 .vspec .spec-bottom-space-item:last-child,
 .vspec .spec-bottom-space-item:last-child {
 	margin-bottom: 0;
@@ -484,7 +581,18 @@ body.vspec {
 .vspec .about-info,
 .vspec .about-info__col,
 .vspec .section-footer,
+.vspec .call-item,
 .vspec .call-description,
+.vspec .text-layout,
+.vspec .blockquote,
+.vspec .system-nav-orange,
+.vspec .content-widget,
+.vspec .form-row,
+.vspec .input-wrap,
+.vspec .r-tabs-accordion-title,
+.vspec .attention,
+.vspec .form-buttons-col,
+.vspec .align-layout,
 .vspec .spec-bottom-space,
 .vspec .spec-bottom-space {
 	margin-bottom: 1.2em;
@@ -501,7 +609,18 @@ body.vspec {
 .vspec .about-info:last-child,
 .vspec .about-info__col:last-child,
 .vspec .section-footer:last-child,
+.vspec .call-item:last-child,
 .vspec .call-description:last-child,
+.vspec .text-layout:last-child,
+.vspec .blockquote:last-child,
+.vspec .system-nav-orange:last-child,
+.vspec .content-widget:last-child,
+.vspec .form-row:last-child,
+.vspec .input-wrap:last-child,
+.vspec .r-tabs-accordion-title:last-child,
+.vspec .attention:last-child,
+.vspec .form-buttons-col:last-child,
+.vspec .align-layout:last-child,
 .vspec .spec-bottom-space:last-child,
 .vspec .spec-bottom-space:last-child {
 	margin-bottom: 0;
@@ -509,6 +628,10 @@ body.vspec {
 
 .vspec .movie__video,
 .vspec .movie__text,
+.vspec .nav-title,
+.vspec .nav-pages,
+.vspec .news-article figure,
+.vspec .news-article footer,
 .vspec .spec-bottom-space-element,
 .vspec .spec-bottom-space-element {
 	margin-bottom: 0.6em;
@@ -516,6 +639,10 @@ body.vspec {
 
 .vspec .movie__video:last-child,
 .vspec .movie__text:last-child,
+.vspec .nav-title:last-child,
+.vspec .nav-pages:last-child,
+.vspec .news-article figure:last-child,
+.vspec .news-article footer:last-child,
 .vspec .spec-bottom-space-element:last-child,
 .vspec .spec-bottom-space-element:last-child {
 	margin-bottom: 0;
@@ -524,6 +651,7 @@ body.vspec {
 .vspec-mod_mono .vspec img,
 .vspec-mod_mono .vspec [class*="depict-files-"],
 .vspec-mod_mono .vspec .call-item__img,
+.vspec-mod_mono .vspec .local-map,
 .vspec-mod_mono .vspec .grayscale,
 .vspec-mod_mono .vspec .grayscale {
 	filter: grayscale(1) contrast(1) invert(0);
@@ -533,25 +661,35 @@ html:not(.vspec-mod_img_on) .vspec [class*="depict-files-"],
 html:not(.vspec-mod_img_on) .vspec .logo img,
 html:not(.vspec-mod_img_on) .vspec .content img,
 html:not(.vspec-mod_img_on) .vspec .call-item__img,
+html:not(.vspec-mod_img_on) .vspec .local-map,
 html:not(.vspec-mod_img_on) .vspec .spec-no-img,
 html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	display: none !important;
 }
 
-.vspec .promo-slider, .vspec .promo-slider.slick-dotted {
+.vspec .pic-slider .slick-list {
+	height: auto !important;
+	-ms-transform: none !important;
+	    transform: none !important;
+	overflow: visible;
+}
+
+.vspec .pic-slider, .vspec .pic-slider.slick-dotted {
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: inherit;
+	padding: 0;
+	margin-bottom: 2.4em;
 }
 
-.vspec .promo-slider.slick-slider {
+.vspec .pic-slider.slick-slider {
 	-webkit-user-select: auto !important;
 	   -moz-user-select: auto !important;
 	    -ms-user-select: auto !important;
 	        user-select: auto !important;
 }
 
-.vspec .promo-slider .slick-track {
+.vspec .pic-slider .slick-track {
 	opacity: 1 !important;
 	left: auto !important;
 	width: auto !important;
@@ -559,11 +697,11 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	transform: none !important;
 }
 
-.vspec .promo-slider .slick-track::before, .vspec .promo-slider .slick-track::after {
+.vspec .pic-slider .slick-track::before, .vspec .pic-slider .slick-track::after {
 	content: none;
 }
 
-.vspec .promo-slider .slick-slide {
+.vspec .pic-slider .slick-slide {
 	position: relative !important;
 	width: auto !important;
 	height: auto !important;
@@ -572,13 +710,14 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	top: auto !important;
 	float: none !important;
 	z-index: auto !important;
+	margin-bottom: 1.2em;
 }
 
-.vspec .promo-slider .slick-arrow {
+.vspec .pic-slider .slick-arrow {
 	display: none !important;
 }
 
-.vspec .promo-slider .slick-dots {
+.vspec .pic-slider .slick-dots {
 	display: none !important;
 }
 
@@ -630,10 +769,9 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 /* ============================================================ */
 .vspec .btn-default,
 .vspec .btn-default-alt,
-.vspec input.btn-default-alt[type="submit"],
-.vspec input.btn-default-alt[type="button"],
-.vspec input.btn-default-alt[type="reset"],
-.vspec button.btn-default-alt {
+.vspec .btn-submit,
+.vspec .btn-reset {
+	position: relative;
 	display: inline-block;
 	vertical-align: top;
 	width: auto;
@@ -656,25 +794,37 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	border-color: #000;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white
+.vspec .btn-default-alt, .vspec-mod_scheme-color_white
+.vspec .btn-submit, .vspec-mod_scheme-color_white
+.vspec .btn-reset {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue
+.vspec .btn-default-alt, .vspec-mod_scheme-color_blue
+.vspec .btn-submit, .vspec-mod_scheme-color_blue
+.vspec .btn-reset {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown
+.vspec .btn-default-alt, .vspec-mod_scheme-color_brown
+.vspec .btn-submit, .vspec-mod_scheme-color_brown
+.vspec .btn-reset {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green
+.vspec .btn-default-alt, .vspec-mod_scheme-color_green
+.vspec .btn-submit, .vspec-mod_scheme-color_green
+.vspec .btn-reset {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
@@ -682,36 +832,27 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 
 .vspec .btn-default::before, .vspec .btn-default::after,
 .vspec .btn-default-alt::before,
-.vspec input.btn-default-alt[type="submit"]::before,
-.vspec input.btn-default-alt[type="button"]::before,
-.vspec input.btn-default-alt[type="reset"]::before,
 .vspec .btn-default-alt::after,
-.vspec input.btn-default-alt[type="submit"]::after,
-.vspec input.btn-default-alt[type="button"]::after,
-.vspec input.btn-default-alt[type="reset"]::after {
+.vspec .btn-submit::before,
+.vspec .btn-submit::after,
+.vspec .btn-reset::before,
+.vspec .btn-reset::after {
 	display: none;
 }
 
 .vspec .btn-default:hover, .vspec .btn-default:focus,
 .vspec .btn-default-alt:hover,
-.vspec input.btn-default-alt:hover[type="submit"],
-.vspec input.btn-default-alt:hover[type="button"],
-.vspec input.btn-default-alt:hover[type="reset"],
 .vspec .btn-default-alt:focus,
-.vspec input.btn-default-alt:focus[type="submit"],
-.vspec input.btn-default-alt:focus[type="button"],
-.vspec input.btn-default-alt:focus[type="reset"] {
+.vspec .btn-submit:hover,
+.vspec .btn-submit:focus,
+.vspec .btn-reset:hover,
+.vspec .btn-reset:focus {
 	background: none;
 	color: inherit;
 	border-color: inherit;
 }
 
-
-.vspec .btn-default-alt,
-.vspec input.btn-default-alt[type="submit"],
-.vspec input.btn-default-alt[type="button"],
-.vspec input.btn-default-alt[type="reset"],
-.vspec button.btn-default-alt {
+.vspec .btn-default-alt {
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
@@ -724,31 +865,23 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	background-color: transparent;
 }
 
-.vspec-mod_scheme-color_white .vspec .btn-default-alt, .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_white .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_white .vspec .btn-default-alt {
 	color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .btn-default-alt, .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_blue .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_blue .vspec .btn-default-alt {
 	color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .btn-default-alt, .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_brown .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_brown .vspec .btn-default-alt {
 	color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .btn-default-alt, .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="submit"], .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="button"], .vspec-mod_scheme-color_green .vspec input.btn-default-alt[type="reset"] {
+.vspec-mod_scheme-color_green .vspec .btn-default-alt {
 	color: #a9e44d;
 }
 
-
-.vspec .btn-default-alt:hover,
-.vspec input.btn-default-alt:hover[type="submit"],
-.vspec input.btn-default-alt:hover[type="button"],
-.vspec input.btn-default-alt:hover[type="reset"],
-.vspec .btn-default-alt:focus,
-.vspec input.btn-default-alt:focus[type="submit"],
-.vspec input.btn-default-alt:focus[type="button"],
-.vspec input.btn-default-alt:focus[type="reset"] {
+.vspec .btn-default-alt:hover, .vspec .btn-default-alt:focus {
 	text-decoration: underline;
 	background-color: transparent;
 }
@@ -943,36 +1076,31 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	border-width: 2px;
 }
 
-.vspec table td, .vspec table th {
+.vspec table, .vspec .tbl {
+	border-color: currentColor;
+}
+
+.vspec table td, .vspec table th, .vspec .tbl td, .vspec .tbl th {
 	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
 	font-size: inherit;
 	line-height: inherit;
-	color: currentColor;
+	letter-spacing: inherit;
+	color: inherit;
+	text-align: left;
+	text-transform: none;
+	white-space: normal;
+	text-transform: none;
 	border: 1px solid currentColor;
-	background-color: #fff;
+	background: none;
 }
 
-.vspec-mod_scheme-color_white .vspec table td, .vspec-mod_scheme-color_white .vspec table th {
-	background-color: #000;
-}
-
-.vspec-mod_scheme-color_blue .vspec table td, .vspec-mod_scheme-color_blue .vspec table th {
-	background-color: #c8e5ff;
-}
-
-.vspec-mod_scheme-color_brown .vspec table td, .vspec-mod_scheme-color_brown .vspec table th {
-	background-color: #f7f3d6;
-}
-
-.vspec-mod_scheme-color_green .vspec table td, .vspec-mod_scheme-color_green .vspec table th {
-	background-color: #3b2716;
-}
-
-.vspec table th {
+.vspec table th, .vspec .tbl th {
 	font-weight: bold;
 }
 
-.vspec table caption {
+.vspec table caption, .vspec .tbl caption {
 	font-size: 0.89em;
 	line-height: 1.75;
 	color: inherit;
@@ -1018,12 +1146,27 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 18px;
+	line-height: 24px;
+	height: 50px;
+	padding: 11px 10px;
 	letter-spacing: inherit;
 	box-shadow: none;
 	color: inherit;
 	transition: none;
 	background: none;
-	border-color: currentColor;
+	border-radius: 0;
+	border: 2px solid currentColor;
+	box-sizing: border-box;
+	margin-bottom: 1.2em;
+}
+
+.vspec input[type="text"]:last-child,
+.vspec input[type="password"]:last-child,
+.vspec input[type="email"]:last-child,
+.vspec input[type="search"]:last-child,
+.vspec textarea:last-child,
+.vspec .select select:last-child {
+	margin-bottom: 0;
 }
 
 .touchevents .vspec input[type="text"], .touchevents
@@ -1094,13 +1237,6 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	transition: none;
 }
 
-.vspec .label-holder, .vspec label {
-	color: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	letter-spacing: inherit;
-}
-
 .vspec .select:before, .vspec .select:after {
 	color: #fff;
 	background-color: #000;
@@ -1131,38 +1267,31 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	border-color: #a9e44d;
 }
 
-.vspec input[type="checkbox"] + label,
-.vspec input[type="radio"] + label,
-.vspec .check-label, .vspec .radio-label {
-	color: inherit;
+.vspec input[type="checkbox"], .vspec input[type="radio"] {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 0.3em;
 }
 
-.vspec input[type="checkbox"]:not(:disabled):checked + span,
-.vspec input[type="checkbox"]:not(:disabled):checked + label > span,
-.vspec input[type="radio"]:not(:disabled):checked + span,
-.vspec input[type="radio"]:not(:disabled):checked + label > span {
-	color: inherit;
+.vspec input[type="checkbox"] + label, .vspec input[type="radio"] + label {
+	display: inline-block;
+	vertical-align: middle;
 }
 
-.vspec input[type="checkbox"]:not(:disabled) + label:before,
-.vspec .check-label > span > i:before {
-	border-color: currentColor;
+.vspec input[type="checkbox"] + label > span, .vspec input[type="radio"] + label > span {
+	padding: 0;
+	z-index: auto;
+	display: inline;
+	vertical-align: baseline;
 }
 
-.vspec input[type="checkbox"]:not(:disabled) + span:before, .vspec input[type="checkbox"]:not(:disabled) + span:after,
-.vspec input[type="checkbox"]:not(:disabled) + label > span:before,
-.vspec input[type="checkbox"]:not(:disabled) + label > span:after {
-	background-color: currentColor;
+.vspec input[type="checkbox"] + label > span::before, .vspec input[type="checkbox"] + label > span::after, .vspec input[type="radio"] + label > span::before, .vspec input[type="radio"] + label > span::after {
+	display: none !important;
 }
 
-.vspec input[type="radio"]:not(:disabled) + label:before,
-.vspec input[type="radio"]:not(:disabled) + span:before {
-	border-color: currentColor;
-}
-
-.vspec input[type="radio"]:not(:disabled) + label > span:after,
-.vspec input[type="radio"]:not(:disabled) + span > i:after {
-	background-color: currentColor;
+.vspec .select {
+	background: none;
 }
 
 .vspec ul, .vspec ol {
@@ -1171,26 +1300,26 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	padding: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list), .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list), .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) {
 	padding: 0;
 	margin-bottom: 1.2em;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):last-child, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):last-child {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list):last-child, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list):last-child {
 	margin-bottom: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) ul, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) ol, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) ul, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) ol {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) ul, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) ol, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) ul, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) ol {
 	margin-bottom: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li {
 	padding-top: 0;
 	padding-left: 1.39em;
 	margin-top: 0.25em;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li::before, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li:first-child::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li:first-child::before {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li::before, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li:first-child::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li:first-child::before {
 	color: currentColor;
 	border-color: currentColor;
 }
@@ -1201,7 +1330,7 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	font-weight: bold;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li::before, .vspec .user-content ol ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list) li::before {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li::before, .vspec .user-content ol ul:not(.breadcrumbs-list):not(.social-networks):not(.sorting-drop):not(.years-drop):not(.map-legend__list):not(.radio-list):not(.checkbox-list) li::before {
 	top: 0.65em;
 	min-width: 0;
 	margin-left: 0;
@@ -1214,16 +1343,50 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 
 .vspec blockquote {
 	max-width: 34em;
+	background: none;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .vspec blockquote q {
 	font-size: 1.22em;
 	line-height: 1.55;
+	font-style: italic;
 	border-color: currentColor;
+	padding: 0;
+}
+
+.vspec blockquote q::before, .vspec blockquote q::after {
+	display: none;
 }
 
 .vspec blockquote cite {
 	font-style: italic;
+}
+
+.vspec .imgc, .vspec .imgr, .vspec .imgl {
+	padding: 0;
+	margin: 0 auto 1.2em;
+}
+
+.vspec .imgr {
+	margin-left: 1em;
+}
+
+@media (max-width: 639px) {
+	.vspec .imgr {
+		margin-left: auto;
+	}
+}
+
+.vspec .imgl {
+	margin-right: 1em;
+}
+
+@media (max-width: 639px) {
+	.vspec .imgl {
+		margin-right: auto;
+	}
 }
 
 /* special version components */
@@ -1255,6 +1418,9 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 }
 
 .vspec .logo {
+	position: relative;
+	left: auto;
+	top: auto;
 	display: inline-block;
 	vertical-align: top;
 	width: auto;
@@ -1266,10 +1432,16 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	margin-bottom: 20px;
 }
 
+@media (max-width: 639px) {
+	.vspec .logo {
+		text-align: center;
+	}
+}
+
 .vspec .logo a {
 	height: auto;
 	padding: 0;
-	display: block;
+	display: inline-block;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-pack: start;
@@ -1279,19 +1451,46 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	text-align: left;
 }
 
+@media (max-width: 639px) {
+	.vspec .logo a {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
 .vspec .logo img, .vspec .logo .logo__text {
 	display: inline-block;
 	margin: 0;
+}
+
+@media (max-width: 639px) {
+	.vspec .logo img, .vspec .logo .logo__text {
+		display: block;
+		text-align: center;
+	}
 }
 
 .vspec .logo img {
 	margin-right: 1em;
 }
 
+@media (max-width: 639px) {
+	.vspec .logo img {
+		margin: 0 auto;
+	}
+}
+
 .vspec .logo .logo__text {
 	left: auto;
 	top: auto;
 	opacity: 1;
+	font-family: inherit;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	color: currentColor;
+	letter-spacing: normal;
+	word-spacing: normal;
 }
 
 .vspec .nav-list {
@@ -1306,9 +1505,26 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	    flex-wrap: wrap;
 }
 
+@media (max-width: 639px) {
+	.vspec .nav-list {
+		font-size: 16px;
+		line-height: 20px;
+		letter-spacing: normal;
+		word-spacing: normal;
+	}
+}
+
 .vspec .nav-list li {
 	display: inline-block;
 	margin: 0.3em 0.6em 0.3em 0;
+}
+
+.vspec .nav-list a {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .vspec .nav-list a::before, .vspec .nav-list a::after {
@@ -1338,61 +1554,7 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 }
 
 .vspec .btn-menu {
-	width: 80px;
-	height: 80px;
-	display: inline-block;
-	display: -ms-flexbox;
-	display: flex;
-	display: none;
-	-ms-flex-pack: center;
-	    justify-content: center;
-	line-height: 24px;
-	-ms-flex-align: center;
-	    align-items: center;
-	color: currentColor;
-	transition: none;
-	box-sizing: border-box;
-	border: 0 solid currentColor;
-	background: none;
-	text-decoration: underline;
-	-webkit-tap-highlight-color: transparent;
-}
-
-@media (max-width: 979px) {
-	.vspec .btn-menu {
-		display: inline-block;
-		display: -ms-flexbox;
-		display: flex;
-	}
-}
-
-.vspec .btn-menu::before {
-	display: none;
-}
-
-.vspec .btn-menu > span {
-	display: inline;
-	vertical-align: middle;
-	font-size: 18px;
-	line-height: 24px;
-	font-weight: bold;
-	letter-spacing: normal;
-	text-transform: uppercase;
-}
-
-@media (max-width: 479px) {
-	.vspec .btn-menu > span {
-		font-size: 14px;
-	}
-}
-
-.vspec .btn-menu > i {
-	display: none;
-}
-
-.vspec .btn-menu > i, .vspec .btn-menu > i::before, .vspec .btn-menu > i::after {
-	transition: none;
-	background: currentColor;
+	display: none !important;
 }
 
 .vspec [class*="icon-"] {
@@ -1554,6 +1716,33 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	text-align: center;
 }
 
+.vspec .btn-default span {
+	border: none;
+}
+
+.vspec .btn-default .arrow-more {
+	display: none;
+}
+
+.vspec .tbl tbody tr:nth-child(even) td {
+	background: none;
+}
+
+.vspec .tbl tfoot td {
+	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
+	font-size: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+	text-align: left;
+	text-transform: none;
+	white-space: normal;
+	font-weight: bold;
+	background: none;
+}
+
 .vspec .file {
 	display: inline-block;
 	vertical-align: top;
@@ -1587,6 +1776,107 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	color: inherit;
 }
 
+.vspec .catalog-menu {
+	background: none;
+	box-sizing: border-box;
+}
+
+.vspec .catalog-menu::after {
+	content: none;
+}
+
+.vspec .catalog-menu-list {
+	width: 100%;
+	box-shadow: none;
+	visibility: visible;
+	word-wrap: break-word;
+	padding: 1em;
+	border: 2px solid currentColor;
+}
+
+.vspec .catalog-menu-list li {
+	padding: 0;
+	transition: none;
+	box-sizing: border-box;
+	float: none;
+	display: inline;
+	width: auto;
+	margin: 0 1em 0 0;
+}
+
+.vspec .catalog-menu-list li::before, .vspec .catalog-menu-list li::after {
+	border-color: currentColor;
+	display: none;
+}
+
+.vspec .catalog-menu-list a {
+	display: inline;
+	box-shadow: none;
+	box-sizing: border-box;
+	height: auto;
+	padding: 0;
+	font-family: inherit;
+	font-weight: normal;
+	font-style: normal;
+	font-size: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	color: inherit;
+	text-align: left;
+	text-transform: none;
+	white-space: normal;
+}
+
+.vspec .catalog-menu-list a::before {
+	content: none;
+}
+
+.vspec .catalog-menu-list a:hover {
+	color: currentColor !important;
+	background: none !important;
+	box-shadow: none;
+}
+
+.vspec .catalog-menu-list a span {
+	display: inline;
+	vertical-align: baseline;
+	max-width: none;
+}
+
+.vspec .catalog-menu-list .has-submenu {
+	display: block;
+	margin: 1em 0 0 0;
+}
+
+.vspec .catalog-menu-list .has-submenu:first-child {
+	margin-top: 0;
+}
+
+.vspec .catalog-menu-list .has-submenu > a {
+	color: currentColor;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	text-transform: uppercase;
+}
+
+.vspec .catalog-menu-list .has-submenu ul {
+	margin: 0;
+}
+
+.vspec .catalog-menu-list .has-submenu ul::before, .vspec .catalog-menu-list .has-submenu ul::after {
+	display: none;
+}
+
+.vspec .catalog-menu-list .has-submenu ul a {
+	padding-left: 0;
+}
+
+.vspec .catalog-menu-list .has-submenu ul a::after {
+	border-color: currentColor;
+	display: none;
+}
+
 .vspec .movie__item h3 {
 	height: auto !important;
 }
@@ -1617,34 +1907,6 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	max-width: none;
 }
 
-.vspec .call-list {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-}
-
-.vspec .call-item {
-	display: inline-block;
-	display: -ms-flexbox;
-	display: flex;
-	padding-right: 10px;
-}
-
-.vspec .call-item__row {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-pack: start;
-	    justify-content: flex-start;
-	-ms-flex-align: start;
-	    align-items: flex-start;
-}
-
-.vspec .call-item__img, .vspec .call-item__text {
-	display: inline-block;
-	margin-right: 10px;
-}
-
 .vspec .social-networks li {
 	display: inline-block;
 	vertical-align: top;
@@ -1665,7 +1927,15 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	font-weight: bold;
 }
 
+.vspec .developer-box {
+	text-align: right;
+}
+
 .vspec .developer {
+	font-size: 14px;
+	line-height: 18px;
+	text-align: left;
+	opacity: 0.8;
 	display: inline;
 	height: auto;
 	width: auto;
@@ -1677,6 +1947,74 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 	border: none;
 	background: none;
 	box-sizing: border-box;
+}
+
+.vspec .unif-form .field.error, .vspec .unif-form .field.error .uploader .action {
+	background: none;
+}
+
+.vspec .unif-form .errors {
+	padding: 0 0.5em;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.vspec .btn-submit > span,
+.vspec .btn-reset > span {
+	opacity: 1 !important;
+	max-width: none !important;
+}
+
+.vspec .r-tabs-panel {
+	display: block !important;
+	opacity: 1 !important;
+}
+
+.vspec .r-tabs-anchor {
+	text-decoration: none;
+	cursor: default;
+}
+
+.vspec .faq-item h3 {
+	max-height: none;
+	height: auto;
+	box-shadow: none;
+	color: inherit;
+	cursor: initial;
+	margin-bottom: 0.6em;
+}
+
+.vspec .faq-item h3 + div, .vspec .faq-item h3 + p {
+	display: block !important;
+}
+
+.vspec .heading + .default-section .title-box {
+	padding: 0;
+}
+
+.vspec .news-article a {
+	min-height: 0 !important;
+	text-decoration: none;
+}
+
+.vspec .news-article h3 {
+	min-height: 0;
+	transition: none;
+	text-decoration: underline;
+}
+
+.vspec .news-article a:hover time, .vspec .news-article a:hover h3, .vspec .news-article a:hover p {
+	color: inherit;
+	text-decoration: none;
+}
+
+.vspec figure img {
+	position: relative;
+	left: auto;
+	top: auto;
+	width: 320px;
+	max-width: 100%;
+	margin: 0;
 }
 
 /*=========== SPECIAL VERSION end =========== */
