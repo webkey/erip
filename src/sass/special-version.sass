@@ -312,6 +312,9 @@ body.#{$spec-mod}
 	.btn-menu
 		display: none !important
 
+	a > span
+		border-bottom: none !important
+
 	// icon
 	[class*="icon-"]
 		font-style: normal
@@ -670,8 +673,8 @@ body.#{$spec-mod}
 		text-decoration: none
 		cursor: default
 
-	// faq
-	.faq-item
+	// faq, terminals
+	.faq-item, .terminals-item
 		h3
 			max-height: none
 			height: auto
@@ -680,8 +683,28 @@ body.#{$spec-mod}
 			cursor: initial
 			margin-bottom: $spec-bottom-space-element
 
+			&::before
+				content: none
+
+			.text-inner
+				display: inline
+				vertical-align: top
+				width: auto
+				font-size: inherit
+				letter-spacing: inherit
+
 			& + div, & + p
 				display: block !important
+				height: auto !important
+				margin: 0 !important
+				padding: 0 !important
+				overflow: visible !important
+
+		//active
+		&:hover, &.active
+			.terminals-item__holder
+				box-shadow: none
+				transition: none
 
 	.heading + .default-section .title-box
 		padding: 0
@@ -702,14 +725,158 @@ body.#{$spec-mod}
 				color: inherit
 				text-decoration: none
 
-	figure img
-		position: relative
-		left: auto
-		top: auto
-		width: 320px
-		max-width: 100%
-		margin: 0
+		figure img
+			position: relative
+			left: auto
+			top: auto
+			width: 320px
+			max-width: 100%
+			margin: 0
 
+	// advantages
+	.advantages-item
+		h3, p
+			height: auto !important
+
+	// pay list
+	.cells-list
+		& > li
+			display: inline-block
+			vertical-align: top
+			margin-right: 20px
+
+			a
+				display: inline
+
+				&::before
+					display: none
+
+				img
+					vertical-align: top
+					width: auto
+					max-width: 100%
+					max-height: none
+					font-size: inherit
+					line-height: inherit
+					letter-spacing: inherit
+					transform: none
+					transition: none
+
+				& > span
+					display: block
+
+				&:hover
+					box-shadow: none
+					transition: none
+
+	// easy
+	.easy-text
+		display: inline
+		transition: none
+
+	.easy-item a:hover .easy-text
+		transform: none
+		transition: none
+
+	// search
+	.multi-search__field
+		input[type="text"]
+			margin: 0
+			padding-right: 45px
+
+			&:hover, &:focus
+				border-color: currentColor
+
+		i
+			&::before
+				border-color: currentColor
+
+			&::after
+				background-color: currentColor
+
+	// .ui-autocomplete
+	.ui-autocomplete
+		border-color: currentColor
+		+spec-reset-bg
+		+spec-font-reset
+		box-shadow: none
+
+	.ui-menu-item
+		+spec-font-reset
+		transition: none
+
+		&.ui-state-focus
+			+spec-reset-bg-invert
+
+	// structure
+	.structure__list
+		ul
+			display: block !important
+			height: auto !important
+			padding: 0 !important
+			margin: 0 !important
+
+		li
+			position: relative
+
+			&::after
+				display: none
+
+		& > li
+			padding-left: 0 !important
+
+			& > .structure__title
+				margin-bottom: $spec-bottom-space
+
+				.structure__inner
+					font-weight: bold
+					+spec-font-size--item
+
+	.structure__title
+		position: relative
+		transition: none
+
+	.structure__list li:hover
+		& > .structure__title
+			background: none
+
+	//qr
+	.qr-code-btn
+		border: 1px solid currentColor
+		+spec-reset-bg
+
+		&:hover
+			+spec-reset-bg-invert
+
+		&::after
+			display: none
+
+	// button close
+	.popup-default__close
+		+spec-reset-bg-invert
+
+		&::before, &::after
+			+spec-reset-bg
+
+		&:hover
+			+spec-reset-bg
+
+			&::before, &::after
+				+spec-reset-bg-invert
+
+	// popup default
+	//.popup-default__layout
+		+spec-reset-bg
+
+	// перебить костыли
+	[style*="font-size"]
+		font-size: inherit !important
+
+	[style*="line-height"]
+		line-height: inherit !important
+
+	[style*="color"]
+		color: inherit !important
 
 //@import spec/popups
 

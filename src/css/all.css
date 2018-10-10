@@ -3445,6 +3445,7 @@ html.desktop .promo-slider .slick-arrow:hover:after{ opacity: 1; }
 	-webkit-transition: all 0.6s;
 	transition: all 0.6s;
 }
+.cells-list >li a > span{ display: none; }
 .cells-list:hover >li a:hover img{
 	-webkit-transform: scale(1, 1);
 	-ms-transform: scale(1, 1);
@@ -6249,6 +6250,10 @@ html.spl-popup--is-open{
 	margin: 0 !important;
 	padding: 0 !important;
 	overflow: hidden !important;
+}
+
+.ui-menu-item.ui-state-focus{
+	color: #f29700;
 }
 
 

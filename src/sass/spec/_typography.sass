@@ -45,10 +45,6 @@
 			//color: currentColor
 			text-decoration: none
 
-		// только для текущего проекта
-		& > span
-			border-bottom: none !important
-
 	b, strong, th
 		font-weight: bold
 
@@ -69,6 +65,10 @@
 
 	table, .tbl
 		border-color: currentColor
+		margin-bottom: $spec-bottom-space
+
+		&:last-child
+			margin-bottom: 0
 
 		td, th
 			+spec-font-reset
@@ -84,6 +84,10 @@
 			line-height: $spec-small-text-line-height
 			color: inherit
 			font-style: italic
+
+	.tbl table
+		margin-bottom: 0
+
 	hr
 		border-bottom-color: currentColor
 
@@ -228,6 +232,7 @@
 						//$size: round-float(10px / $spec-font-size, 1) * 1em
 						$size: 0.5em
 						top: 0.65em
+						left: 0
 						min-width: 0
 						margin-left: 0
 						+size($size)

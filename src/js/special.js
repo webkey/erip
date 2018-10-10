@@ -419,4 +419,29 @@ $(document).ready(function () {
 	};
 
 	specVersionInit();
+
+	/**
+	 * !Back to top
+	 * */
+	function backToTop(){
+		var $btnToTop = $('.back-to-top');
+		// var minScrollTop = 200;
+
+		if($btnToTop.length){
+			// $(window).on('load scroll resizeByWidth', function () {
+			// 	var scrollTop = $(window).scrollTop();
+			// 	$btnToTop.toggleClass('btn-show', scrollTop > minScrollTop);
+			// });
+
+			$btnToTop.on('click', function (e) {
+				e.preventDefault();
+				$('html, body').animate({ scrollTop: 0 }, 450);
+				if (!$(this).is(':animated')) {
+					$('html,body').stop().animate({scrollTop: 0}, 450);
+				}
+			});
+		}
+	}
+
+	backToTop();
 });

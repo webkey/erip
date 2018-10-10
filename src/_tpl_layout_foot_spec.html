@@ -3,13 +3,21 @@
 
 <!--footer-->
 <footer class="footer">
-	@@include("_tpl_spacial--tools-btn.html", {
-		"href": "@@specUrl",
-		"classes": "spec-btn-switcher to_normal",
-		"icon": "includes/svg/icon-special-off.svg",
-		"text": "Обычная версия",
-		"title": "Перейти на обычную версию сайта"
-	})
+	<div class="spec-foot">
+		@@include("_tpl_spacial--tools-btn.html", {
+			"href": "@@specUrl",
+			"classes": "spec-btn-switcher to_normal",
+			"icon": "includes/svg/icon-special-off.svg",
+			"text": "Обычная версия",
+			"title": "Перейти на обычную версию сайта"
+		})
+		<!--back to top-->
+		<a href="#" class="back-to-top btn-default">
+			<i class="#"></i>
+			<span>Наверх</span>
+		</a>
+	</div>
+	<!--back to top end-->
 	<div class="footer-container">
 		<!--nav bar-->
 		<div class="nav-bar">
@@ -148,7 +156,7 @@
 			<div class="popup-default__layout spl-popup__no-close-js">
 				<a href="#" class="popup-default__close popup-default__close-js" title="Закрыть">x close</a>
 				<div class="popup-default__img">
-					<img src="img/img-qr-code.jpg" alt="qr-code" />
+					<img class="qr-code__img-js" src="img/img-qr-code.jpg" alt="qr-code" />
 				</div>
 				<div class="popup-default__footer">
 					<a href="#" class="btn-default btn-default-alt" title="Скачать QR-Code"><span class="btn-default__inner">Скачать QR-Code</span></a>
@@ -166,7 +174,7 @@
 			<div class="popup-default__layout spl-popup__no-close-js">
 				<a href="#" class="popup-default__close popup-default__close-js" title="Закрыть">x close</a>
 				<div class="popup-default__img">
-					<img src="img/img-qr-code.jpg" alt="qr-code" />
+					<img class="qr-code__img-js" src="img/img-qr-code.jpg" alt="qr-code" />
 				</div>
 				<div class="popup-default__footer">
 					<a href="#" class="btn-default btn-default-alt" title="Скачать QR-Code"><span class="btn-default__inner">Скачать QR-Code</span></a>
@@ -192,6 +200,9 @@
 <script src="js/vendor/jquery-ui.min.js"></script>
 <!--Widgets-->
 <script src="js/widgets.js"></script>
+<!--resize sensor-->
+<script src="js/vendor/css-element-queries/src/ResizeSensor.js"></script>
+<script src="js/vendor/css-element-queries/src/ElementQueries.js"></script>
 @@if(context.hasMap){<!--Map--><script src="http://maps.googleapis.com/maps/api/js"></script>}
 <!--Main functions-->
 <script src="js/functions.js"></script>

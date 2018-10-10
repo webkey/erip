@@ -1,5 +1,6 @@
 /*resize only width*/
-var resizeByWidth = true;
+var resizeByWidth = true,
+	customSelectInitialized = false;
 
 var prevWidth = -1;
 $(window).resize(function () {
@@ -465,7 +466,6 @@ function catalogMenuSelect(){
 
 		// scroll to top
 		var $htmlAndBody = $('html, body');
-		console.log(DESKTOP);
 		if (DESKTOP && $(window).scrollTop() > 0 && !$htmlAndBody.is(':animated')) {
 			$htmlAndBody.stop().animate({
 				scrollTop: 0
@@ -900,7 +900,8 @@ function tabs() {
 			activate: function() {
 				var select = $(this).find('select');
 
-				if (DESKTOP && select.length) {
+				// if (DESKTOP && select.length) {
+				if (customSelectInitialized && select.length) {
 					refreshSelectInTabs(select);
 				}
 
@@ -1462,6 +1463,8 @@ function removePositionClass(obj){
 	obj.removeClass('right');
 }
 function customSelect(select){
+	customSelectInitialized = true;
+
 	if ( select.length ) {
 		selectArray = new Array();
 		select.each(function(selectIndex, selectItem){
@@ -1615,7 +1618,7 @@ function newsArticlesHeight() {
 		$.each(self.config, function (key, value) {
 			if(typeof value === 'function') {
 				self.element.on(key + '.SimplePopup', function (e, param) {
-					console.log('callback!');
+					// console.log('callback!');
 					return value(e, self.element, param);
 				});
 			}
@@ -1735,14 +1738,43 @@ function simplePopupInit() {
 			closeBtn: '.popup-default__close-js',
 			openerInset: '.btn-qr-code-js',
 			afterClose: function (e, el, popup) {
-				console.log('afterClose, el: ', el);
-				console.log('afterClose, popup: ', popup);
+				// console.log('afterClose, el: ', el);
+				// console.log('afterClose, popup: ', popup);
 			}
 		})
 	}
 	setTimeout(function () {
 		$('#test-item').append('<a href="#qr-code-popup2" class="qr-code-btn btn-qr-code-js"><span>QR-code</span></a>');
 	}, 1500)
+}
+
+/**
+ * !Track changes of element size
+ */
+function trackChanges(){
+	var element = document.querySelector('.main-layout');
+	var timeout;
+	new ResizeSensor(element, function() {
+		if($('.wrapper-sticky').length){
+			clearTimeout(timeout);
+			timeout = setTimeout(function () {
+				$('.main-layout').hcSticky('reinit');
+			}, 500)
+		}
+	});
+	// for(var i = 0; i < element.length; i++){
+	// 	var el = element[i];
+	// 	new ResizeSensor(el, function() {
+	// 		// console.log('w) Changed to: ', element.clientWidth);
+	// 		if($('.wrapper-sticky').length){
+	// 			clearTimeout(timeout);
+	// 			timeout = setTimeout(function () {
+	// 				console.log('h) Changed to: ', el.clientHeight);
+	// 				// $(".main-layout").hcSticky('reinit');
+	// 			}, 500)
+	// 		}
+	// 	});
+	// }
 }
 
 /** ready/load/resize document **/
@@ -1778,4 +1810,6 @@ $(document).ready(function(){
 	newsArticlesHeight();
 	simplePopupInit();
 	stickyLayout();
+
+	trackChanges();
 });

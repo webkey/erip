@@ -738,4 +738,14 @@
 	background-color: #3b2716;
 }
 
+.spec-foot {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: justify;
+	    justify-content: space-between;
+	-ms-flex-align: center;
+	    align-items: center;
+	margin-bottom: 1.2em;
+}
+
 /*# sourceMappingURL=special-version-base.css.map */
