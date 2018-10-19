@@ -70,11 +70,12 @@
 		&:last-child
 			margin-bottom: 0
 
-		td, th
+		td, th, thead td
 			+spec-font-reset
 			text-transform: none
 			border: 1px solid currentColor
 			background: none
+			padding: 0.4em 0.6em
 
 		th
 			font-weight: bold
@@ -208,22 +209,18 @@
 					margin-bottom: 0
 
 				li
+					position: relative
 					padding-top: 0
 					padding-left: round-float(25px / $spec-font-size, 2) * 1em
 					margin-top: 0.25em
+
+					&::before
+						box-sizing: border-box
 
 					&, &:first-child
 						&::before
 							color: currentColor
 							border-color: currentColor
-
-		ol
-			li
-				&::before
-					$space: round-float(25px / $spec-font-size, 2) * 1em
-					margin-left: -$space
-					min-width: $space
-					font-weight: bold
 
 		ul, ol ul
 			&#{$not-list-classes}
@@ -234,11 +231,32 @@
 						top: 0.65em
 						left: 0
 						min-width: 0
-						margin-left: 0
+						margin: 0
+						padding: 0
 						+size($size)
 						border-radius: $size
 						border: none
 						background-color: currentColor
+
+		ul
+			&#{$not-list-classes}
+				li, & > li
+					&::before
+						content: ''
+						position: absolute
+						top: 0.85em
+
+		ol
+			&#{$not-list-classes}
+				li
+					&::before
+						$space: round-float(25px / $spec-font-size, 2) * 1em
+						margin-left: -$space
+						min-width: $space
+						font-family: inherit
+						font-size: inherit
+						line-height: inherit
+						font-weight: bold
 
 	//blockquote
 	blockquote
@@ -262,7 +280,7 @@
 	//imgc
 	.imgc, .imgr, .imgl
 		padding: 0
-		margin: 0 auto $spec-bottom-space
+		margin: 0 auto $spec-bottom-space-item
 
 	.imgr
 		margin-left: 1em

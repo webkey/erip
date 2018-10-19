@@ -16,6 +16,7 @@
 			$settingsBtn = $element.find(config.settingOpener),
 			$settingsDrop = $element.find(config.settingDrop),
 			$settingsResetBtn = $element.find(config.settingReset),
+			$scrollToContentBtn = $element.find(config.btnScrollToContent),
 			pref = 'jq-spec',
 			pluginClasses = {
 				initClass: pref + '--initialized',
@@ -310,6 +311,14 @@
 
 				event.preventDefault();
 			})
+		}, scrollToContent = function () {
+			$scrollToContentBtn.on('click', function (event) {
+				if (!$(this).is(':animated')) {
+					$('html,body').stop().animate({scrollTop: $(config.content).offset().top - 20}, 300);
+				}
+
+				event.preventDefault();
+			})
 		}, init = function () {
 
 			$element.addClass(pluginClasses.panel + ' ' + pluginClasses.initClass).addClass(config.modifiers.initClass);
@@ -340,6 +349,7 @@
 			selectSetting: selectSetting,
 			toggleDropSettings: toggleDropSettings,
 			settingsReset: settingsReset,
+			scrollToContent: scrollToContent,
 			init: init
 		};
 
@@ -364,6 +374,7 @@
 				elem[i].spec.selectSetting();
 				elem[i].spec.toggleDropSettings();
 				elem[i].spec.settingsReset();
+				elem[i].spec.scrollToContent();
 			}
 			else {
 				ret = elem[i].spec[opt].apply(elem[i].spec, args);
@@ -383,6 +394,8 @@
 		settingDrop: '.spec-settings-js',
 		settingReset: '.spec-btn-reset-js',
 		settingsDefault: null,
+		btnScrollToContent: '.spec-btn-content-js',
+		content: '.spec-content-js',
 		event: 'click',
 		cssId: 'special-version',
 		modifiers: {
@@ -414,7 +427,9 @@ $(document).ready(function () {
 	var specVersionInit = function() {
 		var $specPanel = $('.spec-panel-js');
 		if ($specPanel.length) {
-			$specPanel.spec();
+			$specPanel.spec({
+				content: '.content'
+			});
 		}
 	};
 
@@ -435,7 +450,6 @@ $(document).ready(function () {
 
 			$btnToTop.on('click', function (e) {
 				e.preventDefault();
-				$('html, body').animate({ scrollTop: 0 }, 450);
 				if (!$(this).is(':animated')) {
 					$('html,body').stop().animate({scrollTop: 0}, 450);
 				}

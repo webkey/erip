@@ -146,6 +146,7 @@ body.vspec {
 .vspec .callback,
 .vspec .r-tabs-accordion-title,
 .vspec .r-tabs-panel,
+.vspec .tabs-container .tabs-panel,
 .vspec .form-callback,
 .vspec .r-tabs-anchor,
 .vspec .attention,
@@ -195,13 +196,12 @@ body.vspec {
 .vspec .easy-item,
 .vspec .easy-text,
 .vspec .agency,
-.vspec .structure,
-.vspec .structure__list,
-.vspec .structure__list ul,
-.vspec .structure__list li,
-.vspec .structure__title,
-.vspec .structure__inner,
-.vspec .structure__content,
+.vspec .gallery-zoom,
+.vspec .gallery-zoom figure,
+.vspec .bx-newslist,
+.vspec .bx-newslist .row,
+.vspec [class*="col-"],
+.vspec .bx-newslist-block,
 .vspec .reset-full,
 .vspec .reset-full {
 	display: block;
@@ -272,6 +272,10 @@ body.vspec {
 .vspec .btn-submit > span,
 .vspec .btn-reset > span,
 .vspec .easy-text,
+.vspec .structure__list,
+.vspec .structure__title,
+.vspec .structure__content,
+.vspec .structure-less .structure__inner,
 .vspec .font-reset,
 .vspec .font-reset {
 	font-family: inherit;
@@ -429,11 +433,14 @@ body.vspec {
 .vspec [class*=" depict-files-"]:after,
 .vspec .file__title,
 .vspec .file__info,
+.vspec .structure__title,
+.vspec .structure__content,
 .vspec .no-transition,
 .vspec .no-transition {
 	transition: none;
 }
 
+.vspec .alt-text-spec,
 .vspec .sidebar,
 .vspec .sidebar-overlay,
 .vspec .sidebar-large,
@@ -457,7 +464,6 @@ body.vspec {
 .vspec .promo-slider,
 .vspec .easy-bg,
 .vspec .easy-img,
-.vspec .structure__angle,
 .vspec .spec-hide,
 .vspec .spec-hide {
 	display: none !important;
@@ -473,10 +479,9 @@ body.vspec {
 .vspec input[type="checkbox"] + label::before,
 .vspec input[type="radio"] + label::before,
 .vspec .cells-list::before,
-.vspec .cells-list li::before,
 .vspec .easy-list::before,
 .vspec .advantages-item h3::before,
-.vspec .structure__title::before,
+.vspec .bx-newslist .row::before,
 .vspec .spec-hide-before::before,
 .vspec .spec-hide-before::before {
 	display: none !important;
@@ -489,9 +494,9 @@ body.vspec {
 .vspec input[type="checkbox"] + label::after,
 .vspec input[type="radio"] + label::after,
 .vspec .social-networks::after,
-.vspec .cells-list::after,
 .vspec .easy-list::after,
 .vspec .advantages-item h3::after,
+.vspec .bx-newslist .row::after,
 .vspec .spec-hide-after::after,
 .vspec .spec-hide-after::after {
 	display: none !important;
@@ -525,31 +530,31 @@ body.vspec {
 	background-color: #3b2716;
 }
 
-.vspec .unif-form .errors, .vspec mark, .vspec .reset-bg-invert, .vspec .nav-current-page {
+.vspec .unif-form .errors, .vspec mark, .vspec .reset-bg-invert, .vspec .nav-current-page, .vspec .structure__angle:before, .vspec .structure__angle:after, .vspec li:hover > .structure__title .structure__angle:before, .vspec li:hover > .structure__title .structure__angle:after, .vspec .btn-captcha-refresh {
 	color: #fff;
 	background-color: #000;
 	border-color: #000;
 }
 
-.vspec-mod_scheme-color_white .vspec .unif-form .errors, .vspec-mod_scheme-color_white .vspec mark, .vspec-mod_scheme-color_white .vspec .reset-bg-invert, .vspec-mod_scheme-color_white .vspec .nav-current-page {
+.vspec-mod_scheme-color_white .vspec .unif-form .errors, .vspec-mod_scheme-color_white .vspec mark, .vspec-mod_scheme-color_white .vspec .reset-bg-invert, .vspec-mod_scheme-color_white .vspec .nav-current-page, .vspec-mod_scheme-color_white .vspec .structure__angle:before, .vspec-mod_scheme-color_white .vspec .structure__angle:after, .vspec-mod_scheme-color_white .vspec li:hover > .structure__title .structure__angle:before, .vspec-mod_scheme-color_white .vspec li:hover > .structure__title .structure__angle:after, .vspec-mod_scheme-color_white .vspec .btn-captcha-refresh {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
 }
 
-.vspec-mod_scheme-color_blue .vspec .unif-form .errors, .vspec-mod_scheme-color_blue .vspec mark, .vspec-mod_scheme-color_blue .vspec .reset-bg-invert, .vspec-mod_scheme-color_blue .vspec .nav-current-page {
+.vspec-mod_scheme-color_blue .vspec .unif-form .errors, .vspec-mod_scheme-color_blue .vspec mark, .vspec-mod_scheme-color_blue .vspec .reset-bg-invert, .vspec-mod_scheme-color_blue .vspec .nav-current-page, .vspec-mod_scheme-color_blue .vspec .structure__angle:before, .vspec-mod_scheme-color_blue .vspec .structure__angle:after, .vspec-mod_scheme-color_blue .vspec li:hover > .structure__title .structure__angle:before, .vspec-mod_scheme-color_blue .vspec li:hover > .structure__title .structure__angle:after, .vspec-mod_scheme-color_blue .vspec .btn-captcha-refresh {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
 }
 
-.vspec-mod_scheme-color_brown .vspec .unif-form .errors, .vspec-mod_scheme-color_brown .vspec mark, .vspec-mod_scheme-color_brown .vspec .reset-bg-invert, .vspec-mod_scheme-color_brown .vspec .nav-current-page {
+.vspec-mod_scheme-color_brown .vspec .unif-form .errors, .vspec-mod_scheme-color_brown .vspec mark, .vspec-mod_scheme-color_brown .vspec .reset-bg-invert, .vspec-mod_scheme-color_brown .vspec .nav-current-page, .vspec-mod_scheme-color_brown .vspec .structure__angle:before, .vspec-mod_scheme-color_brown .vspec .structure__angle:after, .vspec-mod_scheme-color_brown .vspec li:hover > .structure__title .structure__angle:before, .vspec-mod_scheme-color_brown .vspec li:hover > .structure__title .structure__angle:after, .vspec-mod_scheme-color_brown .vspec .btn-captcha-refresh {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
 }
 
-.vspec-mod_scheme-color_green .vspec .unif-form .errors, .vspec-mod_scheme-color_green .vspec mark, .vspec-mod_scheme-color_green .vspec .reset-bg-invert, .vspec-mod_scheme-color_green .vspec .nav-current-page {
+.vspec-mod_scheme-color_green .vspec .unif-form .errors, .vspec-mod_scheme-color_green .vspec mark, .vspec-mod_scheme-color_green .vspec .reset-bg-invert, .vspec-mod_scheme-color_green .vspec .nav-current-page, .vspec-mod_scheme-color_green .vspec .structure__angle:before, .vspec-mod_scheme-color_green .vspec .structure__angle:after, .vspec-mod_scheme-color_green .vspec li:hover > .structure__title .structure__angle:before, .vspec-mod_scheme-color_green .vspec li:hover > .structure__title .structure__angle:after, .vspec-mod_scheme-color_green .vspec .btn-captcha-refresh {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
@@ -584,6 +589,7 @@ body.vspec {
 .vspec .terminals-more,
 .vspec .s-points,
 .vspec .info-section,
+.vspec .bx-newslist,
 .vspec .spec-bottom-space-section,
 .vspec .spec-bottom-space-section {
 	margin-bottom: 3.6em;
@@ -605,6 +611,7 @@ body.vspec {
 .vspec .terminals-more:last-child,
 .vspec .s-points:last-child,
 .vspec .info-section:last-child,
+.vspec .bx-newslist:last-child,
 .vspec .spec-bottom-space-section:last-child,
 .vspec .spec-bottom-space-section:last-child {
 	margin-bottom: 0;
@@ -623,13 +630,15 @@ body.vspec {
 .vspec .advantages,
 .vspec .advantages-item,
 .vspec .helpful,
-.vspec .cells-list li,
 .vspec .s-points__filters,
 .vspec .info,
 .vspec .info-row,
 .vspec .info-item,
 .vspec .easy,
 .vspec .agency,
+.vspec .gallery-zoom,
+.vspec .gallery-zoom figure,
+.vspec .bx-newslist-container,
 .vspec .spec-bottom-space-item,
 .vspec .spec-bottom-space-item {
 	margin-bottom: 2.4em;
@@ -648,13 +657,15 @@ body.vspec {
 .vspec .advantages:last-child,
 .vspec .advantages-item:last-child,
 .vspec .helpful:last-child,
-.vspec .cells-list li:last-child,
 .vspec .s-points__filters:last-child,
 .vspec .info:last-child,
 .vspec .info-row:last-child,
 .vspec .info-item:last-child,
 .vspec .easy:last-child,
 .vspec .agency:last-child,
+.vspec .gallery-zoom:last-child,
+.vspec .gallery-zoom figure:last-child,
+.vspec .bx-newslist-container:last-child,
 .vspec .spec-bottom-space-item:last-child,
 .vspec .spec-bottom-space-item:last-child {
 	margin-bottom: 0;
@@ -684,6 +695,7 @@ body.vspec {
 .vspec .form-buttons-col,
 .vspec .align-layout,
 .vspec .s-points__filters-item,
+.vspec .cells-list > li,
 .vspec .spec-bottom-space,
 .vspec .spec-bottom-space {
 	margin-bottom: 1.2em;
@@ -713,6 +725,7 @@ body.vspec {
 .vspec .form-buttons-col:last-child,
 .vspec .align-layout:last-child,
 .vspec .s-points__filters-item:last-child,
+.vspec .cells-list > li:last-child,
 .vspec .spec-bottom-space:last-child,
 .vspec .spec-bottom-space:last-child {
 	margin-bottom: 0;
@@ -768,6 +781,11 @@ html:not(.vspec-mod_img_on) .vspec .spec-no-img {
 
 html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	padding-left: 10px;
+}
+
+html:not(.vspec-mod_img_on) .vspec .captcha-img img {
+	display: inline-block !important;
+	vertical-align: top;
 }
 
 .vspec .pic-slider .slick-list {
@@ -873,7 +891,8 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec .btn-default,
 .vspec .btn-default-alt,
 .vspec .btn-submit,
-.vspec .btn-reset {
+.vspec .btn-reset,
+.vspec .bx-newslist .btn {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
@@ -900,7 +919,8 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec-mod_scheme-color_white .vspec .btn-default, .vspec-mod_scheme-color_white
 .vspec .btn-default-alt, .vspec-mod_scheme-color_white
 .vspec .btn-submit, .vspec-mod_scheme-color_white
-.vspec .btn-reset {
+.vspec .btn-reset, .vspec-mod_scheme-color_white
+.vspec .bx-newslist .btn {
 	color: #000;
 	background-color: #fff;
 	border-color: #fff;
@@ -909,7 +929,8 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec-mod_scheme-color_blue .vspec .btn-default, .vspec-mod_scheme-color_blue
 .vspec .btn-default-alt, .vspec-mod_scheme-color_blue
 .vspec .btn-submit, .vspec-mod_scheme-color_blue
-.vspec .btn-reset {
+.vspec .btn-reset, .vspec-mod_scheme-color_blue
+.vspec .bx-newslist .btn {
 	color: #c8e5ff;
 	background-color: #004c92;
 	border-color: #004c92;
@@ -918,7 +939,8 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec-mod_scheme-color_brown .vspec .btn-default, .vspec-mod_scheme-color_brown
 .vspec .btn-default-alt, .vspec-mod_scheme-color_brown
 .vspec .btn-submit, .vspec-mod_scheme-color_brown
-.vspec .btn-reset {
+.vspec .btn-reset, .vspec-mod_scheme-color_brown
+.vspec .bx-newslist .btn {
 	color: #f7f3d6;
 	background-color: #4d4b43;
 	border-color: #4d4b43;
@@ -927,7 +949,8 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec-mod_scheme-color_green .vspec .btn-default, .vspec-mod_scheme-color_green
 .vspec .btn-default-alt, .vspec-mod_scheme-color_green
 .vspec .btn-submit, .vspec-mod_scheme-color_green
-.vspec .btn-reset {
+.vspec .btn-reset, .vspec-mod_scheme-color_green
+.vspec .bx-newslist .btn {
 	color: #3b2716;
 	background-color: #a9e44d;
 	border-color: #a9e44d;
@@ -939,7 +962,9 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec .btn-submit::before,
 .vspec .btn-submit::after,
 .vspec .btn-reset::before,
-.vspec .btn-reset::after {
+.vspec .btn-reset::after,
+.vspec .bx-newslist .btn::before,
+.vspec .bx-newslist .btn::after {
 	display: none;
 }
 
@@ -949,7 +974,9 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec .btn-submit:hover,
 .vspec .btn-submit:focus,
 .vspec .btn-reset:hover,
-.vspec .btn-reset:focus {
+.vspec .btn-reset:focus,
+.vspec .bx-newslist .btn:hover,
+.vspec .bx-newslist .btn:focus {
 	background: none;
 	color: inherit;
 	border-color: inherit;
@@ -1150,7 +1177,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	margin-bottom: 0;
 }
 
-.vspec table td, .vspec table th, .vspec .tbl td, .vspec .tbl th {
+.vspec table td, .vspec table th, .vspec table thead td, .vspec .tbl td, .vspec .tbl th, .vspec .tbl thead td {
 	font-family: inherit;
 	font-weight: normal;
 	font-style: normal;
@@ -1164,6 +1191,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	text-transform: none;
 	border: 1px solid currentColor;
 	background: none;
+	padding: 0.4em 0.6em;
 }
 
 .vspec table th, .vspec .tbl th {
@@ -1374,46 +1402,61 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	padding: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list), .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list), .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) {
 	padding: 0;
 	margin-bottom: 1.2em;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list):last-child, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list):last-child {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list):last-child, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list):last-child {
 	margin-bottom: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) ul, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) ol, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) ul, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) ol {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) ul, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) ol, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) ul, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) ol {
 	margin-bottom: 0;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li {
+	position: relative;
 	padding-top: 0;
 	padding-left: 1.39em;
 	margin-top: 0.25em;
 }
 
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li::before, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li:first-child::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li:first-child::before {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before {
+	box-sizing: border-box;
+}
+
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li:first-child::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li:first-child::before {
 	color: currentColor;
 	border-color: currentColor;
 }
 
-.vspec .user-content ol li::before {
-	margin-left: -1.39em;
-	min-width: 1.39em;
-	font-weight: bold;
-}
-
-.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li::before, .vspec .user-content ol ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.cells-list) li::before {
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before, .vspec .user-content ol ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before {
 	top: 0.65em;
 	left: 0;
 	min-width: 0;
-	margin-left: 0;
+	margin: 0;
+	padding: 0;
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 0.5em;
 	border: none;
 	background-color: currentColor;
+}
+
+.vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before, .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) > li::before {
+	content: '';
+	position: absolute;
+	top: 0.85em;
+}
+
+.vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) li::before {
+	margin-left: -1.39em;
+	min-width: 1.39em;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: bold;
 }
 
 .vspec blockquote {
@@ -1441,7 +1484,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 
 .vspec .imgc, .vspec .imgr, .vspec .imgl {
 	padding: 0;
-	margin: 0 auto 1.2em;
+	margin: 0 auto 2.4em;
 }
 
 .vspec .imgr {
@@ -1504,7 +1547,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	border: none;
 	z-index: auto;
 	box-sizing: border-box;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 @media (max-width: 639px) {
@@ -1638,6 +1681,10 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 
 .vspec [class*="icon-"] {
 	font-style: normal;
+}
+
+.vspec .datetime {
+	height: auto;
 }
 
 .vspec .breadcrumbs {
@@ -1826,18 +1873,45 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	display: inline-block;
 	vertical-align: top;
 	height: auto !important;
+	text-decoration: none;
 }
 
 .vspec .file [class*="depict-files-"] {
-	float: left;
+	display: inline-block;
+	vertical-align: middle;
 	position: relative;
 	left: auto;
 	top: auto;
-	margin: 0.5em 20px 0 0;
+	margin: 0 10px 0 0;
 }
 
 .vspec .file .file__content {
-	overflow: hidden;
+	overflow: visible;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.vspec .file .file__title,
+.vspec .file .file__info {
+	display: inline;
+	text-decoration: underline;
+}
+
+.vspec .file .file__info {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.vspec .file .file__info::before, .vspec .file .file__info::after {
+	display: inline;
+}
+
+.vspec .file .file__info::before {
+	content: '(';
+}
+
+.vspec .file .file__info::after {
+	content: ')';
 }
 
 .vspec .file:hover [class*="depict-files-"]::before,
@@ -1853,6 +1927,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 .vspec .file:hover .file__title,
 .vspec .file:hover .file__info {
 	color: inherit;
+	text-decoration: none;
 }
 
 .vspec .catalog-menu {
@@ -1953,6 +2028,10 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 
 .vspec .catalog-menu-list .has-submenu ul a::after {
 	border-color: currentColor;
+	display: none;
+}
+
+.vspec .movie__item::after {
 	display: none;
 }
 
@@ -2121,12 +2200,6 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	height: auto !important;
 }
 
-.vspec .cells-list > li {
-	display: inline-block;
-	vertical-align: top;
-	margin-right: 20px;
-}
-
 .vspec .cells-list > li a {
 	display: inline;
 }
@@ -2261,38 +2334,16 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	border-color: #a9e44d;
 }
 
-.vspec .structure__list ul {
-	display: block !important;
-	height: auto !important;
-	padding: 0 !important;
-	margin: 0 !important;
-}
-
-.vspec .structure__list li {
-	position: relative;
-}
-
 .vspec .structure__list li::after {
 	display: none;
 }
 
-.vspec .structure__list > li {
-	padding-left: 0 !important;
-}
-
-.vspec .structure__list > li > .structure__title {
-	margin-bottom: 1.2em;
-}
-
-.vspec .structure__list > li > .structure__title .structure__inner {
-	font-weight: bold;
-	font-size: 1.22em;
-	line-height: 1.55;
-}
-
-.vspec .structure__title {
-	position: relative;
-	transition: none;
+.vspec .structure__title,
+.vspec .structure__content {
+	border-width: 2px;
+	border-color: inherit;
+	box-shadow: none;
+	background: none;
 }
 
 .vspec .structure__list li:hover > .structure__title {
@@ -2300,7 +2351,7 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 }
 
 .vspec .qr-code-btn {
-	border: 1px solid currentColor;
+	border: 2px solid currentColor;
 	background-color: #fff;
 }
 
@@ -2352,6 +2403,12 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 
 .vspec .qr-code-btn::after {
 	display: none;
+}
+
+.vspec .structure-less .structure__title .qr-code-btn {
+	right: 2px;
+	bottom: 2px;
+	height: calc(100% - 4px);
 }
 
 .vspec .popup-default__close {
@@ -2454,6 +2511,14 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 	border-color: #a9e44d;
 }
 
+.vspec .bx-newslist-title, .vspec .bx-newslist-title a {
+	font-size: inherit;
+	line-height: inherit;
+	padding: 0;
+	font-family: inherit;
+	letter-spacing: inherit;
+}
+
 .vspec [style*="font-size"] {
 	font-size: inherit !important;
 }
@@ -2464,6 +2529,14 @@ html:not(.vspec-mod_img_on) .vspec .qr-code-btn {
 
 .vspec [style*="color"] {
 	color: inherit !important;
+}
+
+.vspec [style*="letter-spacing"] {
+	letter-spacing: inherit !important;
+}
+
+.vspec [style*="background-color"] {
+	background-color: transparent !important;
 }
 
 /*=========== SPECIAL VERSION end =========== */

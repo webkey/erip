@@ -152,7 +152,7 @@ gulp.task('buildDist', ['cleanDist', 'htmlCompilation', 'copyImgToDist', 'sassCo
 		}))
 		.pipe(gulp.dest(path.dist + '/js'));
 
-	gulp.src(['!src/js/temp/**/*.js', '!src/js/**/_temp_*.js', '!src/js/special.js', 'src/js/*.js']) // Переносим остальные скрипты в продакшен
+	gulp.src(['!src/js/temp/**/*.js', '!src/js/**/_temp_*.js', '!src/js/special.js', 'src/js/**/*.js']) // Переносим остальные скрипты в продакшен
 		.pipe(gulp.dest(path.dist + '/js'));
 
 	gulp.src('src/assets/**/*') // Переносим дополнительные файлы в продакшен

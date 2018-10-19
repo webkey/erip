@@ -134,11 +134,11 @@ function stickyLayout(){
 		// }, 200);
 	}
 
-	$(window).on('debouncedresize', function () {
-		if($(".sticky-js").length && window.innerWidth < 1350) {
-			$stickyJs.hcSticky('off');
-		}
-	});
+	// $(window).on('debouncedresize', function () {
+	// 	if($(".sticky-js").length && window.innerWidth < 1350) {
+	// 		$stickyJs.hcSticky('off');
+	// 	}
+	// });
 }
 /*sticky layout end*/
 
@@ -462,6 +462,10 @@ function catalogMenuSelect(){
 		// hcSticky recalculation
 		if ($(".sticky-js").length && window.innerWidth >= 1350) {
 			$(".main-layout").hcSticky('reinit');
+		}
+
+		if ($('.spec-panel-js').length) {
+			return;
 		}
 
 		// scroll to top

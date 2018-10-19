@@ -127,5 +127,13 @@ body:not(.vspec) .sidebar .spec-btn-switcher.to_normal {
 }
 
 /*button switch special version end */
+body:not(.vspec) .spec-show {
+	display: none;
+}
+
+body:not(.vspec) .img-alt-spec {
+	display: none;
+	text-align: left;
+}
 
 /*# sourceMappingURL=special-switcher.css.map */
