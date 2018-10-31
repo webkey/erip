@@ -707,15 +707,25 @@ body.#{$spec-mod}
 
 	// faq, terminals
 	.faq-item, .terminals-item
+		position: relative
+		border: 0 solid currentColor
+		border-bottom-width: $spec-border-width
+
+		&:first-child
+			border-top-width: $spec-border-width
+
 		h3
 			max-height: none
 			height: auto
 			box-shadow: none
 			color: inherit
-			cursor: initial
-			margin-bottom: $spec-bottom-space-element
+			cursor: pointer
+			//margin-bottom: $spec-bottom-space-element
+			margin-bottom: 0
+			transition: none
+			padding: 0.5em 70px 0.5em 0
 
-			&::before
+			//&::before
 				content: none
 
 			.text-inner
@@ -725,18 +735,38 @@ body.#{$spec-mod}
 				font-size: inherit
 				letter-spacing: inherit
 
-			& + div, & + p
+			//& + div, & + p
 				display: block !important
 				height: auto !important
 				margin: 0 !important
 				padding: 0 !important
 				overflow: visible !important
 
+			& + div, & + p
+				display: none
+				padding-bottom: 1.5em
+
 		//active
 		&:hover, &.active
+			background: none
+			box-shadow: none
+
 			.terminals-item__holder
 				box-shadow: none
 				transition: none
+
+		.faq-item__angle, .terminals-item__angle
+			top: 1.5em
+			right: 0
+			left: auto
+			cursor: pointer
+
+			&::before, &::after
+				background-color: currentColor !important
+				border-color: currentColor !important
+
+		.terminals-item__angle
+			top: 1.3em
 
 	.heading + .default-section .title-box
 		padding: 0
@@ -811,6 +841,7 @@ body.#{$spec-mod}
 		input[type="text"]
 			margin: 0
 			padding-right: 45px
+			font-weight: bold
 
 			&:hover, &:focus
 				border-color: currentColor
@@ -848,6 +879,14 @@ body.#{$spec-mod}
 		border-color: inherit
 		box-shadow: none
 		background: none
+
+	.structure__title
+		&, & .structure__inner, & .structure__angle
+			cursor: pointer
+
+		&:hover
+			& .structure__inner
+				text-decoration: underline
 
 	.structure__list li:hover > .structure__title
 		background: none

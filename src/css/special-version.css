@@ -459,11 +459,11 @@ body.vspec {
 .vspec .tab-controls,
 .vspec .btn-submit > i,
 .vspec .btn-reset > i,
-.vspec .faq-item__angle,
-.vspec .terminals-item__angle,
 .vspec .promo-slider,
 .vspec .easy-bg,
 .vspec .easy-img,
+.vspec #region1 + .docs-section,
+.vspec .gallery-zoom .imgc > a,
 .vspec .spec-hide,
 .vspec .spec-hide {
 	display: none !important;
@@ -481,6 +481,7 @@ body.vspec {
 .vspec .cells-list::before,
 .vspec .easy-list::before,
 .vspec .advantages-item h3::before,
+.vspec .terminals-item h3::before,
 .vspec .bx-newslist .row::before,
 .vspec .spec-hide-before::before,
 .vspec .spec-hide-before::before {
@@ -621,11 +622,10 @@ body.vspec {
 .vspec .movie,
 .vspec .movie__item,
 .vspec .tabs-panel,
+.vspec .tabs-container .tabs-panel,
 .vspec .callback,
 .vspec .tabs-container,
 .vspec .r-tabs,
-.vspec .faq-item,
-.vspec .terminals-item,
 .vspec .news-article,
 .vspec .advantages,
 .vspec .advantages-item,
@@ -648,11 +648,10 @@ body.vspec {
 .vspec .movie:last-child,
 .vspec .movie__item:last-child,
 .vspec .tabs-panel:last-child,
+.vspec .tabs-container .tabs-panel:last-child,
 .vspec .callback:last-child,
 .vspec .tabs-container:last-child,
 .vspec .r-tabs:last-child,
-.vspec .faq-item:last-child,
-.vspec .terminals-item:last-child,
 .vspec .news-article:last-child,
 .vspec .advantages:last-child,
 .vspec .advantages-item:last-child,
@@ -1396,6 +1395,14 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	background: none;
 }
 
+.vspec .select select {
+	display: block !important;
+}
+
+.vspec .select button.ui-multiselect {
+	display: none !important;
+}
+
 .vspec ul, .vspec ol {
 	list-style: none;
 	margin: 0;
@@ -2133,17 +2140,25 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	cursor: default;
 }
 
+.vspec .faq-item, .vspec .terminals-item {
+	position: relative;
+	border: 0 solid currentColor;
+	border-bottom-width: 2px;
+}
+
+.vspec .faq-item:first-child, .vspec .terminals-item:first-child {
+	border-top-width: 2px;
+}
+
 .vspec .faq-item h3, .vspec .terminals-item h3 {
 	max-height: none;
 	height: auto;
 	box-shadow: none;
 	color: inherit;
-	cursor: initial;
-	margin-bottom: 0.6em;
-}
-
-.vspec .faq-item h3::before, .vspec .terminals-item h3::before {
-	content: none;
+	cursor: pointer;
+	margin-bottom: 0;
+	transition: none;
+	padding: 0.5em 70px 0.5em 0;
 }
 
 .vspec .faq-item h3 .text-inner, .vspec .terminals-item h3 .text-inner {
@@ -2155,16 +2170,34 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 }
 
 .vspec .faq-item h3 + div, .vspec .faq-item h3 + p, .vspec .terminals-item h3 + div, .vspec .terminals-item h3 + p {
-	display: block !important;
-	height: auto !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	overflow: visible !important;
+	display: none;
+	padding-bottom: 1.5em;
+}
+
+.vspec .faq-item:hover, .vspec .faq-item.active, .vspec .terminals-item:hover, .vspec .terminals-item.active {
+	background: none;
+	box-shadow: none;
 }
 
 .vspec .faq-item:hover .terminals-item__holder, .vspec .faq-item.active .terminals-item__holder, .vspec .terminals-item:hover .terminals-item__holder, .vspec .terminals-item.active .terminals-item__holder {
 	box-shadow: none;
 	transition: none;
+}
+
+.vspec .faq-item .faq-item__angle, .vspec .faq-item .terminals-item__angle, .vspec .terminals-item .faq-item__angle, .vspec .terminals-item .terminals-item__angle {
+	top: 1.5em;
+	right: 0;
+	left: auto;
+	cursor: pointer;
+}
+
+.vspec .faq-item .faq-item__angle::before, .vspec .faq-item .faq-item__angle::after, .vspec .faq-item .terminals-item__angle::before, .vspec .faq-item .terminals-item__angle::after, .vspec .terminals-item .faq-item__angle::before, .vspec .terminals-item .faq-item__angle::after, .vspec .terminals-item .terminals-item__angle::before, .vspec .terminals-item .terminals-item__angle::after {
+	background-color: currentColor !important;
+	border-color: currentColor !important;
+}
+
+.vspec .faq-item .terminals-item__angle, .vspec .terminals-item .terminals-item__angle {
+	top: 1.3em;
 }
 
 .vspec .heading + .default-section .title-box {
@@ -2244,6 +2277,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 .vspec .multi-search__field input[type="text"] {
 	margin: 0;
 	padding-right: 45px;
+	font-weight: bold;
 }
 
 .vspec .multi-search__field input[type="text"]:hover, .vspec .multi-search__field input[type="text"]:focus {
@@ -2344,6 +2378,14 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	border-color: inherit;
 	box-shadow: none;
 	background: none;
+}
+
+.vspec .structure__title, .vspec .structure__title .structure__inner, .vspec .structure__title .structure__angle {
+	cursor: pointer;
+}
+
+.vspec .structure__title:hover .structure__inner {
+	text-decoration: underline;
 }
 
 .vspec .structure__list li:hover > .structure__title {
