@@ -107,7 +107,9 @@ $spec-font-style--monospace: Consolas, Monaco, 'Lucida Console', 'Liberation Mon
 // Специальная версия: Размер шрифта - Стандартный базовый шрифт
 // ---------------------------------------------------------------------------
 $spec-font-size: 18px !default // 18px (1em)
+$spec-font-size--mob: 16px !default // 18px (1em)
 $spec-font-size--medium: $spec-font-size !default
+$spec-font-size--medium--mob: $spec-font-size--mob !default
 //$spec-line-height: round-float(30px / $spec-font-size, 2) !default // 30px --> 1.67
 
 // Специальная версия: Размер шрифта - Уменьшенный базовый шрифт
@@ -185,6 +187,13 @@ $spec-title-line-height: round-float(48px / 36px, 2) !default // 48px --> 1.33
 	font-size: $spec-title-font-size
 	line-height: $spec-title-line-height
 
+$spec-title-font-size--mob: round-float(26px / $spec-font-size--mob, 2) * 1em !default // 36px --> 12em
+$spec-title-line-height--mob: round-float(34px / 26px, 2) !default // 48px --> 1.33
+
+=spec-font-size--title--mob()
+	font-size: $spec-title-font-size--mob
+	line-height: $spec-title-line-height--mob
+
 // H2, Заголовки секций
 // ---------------------------------------------------------------------------
 $spec-section-font-size: round-float(26px / $spec-font-size, 2) * 1em !default // 26px --> 1.44em
@@ -194,6 +203,13 @@ $spec-section-line-height: round-float(38px / 26px, 2) !default // 38px --> 1.44
 	font-size: $spec-section-font-size
 	line-height: $spec-section-line-height
 
+$spec-section-font-size--mob: round-float(20px / $spec-font-size--mob, 2) * 1em !default // 26px --> 1.44em
+$spec-section-line-height--mob: round-float(28px / 20px, 2) !default // 38px --> 1.44
+
+=spec-font-size--section--mob()
+	font-size: $spec-section-font-size--mob
+	line-height: $spec-section-line-height--mob
+
 // H3, Заголовки пунктов
 // ---------------------------------------------------------------------------
 $spec-item-font-size: round-float(22px / $spec-font-size, 2) * 1em !default // 22px --> 1.22em
@@ -202,6 +218,13 @@ $spec-item-line-height: round-float(34px / 22px, 2) !default // 34px --> 1.55
 =spec-font-size--item()
 	font-size: $spec-item-font-size
 	line-height: $spec-item-line-height
+
+$spec-item-font-size--mob: round-float(18px / $spec-font-size--mob, 2) * 1em !default
+$spec-item-line-height--mob: round-float(24px / 18px, 2) !default
+
+=spec-font-size--item--mob()
+	font-size: $spec-item-font-size--mob
+	line-height: $spec-item-line-height--mob
 
 // Мелкий текст: сноски, даты и т.д.
 // ---------------------------------------------------------------------------
@@ -233,7 +256,7 @@ $spec-text-layout--sm: 36em !default // Для небольших экранов
 
 // Отступы вертикальные
 // ---------------------------------------------------------------------------
-$spec-bottom-space: 1.2em !default
+$spec-bottom-space: 0.8em !default
 $spec-bottom-space-element: round-float($spec-bottom-space / 2, 1) !default
 $spec-bottom-space-item: round-float($spec-bottom-space * 2, 1) !default
 $spec-bottom-space-section: round-float($spec-bottom-space * 3, 1) !default

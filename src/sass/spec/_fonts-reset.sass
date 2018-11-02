@@ -47,7 +47,6 @@
 	.btn-reset > span,
 	.easy-text,
 	.structure__list,
-	.structure__title,
 	.structure__content,
 	.structure-less .structure__inner,
 	.font-reset,
@@ -88,6 +87,7 @@
 
 		+media('<mob-lg')
 			word-wrap: break-word
+			+spec-font-size--title--mob
 
 		&:last-child
 			margin-bottom: 0
@@ -113,6 +113,7 @@
 
 		+media('<mob-lg')
 			word-wrap: break-word
+			+spec-font-size--section--mob
 
 		&:last-child
 			margin-bottom: 0
@@ -123,6 +124,7 @@
 	// ---------------------------------------------------------------------------
 	.r-tabs-anchor,
 	.advantages-item h3,
+	.structure__title,
 	.font-of-item,
 	.font-of-item
 		padding: 0
@@ -140,6 +142,7 @@
 
 		+media('<mob-lg')
 			word-wrap: break-word
+			+spec-font-size--item--mob
 
 		&:last-child
 			margin-bottom: 0

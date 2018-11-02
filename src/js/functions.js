@@ -1409,7 +1409,7 @@ function multiAccordionInit() {
 			accordionContainer: '.structure__list',
 			accordionItem: 'li',
 			accordionEvent: '.structure__title',
-			collapsibleElement: '.structure__title + ul',
+			collapsibleElement: '.structure__title + ul, .structure__title + .structure__content',
 			according: false,
 			animateSpeed: 300
 		});

@@ -13,6 +13,12 @@ body.vspec {
 	background: #fff url(../img/empty.png) no-repeat fixed;
 }
 
+@media (max-width: 639px) {
+	body.vspec {
+		font-size: 16px;
+	}
+}
+
 /* special version settings */
 /* ============================================================ */
 .vspec-mod_font-style_sans-serif body.vspec {
@@ -29,6 +35,12 @@ body.vspec {
 
 .vspec-mod_font-size_norm body.vspec {
 	font-size: 18px;
+}
+
+@media (max-width: 639px) {
+	.vspec-mod_font-size_norm body.vspec {
+		font-size: 16px;
+	}
 }
 
 .vspec-mod_font-size_sm body.vspec {
@@ -273,7 +285,6 @@ body.vspec {
 .vspec .btn-reset > span,
 .vspec .easy-text,
 .vspec .structure__list,
-.vspec .structure__title,
 .vspec .structure__content,
 .vspec .structure-less .structure__inner,
 .vspec .font-reset,
@@ -293,7 +304,7 @@ body.vspec {
 .vspec .font-of-text,
 .vspec .font-of-text {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 	font-family: inherit;
 	font-weight: normal;
 	font-style: normal;
@@ -314,7 +325,7 @@ body.vspec {
 .vspec .font-of-title,
 .vspec .font-of-title {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
@@ -331,6 +342,8 @@ body.vspec {
 	.vspec .font-of-title,
 	.vspec .font-of-title {
 		word-wrap: break-word;
+		font-size: 1.63em;
+		line-height: 1.31;
 	}
 }
 
@@ -342,7 +355,7 @@ body.vspec {
 .vspec .font-of-section,
 .vspec .font-of-section {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
@@ -359,6 +372,8 @@ body.vspec {
 	.vspec .font-of-section,
 	.vspec .font-of-section {
 		word-wrap: break-word;
+		font-size: 1.25em;
+		line-height: 1.4;
 	}
 }
 
@@ -369,10 +384,11 @@ body.vspec {
 
 .vspec .r-tabs-anchor,
 .vspec .advantages-item h3,
+.vspec .structure__title,
 .vspec .font-of-item,
 .vspec .font-of-item {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 	font-family: inherit;
 	font-weight: bold;
 	font-style: normal;
@@ -388,14 +404,18 @@ body.vspec {
 @media (max-width: 639px) {
 	.vspec .r-tabs-anchor,
 	.vspec .advantages-item h3,
+	.vspec .structure__title,
 	.vspec .font-of-item,
 	.vspec .font-of-item {
 		word-wrap: break-word;
+		font-size: 1.13em;
+		line-height: 1.33;
 	}
 }
 
 .vspec .r-tabs-anchor:last-child,
 .vspec .advantages-item h3:last-child,
+.vspec .structure__title:last-child,
 .vspec .font-of-item:last-child,
 .vspec .font-of-item:last-child {
 	margin-bottom: 0;
@@ -406,7 +426,7 @@ body.vspec {
 .vspec .font-of-small,
 .vspec .font-of-small {
 	padding: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 	font-family: inherit;
 	font-weight: normal;
 	font-style: italic;
@@ -481,6 +501,8 @@ body.vspec {
 .vspec .cells-list::before,
 .vspec .easy-list::before,
 .vspec .advantages-item h3::before,
+.vspec .structure__title::before,
+.vspec .structure__list > li::before,
 .vspec .terminals-item h3::before,
 .vspec .bx-newslist .row::before,
 .vspec .spec-hide-before::before,
@@ -593,7 +615,7 @@ body.vspec {
 .vspec .bx-newslist,
 .vspec .spec-bottom-space-section,
 .vspec .spec-bottom-space-section {
-	margin-bottom: 3.6em;
+	margin-bottom: 2.4em;
 }
 
 .vspec .about-section:last-child,
@@ -639,9 +661,10 @@ body.vspec {
 .vspec .gallery-zoom,
 .vspec .gallery-zoom figure,
 .vspec .bx-newslist-container,
+.vspec .align-layout,
 .vspec .spec-bottom-space-item,
 .vspec .spec-bottom-space-item {
-	margin-bottom: 2.4em;
+	margin-bottom: 1.6em;
 }
 
 .vspec .breadcrumbs:last-child,
@@ -665,6 +688,7 @@ body.vspec {
 .vspec .gallery-zoom:last-child,
 .vspec .gallery-zoom figure:last-child,
 .vspec .bx-newslist-container:last-child,
+.vspec .align-layout:last-child,
 .vspec .spec-bottom-space-item:last-child,
 .vspec .spec-bottom-space-item:last-child {
 	margin-bottom: 0;
@@ -692,12 +716,11 @@ body.vspec {
 .vspec .r-tabs-accordion-title,
 .vspec .attention,
 .vspec .form-buttons-col,
-.vspec .align-layout,
 .vspec .s-points__filters-item,
 .vspec .cells-list > li,
 .vspec .spec-bottom-space,
 .vspec .spec-bottom-space {
-	margin-bottom: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 .vspec h1:last-child, .vspec h2:last-child, .vspec h3:last-child, .vspec h4:last-child, .vspec h5:last-child, .vspec h6:last-child,
@@ -722,7 +745,6 @@ body.vspec {
 .vspec .r-tabs-accordion-title:last-child,
 .vspec .attention:last-child,
 .vspec .form-buttons-col:last-child,
-.vspec .align-layout:last-child,
 .vspec .s-points__filters-item:last-child,
 .vspec .cells-list > li:last-child,
 .vspec .spec-bottom-space:last-child,
@@ -740,7 +762,7 @@ body.vspec {
 .vspec .helpful__note,
 .vspec .spec-bottom-space-element,
 .vspec .spec-bottom-space-element {
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 }
 
 .vspec .movie__video:last-child,
@@ -799,7 +821,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	line-height: inherit;
 	letter-spacing: inherit;
 	padding: 0;
-	margin-bottom: 2.4em;
+	margin-bottom: 1.6em;
 }
 
 .vspec .pic-slider.slick-slider {
@@ -830,7 +852,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	top: auto !important;
 	float: none !important;
 	z-index: auto !important;
-	margin-bottom: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 .vspec .pic-slider .slick-arrow {
@@ -1109,9 +1131,23 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	line-height: 1.33;
 }
 
+@media (max-width: 639px) {
+	.vspec h1 {
+		font-size: 1.63em;
+		line-height: 1.31;
+	}
+}
+
 .vspec h2 {
 	font-size: 1.44em;
 	line-height: 1.46;
+}
+
+@media (max-width: 639px) {
+	.vspec h2 {
+		font-size: 1.25em;
+		line-height: 1.4;
+	}
 }
 
 .vspec .heading h1, .vspec .heading h2 {
@@ -1123,6 +1159,13 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 .vspec h3 {
 	font-size: 1.22em;
 	line-height: 1.55;
+}
+
+@media (max-width: 639px) {
+	.vspec h3 {
+		font-size: 1.13em;
+		line-height: 1.33;
+	}
 }
 
 .vspec h4, .vspec h5, .vspec h6 {
@@ -1162,14 +1205,14 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 }
 
 .vspec hr {
-	margin-top: 2.4em;
+	margin-top: 1.6em;
 	border-color: currentColor;
 	border-width: 2px;
 }
 
 .vspec table, .vspec .tbl {
 	border-color: currentColor;
-	margin-bottom: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 .vspec table:last-child, .vspec .tbl:last-child {
@@ -1258,7 +1301,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	border-radius: 0;
 	border: 2px solid currentColor;
 	box-sizing: border-box;
-	margin-bottom: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 .vspec input[type="text"]:last-child,
@@ -1411,7 +1454,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 
 .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list), .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list) {
 	padding: 0;
-	margin-bottom: 1.2em;
+	margin-bottom: 0.8em;
 }
 
 .vspec .user-content ul:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list):last-child, .vspec .user-content ol:not(.breadcrumbs-list):not(.social-networks):not(.radio-list):not(.checkbox-list):not(.structure__list):not(.structure__list):last-child {
@@ -1491,7 +1534,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 
 .vspec .imgc, .vspec .imgr, .vspec .imgl {
 	padding: 0;
-	margin: 0 auto 2.4em;
+	margin: 0 auto 1.6em;
 }
 
 .vspec .imgr {
@@ -1611,8 +1654,8 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	opacity: 1;
 	font-family: inherit;
 	font-weight: bold;
-	font-size: 24px;
-	line-height: 28px;
+	font-size: 26px;
+	line-height: 34px;
 	color: currentColor;
 	letter-spacing: normal;
 	word-spacing: normal;
@@ -1657,8 +1700,8 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 }
 
 .vspec .main {
-	padding-top: 2.4em;
-	padding-bottom: 2.4em;
+	padding-top: 1.6em;
+	padding-bottom: 1.6em;
 }
 
 .vspec .content {
@@ -1776,7 +1819,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 .vspec .user-form .form-buttons {
 	float: none;
 	margin-right: 0;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 }
 
 .vspec .user-form .form-buttons:last-child {
@@ -1789,7 +1832,7 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 
 .vspec .user-form .form-note {
 	height: auto;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.4em;
 }
 
 .vspec .user-form .form-note:last-child {
@@ -2372,16 +2415,61 @@ html:not(.vspec-mod_img_on) .vspec .captcha-img img {
 	display: none;
 }
 
+@media (max-width: 639px) {
+	.vspec .structure__list li ul li {
+		padding-left: 0.5em !important;
+	}
+}
+
+.vspec .structure__list li::before {
+	top: 1.45em !important;
+}
+
+@media (max-width: 639px) {
+	.vspec .structure__list li::before {
+		content: none !important;
+	}
+}
+
 .vspec .structure__title,
 .vspec .structure__content {
+	padding: 0.5em 0.8em;
 	border-width: 2px;
 	border-color: inherit;
 	box-shadow: none;
 	background: none;
 }
 
+.vspec .structure__content {
+	padding: 0.7em 0.8em 1.2em;
+}
+
+.vspec .structure__title {
+	padding-right: 50px;
+	margin-bottom: 0;
+}
+
+@media (max-width: 639px) {
+	.vspec .structure__title {
+		padding-right: 30px;
+	}
+}
+
 .vspec .structure__title, .vspec .structure__title .structure__inner, .vspec .structure__title .structure__angle {
 	cursor: pointer;
+}
+
+.vspec .structure__title .structure__inner {
+	display: block;
+	width: auto;
+	font-size: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+}
+
+.vspec .structure__title .structure__angle {
+	font-size: 0;
+	line-height: 0;
 }
 
 .vspec .structure__title:hover .structure__inner {

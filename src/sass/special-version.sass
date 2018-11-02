@@ -21,6 +21,9 @@ body.#{$spec-mod}
 	color: $spec-text-color
 	background: $spec-bg-color url(../img/empty.png) no-repeat fixed
 
+	+media('<mob-lg')
+		font-size: $spec-font-size--medium--mob
+
 /* special version settings
 /* ============================================================
 
@@ -46,6 +49,9 @@ body.#{$spec-mod}
 	// ================================================================
 	.#{$spec-mod--font-normal} &
 		font-size: $spec-font-size--medium
+
+		+media('<mob-lg')
+			font-size: $spec-font-size--medium--mob
 
 	// Специальная версия: Уменьшенный базовый шрифт
 	// ================================================================
@@ -248,8 +254,8 @@ body.#{$spec-mod}
 			opacity: 1
 			font-family: inherit
 			font-weight: bold
-			font-size: 24px
-			line-height: 28px
+			font-size: 26px
+			line-height: 34px
 			color: currentColor
 			letter-spacing: normal
 			word-spacing: normal
@@ -873,16 +879,47 @@ body.#{$spec-mod}
 			&::after
 				display: none
 
+			ul li
+				+media('<mob-lg')
+					padding-left: 0.5em !important
+
+			&::before
+				top: 1.45em !important
+
+				+media('<mob-lg')
+					content: none !important
+
 	.structure__title,
 	.structure__content
+		padding: 0.5em 0.8em
 		border-width: 2px
 		border-color: inherit
 		box-shadow: none
 		background: none
 
+	.structure__content
+		padding: 0.7em 0.8em 1.2em
+
 	.structure__title
+		padding-right: 50px
+		margin-bottom: 0
+
+		+media('<mob-lg')
+			padding-right: 30px
+
 		&, & .structure__inner, & .structure__angle
 			cursor: pointer
+
+		& .structure__inner
+			display: block
+			width: auto
+			font-size: inherit
+			line-height: inherit
+			letter-spacing: inherit
+
+		& .structure__angle
+			font-size: 0
+			line-height: 0
 
 		&:hover
 			& .structure__inner

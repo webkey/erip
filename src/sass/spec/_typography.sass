@@ -18,8 +18,14 @@
 	h1
 		+spec-font-size--title
 
+		+media('<mob-lg')
+			+spec-font-size--title--mob()
+
 	h2
 		+spec-font-size--section
+
+		+media('<mob-lg')
+			+spec-font-size--section--mob()
 
 	.heading
 		h1, h2
@@ -27,6 +33,9 @@
 
 	h3
 		+spec-font-size--item
+
+		+media('<mob-lg')
+			+spec-font-size--item--mob()
 
 	h4, h5, h6
 		font-size: inherit
