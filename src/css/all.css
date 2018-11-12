@@ -4931,11 +4931,18 @@ html.desktop .sidebar-small:after{
 	text-align: center;
 	line-height: 16px;
 	height: 80px;
-	border-bottom: 1px solid #bf7600;
+	border: solid #bf7600;
+	border-width: 0 0 1px;
 	font-size: 0;
 	letter-spacing: -4px;
 	position: relative;
 	box-sizing: border-box;
+}
+.sb-spec{
+	border-width: 1px 0 0;
+}
+.sb-menu + .sb-spec{
+	border-width: 0 0 1px;
 }
 .sb-works{
 	height: 161px;
