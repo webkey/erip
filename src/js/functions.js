@@ -235,7 +235,7 @@ function sidebarBehavior(){
 			var $html = $('html');
 			// var $sidebarLayout = $('.sidebar-layout');
 			var _activeClass = 'expanded-sidebar';
-			var delay = 350;
+			var delay = 150;
 			var animateSpeed = 300;
 			var timerClose;
 			var timerOpen;
