@@ -9,113 +9,113 @@
 
 /*=========== SPECIAL VERSION ===========
 .vspec--hide-page
-	display: none !important
+  display: none !important
 
 body.#{$spec-mod}
-	//+spec-font-size--normal
-	font-family: $spec-font-style--sans-serif
-	font-weight: normal
-	font-style: normal
-	font-size: $spec-font-size--medium
-	line-height: $spec-line-height--small
-	color: $spec-text-color
-	background: $spec-bg-color url(../img/empty.png) no-repeat fixed
+  //+spec-font-size--normal
+  font-family: $spec-font-style--sans-serif
+  font-weight: normal
+  font-style: normal
+  font-size: $spec-font-size--medium
+  line-height: $spec-line-height--small
+  color: $spec-text-color
+  background: $spec-bg-color url(../img/empty.png) no-repeat fixed
 
-	+media('<mob-lg')
-		font-size: $spec-font-size--medium--mob
+  +media('<mob-lg')
+    font-size: $spec-font-size--medium--mob
 
 /* special version settings
 /* ============================================================
 
 body.#{$spec-mod}
-	// >>> Font Style <<<
-	// Специальная версия: Шрифт без засечек (sans-serif)
-	// ================================================================
-	.#{$spec-mod--sans-serif} &
-		font-family: $spec-font-style--sans-serif
+  // >>> Font Style <<<
+  // Специальная версия: Шрифт без засечек (sans-serif)
+  // ================================================================
+  .#{$spec-mod--sans-serif} &
+    font-family: $spec-font-style--sans-serif
 
-	// Специальная версия: Шрифт с засечками (serif)
-	// ================================================================
-	.#{$spec-mod--serif} &
-		font-family: $spec-font-style--serif
+  // Специальная версия: Шрифт с засечками (serif)
+  // ================================================================
+  .#{$spec-mod--serif} &
+    font-family: $spec-font-style--serif
 
-	// Специальная версия: Моноширинный шрифт (monospace)
-	// ================================================================
-	.#{$spec-mod--monospace} &
-		font-family: $spec-font-style--monospace
+  // Специальная версия: Моноширинный шрифт (monospace)
+  // ================================================================
+  .#{$spec-mod--monospace} &
+    font-family: $spec-font-style--monospace
 
-	// >>> Font Size <<<
-	// Специальная версия: Стандартный базовый шрифт
-	// ================================================================
-	.#{$spec-mod--font-normal} &
-		font-size: $spec-font-size--medium
+  // >>> Font Size <<<
+  // Специальная версия: Стандартный базовый шрифт
+  // ================================================================
+  .#{$spec-mod--font-normal} &
+    font-size: $spec-font-size--medium
 
-		+media('<mob-lg')
-			font-size: $spec-font-size--medium--mob
+    +media('<mob-lg')
+      font-size: $spec-font-size--medium--mob
 
-	// Специальная версия: Уменьшенный базовый шрифт
-	// ================================================================
-	.#{$spec-mod--font-small} &
-		font-size: $spec-font-size--small
+  // Специальная версия: Уменьшенный базовый шрифт
+  // ================================================================
+  .#{$spec-mod--font-small} &
+    font-size: $spec-font-size--small
 
-	// Специальная версия: Увеличенный базовый шрифт
-	// ================================================================
-	.#{$spec-mod--font-large} &
-		font-size: $spec-font-size--large
+  // Специальная версия: Увеличенный базовый шрифт
+  // ================================================================
+  .#{$spec-mod--font-large} &
+    font-size: $spec-font-size--large
 
-	// >>> Line Height <<<
-	// Специальная версия: Междустрочный интервал - Одинарный
-	// ================================================================
-	.#{$spec-mod--line-height-small} &
-		line-height: $spec-line-height--small
+  // >>> Line Height <<<
+  // Специальная версия: Междустрочный интервал - Одинарный
+  // ================================================================
+  .#{$spec-mod--line-height-small} &
+    line-height: $spec-line-height--small
 
-	// Специальная версия: Междустрочный интервал - Полуторный (нормальный)
-	// ================================================================
-	.#{$spec-mod--line-height-medium} &
-		line-height: $spec-line-height--medium
+  // Специальная версия: Междустрочный интервал - Полуторный (нормальный)
+  // ================================================================
+  .#{$spec-mod--line-height-medium} &
+    line-height: $spec-line-height--medium
 
-	// Специальная версия: Междустрочный интервал - Двойной
-	// ================================================================
-	.#{$spec-mod--line-height-large} &
-		line-height: $spec-line-height--large
+  // Специальная версия: Междустрочный интервал - Двойной
+  // ================================================================
+  .#{$spec-mod--line-height-large} &
+    line-height: $spec-line-height--large
 
-	// >>> Letter Spacing <<<
-	// Специальная версия: Средний межбуквенный интервал
-	// ================================================================
-	.#{$spec-mod--spacing-medium} &
-		letter-spacing: $spec-letter-spacing--medium
-		word-spacing: $spec-letter-spacing--medium
+  // >>> Letter Spacing <<<
+  // Специальная версия: Средний межбуквенный интервал
+  // ================================================================
+  .#{$spec-mod--spacing-medium} &
+    letter-spacing: $spec-letter-spacing--medium
+    word-spacing: $spec-letter-spacing--medium
 
-	// Специальная версия: Бальшой межбуквенный интервал
-	// ================================================================
-	.#{$spec-mod--spacing-large} &
-		letter-spacing: $spec-letter-spacing--large
-		word-spacing: $spec-letter-spacing--large
+  // Специальная версия: Бальшой межбуквенный интервал
+  // ================================================================
+  .#{$spec-mod--spacing-large} &
+    letter-spacing: $spec-letter-spacing--large
+    word-spacing: $spec-letter-spacing--large
 
-	// >>> Color scheme <<<
-	// Специальная версия: Цветовая схема - Белым по черному
-	// ================================================================
-	.#{$spec-mod--scheme-wb} &
-		color: $spec-text-color--scheme-wb
-		background-color: $spec-bg-color--scheme-wb
+  // >>> Color scheme <<<
+  // Специальная версия: Цветовая схема - Белым по черному
+  // ================================================================
+  .#{$spec-mod--scheme-wb} &
+    color: $spec-text-color--scheme-wb
+    background-color: $spec-bg-color--scheme-wb
 
-	// Специальная версия: Цветовая схема - Синим по голубому
-	// ================================================================
-	.#{$spec-mod--scheme-blue} &
-		color: $spec-text-color--scheme-blue
-		background-color: $spec-bg-color--scheme-blue
+  // Специальная версия: Цветовая схема - Синим по голубому
+  // ================================================================
+  .#{$spec-mod--scheme-blue} &
+    color: $spec-text-color--scheme-blue
+    background-color: $spec-bg-color--scheme-blue
 
-	// Специальная версия: Цветовая схема - Коричневым по бежевому
-	// ================================================================
-	.#{$spec-mod--scheme-brown} &
-		color: $spec-text-color--scheme-brown
-		background-color: $spec-bg-color--scheme-brown
+  // Специальная версия: Цветовая схема - Коричневым по бежевому
+  // ================================================================
+  .#{$spec-mod--scheme-brown} &
+    color: $spec-text-color--scheme-brown
+    background-color: $spec-bg-color--scheme-brown
 
-	// Специальная версия: Цветовая схема - Зеленым по темно-коричневому
-	// ================================================================
-	.#{$spec-mod--scheme-green} &
-		color: $spec-text-color--scheme-green
-		background-color: $spec-bg-color--scheme-green
+  // Специальная версия: Цветовая схема - Зеленым по темно-коричневому
+  // ================================================================
+  .#{$spec-mod--scheme-green} &
+    color: $spec-text-color--scheme-green
+    background-color: $spec-bg-color--scheme-green
 
 /* special version reset
 /* ============================================================
@@ -179,843 +179,845 @@ body.#{$spec-mod}
 
 /* to top
 .#{$spec-mod}
-	.btn-to-top
-		opacity: 0.5
+  .btn-to-top
+    opacity: 0.5
 
-		i
-			&::before, &::after
-				background-color: currentColor
+    i
+      &::before, &::after
+        background-color: currentColor
 
-		.no-touchevents &:hover
-			opacity: 0.9
+    .no-touchevents &:hover
+      opacity: 0.9
 
 /* to top end
 
 .#{$spec-mod}
-	.full-page
-		h1, h2, h3, h4, h5, h6
-			max-width: none
-
-	// sidebar
-	.sidebar
-		width: auto !important
-
-	// header
-	.header-layout
-		text-align: center
-
-	.logo
-		position: relative // важно
-		left: auto
-		top: auto
-		display: inline-block
-		vertical-align: top
-		width: auto
-		height: auto
-		background: none
-		border: none
-		z-index: auto
-		box-sizing: border-box
-		margin-bottom: 40px
-
-		+media('<mob-lg')
-			text-align: center
-
-		a
-			height: auto
-			padding: 0
-			display: inline-block
-			display: flex
-			justify-content: flex-start
-			align-items: center
-			text-align: left
-
-			+media('<mob-lg')
-				display: inline-block
-				vertical-align: top
-
-		img, .logo__text
-			display: inline-block
-			margin: 0
-
-			+media('<mob-lg')
-				display: block
-				text-align: center
-
-		img
-			margin-right: 1em
-
-			+media('<mob-lg')
-				margin: 0 auto
-
-		.logo__text
-			left: auto
-			top: auto
-			opacity: 1
-			font-family: inherit
-			font-weight: bold
-			font-size: 26px
-			line-height: 34px
-			color: currentColor
-			letter-spacing: normal
-			word-spacing: normal
-
-	// nav
-	.nav-list
-		max-height: none !important
-		display: flex
-		justify-content: center
-		align-items: flex-start
-		flex-wrap: wrap
-
-		+media('<mob-lg')
-			font-size: 16px
-			line-height: 20px
-			letter-spacing: normal
-			word-spacing: normal
-
-		li
-			display: inline-block
-			margin: 0.3em 0.6em 0.3em 0
-
-		a
-			-webkit-tap-highlight-color: transparent
-			user-select: none
-
-			&::before, &::after
-				display: none
-
-	.main
-		$space: $spec-bottom-space-item
-		padding-top: $space
-		padding-bottom: $space
-
-		//+media('<desk-ml')
-			$space: 2.5em
-			padding-top: $space
-			padding-bottom: $space
-
-		//+media('<tab-sm')
-			$space: 2em
-			padding-top: $space
-			padding-bottom: $space
-
-	.content
-		background: none
-
-	.wrapper
-		min-height: 0
-		height: auto
-		overflow-y: visible
-		overflow-x: hidden
-		z-index: 6
-
-	.footer
-		border-top: $spec-border-width solid currentColor
-		padding: 20px 0
-
-	// mobile menu switcher
-	.btn-menu
-		display: none !important
-
-	a > span
-		border-bottom: none !important
-
-	// icon
-	[class*="icon-"]
-		font-style: normal
-
-	.datetime
-		height: auto
-
-	// breadcrumbs
-	.breadcrumbs
-		+spec-font-size--note
-
-	.breadcrumbs-list
-		li, a, span
-			display: inline
-			vertical-align: baseline
-			line-height: inherit
-			white-space: normal
-
-		li
-			padding: 0
-			margin: 0 0.4em 0 0
-
-			&::before
-				color: inherit
-
-			&, &:first-child
-				&::before
-					position: relative
-					left: auto
-					top: auto
-					display: inline
-					background: none
-					width: auto
-					height: auto
-					border: none
-					margin: 0 0.4em 0 0
-
-			&:last-child
-				& > span
-					display: inline
-					white-space: normal
-					max-width: none
-					overflow: visible
-					text-overflow: unset
-
-		a
-			&:hover, &:focus
-				color: inherit
-
-	// user form
-	.user-form
-		background: none
-
-		.input-wrap
-			&::before, &:after
-				display: none
-
-		.label-holder
-			float: none
-			width: auto
-			padding: 0
-			margin-bottom: 3px
-
-			&::before
-				display: none
-
-			label, .label
-				max-width: none
-				display: inline
-				vertical-align: initial
-
-		.input-holder
-			margin-left: 0
-
-		.form-footer
-			margin-left: 0
-			padding-left: 0
-
-		.form-buttons
-			float: none
-			margin-right: 0
-			margin-bottom: $spec-bottom-space-element
-
-			&:last-child
-				margin-bottom: 0
-
-			.btn-submit
-				width: auto
-
-		.form-note
-			height: auto
-			margin-bottom: $spec-bottom-space-element
-
-			&:last-child
-				margin-bottom: 0
-
-			&::before
-				display: none
-
-		.form-note__item
-			width: auto
-			display: block
-
-	// jFiler
-	.jFiler
-		color: inherit
-
-	.jFiler-input-dragDrop
-		+spec-reset-bg
-		border: $spec-border-width dashed currentColor
-		color: currentColor
-
-	.jFiler-input-icon
-		display: none !important
-
-	.jFiler-input-text
-		strong
-			+spec-font-reset
-			text-align: center
-
-	// btn
-	.btn-default
-		span
-			border: none
-
-		.arrow-more
-			display: none
-
-	// custom table
-	.tbl
-		tbody tr:nth-child(even) td
-			background: none
-
-		tfoot td
-			+spec-font-reset
-			font-weight: bold
-			background: none
-
-	// files
-	.file
-		display: inline-block
-		vertical-align: top
-		height: auto !important
-		text-decoration: none
-
-		[class*="depict-files-"]
-			//float: left
-			display: inline-block
-			vertical-align: middle
-			position: relative
-			left: auto
-			top: auto
-			//margin: 0.5em 20px 0 0
-			margin: 0 10px 0 0
-
-		.file__content
-			//overflow: hidden
-			overflow: visible
-			display: inline-block
-			vertical-align: middle
-
-		.file__title,
-		.file__info
-			display: inline
-			text-decoration: underline
-
-		.file__info
-			font-style: italic
-			font-weight: bold
-
-			&::before, &::after
-				display: inline
-
-			&::before
-				content: '('
-
-			&::after
-				content: ')'
-
-		&:hover
-			[class*="depict-files-"],
-			[class*=" depict-files-"]
-				&::before
-					opacity: 1
-
-				&::after
-					display: none
-
-			.file__title,
-			.file__info
-				color: inherit
-				text-decoration: none
-
-	// catalog menu
-	$catalog-menu-border-width: 2px
-	.catalog-menu
-		background: none
-		box-sizing: border-box
-
-		&::after
-			content: none
-
-	.catalog-menu-list
-		width: 100%
-		box-shadow: none
-		visibility: visible
-		word-wrap: break-word
-		//box-shadow: inset 0 0 0 $catalog-menu-border-width currentColor
-		//padding: round($catalog-menu-border-width/2)
-		padding: 1em
-		border: $catalog-menu-border-width solid currentColor
-
-		li
-			padding: 0
-			transition: none
-			box-sizing: border-box
-			float: none
-			display: inline
-			width: auto
-			margin: 0 1em 0 0
-
-			&::before, &::after
-				border-color: currentColor
-				display: none
-
-		a
-			display: inline
-			box-shadow: none
-			box-sizing: border-box
-			height: auto
-			padding: 0
-			+spec-font-reset
-			//box-shadow: 0 0 0 round($catalog-menu-border-width/2) currentColor
-			//border: round($catalog-menu-border-width/2) solid currentColor
-
-			&::before
-				content: none
-
-			&:hover
-				color: currentColor !important
-				background: none !important
-				//box-shadow:  0 0 0 round($catalog-menu-border-width/2) currentColor, inset 0 0 0 $catalog-menu-border-width currentColor
-				box-shadow:  none
-
-			span
-				display: inline
-				vertical-align: baseline
-				max-width: none
-
-		.has-submenu
-			display: block
-			margin: 1em 0 0 0
-
-			&:first-child
-				margin-top: 0
-
-			& > a
-				color: currentColor
-				font-family: inherit
-				font-size: inherit
-				line-height: inherit
-				text-transform: uppercase
-
-			ul
-				margin: 0
-
-				&::before, &::after
-					display: none
-
-				a
-					padding-left: 0
-
-					&::after
-						border-color: currentColor
-						display: none
-
-	// movie
-	.movie__item
-		&::after
-			display: none
-
-		h3
-			height: auto !important
-
-	.movie__text
-		height: auto !important
-
-	.movie__video-img
-		position: relative
-		display: inline-block
-		vertical-align: top
-
-		i
-			display: none
-
-		&::after
-			display: none
-
-		& > span
-			display: block
-
-	// call section
-	.call-content h2
-		max-width: none
-
-	//.call-list
-		display: flex
-		flex-wrap: wrap
-
-	//.call-item
-		display: inline-block
-		display: flex
-		padding-right: 10px
-
-	//.call-item__row
-		display: flex
-		justify-content: flex-start
-		align-items: flex-start
-
-	//.call-item__img, .call-item__text
-		display: inline-block
-		margin-right: 10px
-
-	// social network
-	.social-networks
-		li
-			display: inline-block
-			vertical-align: top
-			margin-right: 1em
-			margin-bottom: 1em
-
-		a
-			float: none
-			text-indent: 0
-			overflow: visible
-			width: auto
-			height: auto
-			border: none
-			border-radius: 0
-			box-sizing: border-box
-			transition: none
-			font-weight: bold
-
-	// developer
-	.developer-box
-		text-align: right
-
-	.developer
-		font-size: 14px
-		line-height: 18px
-		text-align: left
-		opacity: 0.8
-		display: inline
-		height: auto
-		width: auto
-		position: relative
-		bottom: auto
-		left: auto
-		text-indent: 0
-		overflow: visible
-		border: none
-		background: none
-		box-sizing: border-box
-
-	// form
-	.unif-form
-		.field.error
-			&, & .uploader .action
-				background: none
-
-		.errors
-			padding: 0 0.5em
-			font-weight: bold
-			font-style: italic
-
-	.btn-submit,
-	.btn-reset
-		& > span
-			opacity: 1 !important
-			max-width: none !important
-
-	// tabs
-	.r-tabs-panel
-		display: block !important
-		opacity: 1 !important
-
-	.r-tabs-anchor
-		text-decoration: none
-		cursor: default
-
-	// faq, terminals
-	.faq-item, .terminals-item
-		position: relative
-		border: 0 solid currentColor
-		border-bottom-width: $spec-border-width
-
-		&:first-child
-			border-top-width: $spec-border-width
-
-		h3
-			max-height: none
-			height: auto
-			box-shadow: none
-			color: inherit
-			cursor: pointer
-			//margin-bottom: $spec-bottom-space-element
-			margin-bottom: 0
-			transition: none
-			padding: 0.5em 70px 0.5em 0
-
-			//&::before
-				content: none
-
-			.text-inner
-				display: inline
-				vertical-align: top
-				width: auto
-				font-size: inherit
-				letter-spacing: inherit
-
-			//& + div, & + p
-				display: block !important
-				height: auto !important
-				margin: 0 !important
-				padding: 0 !important
-				overflow: visible !important
-
-			& + div, & + p
-				display: none
-				padding-bottom: 1.5em
-
-		//active
-		&:hover, &.active
-			background: none
-			box-shadow: none
-
-			.terminals-item__holder
-				box-shadow: none
-				transition: none
-
-		.faq-item__angle, .terminals-item__angle
-			top: 1.5em
-			right: 0
-			left: auto
-			cursor: pointer
-
-			&::before, &::after
-				background-color: currentColor !important
-				border-color: currentColor !important
-
-		.terminals-item__angle
-			top: 1.3em
-
-	.heading + .default-section .title-box
-		padding: 0
-
-	// news articles
-	.news-article
-		a
-			min-height: 0 !important
-			text-decoration: none
-
-		h3
-			min-height: 0
-			transition: none
-			text-decoration: underline
-
-		a:hover
-			time, h3, p
-				color: inherit
-				text-decoration: none
-
-		figure img
-			position: relative
-			left: auto
-			top: auto
-			width: 320px
-			max-width: 100%
-			margin: 0
-
-	// advantages
-	.advantages-item
-		h3, p
-			height: auto !important
-
-	// pay list
-	.cells-list
-		& > li
-			a
-				display: inline
-
-				&::before
-					display: none
-
-				img
-					vertical-align: top
-					width: auto
-					max-width: 100%
-					max-height: none
-					font-size: inherit
-					line-height: inherit
-					letter-spacing: inherit
-					transform: none
-					transition: none
-
-				& > span
-					display: block
-
-				&:hover
-					box-shadow: none
-					transition: none
-
-	// easy
-	.easy-text
-		display: inline
-		transition: none
-
-	.easy-item a:hover .easy-text
-		transform: none
-		transition: none
-
-	// search
-	.multi-search__field
-		input[type="text"]
-			margin: 0
-			padding-right: 45px
-			font-weight: bold
-
-			&:hover, &:focus
-				border-color: currentColor
-
-		i
-			&::before
-				border-color: currentColor
-
-			&::after
-				background-color: currentColor
-
-	// .ui-autocomplete
-	.ui-autocomplete
-		border-color: currentColor
-		+spec-reset-bg
-		+spec-font-reset
-		box-shadow: none
-
-	.ui-menu-item
-		+spec-font-reset
-		transition: none
-
-		&.ui-state-focus
-			+spec-reset-bg-invert
-
-	 //structure
-	.structure__list
-		li
-			&::after
-				display: none
-
-			ul li
-				+media('<mob-lg')
-					padding-left: 0.5em !important
-
-			&::before
-				top: 1.45em !important
-
-				+media('<mob-lg')
-					content: none !important
-
-	.structure__title,
-	.structure__content
-		padding: 0.5em 0.8em
-		border-width: 2px
-		border-color: inherit
-		box-shadow: none
-		background: none
-
-	.structure__content
-		padding: 0.7em 0.8em 1.2em
-
-	.structure__title
-		padding-right: 50px
-		margin-bottom: 0
-
-		+media('<mob-lg')
-			padding-right: 30px
-
-		&, & .structure__inner, & .structure__angle
-			cursor: pointer
-
-		& .structure__inner
-			display: block
-			width: auto
-			font-size: inherit
-			line-height: inherit
-			letter-spacing: inherit
-
-		& .structure__angle
-			font-size: 0
-			line-height: 0
-
-		&:hover
-			& .structure__inner
-				text-decoration: underline
-
-	.structure__list li:hover > .structure__title
-		background: none
-
-	// structure
-	//.structure__list
-		ul
-			display: block !important
-			height: auto !important
-			padding: 0 !important
-			margin: 0 !important
-
-		li
-			position: relative
-
-			&::after
-				display: none
-
-		& > li
-			padding-left: 0 !important
-			margin: 0 0 $spec-bottom-space
-
-			& > .structure__title
-				margin-bottom: $spec-bottom-space
-
-				.structure__inner
-					font-weight: bold
-					+spec-font-size--item
-
-	//.structure__title
-		position: relative
-		transition: none
-
-	//.structure__list li:hover
-		& > .structure__title
-			background: none
-
-	//qr
-	.qr-code-btn
-		border: 2px solid currentColor
-		+spec-reset-bg
-
-		&:hover
-			+spec-reset-bg-invert
-
-		&::after
-			display: none
-
-	.structure-less .structure__title .qr-code-btn
-		right: 2px
-		bottom: 2px
-		height: calc(100% - 4px)
-
-	// button close
-	.popup-default__close
-		+spec-reset-bg-invert
-
-		&::before, &::after
-			+spec-reset-bg
-
-		&:hover
-			+spec-reset-bg
-
-			&::before, &::after
-				+spec-reset-bg-invert
-
-	// popup default
-	//.popup-default__layout
-		+spec-reset-bg
-
-	.bx-newslist-title, .bx-newslist-title a
-		font-size: inherit
-		line-height: inherit
-		padding: 0
-		font-family: inherit
-		letter-spacing: inherit
-
-	// перебить костыли
-	[style*="font-size"]
-		font-size: inherit !important
-
-	[style*="line-height"]
-		line-height: inherit !important
-
-	[style*="color"]
-		color: inherit !important
-
-	[style*="letter-spacing"]
-		letter-spacing: inherit !important
-
-	[style*="background-color"]
-		background-color: transparent !important
+  .full-page
+    h1, h2, h3, h4, h5, h6
+      max-width: none
+
+  // sidebar
+  .sidebar
+    width: auto !important
+
+  // header
+  .header-layout
+    text-align: center
+
+  .logo
+    position: relative
+    // важно
+    left: auto
+    top: auto
+    display: inline-block
+    vertical-align: top
+    width: auto
+    height: auto
+    background: none
+    border: none
+    z-index: auto
+    box-sizing: border-box
+    margin-bottom: 40px
+
+    +media('<mob-lg')
+      text-align: center
+
+    a
+      height: auto
+      padding: 0
+      display: inline-block
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      text-align: left
+
+      +media('<mob-lg')
+        display: inline-block
+        vertical-align: top
+
+    img, .logo__text
+      display: inline-block
+      margin: 0
+
+      +media('<mob-lg')
+        display: block
+        text-align: center
+
+    img
+      margin-right: 1em
+
+      +media('<mob-lg')
+        margin: 0 auto
+
+    .logo__text
+      left: auto
+      top: auto
+      opacity: 1
+      font-family: inherit
+      font-weight: bold
+      font-size: 26px
+      line-height: 34px
+      color: currentColor
+      letter-spacing: normal
+      word-spacing: normal
+
+  // nav
+  .nav-list
+    max-height: none !important
+    display: flex
+    justify-content: center
+    align-items: flex-start
+    flex-wrap: wrap
+
+    +media('<mob-lg')
+      font-size: 16px
+      line-height: 20px
+      letter-spacing: normal
+      word-spacing: normal
+
+    li
+      display: inline-block
+      margin: 0.3em 0.6em 0.3em 0
+
+    a
+      -webkit-tap-highlight-color: transparent
+      user-select: none
+
+      &::before, &::after
+        display: none
+
+  .main
+    $space: $spec-bottom-space-item
+    padding-top: $space
+    padding-bottom: $space
+
+  //+media('<desk-ml')
+    $space: 2.5em
+    padding-top: $space
+    padding-bottom: $space
+
+  //+media('<tab-sm')
+    $space: 2em
+    padding-top: $space
+    padding-bottom: $space
+
+  .content
+    background: none
+
+  .wrapper
+    min-height: 0
+    height: auto
+    overflow-y: visible
+    overflow-x: hidden
+    z-index: 6
+
+  .footer
+    border-top: $spec-border-width solid currentColor
+    padding: 20px 0
+
+  // mobile menu switcher
+  .btn-menu
+    display: none !important
+
+  a > span
+    border-bottom: none !important
+
+  // icon
+  [class*="icon-"]
+    font-style: normal
+
+  .datetime
+    height: auto
+
+  // breadcrumbs
+  .breadcrumbs
+    +spec-font-size--note
+
+  .breadcrumbs-list
+    li, a, span
+      display: inline
+      vertical-align: baseline
+      line-height: inherit
+      white-space: normal
+
+    li
+      padding: 0
+      margin: 0 0.4em 0 0
+
+      &::before
+        color: inherit
+
+      &, &:first-child
+        &::before
+          position: relative
+          left: auto
+          top: auto
+          display: inline
+          background: none
+          width: auto
+          height: auto
+          border: none
+          margin: 0 0.4em 0 0
+
+      &:last-child
+        & > span
+          display: inline
+          white-space: normal
+          max-width: none
+          overflow: visible
+          text-overflow: unset
+
+    a
+      &:hover, &:focus
+        color: inherit
+
+  // user form
+  .user-form
+    background: none
+
+    .input-wrap
+      &::before, &:after
+        display: none
+
+    .label-holder
+      float: none
+      width: auto
+      padding: 0
+      margin-bottom: 3px
+
+      &::before
+        display: none
+
+      label, .label
+        max-width: none
+        display: inline
+        vertical-align: initial
+
+    .input-holder
+      margin-left: 0
+
+    .form-footer
+      margin-left: 0
+      padding-left: 0
+
+    .form-buttons
+      float: none
+      margin-right: 0
+      margin-bottom: $spec-bottom-space-element
+
+      &:last-child
+        margin-bottom: 0
+
+      .btn-submit
+        width: auto
+
+    .form-note
+      height: auto
+      margin-bottom: $spec-bottom-space-element
+
+      &:last-child
+        margin-bottom: 0
+
+      &::before
+        display: none
+
+    .form-note__item
+      width: auto
+      display: block
+
+  // jFiler
+  .jFiler
+    color: inherit
+
+  .jFiler-input-dragDrop
+    +spec-reset-bg
+    border: $spec-border-width dashed currentColor
+    color: currentColor
+
+  .jFiler-input-icon
+    display: none !important
+
+  .jFiler-input-text
+    strong
+      +spec-font-reset
+      text-align: center
+
+  // btn
+  .btn-default
+    span
+      border: none
+
+    .arrow-more
+      display: none
+
+  // custom table
+  .tbl
+    tbody tr:nth-child(even) td
+      background: none
+
+    tfoot td
+      +spec-font-reset
+      font-weight: bold
+      background: none
+
+  // files
+  .file
+    display: inline-block
+    vertical-align: top
+    height: auto !important
+    text-decoration: none
+
+    [class*="depict-files-"]
+      //float: left
+      display: inline-block
+      vertical-align: middle
+      position: relative
+      left: auto
+      top: auto
+      //margin: 0.5em 20px 0 0
+      margin: 0 10px 0 0
+
+    .file__content
+      //overflow: hidden
+      overflow: visible
+      display: inline-block
+      vertical-align: middle
+
+    .file__title,
+    .file__info
+      display: inline
+      text-decoration: underline
+
+    .file__info
+      font-style: italic
+      font-weight: bold
+
+      &::before, &::after
+        display: inline
+
+      &::before
+        content: '('
+
+      &::after
+        content: ')'
+
+    &:hover
+      [class*="depict-files-"],
+      [class*=" depict-files-"]
+        &::before
+          opacity: 1
+
+        &::after
+          display: none
+
+      .file__title,
+      .file__info
+        color: inherit
+        text-decoration: none
+
+  // catalog menu
+  $catalog-menu-border-width: 2px
+
+  .catalog-menu
+    background: none
+    box-sizing: border-box
+
+    &::after
+      content: none
+
+  .catalog-menu-list
+    width: 100%
+    box-shadow: none
+    visibility: visible
+    word-wrap: break-word
+    //box-shadow: inset 0 0 0 $catalog-menu-border-width currentColor
+    //padding: round($catalog-menu-border-width/2)
+    padding: 1em
+    border: $catalog-menu-border-width solid currentColor
+
+    li
+      padding: 0
+      transition: none
+      box-sizing: border-box
+      float: none
+      display: inline
+      width: auto
+      margin: 0 1em 0 0
+
+      &::before, &::after
+        border-color: currentColor
+        display: none
+
+    a
+      display: inline
+      box-shadow: none
+      box-sizing: border-box
+      height: auto
+      padding: 0
+      +spec-font-reset
+      //box-shadow: 0 0 0 round($catalog-menu-border-width/2) currentColor
+      //border: round($catalog-menu-border-width/2) solid currentColor
+
+      &::before
+        content: none
+
+      &:hover
+        color: currentColor !important
+        background: none !important
+        //box-shadow:  0 0 0 round($catalog-menu-border-width/2) currentColor, inset 0 0 0 $catalog-menu-border-width currentColor
+        box-shadow: none
+
+      span
+        display: inline
+        vertical-align: baseline
+        max-width: none
+
+    .has-submenu
+      display: block
+      margin: 1em 0 0 0
+
+      &:first-child
+        margin-top: 0
+
+      & > a
+        color: currentColor
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        text-transform: uppercase
+
+      ul
+        margin: 0
+
+        &::before, &::after
+          display: none
+
+        a
+          padding-left: 0
+
+          &::after
+            border-color: currentColor
+            display: none
+
+  // movie
+  .movie__item
+    &::after
+      display: none
+
+    h3
+      height: auto !important
+
+  .movie__text
+    height: auto !important
+
+  .movie__video-img
+    position: relative
+    display: inline-block
+    vertical-align: top
+
+    i
+      display: none
+
+    &::after
+      display: none
+
+    & > span
+      display: block
+
+  // call section
+  .call-content h2
+    max-width: none
+
+  //.call-list
+    display: flex
+    flex-wrap: wrap
+
+  //.call-item
+    display: inline-block
+    display: flex
+    padding-right: 10px
+
+  //.call-item__row
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+
+  //.call-item__img, .call-item__text
+    display: inline-block
+    margin-right: 10px
+
+  // social network
+  .social-networks
+    li
+      display: inline-block
+      vertical-align: top
+      margin-right: 1em
+      margin-bottom: 1em
+
+    a
+      float: none
+      text-indent: 0
+      overflow: visible
+      width: auto
+      height: auto
+      border: none
+      border-radius: 0
+      box-sizing: border-box
+      transition: none
+      font-weight: bold
+
+  // developer
+  .developer-box
+    text-align: right
+
+  .developer
+    font-size: 14px
+    line-height: 18px
+    text-align: left
+    opacity: 0.8
+    display: inline
+    height: auto
+    width: auto
+    position: relative
+    bottom: auto
+    left: auto
+    text-indent: 0
+    overflow: visible
+    border: none
+    background: none
+    box-sizing: border-box
+
+  // form
+  .unif-form
+    .field.error
+      &, & .uploader .action
+        background: none
+
+    .errors
+      padding: 0 0.5em
+      font-weight: bold
+      font-style: italic
+
+  .btn-submit,
+  .btn-reset
+    & > span
+      opacity: 1 !important
+      max-width: none !important
+
+  // tabs
+  .r-tabs-panel
+    display: block !important
+    opacity: 1 !important
+
+  .r-tabs-anchor
+    text-decoration: none
+    cursor: default
+
+  // faq, terminals
+  .faq-item, .terminals-item
+    position: relative
+    border: 0 solid currentColor
+    border-bottom-width: $spec-border-width
+
+    &:first-child
+      border-top-width: $spec-border-width
+
+    h3
+      max-height: none
+      height: auto
+      box-shadow: none
+      color: inherit
+      cursor: pointer
+      //margin-bottom: $spec-bottom-space-element
+      margin-bottom: 0
+      transition: none
+      padding: 0.5em 70px 0.5em 0
+
+      //&::before
+        content: none
+
+      .text-inner
+        display: inline
+        vertical-align: top
+        width: auto
+        font-size: inherit
+        letter-spacing: inherit
+
+      //& + div, & + p
+        display: block !important
+        height: auto !important
+        margin: 0 !important
+        padding: 0 !important
+        overflow: visible !important
+
+      & + div, & + p
+        display: none
+        padding-bottom: 1.5em
+
+    //active
+    &:hover, &.active
+      background: none
+      box-shadow: none
+
+      .terminals-item__holder
+        box-shadow: none
+        transition: none
+
+    .faq-item__angle, .terminals-item__angle
+      top: 1.5em
+      right: 0
+      left: auto
+      cursor: pointer
+
+      &::before, &::after
+        background-color: currentColor !important
+        border-color: currentColor !important
+
+    .terminals-item__angle
+      top: 1.3em
+
+  .heading + .default-section .title-box
+    padding: 0
+
+  // news articles
+  .news-article
+    a
+      min-height: 0 !important
+      text-decoration: none
+
+    h3
+      min-height: 0
+      transition: none
+      text-decoration: underline
+
+    a:hover
+      time, h3, p
+        color: inherit
+        text-decoration: none
+
+    figure img
+      position: relative
+      left: auto
+      top: auto
+      width: 320px
+      max-width: 100%
+      margin: 0
+
+  // advantages
+  .advantages-item
+    h3, p
+      height: auto !important
+
+  // pay list
+  .cells-list
+    & > li
+      a
+        display: inline
+
+        &::before
+          display: none
+
+        img
+          vertical-align: top
+          width: auto
+          max-width: 100%
+          max-height: none
+          font-size: inherit
+          line-height: inherit
+          letter-spacing: inherit
+          transform: none
+          transition: none
+
+        & > span
+          display: block
+
+        &:hover
+          box-shadow: none
+          transition: none
+
+  // easy
+  .easy-text
+    display: inline
+    transition: none
+
+  .easy-item a:hover .easy-text
+    transform: none
+    transition: none
+
+  // search
+  .multi-search__field
+    input[type="text"]
+      margin: 0
+      padding-right: 45px
+      font-weight: bold
+
+      &:hover, &:focus
+        border-color: currentColor
+
+    i
+      &::before
+        border-color: currentColor
+
+      &::after
+        background-color: currentColor
+
+  // .ui-autocomplete
+  .ui-autocomplete
+    border-color: currentColor
+    +spec-reset-bg
+    +spec-font-reset
+    box-shadow: none
+
+  .ui-menu-item
+    +spec-font-reset
+    transition: none
+
+    &.ui-state-focus
+      +spec-reset-bg-invert
+
+  //structure
+  .structure__list
+    li
+      &::after
+        display: none
+
+      ul li
+        +media('<mob-lg')
+          padding-left: 0.5em !important
+
+      &::before
+        top: 1.45em !important
+
+        +media('<mob-lg')
+          content: none !important
+
+  .structure__title,
+  .structure__content
+    padding: 0.5em 0.8em
+    border-width: 2px
+    border-color: inherit
+    box-shadow: none
+    background: none
+
+  .structure__content
+    padding: 0.7em 0.8em 1.2em
+
+  .structure__title
+    padding-right: 50px
+    margin-bottom: 0
+
+    +media('<mob-lg')
+      padding-right: 30px
+
+    &, & .structure__inner, & .structure__angle
+      cursor: pointer
+
+    & .structure__inner
+      display: block
+      width: auto
+      font-size: inherit
+      line-height: inherit
+      letter-spacing: inherit
+
+    & .structure__angle
+      font-size: 0
+      line-height: 0
+
+    &:hover
+      & .structure__inner
+        text-decoration: underline
+
+  .structure__list li:hover > .structure__title
+    background: none
+
+  // structure
+  //.structure__list
+    ul
+      display: block !important
+      height: auto !important
+      padding: 0 !important
+      margin: 0 !important
+
+    li
+      position: relative
+
+      &::after
+        display: none
+
+    & > li
+      padding-left: 0 !important
+      margin: 0 0 $spec-bottom-space
+
+      & > .structure__title
+        margin-bottom: $spec-bottom-space
+
+        .structure__inner
+          font-weight: bold
+          +spec-font-size--item
+
+  //.structure__title
+    position: relative
+    transition: none
+
+  //.structure__list li:hover
+    & > .structure__title
+      background: none
+
+  //qr
+  .qr-code-btn
+    border: 2px solid currentColor
+    +spec-reset-bg
+
+    &:hover
+      +spec-reset-bg-invert
+
+    &::after
+      display: none
+
+  .structure-less .structure__title .qr-code-btn
+    right: 2px
+    bottom: 2px
+    height: calc(100% - 4px)
+
+  // button close
+  .popup-default__close
+    +spec-reset-bg-invert
+
+    &::before, &::after
+      +spec-reset-bg
+
+    &:hover
+      +spec-reset-bg
+
+      &::before, &::after
+        +spec-reset-bg-invert
+
+  // popup default
+  //.popup-default__layout
+    +spec-reset-bg
+
+  .bx-newslist-title, .bx-newslist-title a
+    font-size: inherit
+    line-height: inherit
+    padding: 0
+    font-family: inherit
+    letter-spacing: inherit
+
+  // перебить костыли
+  [style*="font-size"]
+    font-size: inherit !important
+
+  [style*="line-height"]
+    line-height: inherit !important
+
+  [style*="color"]
+    color: inherit !important
+
+  [style*="letter-spacing"]
+    letter-spacing: inherit !important
+
+  [style*="background-color"]
+    background-color: transparent !important
 
 //@import spec/popups
 

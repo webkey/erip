@@ -1,0 +1,412 @@
+<!doctype html>
+<!--[if lte IE 9]><html class="no-js lte-ie9" lang=""> <![endif]-->
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js expanded-sidebar" lang=""> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>@@title</title>
+	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<!--Mobile optimized-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!--Favicon-->
+	<link href="favicon.ico" rel="shortcut icon">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<!--Main style-->
+	<link href="css/all.css?rev=@@hash" rel="stylesheet" media="all">
+	<!--Media queries style-->
+	<link href="css/mq-all.css?rev=@@hash" rel="stylesheet" media="screen">
+	<!--Modernizr-->
+	<script src="js/vendor/modernizr.min.js"></script>
+	<!--Special-->
+	<link href="css/special-version-base.css?rev=@@hash" rel="stylesheet" media="screen">
+</head>
+<body class="@@if(context.pageClass){@@pageClass }top-panel-show">
+<!--[if lt IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
+
+@@include('_tpl_spec-panel.html', {"specUrl": "@@specUrl"})
+
+<!--WRAPPER-->
+<div class="wrapper">
+
+	<!--sidebar-->
+	<aside class="sidebar">
+		<div class="sidebar-layout">
+			<div class="sidebar-holder">
+				<div class="sidebar-inner sidebar-small">
+					<div class="sidebar-frame">
+						<!--logo-->
+						<strong class="logo"> <a href="index.html"> <img src="img/logo.png" alt="Расчет" /> <span class="logo__text">Единое Расчётное Информационное Пространство</span> </a> </strong>
+						<!--logo end-->
+						<!--sb buttons-->
+						<!--<div class="sb-msi">
+              <a href="#">
+                <div class="sb-msi__align">
+                  <div class="sb-msi__title">
+                    <i class="icon-sing-in">
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+                        <path fill="#cf2f09" d="M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z"></path>
+                        <path fill="#cf2f09" d="M10 8l-5-4v2h-5v4h5v2z"></path>
+                      </svg>
+                    </i>
+                    <span>МСИ</span>
+                  </div>
+                  <div class="sb-msi__title_alt">Межбанковская система идентификации</div>
+                  <div class="sb-msi__body">
+                    <div class="sb-msi__btn">
+                      <i class="icon-sing-in">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16" viewBox="0 0 16 16">
+                          <path fill="#cf2f09" d="M7 1v2l1 1v-2h7v12h-7v-2l-1 1v2h9v-14z"></path>
+                          <path fill="#cf2f09" d="M10 8l-5-4v2h-5v4h5v2z"></path>
+                        </svg>
+                      </i>
+                      <span>Вход</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>-->
+						<div class="sb-phones">
+							<a href="tel:141">
+								<div class="sb-phones__align">
+									<div class="sb-phones__title">контактный телефон:</div>
+									<div class="sb-phones__body"><i class="icon-phone_in_talk"></i><span>141</span></div>
+									<div class="sb-phones__foot">8:00 - 20:00</div>
+								</div>
+							</a>
+						</div>
+						<div class="sb-works">
+							<div class="sb-works__align">
+								<div class="sb-works__title">время работы контакт-центра:</div>
+								<div class="sb-work__body">
+									<i class="icon-access_time"></i>8:00 - 20:00
+								</div>
+							</div>
+						</div>
+						<!--sb buttons end-->
+						<!--sb menu-->
+						<ul class="sb-menu">
+							<li>
+								<a href="https://ioauth.raschet.by:6444/client/">
+									<div class="sb-menu__view-normal">
+										<i class="depict-msi"></i> <span class="sb-menu__inner">МСИ</span>
+									</div>
+									<div class="sb-menu__view-alt">
+										<i class="depict-msi"></i> <span class="sb-menu__inner">Межбанковская система идентификации</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="https://ioauth.raschet.by:6444/client/">
+									<div class="sb-menu__view-normal">
+										<i class="icon-lkerip">
+											@@include("includes/svg/icon-log.svg")
+										</i>
+										<span class="sb-menu__inner">ЛК ЕРИП</span>
+									</div>
+									<div class="sb-menu__view-alt">
+										<i class="icon-lkerip">
+											@@include("includes/svg/icon-log.svg")
+										</i>
+										<span class="sb-menu__inner">Личный кабинет ЕРИП</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="/organizatsiyam/ais-raschet/servis-e-pos/">
+									<div class="sb-menu__view-normal">
+										<i class="depict-stat"></i> <span class="sb-menu__inner">Сервис E-POS</span>
+									</div>
+									<div class="sb-menu__view-alt">
+										<i class="depict-stat"></i> <span class="sb-menu__inner">Сервис E-POS</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="/platelshchikam/zadat-vopros/">
+									<div class="sb-menu__view-normal">
+										<i class="depict-faq"></i> <span class="sb-menu__inner">Задать вопрос</span>
+									</div>
+									<div class="sb-menu__view-alt">
+										<i class="depict-faq"></i> <span class="sb-menu__inner">Задать вопрос</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<!--sb menu end-->
+						<div class="sb-lang">
+							<a href="#"><span>Бел</span>/<span class="active">Рус</span></a>
+						</div>
+						<div class="sb-spec">
+							<div class="sb-spec__align">
+								@@include("_tpl_spacial--tools-btn.html", { "href": "@@specUrl", "classes": "spec-btn-switcher", "icon": "includes/svg/icon-special-on.svg", "text": "Версия для слабо- видящих", "title": "Перейти на версию сайта для слабовидящих" })
+							</div>
+						</div>
+						<!--social networks-->
+						<ul class="social-networks">
+							<li>
+								<a href="https://www.facebook.com/%D0%95%D0%A0%D0%98%D0%9F-1085028641613555/" class="soc-facebook" target="_blank"> <span>facebook</span> <i class="soc-depict-fb"></i> <i class="soc-depict-fb-h"></i> </a>
+							</li>
+							<!--<li>
+                <a href="#" class="soc-twitter"> <span>twitter</span> <i class="soc-depict-twitter"></i> <i class="soc-depict-twitter-h"></i> </a>
+              </li>-->
+							<li>
+								<a href="https://vk.com/public135843339" class="vk" target="_blank"> <span>vk</span> <i class="soc-depict-vk"></i> <i class="soc-depict-vk-h"></i> </a>
+							</li>
+						</ul>
+						<!--social networks end-->
+						<!--developer-->
+						<a href="http://astronim.by/index.html" target="_blank" class="developer">Astronim*Support</a>
+						<!--developer end-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+	<a href="#" class="btn-sidebar"><span>Дополнительное меню</span></a>
+	<!--sidebar end-->
+
+	<!--site map-->
+	<div class="site-map js-popup-menu" id="site-map-popup">
+		<div class="site-map-layout">
+			<div class="site-map-overlay"></div>
+			<div class="site-map-holder">
+				<div class="align-layout">
+					<ul class="nav-bar__list">
+						<li class="align-left">
+							<strong>О компании</strong>
+							<ul>
+								<li><a href="/nkfo/o-kompanii/">О НКФО ЕРИП</a></li>
+								<li><a href="/nkfo/struktura/">Структура</a></li>
+								<li><a href="/nkfo/nablyudatelnyy-sovet/">Наблюдательный Совет</a></li>
+								<li><a href="/nkfo/pravlenie/">Правление</a></li>
+								<li><a href="/nkfo/raskrytie-informatsii/">Раскрытие информации</a></li>
+								<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-N">Финансовая отчетность по НСФО</a></li>
+								<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-M">Финансовая отчетность по МСФО</a></li>
+								<li><a href="/nkfo/finansovaya-gramotnost/">Финансовая грамотность</a></li>
+								<li><a href="/nkfo/konsultativnyy-sovet/">Консультативный совет</a></li>
+								<li><a href="/nkfo/tekhnologicheskiy-sovet/">Технологический совет</a></li>
+								<li><a href="/nkfo/zakupki/">Закупки</a></li>
+								<li><a href="/nkfo/vakansii">Вакансии</a></li>
+								<li><a href="/nkfo/kontakty/">Контакты</a></li>
+								<li><a href="/nkfo/elektronnoe-obrashchenie/">Электронное обращение</a></li>
+								<li><a href="/nkfo/informatsiya-dlya-aktsionerov">Информация для акционеров</a></li>
+								<li><a href="/nkfo/pr-sluzhba">PR-служба</a></li>
+								<li><a href="/nkfo/litsenzii-sertifikaty-i-attestaty-nkfo-erip/">Лицензии, сертификаты и аттестаты НКФО ЕРИП</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong>О системе</strong>
+							<ul>
+								<li><a href="/o-sisteme/o-sisteme/">О системе</a></li>
+								<li><a href="/o-sisteme/normativnaya-baza/">Нормативная база</a></li>
+								<li><a href="/o-sisteme/publikatsii/">Публикации</a></li>
+								<li><a href="/o-sisteme/novosti/">Новости</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Банкам</strong>
+							<ul>
+								<li><a href="/bankam/ais-raschet/">АИС "Расчет"</a></li>
+								<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/">Межбанковская система идентификации</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Плательщикам</strong>
+							<ul>
+								<li><a href="/platelshchikam/ais-raschet/">АИС "Расчет"</a></li>
+								<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/">Межбанковская система идентификации (МСИ)</a></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Организациям</strong>
+							<ul>
+								<li><a href="/organizatsiyam/ais-raschet/">АИС "Расчет"</a></li>
+								<li><a href="/organizatsiyam/ais-raschet-zhkuu/">АИС "Расчет-ЖКУ"</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="btn-site-map-close" title="Закрыть"></div>
+		</div>
+	</div>
+	<!--site map end-->
+
+	<!--header-->
+	<header class="header">
+		<div class="header-layout">
+			<!--logo in header-->
+			<strong class="logo logo-header"> <a href="index.html"> <img src="img/logo.png" alt="Расчет"> <span class="logo__text">Единое Расчётное Информационное Пространство</span> </a> </strong>
+			<!--logo in header end-->
+
+			<!-- main navigation -->
+			<nav class="nav">
+				<div class="nav-layout">
+					<!--button menu-->
+					<a href="#" class="btn-menu"><span>Меню</span></a>
+					<!--button menu end-->
+
+					<ul class="nav-list" style="max-height: 909px;">
+						<li
+								@@if(context.currentItem == "О компании"){ class="current"}><a href="#nkfo-submenu"><span>О компании</span></a></li>
+						<li
+								@@if(context.currentItem == "О системе"){ class="current"}><a href="#o-sisteme-submenu"><span>О системе</span></a></li>
+						<li
+								@@if(context.currentItem == "Банкам"){ class="current"}><a href="#bankam-submenu"><span>Банкам</span></a></li>
+						<li
+								@@if(context.currentItem == "Организациям"){ class="current"}><a href="#organizatsiyam-submenu"><span>Организациям</span></a></li>
+						<li
+								@@if(context.currentItem == "Плательщикам"){ class="current"}> <a href="#platelshchikam-submenu"><span>Плательщикам</span></a>					</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- main navigation end -->
+
+			<a href="#?" class="log" title="Вход в личный кабинет"> @@include("includes/svg/icon-log.svg") <span>Вход в личный кабинет</span> </a>
+
+			<!--button site map-->
+			<a href="#" class="btn-site-map" title="Карта сайта">
+				<div class="btn-lines">
+					<span></span> <span></span> <span></span>
+				</div>
+			</a>
+			<!--button site map-->
+
+			<!--search form-->
+			<div class="search-form js-search-form">
+				<form action="#">
+					<div class="btn-search">
+						<i></i>
+						<input type="submit" value="" title="Поиск">
+					</div>
+					<div class="input-wrapper">
+						<input type="search" placeholder="Поиск по сайту">
+					</div>
+					<strong class="btn-search-open js-search-open"> <span>Поиск</span> </strong>
+				</form>
+			</div>
+			<!--search form end-->
+
+			<!--button menu-->
+			<a href="#" class="btn-aside" title="Акции и новости">
+				<div class="btn-lines">
+					<span></span> <span></span> <span></span>
+				</div>
+			</a>
+			<!--button menu end-->
+		</div>
+	</header>
+	<!--header end-->
+
+	<!--main layout-->
+	<div class="main-layout sticky-js">
+		<!--catalog menu-->
+		<div class="catalog-menu">
+			<ul class="catalog-menu-list" id="nkfo-submenu">
+				<li><a href="/nkfo/o-kompanii/"><span>О НКФО ЕРИП</span></a></li>
+				<li><a href="/nkfo/struktura/"><span>Структура</span></a></li>
+				<li><a href="/nkfo/nablyudatelnyy-sovet/"><span>Наблюдательный Совет</span></a></li>
+				<li><a href="/nkfo/pravlenie/"><span>Правление</span></a></li>
+				<li><a href="/nkfo/raskrytie-informatsii/"><span>Раскрытие информации</span></a></li>
+				<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-N"><span>Финансовая отчетность по НСФО</span></a></li>
+				<li><a href="/nkfo/finansovye-pokazateli-deyatelnosti-po-M"><span>Финансовая отчетность по МСФО</span></a></li>
+				<li><a href="/nkfo/finansovaya-gramotnost/"><span>Финансовая грамотность</span></a></li>
+				<li><a href="/nkfo/konsultativnyy-sovet/"><span>Консультативный совет</span></a></li>
+				<li><a href="/nkfo/tekhnologicheskiy-sovet/"><span>Технологический совет</span></a></li>
+				<li><a href="/nkfo/zakupki/"><span>Закупки</span></a></li>
+				<li><a href="/nkfo/vakansii"><span>Вакансии</span></a></li>
+				<li><a href="/nkfo/kontakty/"><span>Контакты</span></a></li>
+				<li><a href="/nkfo/elektronnoe-obrashchenie/"><span>Электронное обращение</span></a></li>
+				<li><a href="/nkfo/informatsiya-dlya-aktsionerov"><span>Информация для акционеров</span></a></li>
+				<li><a href="/nkfo/pr-sluzhba"><span>PR-служба</span></a></li>
+				<li><a href="/nkfo/litsenzii-sertifikaty-i-attestaty-nkfo-erip/"><span>Лицензии, сертификаты и аттестаты НКФО ЕРИП</span></a></li>
+			</ul>
+			<ul class="catalog-menu-list" id="o-sisteme-submenu">
+				<li><a href="/o-sisteme/o-sisteme/"><span>О системе</span></a></li>
+				<li><a href="/o-sisteme/normativnaya-baza/"><span>Нормативная база</span></a></li>
+				<li><a href="/o-sisteme/publikatsii/"><span>Публикации</span></a></li>
+				<li><a href="/o-sisteme/novosti/"><span>Новости</span></a></li>
+			</ul>
+			<ul class="catalog-menu-list" id="bankam-submenu">
+				<li class="has-submenu"><a href="/bankam/ais-raschet/"><span>АИС "Расчет"</span></a>
+					<ul>
+						<li><a href="/bankam/ais-raschet/obshchie-usloviya-podklyucheniya/"><span>Общие условия подключения</span></a></li>
+						<li><a href="/bankam/ais-raschet/derevo-erip/"><span>Дерево ЕРИП</span></a></li>
+						<li><a href="/bankam/ais-raschet/banki-uchastniki/"><span>Банки-участники</span></a></li>
+						<li><a href="/bankam/ais-raschet/platezhnye-agenty/"><span>Платежные агенты</span></a></li>
+						<li><a href="/bankam/ais-raschet/organizatsiya-oplaty-po-qr-kodu/"><span>Организация оплаты по QR-коду</span></a></li>
+						<li><a href="/bankam/ais-raschet/statistika/"><span>Статистика</span></a></li>
+						<li><a href="/bankam/ais-raschet/populyarnye-voprosy-i-otvety/"><span>Популярные вопросы и ответы</span></a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/"><span>Межбанковская система идентификации</span></a>
+					<ul>
+						<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/obshchie-usloviya-podklyucheniya/"><span>Общие условия подключения</span></a></li>
+						<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/banki-uchastniki/"><span>Банки-участники</span></a></li>
+						<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/statistika/"><span>Статистика</span></a></li>
+						<li><a href="/bankam/mezhbankovskaya-sistema-idetifikatsii/populyarnye-voprosy-i-otvety/"><span>Популярные вопросы и ответы</span></a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="catalog-menu-list three-cols" id="platelshchikam-submenu">
+				<li class="has-submenu"><a href="/platelshchikam/ais-raschet/"><span>АИС "Расчет"</span></a>
+					<ul>
+						<li><a href="/platelshchikam/ais-raschet/istoriya-sozdaniya-ais-raschet/"><span>История создания АИС "Расчет"</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/derevo-erip/"><span>Дерево ЕРИП</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/nomer-platelshchika/"><span>Номер плательщика</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/poisk-po-uslugam-i-platezham/"><span>Поиск по услугам и платежам</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/populyarnye-voprosy-i-otvety/"><span>Популярные вопросы и ответы</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/zadat-vopros/"><span>Задать вопрос</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/oplata-po-qr-kodu/"><span>Оплата по QR-коду</span></a></li>
+						<li><a href="/platelshchikam/ais-raschet/punkty-priema-platezhey/"><span>Пункты приема платежей</span></a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/"><span>Межбанковская система идентификации (МСИ)</span></a>
+					<ul>
+						<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/istoriya-sozdaniya-msi/"><span>История создания МСИ</span></a></li>
+						<li><a href="https://ioauth.raschet.by:6444/client/"><span>Вход/регистрация в МСИ</span></a></li>
+						<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/banki-uchastniki/"><span>Банки-участники</span></a></li>
+						<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/populyarnye-voprosy-i-otvety/"><span>Популярные вопросы и ответы</span></a></li>
+						<li><a href="/platelshchikam/mezhbankovskaya-sistema-identifikatsii-msi/zadat-vopros/"><span>Задать вопрос</span></a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="#"><span>Личный кабинет ЕРИП (ЛК ЕРИП)</span></a>
+					<ul>
+						<li><a href="#"><span>Общая информация о  ЛК ЕРИП</span></a></li>
+						<li><a href="#"><span>Номер плательщика ЛК ЕРИП</span></a></li>
+						<li><a href="#"><span>Популярные вопросы и ответы</span></a></li>
+						<li><a href="#"><span>Задать вопрос</span></a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="catalog-menu-list" id="organizatsiyam-submenu">
+				<li class="has-submenu"><a href="/organizatsiyam/ais-raschet/"><span>АИС "Расчет"</span></a>
+					<ul>
+						<li><a href="/organizatsiyam/ais-raschet/usloviya-podklyucheniya-k-ais-raschet/"><span>Условия подключения к ЕРИП</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/derevo-erip/"><span>Дерево ЕРИП</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/servis-e-pos/"><span>Сервис E-POS</span></a></li>
+						<li><a href="/organizatsiyam/oplata-po-qr-kodu"><span>Оплата по QR-коду</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/informatsionnyy-resurs/"><span>Информационный ресурс</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/agregatory/"><span>Агрегаторы</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/populyarnye-voprosy-i-otvety/"><span>Популярные вопросы и ответы</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/zadat-vopros/"><span>Задать вопрос</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet/kontakt-tsentr-141/"><span>Контакт-центр 141</span></a></li>
+					</ul>
+				</li>
+				<li class="has-submenu"><a href="/organizatsiyam/ais-raschet-zhkuu/"><span>АИС "Расчет-ЖКУ"</span></a>
+					<ul>
+						<li><a href="/organizatsiyam/ais-raschet-zhkuu/istoriya-sozdaniya-ais-raschet-zhku/"><span>История создания АИС "Расчет-ЖКУ"</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet-zhkuu/usloviya-podklyucheniya-k-ais-raschet-zhku-/"><span>Условия подключения к АИС "Расчет-ЖКУ" </span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet-zhkuu/generator-otchetov/"><span>Генератор отчетов</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet-zhkuu/zadat-vopros/"><span>Задать вопрос</span></a></li>
+						<li><a href="/organizatsiyam/ais-raschet-zhkuu/kontakt-tsentr/"><span>Контакт центр</span></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--catalog menu-->
+
+		<!--main-->
+		<div class="main"></div>

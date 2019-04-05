@@ -414,7 +414,7 @@ function catalogMenuSelect(){
 		$catalogMenu.css('height','auto');
 	});
 	var scrollSpeed = 900;
-	var animationSpeed = 500;
+	var animationSpeed = 330;
 
 	$navList.find('a').on('click', function(event){
 		event.preventDefault();

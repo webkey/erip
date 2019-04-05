@@ -37,9 +37,10 @@
 		margin: 0 auto;
 	}
 
-	.nav-layout { margin: 0 120px 0 60px; }
+	.nav-layout { margin: 0 180px 0 60px; }
 	.btn-aside{ display: block; }
 	.search-form{ right: 60px; }
+	.log{ right: 120px; }
 
 	.aside{
 		position: fixed;
@@ -322,6 +323,9 @@
 	/*catalog menu*/
 	.catalog-menu-list li{
 		float: none;
+		width: auto;
+	}
+	.catalog-menu-list.three-cols li{
 		width: auto;
 	}
 	.catalog-menu-list a{
