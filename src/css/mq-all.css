@@ -37,9 +37,10 @@
 		margin: 0 auto;
 	}
 
-	.nav-layout { margin: 0 180px 0 60px; }
+	.nav-layout { margin: 0 240px 0 60px; }
 	.btn-aside{ display: block; }
 	.search-form{ right: 60px; }
+	.msi{ right: 180px; }
 	.log{ right: 120px; }
 
 	.aside{
@@ -80,6 +81,12 @@
 		transform: translate(150px, 0);
 	}*/
 	/*layout main blocks end*/
+}
+
+@media only screen and (max-width: 1199px){
+	.nav-list > li {
+		font-size: 12px;
+	}
 }
 
 @media only screen and (max-width: 979px){
@@ -388,6 +395,10 @@
 }
 
 @media only screen and (max-width: 639px){
+	:root {
+		--size: 50px;
+	}
+
 	h1{
 		font-size: 30px;
 		line-height: 38px;
@@ -419,15 +430,85 @@
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 60px;
-		height: 60px;
+		width: var(--size);
+		height: var(--size);
 		border: none;
 	}
+	/*.logo-header > a,*/
+	/*.logo-header > div{ padding: 15px 8px 0; }*/
 	.logo-header > a,
-	.logo-header > div{ padding: 15px 8px 0; }
+	.logo-header > div{ padding: 10px 2px 0; }
 	.btn-site-map,
 	.site-map{ display: none; }
 	/*header end*/
+
+	.header-layout {
+		height: var(--size);
+	}
+	.main-layout {
+		padding-top: var(--size);
+	}
+	.btn-menu {
+		font-size: 14px;
+		margin-top: 15px;
+	}
+	.btn-menu > span {
+		border: none;
+	}
+	.nav{
+		height: var(--size);
+	}
+	.nav-layout {
+		margin-right: calc(var(--size) * 4);
+		margin-left: var(--size);
+	}
+	.msi,
+	.log,
+	.btn-aside,
+	.btn-search,
+	.btn-search-open {
+		height: var(--size);
+		width: var(--size);
+	}
+	.msi {
+		right: calc(var(--size) * 3);
+	}
+	.msi > span {
+		padding-bottom: 2px;
+	}
+	.log {
+		right: calc(var(--size) * 2);
+	}
+	.btn-aside:before {
+		height: var(--size);
+		width: var(--size);
+	}
+	.btn-search i {
+		left: 15px;
+	}
+	.search-form {
+		right: var(--size);
+		width: var(--size);
+	}
+	.search-form input[type="search"],
+	.search-form input[type="text"] {
+		font-size: 16px;
+		line-height: 20px;
+		padding: calc((var(--size) - 20px) / 2) var(--size);
+		height: var(--size);
+	}
+	.nav-list li {
+		text-align: center;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.aside {
+		top: var(--size);
+	}
+	.aside-panel-overlay {
+		top: var(--size);
+		height: calc(100% - var(--size));
+	}
 
 	/*form-callback*/
 	.captcha-row{ display: block; }
