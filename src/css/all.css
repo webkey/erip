@@ -2818,7 +2818,22 @@ html.desktop .btn-site-map:hover .btn-lines span{
   transition-duration: 0.35s;
 }
 .log > span {
-  display: none;
+  /*display: none;*/
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 14px;
+  color: white;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+.log > span em{
+  font-style: normal;
+  font-family: inherit;
 }
 .log svg{
   display: block;
@@ -2827,7 +2842,7 @@ html.desktop .btn-site-map:hover .btn-lines span{
   top: 50%;
   height: 24px;
   width: 24px;
-  margin: -12px 0 0 -12px;
+  margin: -17px 0 0 -12px;
 }
 .log svg path {
   fill: currentColor;
@@ -2920,11 +2935,14 @@ html.desktop .btn-site-map:hover .btn-lines span{
   left: 21px;
   width: 21px;
   height: 17px;
-  margin: -9px 0 0;
+  margin: -13px 0 0;
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+}
+.form-opened .btn-search i{
+  margin: -9px 0 0;
 }
 .btn-search i:before,
 .btn-search i:after{
@@ -2967,6 +2985,22 @@ html.desktop .btn-search:hover i{
   border: none;
   background: none;
   margin: 0;
+}
+.btn-search > span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 14px;
+  color: #0f4b01;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+.form-opened .btn-search > span {
+  display: none;
 }
 /*search submit end*/
 

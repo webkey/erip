@@ -479,12 +479,18 @@
 	.log {
 		right: calc(var(--size) * 2);
 	}
+	.log > span {
+		padding-bottom: 2px;
+	}
 	.btn-aside:before {
 		height: var(--size);
 		width: var(--size);
 	}
 	.btn-search i {
 		left: 15px;
+	}
+	.btn-search > span {
+		padding-bottom: 2px;
 	}
 	.search-form {
 		right: var(--size);
